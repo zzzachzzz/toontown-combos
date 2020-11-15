@@ -210,20 +210,19 @@ function findCombo({ cogLvl, gagTrack, numToons, isLured, stunTrack = null } = {
   }
 
   // In a drop combo, attempt to lower gag level of stun gag
-  if (gagTrack === 'drop' && combo.gags[0].lvl == 5) {
-    if (combo.gags[1].lvl === 7) {
-      combo.gags[0].lvl += 1;
-      combo.gags[1].lvl -= 1;
+  if (gagTrack === 'drop') {
+    if (combo.gags[0].lvl > 5 && combo.gags[1].lvl < 6) {
+      combo.gags[0].lvl -= 1;
+      combo.gags[1].lvl += 1;
       if (combo.damage() < cog.Hp) {
-        combo.gags[0].lvl -= 1;
-        combo.gags[1].lvl += 1;
+        combo.gags[0].lvl += 1;
+        combo.gags[1].lvl -= 1;
       }
-    } else {
-      while (combo.damage() >= cog.Hp && combo.gags[0].lvl > 0) {
-        combo.gags[0].lvl -= 1;
-      }
-      combo.gags[0].lvl += 1;
     }
+    while (combo.damage() >= cog.Hp && combo.gags[0].lvl > 0) {
+      combo.gags[0].lvl -= 1;
+    }
+    combo.gags[0].lvl += 1;
   }
   return combo;
 }
