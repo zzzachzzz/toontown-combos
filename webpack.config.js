@@ -17,10 +17,13 @@ module.exports = env => ({
   },
   devtool: 'inline-source-map',
   plugins: [new webpack.ProgressPlugin()],
+  resolve: {
+    extensions: ['.js', '.mjs']
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|mjs)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

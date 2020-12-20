@@ -1,4 +1,4 @@
-const cogHp = {
+export const cogHp = {
   1:  6,
   2:  12,
   3:  20,
@@ -94,7 +94,7 @@ class Gag {
     if (this.lvl === 0) {
       return 'None';
     }
-    return `${gags[this.track][this.lvl].name}${this.isOrg ? ' (Organic)' : ''}`;
+    return gags[this.track][this.lvl].name;
   }
 
   /**
@@ -132,7 +132,7 @@ class Gag {
    * @return {string}
    */
   toString() {
-    return `Gag(name: ${this.name}, level: ${this.lvl}, damage: ${this.damage})`;
+    return `Gag(name: ${this.name}, level: ${this.lvl}, damage: ${this.damage}, isOrg: ${this.isOrg})`;
   }
 }
 
@@ -195,7 +195,10 @@ class Combo {
 function findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack = null } = {}) {
   const cog = new Cog(cogLvl);
   let combo, isStunOrg;
-  const numOrg = organicGags[gagTrack] || 0;
+  const numOrg = Math.min(
+    organicGags[gagTrack] || 0,
+    gagTrack === 'drop' ? numToons - 1 : numToons
+  );
 
   /**
    * @return {boolean}
@@ -222,10 +225,19 @@ function findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack
   while (!damageKillsCog()) {
     for (const gag of combo.gags) {
       if (gagTrack === 'drop' && gag.track === stunTrack && gag.lvl > 4) {
-        gag.lvl = 5;
+        continue;
       } else {
         gag.lvl += 1;
       }
+    }
+  }
+  // Prioritize a lvl 6 stun gag over any lvl 7 gag
+  if (gagTrack === 'drop' && combo.gags.slice(1).some(gag => gag.lvl === 7)) {
+    combo.gags[0].lvl += 1;
+    combo.gags[1].lvl -= 1;
+    if (!damageKillsCog()) {
+      combo.gags[0].lvl -= 1;
+      combo.gags[1].lvl += 1;
     }
   }
   // Decrease the level of individual gags until the damage is insufficient
@@ -244,21 +256,23 @@ function findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack
   }
 
   // Check if organic is actually necessary for the combo
+  if (gagTrack === 'drop' && isStunOrg) {
+    combo.gags[0].isOrg = false;
+    if (!damageKillsCog())
+      combo.gags[0].isOrg = true;
+  }
   if (numOrg > 0) {
-    let i = gagTrack === 'drop' ? 1 : 0;
-    for (; i < numOrg; i++) {
+    const offset = gagTrack === 'drop' ? 1 : 0;
+    let i = offset;
+    for (; i < numOrg + offset; i++) {
       combo.gags[i].isOrg = false;
       if (!damageKillsCog()) {
         combo.gags[i].isOrg = true;
       }
     }
-    if (isStunOrg) {
-      combo.gags[0].isOrg = false;
-      if (!damageKillsCog())
-        combo.gags[0].isOrg = true;
-    }
-    combo.gags.sort((gag1, gag2) => gag2.damage - gag1.damage);
   }
+
+  combo.gags.sort((gag1, gag2) => gag2.damage - gag1.damage);
 
   // In a drop combo, attempt to lower gag level of stun gag
   if (gagTrack === 'drop') {
@@ -288,7 +302,7 @@ function findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack
  * @param {Object<any, string>} args
  * @param {Combo} combo
  */
-function logTable(args, combo) {
+export function logTable(args, combo) {
   console.log('Input:');
   console.table({
     'Num Toons': args.numToons,
@@ -305,7 +319,7 @@ function logTable(args, combo) {
   console.table(
     combo.gags.reduce((newObj, gag, i) => {
       newObj[`Gag ${i+1}`] = {
-        'Name': gag.name,
+        'Name': `${gag.name}${gag.isOrg ? ' (Organic)' : ''}`,
         'Level': gag.lvl,
         'Damage': gag.damage,
       };
@@ -326,26 +340,5 @@ function logTable(args, combo) {
   });
 }
 
-module.exports = findCombo;
-
-const args = {
-  numToons: 4,  // 4 | 3 | 2
-  cogLvl: 10,  // 1 - 12
-  isLured: true,  // true | false
-  gagTrack: 'drop',  // 'sound' | 'throw' | 'squirt' | 'drop'
-  stunTrack: 'sound',  // 'sound' | 'throw' | 'squirt'
-  organicGags: {
-    // 4 | 3 | 2 | 1 | 0
-    sound: 1,
-    // throw: 2,
-    // squirt: 0,
-    drop: 3,
-  },
-};
-
-if (args.organicGags[args.gagTrack] > args.numToons)
-  throw new Error('Number of organic gags for the given `gagTrack` exceeds `numToons`');
-
-const combo = findCombo(args);
-logTable(args, combo);
+export default findCombo;
 
