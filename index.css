@@ -1,0 +1,283 @@
+:root {
+  --toonup: #c68bef;
+  --trap: #e9ef57;
+  --lure: #32ab2e;
+  --sound: #4649e4;
+  --throw: #f2711c;
+  --squirt: #f117ba;
+  --drop: #25e9f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("assets/gags_pattern.png");
+  background-repeat: repeat;
+  background-size: 15em;
+  font-family: sans-serif;
+  margin: 0;
+  padding-bottom: 50px;
+}
+
+button {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+
+button:not([disabled]) {
+  cursor: pointer;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.combo-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.combo {
+  display: grid;
+  grid-template-columns: 25px auto;
+  grid-template-rows: 30px;
+  align-items: center;
+}
+
+.combo-cell .combo:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.gags {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.combo-dmg {
+  font-size: 0.8rem;
+  margin-right: 8px;
+}
+
+#cog-lvl-column {
+  display: grid;
+  grid-template-rows: repeat(12, 110px);
+}
+
+.cog-lvl-cell {
+  width: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.cog-icon-container {
+  width: 60px;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.cog-lvl-cell img {
+  width: 100%;
+}
+
+.cog-lvl {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.cog-hp {
+  font-size: 0.8rem;
+}
+
+.hp {
+  font-size: 0.3rem;
+  margin-left: 2px;
+}
+
+#combos-grid {
+  display: grid;
+  grid-template: repeat(12, 110px) / repeat(6, 1fr);
+  grid-column-gap: 20px;
+  width: 100%;
+  overflow-x: scroll;
+  margin: 0 1em;
+}
+
+.gag-icon-container {
+  width: 30px;
+  height: 100%;
+  text-align: center;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+.gag-icon-container span,
+.cog-icon-container span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.3em;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.cog-icon-container span {
+  bottom: unset;
+  top: 0;
+}
+
+.gag-icon {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.org-gag-track-list {
+  list-style: none;
+  display: grid;
+  grid-template-rows: repeat(7, 2.2em);
+  grid-row-gap: 0.2em;
+  font-size: 0.85em;
+
+}
+
+.org-gag-track-list li {
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.org-gag-track-list button {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.8em 4em;
+  grid-template-rows: 100%;
+  grid-column-gap: 0.9em;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+}
+
+.org-gag-track-list .img-container {
+  width: 1.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.org-gag-track-list img {
+  max-width: 1.8em;
+  max-height: 1.8em;
+}
+
+.org-gag-track-list span {
+  text-align: left;
+  white-space: nowrap;
+}
+
+#controls-container {
+  margin: 1.5em 0;
+  max-width: 40em;
+  width: 98%;
+  margin: 1em auto;
+}
+
+#controls-header {
+  display: flex;
+}
+
+.toon-num {
+  margin: 0.3em 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+#controls-header h4 {
+  margin: 0.3em auto 0.3em 0;
+  width: min-content;
+  white-space: nowrap;
+}
+
+.controls-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1em;
+}
+
+#is-cog-lured {
+  margin-right: 1em;
+}
+
+#is-cog-lured button, #clear-selection {
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 0.9em;
+  padding: 0 0.2em;
+}
+
+#is-cog-lured button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#is-cog-lured img {
+  max-height: 1.8em;
+  max-width: 1.8em;
+  margin-right: 0.9em;
+}
+
+@media only screen and (max-width: 760px) {
+  .org-gag-track-list {
+    font-size: 0.55em;
+  }
+
+  .org-gag-track-list button {
+    grid-column-gap: 0.5em;
+  }
+
+  .controls-list {
+    grid-column-gap: 0.2em;
+  }
+
+  #controls-header {
+    font-size: 0.6em;
+  }
+
+  button#clear-selection {
+    font-size: 0.6em;
+  }
+}
+
