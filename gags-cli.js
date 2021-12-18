@@ -1,4 +1,4 @@
-import findCombo, { logTable } from './gags.mjs';
+import findCombo, { logTable } from './gags.js';
 
 const args = {
   numToons: 2,  // 4 | 3 | 2
