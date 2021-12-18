@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = env => ({
@@ -16,7 +17,6 @@ module.exports = env => ({
     port: 3000
   },
   devtool: 'inline-source-map',
-  plugins: [new webpack.ProgressPlugin()],
   resolve: {
     extensions: ['.js', '.mjs']
   },
@@ -51,11 +51,15 @@ module.exports = env => ({
     minimizer: [new TerserPlugin()],
   },
   plugins: [
+    new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',
       favicon: './assets/favicon.ico'
-    })
-  ]
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'assets', to: 'assets' }],
+    }),
+  ],
 });

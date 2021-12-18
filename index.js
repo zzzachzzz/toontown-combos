@@ -1,7 +1,5 @@
 import findCombo, { cogHp } from './gags.js';
 import './index.css';
-require.context('./assets/gag_icons/', false, /\.png$/);
-require.context('./assets/cog_icons/', false, /\.png$/);
 
 const savedState = JSON.parse(localStorage.getItem('savedState'))
 
