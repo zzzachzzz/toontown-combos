@@ -138,17 +138,29 @@ class Gag {
 
 class Combo {
   /**
-   * @param {Array<Gag>} gags
-   * @param {boolean} isLured
-   * @param {string} gagTrack
-   * @param {string} [stunTrack=null]
+   * @param {Object} args
+   * @param {number} args.cogLvl
+   * @param {Array<Gag>} args.gags
+   * @param {boolean} args.isLured
+   * @param {string} args.gagTrack
+   * @param {string} [args.stunTrack=null]
+   * @param {Object<string, number>} [args.organicGags={}]
    */
-  constructor(gags, isLured, gagTrack, stunTrack=null) {
+  constructor({
+    cogLvl,
+    gags,
+    isLured,
+    gagTrack,
+    stunTrack = null,
+    organicGags = {},
+  }) {
+    this.cogLvl = cogLvl;
     this.gags = gags;
     this.numToons = gags.length;
     this.isLured = isLured;
     this.gagTrack = gagTrack;
     this.stunTrack = stunTrack;
+    this.organicGags = organicGags;
   }
 
   /**
@@ -184,15 +196,23 @@ class Combo {
 }
 
 /**
- * @param {Object<string, any>} args
+ * @param {Object} args
  * @param {number} args.cogLvl
  * @param {string} args.gagTrack - 'sound' | 'throw' | 'squirt' | 'drop'
  * @param {number} args.numToons
  * @param {boolean} args.isLured
+ * @param {Object<string, number>} args.organicGags
  * @param {string} [args.stunTrack=null] 'sound' | 'throw' | 'squirt'
  * @return {Combo}
  */
-function findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack = null } = {}) {
+function findCombo({
+  cogLvl,
+  gagTrack,
+  numToons,
+  isLured,
+  organicGags,
+  stunTrack = null
+}) {
   const cog = new Cog(cogLvl);
   let combo, isStunOrg;
   const numOrg = Math.min(
@@ -209,13 +229,26 @@ function findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack
   if (gagTrack === 'drop') {
     if (stunTrack === null) throw new Error('Stun gag track not specified by `stunTrack` argument');
     isStunOrg = organicGags[stunTrack] >= 1;
-    combo = new Combo([new Gag(stunTrack, 1, isStunOrg)], isLured, gagTrack, stunTrack);
+    combo = new Combo({
+      cogLvl,
+      gags: [new Gag(stunTrack, 1, isStunOrg)],
+      isLured,
+      gagTrack,
+      stunTrack,
+      organicGags,
+    });
     for (let i = 0; i < numToons-1; i++) {
       const isOrg = i <= numOrg - 1;
       combo.gags.push(new Gag(gagTrack, 1, isOrg));
     }
   } else {
-    combo = new Combo([], isLured, gagTrack);
+    combo = new Combo({
+      cogLvl,
+      gags: [],
+      isLured,
+      gagTrack,
+      organicGags,
+    });
     for (let i = 0; i < numToons; i++) {
       const isOrg = i <= numOrg - 1;
       combo.gags.push(new Gag(gagTrack, 1, isOrg));
@@ -299,18 +332,17 @@ function findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack
 }
 
 /**
- * @param {Object<any, string>} args
  * @param {Combo} combo
  */
-export function logTable(args, combo) {
+export function logTable(combo) {
   console.log('Input:');
   console.table({
-    'Num Toons': args.numToons,
-    'Cog Level': args.cogLvl,
-    'Is Cog Lured?': args.isLured,
-    'Gag Track': args.gagTrack,
-    ...(args.gagTrack === 'drop' && { 'Stun Gag Track': args.stunTrack }),
-    'Organic Gags': Object.entries(args.organicGags)
+    'Num Toons': combo.numToons,
+    'Cog Level': combo.cogLvl,
+    'Is Cog Lured?': combo.isLured,
+    'Gag Track': combo.gagTrack,
+    ...(combo.gagTrack === 'drop' && { 'Stun Gag Track': combo.stunTrack }),
+    'Organic Gags': Object.entries(combo.organicGags)
       .map(([track, num]) => !num ? null : `${track[0].toUpperCase()}${track.slice(1)}: ${num}`)
       .filter(s => s !== null)
       .join(', '),
@@ -336,7 +368,7 @@ export function logTable(args, combo) {
     'Total base damage': combo.gags.reduce((sum, gag) => sum + gag.damage, 0),
     'Damage Multipliers': multipliers.join(', ') || '<None>',
     'Final damage calculated': combo.damage(),
-    ...(args.cogLvl !== null && { 'Cog HP': cogHp[args.cogLvl] }),
+    'Cog HP': new Cog(combo.cogLvl).Hp,
   });
 }
 

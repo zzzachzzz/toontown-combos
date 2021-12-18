@@ -16,5 +16,5 @@ const args = {
 };
 
 const combo = findCombo(args);
-logTable(args, combo);
+logTable(combo);
 
