@@ -1,6 +1,7 @@
 import findCombo, { logTable } from './gags.js';
 
 const args = {
+  game: 'ttr', // 'ttr' | 'classic'
   numToons: 2,  // 4 | 3 | 2
   cogLvl: 1,  // 1 - 12
   isLured: false,  // true | false

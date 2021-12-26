@@ -259,6 +259,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0.9em;
 }
 
+#game-select {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 @media only screen and (max-width: 760px) {
   .org-gag-track-list {
     font-size: 0.55em;

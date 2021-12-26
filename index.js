@@ -1,17 +1,29 @@
-import findCombo, { cogHp } from './gags.js';
+import findCombo, { classicCogHp, ttrCogHp } from './gags.js';
 import './index.css';
 
-const savedState = JSON.parse(localStorage.getItem('savedState'))
+const savedState = JSON.parse(localStorage.getItem('savedState'));
 
 const _selectedOrgGags =
   savedState?.selectedOrgGags || Array.from({ length: 4 }, () => null);
 
+/**
+ * @type {{
+ *   selectedOrgGags: Array<string>,
+ *   selectedOrgGagCounts: Object<string, number>,
+ *   isLured: boolean,
+ *   game: string,
+ * }}
+ */
 const state = {
   selectedOrgGags: _selectedOrgGags,
   selectedOrgGagCounts: calcSelectedGagTrackCounts(_selectedOrgGags),
   isLured: savedState?.isLured || false,
+  game: savedState?.game || 'ttr',
 };
 
+/**
+ * @return {Object<string, number>}
+ */
 function calcSelectedGagTrackCounts(selectedOrgGags) {
   return selectedOrgGags.reduce((acc, selectedOrgGag) => {
     if (selectedOrgGag !== null) acc[selectedOrgGag]++;
@@ -36,13 +48,15 @@ function CombosCell({ cogLvl, gagTrack, stunTrack = null }) {
 }
 
 function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
-  const { selectedOrgGagCounts: organicGags, isLured } = state;
+  const { selectedOrgGagCounts: organicGags, isLured, game } = state;
 
-  const combo = findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack });
+  const combo = findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack, game });
+
+  const damageText = combo.damageKillsCog() ? combo.damage() : 'N/A';
 
   return `
     <div class="combo">
-      <span class="combo-dmg">${combo.damage()}</span>
+      <span class="combo-dmg">${damageText}</span>
       <div class="gags">
         ${combo.gags.reduce((acc, gag) => acc + `
           <div class="gag-icon-container" ${gag.isOrg ? `style="background: var(--${gag.track});"` : ''}>
@@ -56,6 +70,8 @@ function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
 }
 
 function CogLvlCell(cogLvl) {
+  const cogHp = (state.game === 'ttr' ? ttrCogHp : classicCogHp)[cogLvl];
+
   return `
     <div class="cog-lvl-cell">
       <div class="cog-icon-container">
@@ -64,7 +80,7 @@ function CogLvlCell(cogLvl) {
       </div>
       <div>
         <span class="cog-lvl">${cogLvl}</span>
-        <span class="cog-hp">${cogHp[cogLvl]}</span><span class="hp">HP</span>
+        <span class="cog-hp">${cogHp}</span><span class="hp">HP</span>
       </div>
     </div>
   `;
@@ -72,6 +88,7 @@ function CogLvlCell(cogLvl) {
 
 function CogLvlColumn() {
   let arr = [];
+  // TODO For lvl 13+ cogs
   for (let cogLvl = 12; cogLvl >= 1; cogLvl--) {
     arr.push(CogLvlCell(cogLvl));
   }
@@ -153,6 +170,16 @@ function CogLuredButton() {
   `;
 }
 
+function onChangeSelectGame(e) {
+  const game = e.target.value;
+  state.game = game;
+
+  saveStateToLocalStorage();
+
+  renderCogLvlColumn();
+  renderComboGrid();
+}
+
 function onClickToggleLure() {
   state.isLured = !state.isLured;
 
@@ -164,8 +191,8 @@ function onClickToggleLure() {
 }
 
 function saveStateToLocalStorage() {
-  const { selectedOrgGags, isLured } = state;
-  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured }));
+  const { selectedOrgGags, isLured, game } = state;
+  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured, game }));
 }
 
 window.onClickOrgGagTrack = (gagTrack, toonIdx) => {
@@ -209,4 +236,16 @@ renderCogLuredButton();
 
 document.getElementById('clear-selection').addEventListener('click', onClickClearSelection);
 document.getElementById('is-cog-lured').addEventListener('click', onClickToggleLure);
+document.getElementById('game-select').addEventListener('change', onChangeSelectGame);
+
+(function setInitialSelectedGameDOM() {
+  const select = document.getElementById('game-select');
+  for (let i = 0; i < select.options.length; i++) {
+    const option = select.options[i];
+    if (option.value === state.game) {
+      option.setAttribute('selected', true);
+      break;
+    }
+  }
+})();
 
