@@ -10,13 +10,20 @@ export const classicCogHp = {
   9:  110,
   10: 132,
   11: 156,
-  12: 200,
+  12: 196,
+  13: 224,
+  14: 254,
+  15: 286,
+  16: 320,
+  17: 356,
+  18: 394,
+  19: 434,
+  20: 476,  
 };
 
 export const ttrCogHp = {
   ...classicCogHp,
   12: 196,
-  // TODO 13+
 };
 
 const gags = {
@@ -244,8 +251,10 @@ function findCombo({
   game = 'ttr',
   stunTrack = null
 }) {
-  if (numToons === 1 && gagTrack === 'drop')
-    throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
+  if (numToons === 1 && gagTrack === 'drop') {
+    // For drop combos with one toon, add two skips
+    numToons += 2;
+  }
 
   let combo, isStunOrg;
   const numOrg = Math.min(

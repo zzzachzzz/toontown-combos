@@ -38,14 +38,19 @@ function CombosCell({ cogLvl, gagTrack, stunTrack = null }) {
     <div class="combo-cell">
       ${(() => {
         const arr = [];
-        for (let numToons = 4; numToons >= 2; numToons--) {
-          arr.push(Combo({ numToons, cogLvl, gagTrack, stunTrack }));
+        for (let numToons = 4; numToons >= 1; numToons--) {
+          // Check if gagTrack is 'drop' and numToons is 1
+          if (!(gagTrack === 'drop' && numToons === 1)) {
+            arr.push(Combo({ numToons, cogLvl, gagTrack, stunTrack }));
+          }
         }
         return arr.join('');
       })()}
     </div>
   `;
 }
+
+
 
 function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
   const { selectedOrgGagCounts: organicGags, isLured, game } = state;
@@ -71,11 +76,15 @@ function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
 
 function CogLvlCell(cogLvl) {
   const cogHp = (state.game === 'ttr' ? ttrCogHp : classicCogHp)[cogLvl];
-
+  if (cogLvl > 12) {
+  	var cogLvlImg = "13+"
+  } else {
+  	var cogLvlImg = cogLvl
+  }
   return `
     <div class="cog-lvl-cell">
       <div class="cog-icon-container">
-        <img src="assets/cog_icons/${cogLvl}.png" ${state.isLured ? 'style="background: var(--lure);"' : ''} />
+        <img src="assets/cog_icons/${cogLvlImg}.png" ${state.isLured ? 'style="background: var(--lure);"' : ''} />
         ${state.isLured ? '<span>Lured</span>' : ''}
       </div>
       <div>
@@ -89,7 +98,7 @@ function CogLvlCell(cogLvl) {
 function CogLvlColumn() {
   let arr = [];
   // TODO For lvl 13+ cogs
-  for (let cogLvl = 12; cogLvl >= 1; cogLvl--) {
+  for (let cogLvl = 20; cogLvl >= 1; cogLvl--) {
     arr.push(CogLvlCell(cogLvl));
   }
   return arr.join('');
@@ -97,7 +106,7 @@ function CogLvlColumn() {
 
 function CombosGrid() {
   const arr = [];
-  for (let cogLvl = 12; cogLvl >= 1; cogLvl--) {
+  for (let cogLvl = 20; cogLvl >= 1; cogLvl--) {
     arr.push(
       gagTracks.reduce((acc, gagTrack) => {
         if (gagTrack === 'drop') {
