@@ -4,7 +4,7 @@ import './index.css';
 const savedState = JSON.parse(localStorage.getItem('savedState'));
 
 const _selectedOrgGags =
-  savedState?.selectedOrgGags || Array.from({ length: 4 }, () => null);
+  savedState?.selectedOrgGags || Array.from({ length: 5 }, () => null);
 
 /**
  * @type {{
@@ -18,6 +18,7 @@ const state = {
   selectedOrgGags: _selectedOrgGags,
   selectedOrgGagCounts: calcSelectedGagTrackCounts(_selectedOrgGags),
   isLured: savedState?.isLured || false,
+  toggle: savedState?.toggle || false,
   game: savedState?.game || 'ttr',
 };
 
@@ -76,11 +77,7 @@ function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
 
 function CogLvlCell(cogLvl) {
   const cogHp = (state.game === 'ttr' ? ttrCogHp : classicCogHp)[cogLvl];
-  if (cogLvl > 12) {
-  	var cogLvlImg = "13+"
-  } else {
-  	var cogLvlImg = cogLvl
-  }
+  const cogLvlImg = cogLvl > 12 ? '13+' : cogLvl.toString();
   return `
     <div class="cog-lvl-cell">
       <div class="cog-icon-container">
@@ -97,8 +94,8 @@ function CogLvlCell(cogLvl) {
 
 function CogLvlColumn() {
   let arr = [];
-  // TODO For lvl 13+ cogs
-  for (let cogLvl = 20; cogLvl >= 1; cogLvl--) {
+  const MaxCogLvl = (state.game === 'ttr') ? (state.toggle ? 12 : 20) : 12;
+  for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(CogLvlCell(cogLvl));
   }
   return arr.join('');
@@ -106,7 +103,8 @@ function CogLvlColumn() {
 
 function CombosGrid() {
   const arr = [];
-  for (let cogLvl = 20; cogLvl >= 1; cogLvl--) {
+  const MaxCogLvl = (state.game === 'ttr') ? (state.toggle ? 12 : 20) : 12;
+  for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(
       gagTracks.reduce((acc, gagTrack) => {
         if (gagTrack === 'drop') {
@@ -189,6 +187,16 @@ function onChangeSelectGame(e) {
   renderComboGrid();
 }
 
+function onClickFieldOffice(e) {
+  const toggle = !state.toggle;
+  state.toggle = toggle;
+
+  saveStateToLocalStorage();
+
+  renderCogLvlColumn();
+  renderComboGrid();
+}
+
 function onClickToggleLure() {
   state.isLured = !state.isLured;
 
@@ -200,8 +208,8 @@ function onClickToggleLure() {
 }
 
 function saveStateToLocalStorage() {
-  const { selectedOrgGags, isLured, game } = state;
-  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured, game }));
+  const { selectedOrgGags, isLured, toggle, game } = state;
+  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured, toggle, game }));
 }
 
 window.onClickOrgGagTrack = (gagTrack, toonIdx) => {
@@ -246,6 +254,7 @@ renderCogLuredButton();
 document.getElementById('clear-selection').addEventListener('click', onClickClearSelection);
 document.getElementById('is-cog-lured').addEventListener('click', onClickToggleLure);
 document.getElementById('game-select').addEventListener('change', onChangeSelectGame);
+document.getElementById('field-office').addEventListener('click', onClickFieldOffice);
 
 (function setInitialSelectedGameDOM() {
   const select = document.getElementById('game-select');

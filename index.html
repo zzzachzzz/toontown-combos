@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Toontown Combos</title>
-  </head>
-  <body>
-    <select id="game-select" name="game">
-      <option value="ttr">Toontown Rewritten</option>
-      <option value="classic">Toontown Online (Classic)</option>
-    </select>
-    <h2 style="margin-bottom: 0;">Toontown Combos</h2>
-    <div id="controls-container">
-      <div id="controls-header">
-        <h4>Select Your Party's Organic Gags</h4>
-        <div id="is-cog-lured"></div>
-        <button id="clear-selection">Clear Selection</button>
-      </div>
-      <div id="controls"></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toontown Combos</title>
+</head>
+<body>
+  <select id="game-select" name="game">
+    <option value="ttr">Toontown Rewritten</option>
+    <option value="classic">Toontown Online (Classic)</option>
+  </select>
+  <div>
+    <label>
+      <input type="checkbox" id="field-office" value="hide-field-office">
+      Hide Level 13+ Cogs
+    </label>
+  </div>
+  <h2 style="margin-bottom: 0;">Toontown Combos</h2>
+  <div id="controls-container">
+    <div id="controls-header">
+      <h4>Select Your Party's Organic Gags</h4>
+      <div id="is-cog-lured"></div>
+      <button id="clear-selection">Clear Selection</button>
     </div>
-    <div style="display: flex;">
-      <div id="cog-lvl-column"></div>
-      <div id="combos-grid"></div>
-    </div>
-  </body>
+    <div id="controls"></div>
+  </div>
+  <div style="display: flex;">
+    <div id="cog-lvl-column"></div>
+    <div id="combos-grid"></div>
+  </div>
+</body>
 </html>

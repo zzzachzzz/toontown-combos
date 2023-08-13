@@ -10,7 +10,12 @@ export const classicCogHp = {
   9:  110,
   10: 132,
   11: 156,
-  12: 200,
+  12: 196,
+};
+
+export const ttrCogHp = {
+  ...classicCogHp,
+  12: 196,
   13: 224,
   14: 254,
   15: 286,
@@ -19,11 +24,6 @@ export const classicCogHp = {
   18: 394,
   19: 434,
   20: 476,  
-};
-
-export const ttrCogHp = {
-  ...classicCogHp,
-  12: 196,
 };
 
 const gags = {
@@ -252,8 +252,7 @@ function findCombo({
   stunTrack = null
 }) {
   if (numToons === 1 && gagTrack === 'drop') {
-    // For drop combos with one toon, add two skips
-    numToons += 2;
+    throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
   }
 
   let combo, isStunOrg;
