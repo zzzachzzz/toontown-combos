@@ -10,7 +10,7 @@ export const classicCogHp = {
   9:  110,
   10: 132,
   11: 156,
-  12: 196,
+  12: 200,
 };
 
 export const ttrCogHp = {
