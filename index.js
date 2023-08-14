@@ -168,6 +168,15 @@ function OrgGagTrackSelect({ toonIdx }) {
   `;
 }
 
+function FieldOfficeCogCheckbox() {
+  return `
+    <label>
+      <input type="checkbox" id="toggle-checkbox" ${state.toggle ? 'checked' : ''} />
+      Hide Level 13+ Cogs
+    </label>
+  `;
+}
+
 function CogLuredButton() {
   return `
     <button ${state.isLured ? 'style="background: var(--lure);"': ''}>
@@ -193,6 +202,7 @@ function onClickFieldOffice(e) {
 
   saveStateToLocalStorage();
 
+  renderFieldOfficeCogCheckbox();
   renderCogLvlColumn();
   renderComboGrid();
 }
@@ -251,6 +261,9 @@ renderControls();
 const renderCogLuredButton = () => document.getElementById('is-cog-lured').innerHTML = CogLuredButton();
 renderCogLuredButton();
 
+const renderFieldOfficeCogCheckbox = () => document.getElementById('field-office').innerHTML = FieldOfficeCogCheckbox();
+renderFieldOfficeCogCheckbox();
+
 document.getElementById('clear-selection').addEventListener('click', onClickClearSelection);
 document.getElementById('is-cog-lured').addEventListener('click', onClickToggleLure);
 document.getElementById('game-select').addEventListener('change', onChangeSelectGame);
@@ -266,4 +279,3 @@ document.getElementById('field-office').addEventListener('click', onClickFieldOf
     }
   }
 })();
-
