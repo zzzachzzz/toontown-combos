@@ -4,7 +4,7 @@ import './index.css';
 const savedState = JSON.parse(localStorage.getItem('savedState'));
 
 const _selectedOrgGags =
-  savedState?.selectedOrgGags || Array.from({ length: 5 }, () => null);
+  savedState?.selectedOrgGags || Array.from({ length: 4 }, () => null);
 
 /**
  * @type {{
@@ -18,7 +18,7 @@ const state = {
   selectedOrgGags: _selectedOrgGags,
   selectedOrgGagCounts: calcSelectedGagTrackCounts(_selectedOrgGags),
   isLured: savedState?.isLured || false,
-  toggle: savedState?.toggle || false,
+  hideLvl13UpCogs: savedState?.hideLvl13UpCogs || false,
   game: savedState?.game || 'ttr',
 };
 
@@ -94,7 +94,7 @@ function CogLvlCell(cogLvl) {
 
 function CogLvlColumn() {
   let arr = [];
-  const MaxCogLvl = (state.game === 'ttr') ? (state.toggle ? 12 : 20) : 12;
+  const MaxCogLvl = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
   for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(CogLvlCell(cogLvl));
   }
@@ -103,7 +103,7 @@ function CogLvlColumn() {
 
 function CombosGrid() {
   const arr = [];
-  const MaxCogLvl = (state.game === 'ttr') ? (state.toggle ? 12 : 20) : 12;
+  const MaxCogLvl = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
   for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(
       gagTracks.reduce((acc, gagTrack) => {
@@ -168,10 +168,10 @@ function OrgGagTrackSelect({ toonIdx }) {
   `;
 }
 
-function FieldOfficeCogCheckbox() {
+function HideLvl13UpCogsCheckbox() {
   return `
     <label>
-      <input type="checkbox" id="toggle-checkbox" ${state.toggle ? 'checked' : ''} />
+      <input type="checkbox" id="toggle-checkbox" ${state.hideLvl13UpCogs ? 'checked' : ''} />
       Hide Level 13+ Cogs
     </label>
   `;
@@ -196,13 +196,13 @@ function onChangeSelectGame(e) {
   renderComboGrid();
 }
 
-function onClickFieldOffice(e) {
-  const toggle = !state.toggle;
-  state.toggle = toggle;
+function onClickHideLvl13UpCogs(e) {
+  const hideLvl13UpCogs = !state.hideLvl13UpCogs;
+  state.hideLvl13UpCogs = hideLvl13UpCogs;
 
   saveStateToLocalStorage();
 
-  renderFieldOfficeCogCheckbox();
+  renderLvl13UpCogsCheckbox();
   renderCogLvlColumn();
   renderComboGrid();
 }
@@ -218,8 +218,8 @@ function onClickToggleLure() {
 }
 
 function saveStateToLocalStorage() {
-  const { selectedOrgGags, isLured, toggle, game } = state;
-  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured, toggle, game }));
+  const { selectedOrgGags, isLured, hideLvl13UpCogs, game } = state;
+  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured, hideLvl13UpCogs, game }));
 }
 
 window.onClickOrgGagTrack = (gagTrack, toonIdx) => {
@@ -261,13 +261,13 @@ renderControls();
 const renderCogLuredButton = () => document.getElementById('is-cog-lured').innerHTML = CogLuredButton();
 renderCogLuredButton();
 
-const renderFieldOfficeCogCheckbox = () => document.getElementById('field-office').innerHTML = FieldOfficeCogCheckbox();
-renderFieldOfficeCogCheckbox();
+const renderLvl13UpCogsCheckbox = () => document.getElementById('field-office').innerHTML = HideLvl13UpCogsCheckbox();
+renderLvl13UpCogsCheckbox();
 
 document.getElementById('clear-selection').addEventListener('click', onClickClearSelection);
 document.getElementById('is-cog-lured').addEventListener('click', onClickToggleLure);
 document.getElementById('game-select').addEventListener('change', onChangeSelectGame);
-document.getElementById('field-office').addEventListener('click', onClickFieldOffice);
+document.getElementById('field-office').addEventListener('click', onClickHideLvl13UpCogs);
 
 (function setInitialSelectedGameDOM() {
   const select = document.getElementById('game-select');
