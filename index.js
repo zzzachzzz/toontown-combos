@@ -169,6 +169,13 @@ function OrgGagTrackSelect({ toonIdx }) {
 }
 
 function HideLvl13UpCogsCheckbox() {
+  const cogLvlColumn = document.getElementById("cog-lvl-column");
+  const combosGrid = document.getElementById("combos-grid");
+
+  const rowValue = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
+  cogLvlColumn.style.gridTemplateRows = `repeat(${rowValue}, 140px)`;
+  combosGrid.style.gridTemplate = `repeat(${rowValue}, 140px) / repeat(6, 1fr)`;
+
   return `
     <label>
       <input type="checkbox" id="toggle-checkbox" ${state.hideLvl13UpCogs ? 'checked' : ''} />
@@ -192,6 +199,7 @@ function onChangeSelectGame(e) {
 
   saveStateToLocalStorage();
 
+  renderLvl13UpCogsCheckbox();
   renderCogLvlColumn();
   renderComboGrid();
 }
