@@ -59,20 +59,22 @@ function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
   const combo = findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack, game });
 
   const damageText = combo.damageKillsCog() ? combo.damage() : 'N/A';
-
-  return `
-    <div class="combo">
-      <span class="combo-dmg">${damageText}</span>
-      <div class="gags">
-        ${combo.gags.reduce((acc, gag) => acc + `
-          <div class="gag-icon-container" ${gag.isOrg ? `style="background: var(--${gag.track});"` : ''}>
-            <img class="gag-icon" src="assets/gag_icons/${gag.name.replace(/\s/g, '_')}.png" />
-            ${gag.isOrg ? '<span class="org">Org</span>' : ''}
-          </div>
-        `, '')}
+  
+  if (damageText != 'N/A'){
+    return `
+      <div class="combo">
+        <span class="combo-dmg">${damageText}</span>
+        <div class="gags">
+          ${combo.gags.reduce((acc, gag) => acc + `
+            <div class="gag-icon-container" ${gag.isOrg ? `style="background: var(--${gag.track});"` : ''}>
+              <img class="gag-icon" src="assets/gag_icons/${gag.name.replace(/\s/g, '_')}.png" />
+              ${gag.isOrg ? '<span class="org">Org</span>' : ''}
+            </div>
+          `, '')}
+        </div>
       </div>
-    </div>
-  `;
+    `;
+  }
 }
 
 function CogLvlCell(cogLvl) {
