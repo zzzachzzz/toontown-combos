@@ -18,6 +18,7 @@ const state = {
   selectedOrgGags: _selectedOrgGags,
   selectedOrgGagCounts: calcSelectedGagTrackCounts(_selectedOrgGags),
   isLured: savedState?.isLured || false,
+  hideLvl13UpCogs: savedState?.hideLvl13UpCogs || false,
   game: savedState?.game || 'ttr',
 };
 
@@ -38,8 +39,11 @@ function CombosCell({ cogLvl, gagTrack, stunTrack = null }) {
     <div class="combo-cell">
       ${(() => {
         const arr = [];
-        for (let numToons = 4; numToons >= 2; numToons--) {
-          arr.push(Combo({ numToons, cogLvl, gagTrack, stunTrack }));
+        for (let numToons = 4; numToons >= 1; numToons--) {
+          // Check if gagTrack is 'drop' and numToons is 1
+          if (!(gagTrack === 'drop' && numToons === 1)) {
+            arr.push(Combo({ numToons, cogLvl, gagTrack, stunTrack }));
+          }
         }
         return arr.join('');
       })()}
@@ -47,35 +51,39 @@ function CombosCell({ cogLvl, gagTrack, stunTrack = null }) {
   `;
 }
 
+
+
 function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
   const { selectedOrgGagCounts: organicGags, isLured, game } = state;
 
   const combo = findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack, game });
 
   const damageText = combo.damageKillsCog() ? combo.damage() : 'N/A';
-
-  return `
-    <div class="combo">
-      <span class="combo-dmg">${damageText}</span>
-      <div class="gags">
-        ${combo.gags.reduce((acc, gag) => acc + `
-          <div class="gag-icon-container" ${gag.isOrg ? `style="background: var(--${gag.track});"` : ''}>
-            <img class="gag-icon" src="assets/gag_icons/${gag.name.replace(/\s/g, '_')}.png" />
-            ${gag.isOrg ? '<span class="org">Org</span>' : ''}
-          </div>
-        `, '')}
+  
+  if (damageText != 'N/A'){
+    return `
+      <div class="combo">
+        <span class="combo-dmg">${damageText}</span>
+        <div class="gags">
+          ${combo.gags.reduce((acc, gag) => acc + `
+            <div class="gag-icon-container" ${gag.isOrg ? `style="background: var(--${gag.track});"` : ''}>
+              <img class="gag-icon" src="assets/gag_icons/${gag.name.replace(/\s/g, '_')}.png" />
+              ${gag.isOrg ? '<span class="org">Org</span>' : ''}
+            </div>
+          `, '')}
+        </div>
       </div>
-    </div>
-  `;
+    `;
+  }
 }
 
 function CogLvlCell(cogLvl) {
   const cogHp = (state.game === 'ttr' ? ttrCogHp : classicCogHp)[cogLvl];
-
+  const cogLvlImg = cogLvl > 12 ? '13+' : cogLvl.toString();
   return `
     <div class="cog-lvl-cell">
       <div class="cog-icon-container">
-        <img src="assets/cog_icons/${cogLvl}.png" ${state.isLured ? 'style="background: var(--lure);"' : ''} />
+        <img src="assets/cog_icons/${cogLvlImg}.png" ${state.isLured ? 'style="background: var(--lure);"' : ''} />
         ${state.isLured ? '<span>Lured</span>' : ''}
       </div>
       <div>
@@ -88,8 +96,8 @@ function CogLvlCell(cogLvl) {
 
 function CogLvlColumn() {
   let arr = [];
-  // TODO For lvl 13+ cogs
-  for (let cogLvl = 12; cogLvl >= 1; cogLvl--) {
+  const MaxCogLvl = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
+  for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(CogLvlCell(cogLvl));
   }
   return arr.join('');
@@ -97,7 +105,8 @@ function CogLvlColumn() {
 
 function CombosGrid() {
   const arr = [];
-  for (let cogLvl = 12; cogLvl >= 1; cogLvl--) {
+  const MaxCogLvl = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
+  for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(
       gagTracks.reduce((acc, gagTrack) => {
         if (gagTrack === 'drop') {
@@ -161,6 +170,22 @@ function OrgGagTrackSelect({ toonIdx }) {
   `;
 }
 
+function HideLvl13UpCogsCheckbox() {
+  const cogLvlColumn = document.getElementById("cog-lvl-column");
+  const combosGrid = document.getElementById("combos-grid");
+
+  const rowValue = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
+  cogLvlColumn.style.gridTemplateRows = `repeat(${rowValue}, 140px)`;
+  combosGrid.style.gridTemplate = `repeat(${rowValue}, 140px) / repeat(6, 1fr)`;
+
+  return `
+    <label>
+      <input type="checkbox" id="toggle-checkbox" ${state.hideLvl13UpCogs ? 'checked' : ''} />
+      Hide Level 13+ Cogs
+    </label>
+  `;
+}
+
 function CogLuredButton() {
   return `
     <button ${state.isLured ? 'style="background: var(--lure);"': ''}>
@@ -176,6 +201,18 @@ function onChangeSelectGame(e) {
 
   saveStateToLocalStorage();
 
+  renderLvl13UpCogsCheckbox();
+  renderCogLvlColumn();
+  renderComboGrid();
+}
+
+function onClickHideLvl13UpCogs(e) {
+  const hideLvl13UpCogs = !state.hideLvl13UpCogs;
+  state.hideLvl13UpCogs = hideLvl13UpCogs;
+
+  saveStateToLocalStorage();
+
+  renderLvl13UpCogsCheckbox();
   renderCogLvlColumn();
   renderComboGrid();
 }
@@ -191,8 +228,8 @@ function onClickToggleLure() {
 }
 
 function saveStateToLocalStorage() {
-  const { selectedOrgGags, isLured, game } = state;
-  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured, game }));
+  const { selectedOrgGags, isLured, hideLvl13UpCogs, game } = state;
+  localStorage.setItem('savedState', JSON.stringify({ selectedOrgGags, isLured, hideLvl13UpCogs, game }));
 }
 
 window.onClickOrgGagTrack = (gagTrack, toonIdx) => {
@@ -234,9 +271,13 @@ renderControls();
 const renderCogLuredButton = () => document.getElementById('is-cog-lured').innerHTML = CogLuredButton();
 renderCogLuredButton();
 
+const renderLvl13UpCogsCheckbox = () => document.getElementById('field-office').innerHTML = HideLvl13UpCogsCheckbox();
+renderLvl13UpCogsCheckbox();
+
 document.getElementById('clear-selection').addEventListener('click', onClickClearSelection);
 document.getElementById('is-cog-lured').addEventListener('click', onClickToggleLure);
 document.getElementById('game-select').addEventListener('change', onChangeSelectGame);
+document.getElementById('field-office').addEventListener('click', onClickHideLvl13UpCogs);
 
 (function setInitialSelectedGameDOM() {
   const select = document.getElementById('game-select');
@@ -248,4 +289,3 @@ document.getElementById('game-select').addEventListener('change', onChangeSelect
     }
   }
 })();
-
