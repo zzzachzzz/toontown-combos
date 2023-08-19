@@ -280,13 +280,13 @@ renderControls();
 const renderCogLuredButton = () => document.getElementById('is-cog-lured').innerHTML = CogLuredButton();
 renderCogLuredButton();
 
-const renderLvl13UpCogsCheckbox = () => document.getElementById('field-office').innerHTML = HideLvl13UpCogsCheckbox();
+const renderLvl13UpCogsCheckbox = () => document.getElementById('hide-lvl-13-up-cogs').innerHTML = HideLvl13UpCogsCheckbox();
 renderLvl13UpCogsCheckbox();
 
 document.getElementById('clear-selection').addEventListener('click', onClickClearSelection);
 document.getElementById('is-cog-lured').addEventListener('click', onClickToggleLure);
 document.getElementById('game-select').addEventListener('change', onChangeSelectGame);
-document.getElementById('field-office').addEventListener('click', onClickHideLvl13UpCogs);
+document.getElementById('hide-lvl-13-up-cogs').addEventListener('click', onClickHideLvl13UpCogs);
 
 (function setInitialSelectedGameDOM() {
   const select = document.getElementById('game-select');
