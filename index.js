@@ -19,7 +19,17 @@ const state = {
   selectedOrgGagCounts: calcSelectedGagTrackCounts(_selectedOrgGags),
   isLured: savedState?.isLured || false,
   hideLvl13UpCogs: savedState?.hideLvl13UpCogs || false,
+  /** 'ttr' or 'classic' */
   game: savedState?.game || 'ttr',
+};
+
+/** @return {number} */
+const getMaxCogLvl = () => {
+  if (state.game === 'classic')
+    return 12;
+  if (state.hideLvl13UpCogs)
+    return 12;
+  return 20;
 };
 
 /**
@@ -59,7 +69,7 @@ function Combo({ cogLvl, gagTrack, numToons, stunTrack }) {
   const combo = findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack, game });
 
   const damageText = combo.damageKillsCog() ? combo.damage() : 'N/A';
-  
+
   if (damageText != 'N/A'){
     return `
       <div class="combo">
@@ -96,8 +106,8 @@ function CogLvlCell(cogLvl) {
 
 function CogLvlColumn() {
   let arr = [];
-  const MaxCogLvl = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
-  for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
+  const maxCogLvl = getMaxCogLvl();
+  for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(CogLvlCell(cogLvl));
   }
   return arr.join('');
@@ -105,8 +115,8 @@ function CogLvlColumn() {
 
 function CombosGrid() {
   const arr = [];
-  const MaxCogLvl = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
-  for (let cogLvl = MaxCogLvl; cogLvl >= 1; cogLvl--) {
+  const maxCogLvl = getMaxCogLvl();
+  for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
     arr.push(
       gagTracks.reduce((acc, gagTrack) => {
         if (gagTrack === 'drop') {
@@ -174,9 +184,9 @@ function HideLvl13UpCogsCheckbox() {
   const cogLvlColumn = document.getElementById("cog-lvl-column");
   const combosGrid = document.getElementById("combos-grid");
 
-  const rowValue = (state.game === 'ttr') ? (state.hideLvl13UpCogs ? 12 : 20) : 12;
-  cogLvlColumn.style.gridTemplateRows = `repeat(${rowValue}, 140px)`;
-  combosGrid.style.gridTemplate = `repeat(${rowValue}, 140px) / repeat(6, 1fr)`;
+  const maxCogLvl = getMaxCogLvl();
+  cogLvlColumn.style.gridTemplateRows = `repeat(${maxCogLvl}, 140px)`;
+  combosGrid.style.gridTemplate = `repeat(${maxCogLvl}, 140px) / repeat(6, 1fr)`;
 
   return `
     <label>
