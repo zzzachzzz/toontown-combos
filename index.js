@@ -8,10 +8,11 @@ const _selectedOrgGags =
 
 /**
  * @type {{
- *   selectedOrgGags: Array<string>,
+ *   selectedOrgGags: Array<string | null>,
  *   selectedOrgGagCounts: Object<string, number>,
  *   isLured: boolean,
  *   game: string,
+ *   showOrgView: boolean,
  * }}
  */
 const state = {
@@ -21,6 +22,7 @@ const state = {
   hideLvl13UpCogs: savedState?.hideLvl13UpCogs || false,
   /** 'ttr' or 'classic' */
   game: savedState?.game || 'ttr',
+  showOrgView: true,
 };
 
 /** @return {number} */
@@ -132,15 +134,51 @@ function CombosGrid() {
   return arr.join('');
 }
 
-function Controls() {
+function OrgSelection() {
   return `
-    <ul class="controls-list">
+    <ul class="org-selection-list">
       ${Array.from({ length: 4 }).reduce((acc, _, i) => acc + `
         <li>
           <div class="toon-num">Toon ${i+1}</div>
           ${OrgGagTrackSelect({ toonIdx: i })}
         </li>
       `, '')}
+    </ul>
+  `;
+}
+
+function OrgSelectionPreview() {
+  if (state.selectedOrgGags.every(g => g === null))
+    return '';
+
+  return `
+    <ul class="org-selection-preview-list">
+      ${Array.from({ length: 4 }).reduce((acc, _, toonIdx) => {
+        const selectedOrgGagTrack = state.selectedOrgGags[toonIdx];
+        /** @type {{ name: string, img: string } | null} */
+        let foundGagTrack;
+        if (selectedOrgGagTrack !== null) {
+          foundGagTrack = trackSelectList.find(
+            ({ name }) => selectedOrgGagTrack === name.replace(/\s/g, '').toLowerCase()
+          )
+          if (!foundGagTrack) throw Error(`Did not find track for key ${selectedOrgGagTrack}`);
+        } else {
+          foundGagTrack = null;
+        }
+        const background = foundGagTrack !== null
+          ? `var(--${selectedOrgGagTrack})`
+          : 'transparent';
+        return acc + `
+          <li role="option" style="background: ${background};" class="org-selection-preview-list-item">
+            ${foundGagTrack === null ? '' : `
+              <div class="img-container">
+                <img src="${foundGagTrack.img}" />
+              </div>
+              <span>${foundGagTrack.name}</span>
+            `}
+          </li>
+        `;
+      }, '')}
     </ul>
   `;
 }
@@ -179,20 +217,12 @@ function OrgGagTrackSelect({ toonIdx }) {
   `;
 }
 
-function HideLvl13UpCogsCheckbox() {
+function onMaxCogLvlChanged() {
   const cogLvlColumn = document.getElementById("cog-lvl-column");
   const combosGrid = document.getElementById("combos-grid");
-
   const maxCogLvl = getMaxCogLvl();
   cogLvlColumn.style.gridTemplateRows = `repeat(${maxCogLvl}, 140px)`;
   combosGrid.style.gridTemplate = `repeat(${maxCogLvl}, 140px) / repeat(6, 1fr)`;
-
-  return `
-    <label>
-      <input type="checkbox" id="toggle-checkbox" ${state.hideLvl13UpCogs ? 'checked' : ''} />
-      Hide Level 13+ Cogs
-    </label>
-  `;
 }
 
 function CogLuredButton() {
@@ -210,18 +240,19 @@ function onChangeSelectGame(e) {
 
   saveStateToLocalStorage();
 
-  renderLvl13UpCogsCheckbox();
+  onMaxCogLvlChanged();
   renderCogLvlColumn();
   renderComboGrid();
 }
 
-function onClickHideLvl13UpCogs(e) {
+function onClickHideLvl13UpCogs() {
   const hideLvl13UpCogs = !state.hideLvl13UpCogs;
   state.hideLvl13UpCogs = hideLvl13UpCogs;
 
   saveStateToLocalStorage();
 
-  renderLvl13UpCogsCheckbox();
+  renderHideLvl13UpCogsCheckbox();
+  onMaxCogLvlChanged();
   renderCogLvlColumn();
   renderComboGrid();
 }
@@ -234,6 +265,24 @@ function onClickToggleLure() {
   renderCogLuredButton();
   renderCogLvlColumn();
   renderComboGrid();
+}
+
+function onClickToggleOrgView() {
+  state.showOrgView = !state.showOrgView;
+
+  const toggleOrgViewBtn = document.getElementById('expand-org');
+  const orgSelection = document.getElementById('org-selection-container');
+  const orgSelectionPreview = document.getElementById('org-selection-preview');
+
+  if (state.showOrgView) {
+    toggleOrgViewBtn.innerText = 'Hide organic gags selection';
+    orgSelection.style.display = 'block';
+    orgSelectionPreview.style.display = 'none';
+  } else {
+    toggleOrgViewBtn.innerText = 'Show organic gags selection';
+    orgSelection.style.display = 'none';
+    orgSelectionPreview.style.display = 'block';
+  }
 }
 
 function saveStateToLocalStorage() {
@@ -250,7 +299,7 @@ window.onClickOrgGagTrack = (gagTrack, toonIdx) => {
 
   saveStateToLocalStorage();
 
-  renderControls();
+  renderOrgSelection();
   renderComboGrid();
 };
 
@@ -264,7 +313,7 @@ function onClickClearSelection() {
 
   renderCogLuredButton();
   renderCogLvlColumn();
-  renderControls();
+  renderOrgSelection();
   renderComboGrid();
 }
 
@@ -274,19 +323,28 @@ renderComboGrid();
 const renderCogLvlColumn = () => document.getElementById('cog-lvl-column').innerHTML = CogLvlColumn();
 renderCogLvlColumn();
 
-const renderControls = () => document.getElementById('controls').innerHTML = Controls();
-renderControls();
+const renderOrgSelection = () => {
+  document.getElementById('org-selection').innerHTML = OrgSelection();
+  document.getElementById('org-selection-preview').innerHTML = OrgSelectionPreview();
+};
+renderOrgSelection();
 
 const renderCogLuredButton = () => document.getElementById('is-cog-lured').innerHTML = CogLuredButton();
 renderCogLuredButton();
 
-const renderLvl13UpCogsCheckbox = () => document.getElementById('hide-lvl-13-up-cogs').innerHTML = HideLvl13UpCogsCheckbox();
-renderLvl13UpCogsCheckbox();
+const renderHideLvl13UpCogsCheckbox = () => {
+  /** @type {HTMLInputElement} */
+  const el = document.getElementById('hide-lvl-13-up-cogs');
+  el.checked = state.hideLvl13UpCogs;
+};
+renderHideLvl13UpCogsCheckbox();
+onMaxCogLvlChanged();
 
 document.getElementById('clear-selection').addEventListener('click', onClickClearSelection);
 document.getElementById('is-cog-lured').addEventListener('click', onClickToggleLure);
 document.getElementById('game-select').addEventListener('change', onChangeSelectGame);
 document.getElementById('hide-lvl-13-up-cogs').addEventListener('click', onClickHideLvl13UpCogs);
+document.getElementById('expand-org').addEventListener('click', onClickToggleOrgView);
 
 (function setInitialSelectedGameDOM() {
   const select = document.getElementById('game-select');
