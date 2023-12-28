@@ -23,7 +23,7 @@ export const ttrCogHp = {
   17: 356,
   18: 394,
   19: 434,
-  20: 476,  
+  20: 476,
 };
 
 const gagTracks = {
@@ -36,15 +36,15 @@ const gagTracks = {
   'drop': 'drop',
 };
 
-const gagTracksOrdered = [
-  gagTracks.toonup,
-  gagTracks.trap,
-  gagTracks.lure,
-  gagTracks.sound,
-  gagTracks.throw,
-  gagTracks.squirt,
-  gagTracks.drop,
-];
+const gagTracksOrder = {
+  [gagTracks.toonup]: 0,
+  [gagTracks.trap]: 1,
+  [gagTracks.lure]: 2,
+  [gagTracks.sound]: 3,
+  [gagTracks.throw]: 4,
+  [gagTracks.squirt]: 5,
+  [gagTracks.drop]: 6,
+};
 
 const gags = {
   'trap': {
@@ -305,7 +305,7 @@ function findCombo({
   isLured,
   organicGags,
   game = 'ttr',
-  stunTrack = null // TODO Rename stunTrack to secondaryTrack for the trap combos
+  stunTrack = null
 }) {
   if (numToons === 1 && gagTrack === 'drop') {
     throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
@@ -483,9 +483,6 @@ function findCombo({
   return combo;
 }
 
-// TODO combo gags array sort function
-// TODO Sort gags based on move track order, then damage
-
 /**
  * @param {Object} args
  * @param {number} args.cogLvl
@@ -513,6 +510,9 @@ export function findComboV2({
     }
     if (typeof val !== 'number' || isNaN(val)) {
       throw new Error(`Values in \`gags\` argument must be a number. For key '${key}' got value '${val}'.`);
+    }
+    if (key === 'trap' && val > 1) {
+      throw new Error(`Cannot specify multiple trap gags, must be 0 or 1.`);
     }
     sumGags += val;
   }
@@ -587,10 +587,22 @@ export function findComboV2({
     }
   }
 
-  // TODO Sort gags based on move track order, then damage
-  combo.gags.sort((gag1, gag2) => gag2.damage - gag1.damage);
+  combo.gags.sort(sortFnGags);
 
   return combo;
+}
+
+/**
+ * Sort gags based on track order, then damage high to low.
+ *
+ * @param {Gag} gag1
+ * @param {Gag} gag2
+ * @return {number}
+ */
+function sortFnGags(gag1, gag2) {
+  const cmpTrack = gagTracksOrder[gag1.track] - gagTracksOrder[gag2.track];
+  if (cmpTrack !== 0) return cmpTrack;
+  return gag2.damage - gag1.damage;
 }
 
 /**

@@ -1,6 +1,12 @@
 import findCombo, { logTable, findComboV2 } from './gags.js';
 
-// TODO, consider also supporting numToons=1 just for convenience I guess
+// TODO output multiple combos, for example,
+// in multi-track scenarios, such as squirt + drop,
+// return a combo which uses squirt lvl 6 and one that uses drop lvl 6.
+// And the ability to omit certain gags from being used in a combo. For example,
+// no fog/bday/storm, which is relevant to field offices. Although, the algorithm
+// should prefer that anyway. Generating multiple combo choices might solve that issue.
+// Think about... big changes with more dynamic results and more user input parameters.
 
 const args = {
   game: 'ttr', // 'ttr' | 'classic'
@@ -20,13 +26,17 @@ const args = {
 
 const combo = findComboV2({
   cogLvl: 11,  // 1 - 12
-  isLured: true,  // true | false
+  isLured: false,  // true | false
   gags: {
-    throw: 2,
-    squirt: 1,
+    // throw: 2,
+    // squirt: 3,
+    sound: 2,
+    drop: 1,
+    // trap: 1,
   },
   organicGags: {
     throw: 1,
+    trap: 1,
   },
   game: 'ttr',
 });
