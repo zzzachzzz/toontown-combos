@@ -529,8 +529,6 @@ export function findComboV2({
     return acc;
   }, []);
 
-  console.log('gags:', gags);
-
   const combo = new Combo({
     game,
     cogLvl,

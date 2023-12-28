@@ -11,13 +11,28 @@ function main() {
     for (let cogLvl = 12; cogLvl >= 1; cogLvl--) {
       for (let numToons = 4; numToons >= 1; numToons--) {
         if (gagTrack === 'drop') {
-          if (numToons == 1) continue;
+          if (numToons === 1) continue;
           for (const stunTrack of ['sound', 'throw', 'squirt']) {
-            const combo = findComboV2({ numToons, cogLvl, gagTrack, stunTrack, organicGags, isLured });
+            const combo = findComboV2({
+              cogLvl,
+              isLured,
+              gags: {
+                drop: numToons - 1,
+                [stunTrack]: 1,
+              },
+              organicGags,
+            });
             console.log(combo.toString());
           }
         } else {
-          const combo = findComboV2({ numToons, cogLvl, gagTrack, stunTrack, organicGags, isLured });
+          const combo = findComboV2({
+            cogLvl,
+            isLured,
+            gags: {
+              [gagTrack]: numToons,
+            },
+            organicGags,
+          });
           console.log(combo.toString());
         }
       }
