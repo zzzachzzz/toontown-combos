@@ -406,6 +406,7 @@ function findCombo({
     }
   }
 
+  // TODO Sort gags based on move track order, then damage
   combo.gags.sort((gag1, gag2) => gag2.damage - gag1.damage);
 
   // In a drop combo, attempt to lower gag level of stun gag
@@ -449,6 +450,100 @@ function findCombo({
     combo.gags[1].lvl += 1;
   // TODO
   }
+
+  return combo;
+}
+
+/**
+ * @param {Object} args
+ * @param {number} args.cogLvl
+ * @param {string} args.gagTrack - 'sound' | 'throw' | 'squirt' | 'drop'
+ * @param {number} args.numToons
+ * @param {boolean} args.isLured
+ * @param {Object<string, number>} args.organicGags
+ * @param {string} args.game
+ * @param {string} [args.stunTrack=null] 'sound' | 'throw' | 'squirt'
+ * @return {Combo}
+ */
+export function findComboV2({
+  cogLvl,
+  gagTrack,
+  numToons,
+  isLured,
+  organicGags,
+  game = 'ttr',
+  stunTrack = null // TODO Rename stunTrack to secondaryTrack for the trap combos
+}) {
+  if (numToons === 1 && gagTrack === 'drop') {
+    // TODO Remove this requirement, allow singular toon drop combos
+    throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
+  }
+
+  let combo = new Combo({
+    game,
+    cogLvl,
+    gags: [],
+    numToons,
+    isLured,
+    gagTrack,
+    organicGags,
+  });
+  for (let i = 0; i < numToons; i++) {
+    const numOrg = organicGags[gagTrack] ?? 0;
+    const isOrg = i <= numOrg - 1;
+    combo.gags.push(new Gag(gagTrack, 1, game, isOrg));
+  }
+  // Increase the level of each gag until the damage is sufficient
+  while (!combo.damageKillsCog()) {
+    for (const gag of combo.gags) {
+      if (gag.lvl === 7) {
+        continue;
+      } else {
+        gag.lvl += 1;
+      }
+    }
+    if (combo.gags.every(gag => gag.lvl === 7))
+      break;
+  }
+
+  // Insufficient damage, killing cog with given parameters is not possible
+  if (!combo.damageKillsCog()) {
+    combo.gags = combo.gags.map(g => new Gag(g.track, 0, game));
+    return combo;
+  }
+
+  // Decrease the level of individual gags until the damage is insufficient
+  // TODO Maybe combine the org part here? Nah above
+  let i = 0;
+  while (i != combo.gags.length-1) {
+    for (i = combo.gags.length-1; i >= 0; i--) {
+      if (combo.gags[i].lvl === 0) {
+        break;
+      }
+      combo.gags[i].lvl -= 1;
+      if (!combo.damageKillsCog()) {
+        combo.gags[i].lvl += 1;
+        break
+      }
+    }
+  }
+
+  // Check if organic is actually necessary for the combo
+  // if (gagTrack === 'drop' && isStunOrg) {
+  //   combo.gags[0].isOrg = false;
+  //   if (!combo.damageKillsCog())
+  //     combo.gags[0].isOrg = true;
+  // }
+  // TODO refactor
+  for (let i = 0; i < combo.gags.length; i++) {
+    combo.gags[i].isOrg = false;
+    if (!combo.damageKillsCog()) {
+      combo.gags[i].isOrg = true;
+    }
+  }
+
+  // TODO Sort gags based on move track order, then damage
+  combo.gags.sort((gag1, gag2) => gag2.damage - gag1.damage);
 
   return combo;
 }

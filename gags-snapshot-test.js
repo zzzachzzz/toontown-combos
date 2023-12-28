@@ -1,4 +1,4 @@
-import findCombo from './gags.js';
+import findCombo, { findComboV2 } from './gags.js';
 
 const gagTracks = ['sound', 'throw', 'squirt', 'drop'];
 
@@ -13,11 +13,11 @@ function main() {
         if (gagTrack === 'drop') {
           if (numToons == 1) continue;
           for (const stunTrack of ['sound', 'throw', 'squirt']) {
-            const combo = findCombo({ numToons, cogLvl, gagTrack, stunTrack, organicGags, isLured });
+            const combo = findComboV2({ numToons, cogLvl, gagTrack, stunTrack, organicGags, isLured });
             console.log(combo.toString());
           }
         } else {
-          const combo = findCombo({ numToons, cogLvl, gagTrack, stunTrack, organicGags, isLured });
+          const combo = findComboV2({ numToons, cogLvl, gagTrack, stunTrack, organicGags, isLured });
           console.log(combo.toString());
         }
       }
