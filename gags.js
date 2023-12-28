@@ -168,6 +168,8 @@ class Combo {
    * @param {string} args.game
    * @param {number} args.cogLvl
    * @param {Array<Gag>} args.gags
+   * @param {number} args.numToons The number of toons requested for the combo,
+   *                               not necessarily the amount of gags needed.
    * @param {boolean} args.isLured
    * @param {string} args.gagTrack
    * @param {string} [args.stunTrack=null]
@@ -177,6 +179,7 @@ class Combo {
     game,
     cogLvl,
     gags,
+    numToons,
     isLured,
     gagTrack,
     stunTrack = null,
@@ -185,7 +188,7 @@ class Combo {
     this.game = game;
     this.cog = new Cog(cogLvl, game);
     this.gags = gags;
-    this.numToons = gags.length;
+    this.numToons = numToons;
     this.isLured = isLured;
     this.gagTrack = gagTrack;
     this.stunTrack = stunTrack;
@@ -269,6 +272,7 @@ function findCombo({
       game,
       cogLvl,
       gags: [new Gag(stunTrack, 1, game, isStunOrg)],
+      numToons,
       isLured,
       gagTrack,
       stunTrack,
@@ -283,6 +287,7 @@ function findCombo({
       game,
       cogLvl,
       gags: [],
+      numToons,
       isLured,
       gagTrack,
       organicGags,
