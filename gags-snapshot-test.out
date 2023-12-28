@@ -1,0 +1,1188 @@
+Combo(damage: 200 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false)
+])
+Combo(damage: 228 gags: [
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false)
+])
+Combo(damage: 216 gags: [
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false),
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 159 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false)
+])
+Combo(damage: 180 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false)
+])
+Combo(damage: 168 gags: [
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 136 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false)
+])
+Combo(damage: 134 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false)
+])
+Combo(damage: 134 gags: [
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 112 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false)
+])
+Combo(damage: 111 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false)
+])
+Combo(damage: 120 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 95 gags: [
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false)
+])
+Combo(damage: 93 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false)
+])
+Combo(damage: 120 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false)
+])
+Combo(damage: 90 gags: [
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false)
+])
+Combo(damage: 77 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false)
+])
+Combo(damage: 76 gags: [
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false)
+])
+Combo(damage: 74 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false)
+])
+Combo(damage: 90 gags: [
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false)
+])
+Combo(damage: 59 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false)
+])
+Combo(damage: 58 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false)
+])
+Combo(damage: 65 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 90 gags: [
+  Gag(name: Opera Singer, level: 7, damage: 90, isOrg: false)
+])
+Combo(damage: 44 gags: [
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false)
+])
+Combo(damage: 46 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false)
+])
+Combo(damage: 45 gags: [
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false)
+])
+Combo(damage: 50 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false)
+])
+Combo(damage: 31 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false)
+])
+Combo(damage: 33 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false)
+])
+Combo(damage: 50 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false)
+])
+Combo(damage: 20 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 22 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 22 gags: [
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false)
+])
+Combo(damage: 21 gags: [
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 16 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false)
+])
+Combo(damage: 10 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 10 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 10 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 7 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false)
+])
+Combo(damage: 197 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 201 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false),
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false)
+])
+Combo(damage: 240 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false),
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 161 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false)
+])
+Combo(damage: 161 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false)
+])
+Combo(damage: 168 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false),
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 134 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false)
+])
+Combo(damage: 144 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false)
+])
+Combo(damage: 132 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 110 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 113 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false)
+])
+Combo(damage: 128 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 120 gags: [
+  Gag(name: Wedding Cake, level: 7, damage: 120, isOrg: false)
+])
+Combo(damage: 94 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false)
+])
+Combo(damage: 98 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false)
+])
+Combo(damage: 96 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false)
+])
+Combo(damage: 100 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false)
+])
+Combo(damage: 74 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 74 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false)
+])
+Combo(damage: 81 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false)
+])
+Combo(damage: 100 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false)
+])
+Combo(damage: 57 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 62 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false)
+])
+Combo(damage: 65 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false)
+])
+Combo(damage: 100 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false)
+])
+Combo(damage: 44 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 45 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 45 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 100 gags: [
+  Gag(name: Birthday Cake, level: 6, damage: 100, isOrg: false)
+])
+Combo(damage: 34 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 32 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 33 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false)
+])
+Combo(damage: 40 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false)
+])
+Combo(damage: 22 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 22 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 20 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 27 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 17 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false)
+])
+Combo(damage: 6 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 6 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 6 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 6 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false)
+])
+Combo(damage: 204 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false)
+])
+Combo(damage: 197 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 222 gags: [
+  Gag(name: Geyser, level: 7, damage: 105, isOrg: false),
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 156 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false)
+])
+Combo(damage: 158 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 192 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 134 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 136 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false)
+])
+Combo(damage: 132 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 112 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 111 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 111 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false)
+])
+Combo(damage: 0 gags: [
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 90 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false)
+])
+Combo(damage: 98 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 101 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 105 gags: [
+  Gag(name: Geyser, level: 7, damage: 105, isOrg: false)
+])
+Combo(damage: 75 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false)
+])
+Combo(damage: 76 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 72 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false)
+])
+Combo(damage: 80 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false)
+])
+Combo(damage: 58 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false)
+])
+Combo(damage: 56 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 62 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 80 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false)
+])
+Combo(damage: 44 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false)
+])
+Combo(damage: 44 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false)
+])
+Combo(damage: 51 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 80 gags: [
+  Gag(name: Storm Cloud, level: 6, damage: 80, isOrg: false)
+])
+Combo(damage: 34 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 34 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false)
+])
+Combo(damage: 20 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 20 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 20 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false)
+])
+Combo(damage: 21 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 15 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 12 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false)
+])
+Combo(damage: 10 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 10 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 10 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false)
+])
+Combo(damage: 8 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false)
+])
+Combo(damage: 196 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 202 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 204 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 220 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 208 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false)
+])
+Combo(damage: 198 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false)
+])
+Combo(damage: 220 gags: [
+  Gag(name: Foghorn, level: 6, damage: 50, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 197 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 200 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 160 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 157 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 156 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 159 gags: [
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 160 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 159 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 174 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 176 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 174 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 133 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 135 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 133 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 136 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 135 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 138 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 174 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 176 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 174 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 112 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 111 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 112 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 112 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 117 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 111 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 174 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 110 gags: [
+  Gag(name: Whole Cream Pie, level: 5, damage: 40, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false)
+])
+Combo(damage: 174 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Grand Piano, level: 6, damage: 170, isOrg: false)
+])
+Combo(damage: 91 gags: [
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 90 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 92 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 92 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 99 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 93 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 91 gags: [
+  Gag(name: Elephant Trunk, level: 5, damage: 21, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false)
+])
+Combo(damage: 97 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false)
+])
+Combo(damage: 91 gags: [
+  Gag(name: Seltzer Bottle, level: 4, damage: 21, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false)
+])
+Combo(damage: 72 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 75 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 73 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 76 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 75 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 76 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 74 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Safe, level: 5, damage: 70, isOrg: false)
+])
+Combo(damage: 72 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 75 gags: [
+  Gag(name: Fire Hose, level: 5, damage: 30, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 60 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 56 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 60 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 59 gags: [
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 61 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 56 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 56 gags: [
+  Gag(name: Bugle, level: 3, damage: 11, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 57 gags: [
+  Gag(name: Whole Fruit Pie, level: 4, damage: 27, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 57 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Big Weight, level: 4, damage: 45, isOrg: false)
+])
+Combo(damage: 43 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 42 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 44 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 48 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 44 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 42 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 46 gags: [
+  Gag(name: Aoogah, level: 4, damage: 16, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 47 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 42 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 40 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 40 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 31 gags: [
+  Gag(name: Whistle, level: 2, damage: 7, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 32 gags: [
+  Gag(name: Glass of Water, level: 2, damage: 8, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 34 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Anvil, level: 3, damage: 30, isOrg: false)
+])
+Combo(damage: 35 gags: [
+  Gag(name: Cream Pie Slice, level: 3, damage: 17, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Squirt Gun, level: 3, damage: 12, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 28 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 28 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 28 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 30 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 28 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 22 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 20 gags: [
+  Gag(name: Fruit Pie Slice, level: 2, damage: 10, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 22 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Sandbag, level: 2, damage: 18, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 16 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 16 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 16 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 6 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 6 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Bike Horn, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
+Combo(damage: 6 gags: [
+  Gag(name: Cupcake, level: 1, damage: 6, isOrg: false),
+  Gag(name: None, level: 0, damage: 0, isOrg: false)
+])
+Combo(damage: 14 gags: [
+  Gag(name: Squirting Flower, level: 1, damage: 4, isOrg: false),
+  Gag(name: Flower Pot, level: 1, damage: 10, isOrg: false)
+])
