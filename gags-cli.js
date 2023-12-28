@@ -11,7 +11,7 @@ import findCombo, { logTable, findComboV2 } from './gags.js';
 const args = {
   game: 'ttr', // 'ttr' | 'classic'
   numToons: 2,  // 4 | 3 | 2
-  cogLvl: 12,  // 1 - 12
+  cogLvl: 11,  // 1 - 12
   isLured: true,  // true | false
   gagTrack: 'trap',  // 'sound' | 'throw' | 'squirt' | 'drop' | 'trap'
   stunTrack: 'throw',  // 'sound' | 'throw' | 'squirt' | 'trap'
@@ -24,22 +24,26 @@ const args = {
   },
 };
 
-const combo = findComboV2({
-  cogLvl: 11,  // 1 - 12
+const combos = findComboV2({
+  cogLvl: 12,  // 1 - 12
   isLured: false,  // true | false
   gags: {
-    // throw: 2,
-    // squirt: 3,
-    sound: 2,
-    drop: 1,
+    sound: 1,
+    throw: 1,
+    squirt: 2,
+    // drop: 2,
+    // sound: 2,
     // trap: 1,
   },
   organicGags: {
-    throw: 1,
+    throw: 0,
     trap: 1,
+    squirt: 1,
   },
   game: 'ttr',
 });
 
-logTable(combo);
+for (const combo of combos) {
+  logTable(combo);
+}
 

@@ -491,7 +491,7 @@ function findCombo({
  *   Mapping of gag track to number of gags to use in the combo. Sum of numbers must be 1 <= n <= 4.
  * @param {Object<string, number>} args.organicGags
  * @param {string} args.game
- * @return {Combo}
+ * @return {Array<Combo>}
  */
 export function findComboV2({
   cogLvl,
@@ -528,6 +528,10 @@ export function findComboV2({
     }
     return acc;
   }, []);
+
+  // Sort by damage high to low for the algorithm
+  // comboGags.sort((gag1, gag2) => gag2.damage - gag1.damage);
+  comboGags.sort((gag1, gag2) => gag1.damage - gag2.damage);
 
   const combo = new Combo({
     game,
@@ -585,9 +589,17 @@ export function findComboV2({
     }
   }
 
+  // TODO The approach to generating multiple combos
+  // might be to just handle level 6 & 7 gags differently.
+  // For example, if a combo for '1 sound, 1 throw, 1 squirt'
+  // contains a fog, try regenerating with no fog, i.e with a
+  // level 6 throw in one combo and a level 6 squirt in another!
+
   combo.gags.sort(sortFnGags);
 
-  return combo;
+  const combos = [combo];
+
+  return combos;
 }
 
 /**
