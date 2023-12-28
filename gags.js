@@ -36,6 +36,16 @@ const gagTracks = {
   'drop': 'drop',
 };
 
+const gagTracksOrdered = [
+  gagTracks.toonup,
+  gagTracks.trap,
+  gagTracks.lure,
+  gagTracks.sound,
+  gagTracks.throw,
+  gagTracks.squirt,
+  gagTracks.drop,
+];
+
 const gags = {
   'trap': {
     1: { name: 'Banana Peel',  damage: 12  },
@@ -163,27 +173,40 @@ class Gag {
 
   /**
    * @param {Combo} combo
+   * @return {number}
    */
   multiplier(combo) {
-    if (this.lvl === 0) {
+    if (this.lvl === 0)
       return 1;
-    }
     // No multipliers applicable for trap.
     // But multiple trap should not be present anyway in the combo.
-    if (this.track === 'trap') {
+    if (this.track === 'trap')
       return 1;
-    }
     const tc = combo.trackCounts();
-    const knockback = (
-      combo.cog.isLured
-      && (this.track === 'throw' || this.track === 'squirt')
-      && tc['trap'] === 0
-    );
     return (
       1
       + (tc[this.track] >= 2 ? 0.2 : 0)
-      + (knockback ? 0.5 : 0)
+      + (this.knockback(combo) ? 0.5 : 0)
     );
+  }
+
+  /**
+   * @param {Combo} combo
+   * @return {boolean}
+   */
+  knockback(combo) {
+    if (!combo.cog.isLured)
+      return false;
+    const tc = combo.trackCounts();
+    if (tc['trap'] > 0)
+      return false;
+    if (tc['sound'] > 0)
+      return false;
+    if (this.track === 'throw')
+      return true;
+    if (this.track === 'squirt' && tc['throw'] === 0)
+      return true;
+    return false;
   }
 
   /**
@@ -228,7 +251,9 @@ class Combo {
       }
       return acc;
     }, {
+      'toonup': 0,
       'trap': 0,
+      'lure': 0,
       'sound': 0,
       'throw': 0,
       'squirt': 0,
