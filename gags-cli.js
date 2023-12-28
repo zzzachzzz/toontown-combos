@@ -1,12 +1,14 @@
 import findCombo, { logTable } from './gags.js';
 
+// TODO, consider also supporting numToons=1 just for convenience I guess
+
 const args = {
   game: 'ttr', // 'ttr' | 'classic'
   numToons: 2,  // 4 | 3 | 2
-  cogLvl: 1,  // 1 - 12
-  isLured: false,  // true | false
-  gagTrack: 'drop',  // 'sound' | 'throw' | 'squirt' | 'drop'
-  stunTrack: 'throw',  // 'sound' | 'throw' | 'squirt'
+  cogLvl: 12,  // 1 - 12
+  isLured: true,  // true | false
+  gagTrack: 'trap',  // 'sound' | 'throw' | 'squirt' | 'drop' | 'trap'
+  stunTrack: 'throw',  // 'sound' | 'throw' | 'squirt' | 'trap'
   organicGags: {
     // 4 | 3 | 2 | 1 | 0
     sound: 0,

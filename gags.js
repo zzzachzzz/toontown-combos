@@ -27,6 +27,15 @@ export const ttrCogHp = {
 };
 
 const gags = {
+  'trap': {
+    1: { name: 'Banana Peel',  damage: 12  },
+    2: { name: 'Rake',         damage: 20  },
+    3: { name: 'Marbles',      damage: 35  },
+    4: { name: 'Quicksand',    damage: 50  },
+    5: { name: 'Trapdoor',     damage: 85  },
+    6: { name: 'TNT',          damage: 180 },
+    7: { name: 'Railroad',     damage: 200 },
+  },
   'sound': {
     1: { name: 'Bike Horn',       damage: 4  },
     2: { name: 'Whistle',         damage: 7  },
@@ -146,12 +155,22 @@ class Gag {
     if (this.lvl === 0) {
       return 1;
     }
+    // No multipliers applicable for trap.
+    // But multiple trap should not be present anyway in the combo.
+    if (this.track === 'trap') {
+      return 1;
+    }
     const tc = combo.trackCounts();
-    const multi = 1 + (tc[this.track] >= 2 ? 0.2 : 0) + (
-      (combo.isLured && (this.track === 'throw' ||
-              this.track === 'squirt')
-      ) ? 0.5 : 0)
-    return multi;
+    const knockback = (
+      combo.isLured
+      && (this.track === 'throw' || this.track === 'squirt')
+      && tc['trap'] === 0
+    );
+    return (
+      1
+      + (tc[this.track] >= 2 ? 0.2 : 0)
+      + (knockback ? 0.5 : 0)
+    );
   }
 
   /**
@@ -199,13 +218,18 @@ class Combo {
    * @return {Object<string, number>} A mapping of gag tracks to their respective number of gags in the combo
    */
   trackCounts() {
-    let tc = {};
-    this.gags.forEach((gag) => {
+    return this.gags.reduce((acc, gag) => {
       if (gag.lvl !== 0) {
-        gag.track in tc ? tc[gag.track] += 1 : tc[gag.track] = 1;
+        acc[gag.track] += 1;
       }
+      return acc;
+    }, {
+      'trap': 0,
+      'sound': 0,
+      'throw': 0,
+      'squirt': 0,
+      'drop': 0,
     });
-    return tc;
   }
 
   /**
@@ -252,7 +276,7 @@ function findCombo({
   isLured,
   organicGags,
   game = 'ttr',
-  stunTrack = null
+  stunTrack = null // TODO Rename stunTrack to secondaryTrack for the trap combos
 }) {
   if (numToons === 1 && gagTrack === 'drop') {
     throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
@@ -282,6 +306,23 @@ function findCombo({
       const isOrg = i <= numOrg - 1;
       combo.gags.push(new Gag(gagTrack, 1, game, isOrg));
     }
+  } else if (gagTrack === 'trap') {
+    if (stunTrack === null) throw new Error('Stun gag track not specified by `stunTrack` argument');
+    const isOrg = organicGags[gagTrack] >= 1;
+    combo = new Combo({
+      game,
+      cogLvl,
+      gags: [new Gag(stunTrack, 1, game, isOrg)],
+      numToons,
+      isLured,
+      gagTrack,
+      stunTrack,
+      organicGags,
+    });
+    for (let i = 0; i < numToons-1; i++) {
+      const isStunOrg = i <= organicGags[stunTrack] - 1;
+      combo.gags.push(new Gag(gagTrack, 1, game, isStunOrg));
+    }
   } else {
     combo = new Combo({
       game,
@@ -300,7 +341,11 @@ function findCombo({
   // Increase the level of each gag until the damage is sufficient
   while (!combo.damageKillsCog()) {
     for (const gag of combo.gags) {
-      if (gagTrack === 'drop' && gag.track === stunTrack && gag.lvl > 4) {
+      if (
+        (gagTrack === 'drop' || gagTrack === 'trap')
+        && gag.track === stunTrack
+        && gag.lvl > 4
+      ) {
         continue;
       } else if (gag.lvl === 7) {
         continue;
@@ -311,6 +356,7 @@ function findCombo({
     if (combo.gags[combo.gags.length-1].lvl === 7)
       break;
   }
+  // TODO trap
   // Prioritize a lvl 6 stun gag over any lvl 7 gag
   if (gagTrack === 'drop' && combo.gags.slice(1).some(gag => gag.lvl === 7)) {
     combo.gags[0].lvl += 1;
@@ -348,6 +394,7 @@ function findCombo({
     if (!combo.damageKillsCog())
       combo.gags[0].isOrg = true;
   }
+  // TODO refactor
   if (numOrg > 0) {
     const offset = gagTrack === 'drop' ? 1 : 0;
     let i = offset;
@@ -380,6 +427,27 @@ function findCombo({
       combo.gags[0].lvl -= 1;
     }
     combo.gags[0].lvl += 1;
+  // TODO
+  } else if (gagTrack === 'trap') {
+    combo.gags.sort((gag1, gag2) => {
+      if (gag1.track === 'trap') return -1;
+      else return gag2.damage - gag1.damage;
+    });
+
+    // TODO refactor
+    if (combo.gags[1].lvl > 5 && combo.gags[0].lvl < 6) {
+      combo.gags[1].lvl -= 1;
+      combo.gags[0].lvl += 1;
+      if (!combo.damageKillsCog()) {
+        combo.gags[1].lvl += 1;
+        combo.gags[0].lvl -= 1;
+      }
+    }
+    while (combo.damageKillsCog() && combo.gags[1].lvl > 0) {
+      combo.gags[1].lvl -= 1;
+    }
+    combo.gags[1].lvl += 1;
+  // TODO
   }
 
   return combo;
@@ -413,9 +481,11 @@ export function logTable(combo) {
       return newObj;
     }, {})
   );
+  // TODO Maybe have a `multipliers()` method on `Combo` that returns this,
+  // providing additional info on which track(s) have multipliers added to them.
   const multipliers = [];
   if (combo.trackCounts()[combo.gagTrack] >= 2)
-    multipliers.push('Same type bonus (20%)');
+    multipliers.push('Same type bonus (20%)'); // TODO Nope, not for trap. Delegate to Combo class
   if (combo.isLured && [combo.gagTrack, combo.stunTrack].some(track => new Set(['throw', 'squirt']).has(track)))
     multipliers.push('Knockback bonus (50%)');
   console.log('Details:');
