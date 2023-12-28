@@ -93,10 +93,12 @@ const ttrGagsDmgOverrides = {
 class Cog {
   /**
    * @param {number} lvl
+   * @param {boolean} isLured
    * @param {string} game
    */
-  constructor(lvl, game) {
+  constructor(lvl, isLured, game) {
     this.lvl = lvl;
+    this.isLured = isLured;
     this._game = game;
   }
 
@@ -116,6 +118,7 @@ class Cog {
 }
 
 class Gag {
+  // TODO kwargs with obj
   /**
    * @param {string} track
    * @param {number} lvl
@@ -172,7 +175,7 @@ class Gag {
     }
     const tc = combo.trackCounts();
     const knockback = (
-      combo.isLured
+      combo.cog.isLured
       && (this.track === 'throw' || this.track === 'squirt')
       && tc['trap'] === 0
     );
@@ -197,8 +200,6 @@ class Combo {
    * @param {string} args.game
    * @param {number} args.cogLvl
    * @param {Array<Gag>} args.gags
-   * @param {number} args.numToons The number of toons requested for the combo,
-   *                               not necessarily the amount of gags needed.
    * @param {boolean} args.isLured
    * @param {string} args.gagTrack
    * @param {string} [args.stunTrack=null]
@@ -208,19 +209,12 @@ class Combo {
     game,
     cogLvl,
     gags,
-    numToons,
     isLured,
-    gagTrack,
-    stunTrack = null,
     organicGags = {},
   }) {
     this.game = game;
-    this.cog = new Cog(cogLvl, game);
+    this.cog = new Cog(cogLvl, isLured, game);
     this.gags = gags;
-    this.numToons = numToons;
-    this.isLured = isLured;
-    this.gagTrack = gagTrack;
-    this.stunTrack = stunTrack;
     this.organicGags = organicGags;
   }
 
@@ -470,20 +464,17 @@ function findCombo({
 /**
  * @param {Object} args
  * @param {number} args.cogLvl
- * @param {string} args.gagTrack - 'sound' | 'throw' | 'squirt' | 'drop'
- * @param {number} args.numToons
+ * @param {boolean} args.isLured
  * @param {Object<string, number>} args.gags
  *   Mapping of gag track to number of gags to use in the combo. Sum of numbers must be 1 <= n <= 4.
- * @param {boolean} args.isLured
  * @param {Object<string, number>} args.organicGags
  * @param {string} args.game
- * @param {string} [args.stunTrack=null] 'sound' | 'throw' | 'squirt'
  * @return {Combo}
  */
 export function findComboV2({
   cogLvl,
-  gags,
   isLured,
+  gags,
   organicGags,
   game = 'ttr',
 }) {
@@ -504,28 +495,24 @@ export function findComboV2({
     throw new Error(`Sum of values in \`gags\` argument must be 1 <= n <= 4. Received ${sumGags}.`);
   }
 
+  /** @type {Array<Gag>} */
+  const comboGags = Object.entries(gags).reduce((acc, [gagTrack, numGags]) => {
+    for (let i = 0; i < numGags; i++) {
+      const isOrg = i <= (organicGags[gagTrack] ?? 0) - 1;
+      acc.push(new Gag(gagTrack, 1, game, isOrg));
+    }
+    return acc;
+  }, []);
 
-  // TODO Validation for `organicGags` arg
+  console.log('gags:', gags);
 
-  if (numToons === 1 && gagTrack === 'drop') {
-    // TODO Remove this requirement, allow singular toon drop combos
-    throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
-  }
-
-  let combo = new Combo({
+  const combo = new Combo({
     game,
     cogLvl,
-    gags: [],
-    numToons,
+    gags: comboGags,
     isLured,
-    gagTrack,
     organicGags,
   });
-  for (let i = 0; i < numToons; i++) {
-    const numOrg = organicGags[gagTrack] ?? 0;
-    const isOrg = i <= numOrg - 1;
-    combo.gags.push(new Gag(gagTrack, 1, game, isOrg));
-  }
   // Increase the level of each gag until the damage is sufficient
   while (!combo.damageKillsCog()) {
     for (const gag of combo.gags) {

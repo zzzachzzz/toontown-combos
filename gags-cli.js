@@ -18,6 +18,18 @@ const args = {
   },
 };
 
-const combo = findComboV2({...args, gags: {'throw': 1, 'squirt': 0} });
+const combo = findComboV2({
+  cogLvl: 11,  // 1 - 12
+  isLured: true,  // true | false
+  gags: {
+    throw: 2,
+    squirt: 1,
+  },
+  organicGags: {
+    throw: 1,
+  },
+  game: 'ttr',
+});
+
 logTable(combo);
 
