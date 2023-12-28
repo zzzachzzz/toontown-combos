@@ -1,4 +1,4 @@
-import findCombo, { logTable } from './gags.js';
+import findCombo, { logTable, findComboV2 } from './gags.js';
 
 // TODO, consider also supporting numToons=1 just for convenience I guess
 
@@ -18,6 +18,6 @@ const args = {
   },
 };
 
-const combo = findCombo(args);
+const combo = findComboV2({...args, gags: {'throw': 1, 'squirt': 0} });
 logTable(combo);
 

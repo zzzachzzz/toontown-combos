@@ -26,6 +26,16 @@ export const ttrCogHp = {
   20: 476,  
 };
 
+const gagTracks = {
+  'toonup': 'toonup',
+  'trap': 'trap',
+  'lure': 'lure',
+  'sound': 'sound',
+  'throw': 'throw',
+  'squirt': 'squirt',
+  'drop': 'drop',
+};
+
 const gags = {
   'trap': {
     1: { name: 'Banana Peel',  damage: 12  },
@@ -454,11 +464,16 @@ function findCombo({
   return combo;
 }
 
+// TODO combo gags array sort function
+// TODO Sort gags based on move track order, then damage
+
 /**
  * @param {Object} args
  * @param {number} args.cogLvl
  * @param {string} args.gagTrack - 'sound' | 'throw' | 'squirt' | 'drop'
  * @param {number} args.numToons
+ * @param {Object<string, number>} args.gags
+ *   Mapping of gag track to number of gags to use in the combo. Sum of numbers must be 1 <= n <= 4.
  * @param {boolean} args.isLured
  * @param {Object<string, number>} args.organicGags
  * @param {string} args.game
@@ -467,13 +482,31 @@ function findCombo({
  */
 export function findComboV2({
   cogLvl,
-  gagTrack,
-  numToons,
+  gags,
   isLured,
   organicGags,
   game = 'ttr',
-  stunTrack = null // TODO Rename stunTrack to secondaryTrack for the trap combos
 }) {
+  let sumGags = 0;
+  for (const [key, val] of Object.entries(gags)) {
+    if (!gagTracks.hasOwnProperty(key)) {
+      throw new Error(
+        `Unrecognized gag track key '${key}' in \`gags\` argument. ` +
+        `Must be one of: ${Object.keys(gagTracks).map(gt => "'" + gt + "'").join(', ')}`
+      );
+    }
+    if (typeof val !== 'number' || isNaN(val)) {
+      throw new Error(`Values in \`gags\` argument must be a number. For key '${key}' got value '${val}'.`);
+    }
+    sumGags += val;
+  }
+  if (sumGags < 1 || sumGags > 4) {
+    throw new Error(`Sum of values in \`gags\` argument must be 1 <= n <= 4. Received ${sumGags}.`);
+  }
+
+
+  // TODO Validation for `organicGags` arg
+
   if (numToons === 1 && gagTrack === 'drop') {
     // TODO Remove this requirement, allow singular toon drop combos
     throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
