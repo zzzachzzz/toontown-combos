@@ -10,14 +10,24 @@ const gags = [
   new Gag('drop', 7, game, true),
 ];
 
-const isLured = false;
-const isV2 = false;
-
-const cog = new Cog({ lvl: 12, isLured, game, isV2 });
-
 const combo = new Combo({ gags });
 
-const damage = combo.damage(cog);
+function whatdoesitkill(combo, isLured, isV2) {
+  let cog;
+  for (let lvl = 1; lvl <= 12; lvl++) {
+    cog = new Cog({ lvl, isLured, game, isV2 })
+    if (!combo.damageKillsCog(cog)) {
+      return new Cog({ lvl: lvl-1, isLured, game, isV2 })
+    }
+  }
+  return cog;
+}
 
-console.log('damage:', damage);
+const r1 = whatdoesitkill(combo, false, false);
+console.log('r1:', r1);
+console.log(combo.damage(r1));
+
+const r2 = whatdoesitkill(combo, false, true);
+console.log('r2:', r2);
+console.log(combo.damage(r2));
 

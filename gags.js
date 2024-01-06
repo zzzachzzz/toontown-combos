@@ -288,7 +288,7 @@ export class Combo {
    * @return {boolean}
    */
   damageKillsCog(cog) {
-    return this.damage(cog.isLured) >= cog.hp;
+    return this.damage(cog) >= cog.hp;
   }
 
   /**
