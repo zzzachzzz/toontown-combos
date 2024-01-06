@@ -1,4 +1,4 @@
-import findCombo, { logTable, findComboV2 } from './gags.js';
+import findCombo, { logTable } from './gags.js';
 
 // TODO output multiple combos, for example,
 // in multi-track scenarios, such as squirt + drop,
@@ -24,7 +24,7 @@ const args = {
   },
 };
 
-const combos = findComboV2({
+const combos = findCombo({
   cogLvl: 12,  // 1 - 12
   isLured: false,  // true | false
   gags: {
