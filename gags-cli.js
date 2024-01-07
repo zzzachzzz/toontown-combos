@@ -1,4 +1,4 @@
-import findCombo, { logTable } from './gags.js';
+import findCombo, { logTable, Cog } from './gags.js';
 
 // TODO output multiple combos, for example,
 // in multi-track scenarios, such as squirt + drop,
@@ -8,42 +8,29 @@ import findCombo, { logTable } from './gags.js';
 // should prefer that anyway. Generating multiple combo choices might solve that issue.
 // Think about... big changes with more dynamic results and more user input parameters.
 
-const args = {
-  game: 'ttr', // 'ttr' | 'classic'
-  numToons: 2,  // 4 | 3 | 2
-  cogLvl: 11,  // 1 - 12
-  isLured: true,  // true | false
-  gagTrack: 'trap',  // 'sound' | 'throw' | 'squirt' | 'drop' | 'trap'
-  stunTrack: 'throw',  // 'sound' | 'throw' | 'squirt' | 'trap'
-  organicGags: {
-    // 4 | 3 | 2 | 1 | 0
-    sound: 0,
-    throw: 1,
+const game = 'ttr'; // 'ttr' | 'classic'
+const cog = new Cog({ lvl: 11, isLured: false, game });
+const combos = findCombo({
+  cogLvl: cog.lvl,
+  isLured: cog.isLured,
+  gags: {
+    trap: 0,
+    sound: 3,
+    throw: 0,
     squirt: 0,
     drop: 0,
   },
-};
-
-const combos = findCombo({
-  cogLvl: 12,  // 1 - 12
-  isLured: false,  // true | false
-  gags: {
-    sound: 1,
-    throw: 1,
-    squirt: 2,
-    // drop: 2,
-    // sound: 2,
-    // trap: 1,
-  },
   organicGags: {
-    throw: 0,
     trap: 1,
-    squirt: 1,
+    sound: 0,
+    throw: 1,
+    squirt: 0,
+    drop: 1,
   },
-  game: 'ttr',
+  game,
 });
 
 for (const combo of combos) {
-  logTable(combo);
+  logTable(combo, cog);
 }
 

@@ -346,14 +346,17 @@ export function findCombo({
   }, []);
 
   // Sort by damage high to low for the algorithm
-  // comboGags.sort((gag1, gag2) => gag2.damage - gag1.damage);
-  comboGags.sort((gag1, gag2) => gag1.damage - gag2.damage);
+  comboGags.sort((gag1, gag2) => gag2.damage - gag1.damage);
+  console.log('comboGags:', comboGags);
 
   const combo = new Combo({
     game,
     gags: comboGags,
     organicGags,
   });
+
+  const cog = new Cog({ lvl: cogLvl, isLured, game });
+
   // Increase the level of each gag until the damage is sufficient
   while (!combo.damageKillsCog(cog)) {
     for (const gag of combo.gags) {
@@ -375,8 +378,9 @@ export function findCombo({
 
   // Decrease the level of individual gags until the damage is insufficient
   // TODO Maybe combine the org part here? Nah above
+  console.log('combo:', combo);
   let i = 0;
-  while (i != combo.gags.length-1) {
+  while (i !== combo.gags.length-1) {
     for (i = combo.gags.length-1; i >= 0; i--) {
       if (combo.gags[i].lvl === 0) {
         break;
@@ -388,6 +392,7 @@ export function findCombo({
       }
     }
   }
+  console.log('combo:', combo);
 
   // Check if organic is actually necessary for the combo
   // if (gagTrack === 'drop' && isStunOrg) {
@@ -398,7 +403,7 @@ export function findCombo({
   // TODO refactor
   for (let i = 0; i < combo.gags.length; i++) {
     combo.gags[i].isOrg = false;
-    if (!combo.damageKillsCog()) {
+    if (!combo.damageKillsCog(cog)) {
       combo.gags[i].isOrg = true;
     }
   }
@@ -431,20 +436,22 @@ function sortFnGags(gag1, gag2) {
 
 /**
  * @param {Combo} combo
+ * @param {Cog} cog
  */
-export function logTable(combo) {
+export function logTable(combo, cog) {
   console.log('Input:');
   console.table({
     'Game': combo.game === 'ttr' ? 'Toontown Rewritten' : 'Toontown Online (Classic)',
     'Num Toons': combo.numToons,
-    'Cog Level': combo.cog.lvl,
-    'Is Cog Lured?': combo.isLured,
+    'Cog Level': cog.lvl,
+    'Is Cog Lured?': cog.isLured,
     'Gag Track': combo.gagTrack,
     ...(combo.gagTrack === 'drop' && { 'Stun Gag Track': combo.stunTrack }),
-    'Organic Gags': Object.entries(combo.organicGags)
-      .map(([track, num]) => !num ? null : `${track[0].toUpperCase()}${track.slice(1)}: ${num}`)
-      .filter(s => s !== null)
-      .join(', '),
+    // TODO
+    // 'Organic Gags': Object.entries(combo.organicGags)
+    //   .map(([track, num]) => !num ? null : `${track[0].toUpperCase()}${track.slice(1)}: ${num}`)
+    //   .filter(s => s !== null)
+    //   .join(', '),
   });
   console.log('Combo:');
   console.table(
@@ -468,8 +475,8 @@ export function logTable(combo) {
   console.table({
     'Total base damage': combo.gags.reduce((sum, gag) => sum + gag.damage, 0),
     'Damage Multipliers': multipliers.join(', ') || '<None>',
-    'Final damage calculated': combo.damage(), // TODO
-    'Cog HP': combo.cog.hp,
+    'Final damage calculated': combo.damage(cog),
+    'Cog HP': cog.hp,
   });
 }
 
