@@ -147,18 +147,30 @@ export class Cog {
 }
 
 export class Gag {
-  // TODO kwargs with obj
   /**
-   * @param {string} track
-   * @param {number} lvl
-   * @param {string} game
-   * @param {boolean} [isOrg=false]
+   * @param {Object} args
+   * @param {string} args.track
+   * @param {number} args.lvl
+   * @param {string} args.game
+   * @param {boolean} [args.isOrg=false]
    */
-  constructor(track, lvl, game, isOrg = false) {
+  constructor({ track, lvl, game, isOrg = false }) {
     this.track = track;
     this.lvl = lvl;
     this._game = game;
     this.isOrg = isOrg;
+  }
+
+  /**
+   * Create new `Combo` instance, copied from another instance
+   *
+   * @param {Gag} gag
+   * @return {Gag}
+   */
+  static fromGag(gag) {
+    return new Gag({
+      track: gag.track, lvl: gag.lvl, isOrg: gag.isOrg, game: gag.game,
+    });
   }
 
   /**
@@ -250,6 +262,18 @@ export class Combo {
   }
 
   /**
+   * Create new `Combo` instance, copied from another instance
+   *
+   * @param {Combo} combo
+   * @return {Combo}
+   */
+  static fromCombo(combo) {
+    return new Combo({
+      gags: combo.gags.map(g => Gag.fromGag(g)),
+    });
+  }
+
+  /**
    * @return {Object<string, number>} A mapping of gag tracks to their respective number of gags in the combo
    */
   trackCounts() {
@@ -309,7 +333,7 @@ export class Combo {
  * @param {string} args.game
  * @return {Array<Combo>}
  */
-export function findCombo({
+export function findCombo({ // TODO Rename findCombo -> findCombos
   cogLvl,
   isLured,
   gags,
@@ -337,19 +361,18 @@ export function findCombo({
   }
 
   /** @type {Array<Gag>} */
-  const comboGags = Object.entries(gags).reduce((acc, [gagTrack, numGags]) => {
+  const comboGags = Object.entries(gags).reduce((acc, [track, numGags]) => {
     for (let i = 0; i < numGags; i++) {
-      const isOrg = i <= (organicGags[gagTrack] ?? 0) - 1;
-      acc.push(new Gag(gagTrack, 1, game, isOrg));
+      const isOrg = i <= (organicGags[track] ?? 0) - 1;
+      acc.push(new Gag({ track, lvl: 1, game, isOrg }));
     }
     return acc;
   }, []);
 
   // Sort by damage high to low for the algorithm
   comboGags.sort((gag1, gag2) => gag2.damage - gag1.damage);
-  console.log('comboGags:', comboGags);
 
-  const combo = new Combo({
+  let combo = new Combo({
     game,
     gags: comboGags,
     organicGags,
@@ -357,6 +380,39 @@ export function findCombo({
 
   const cog = new Cog({ lvl: cogLvl, isLured, game });
 
+  combo = _findCombo(combo, cog);
+
+  // TODO The approach to generating multiple combos
+  // might be to just handle level 6 & 7 gags differently.
+  // For example, if a combo for '1 sound, 1 throw, 1 squirt'
+  // contains a fog, try regenerating with no fog, i.e with a
+  // level 6 throw in one combo and a level 6 squirt in another!
+
+  // TODO Do this after all combos generated
+  // combo.gags.sort(sortFnGags); // TODO
+
+  const combos = [combo];
+
+  // TODO Might need to make this way more robust, like recursion or something.
+  // For now... if combo contains at least one lvl 6 gag, present a combo with a lvl 7 gag.
+  if (combo.gags.some(g => g.lvl === 6)) {
+    let combo2 = Combo.fromCombo(combo);
+    combo2.gags[0].lvl = 7;
+    combo2 = _findCombo(combo2, cog);
+    combos.push(combo2);
+  }
+
+  return combos;
+}
+
+/**
+ * TODO Describe algorithm, note that it mutates `combo` argument, etc.
+ *
+ * @param {Combo} combo
+ * @param {Cog} cog
+ * @return {Combo}
+ */
+function _findCombo(combo, cog) {
   // Increase the level of each gag until the damage is sufficient
   while (!combo.damageKillsCog(cog)) {
     for (const gag of combo.gags) {
@@ -372,13 +428,12 @@ export function findCombo({
 
   // Insufficient damage, killing cog with given parameters is not possible
   if (!combo.damageKillsCog(cog)) {
-    combo.gags = combo.gags.map(g => new Gag(g.track, 0, game));
+    combo.gags = combo.gags.map(g => new Gag({ track: g.track, lvl: 0, game }));
     return combo;
   }
 
   // Decrease the level of individual gags until the damage is insufficient
   // TODO Maybe combine the org part here? Nah above
-  console.log('combo:', combo);
   let i = 0;
   while (i !== combo.gags.length-1) {
     for (i = combo.gags.length-1; i >= 0; i--) {
@@ -392,7 +447,6 @@ export function findCombo({
       }
     }
   }
-  console.log('combo:', combo);
 
   // Check if organic is actually necessary for the combo
   // if (gagTrack === 'drop' && isStunOrg) {
@@ -408,17 +462,7 @@ export function findCombo({
     }
   }
 
-  // TODO The approach to generating multiple combos
-  // might be to just handle level 6 & 7 gags differently.
-  // For example, if a combo for '1 sound, 1 throw, 1 squirt'
-  // contains a fog, try regenerating with no fog, i.e with a
-  // level 6 throw in one combo and a level 6 squirt in another!
-
-  combo.gags.sort(sortFnGags);
-
-  const combos = [combo];
-
-  return combos;
+  return combo;
 }
 
 /**

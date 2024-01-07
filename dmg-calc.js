@@ -5,14 +5,10 @@ import {
 const game = 'ttr';
 
 const gags = [
-  new Gag('sound', 6, game, true),
-  new Gag('sound', 6, game, false),
-  new Gag('sound', 6, game, false),
-  new Gag('sound', 5, game, false),
-  // new Gag('throw', 5, game, true),
-  // new Gag('throw', 6, game, true),
-  // new Gag('squirt', 5, game, false),
-  // new Gag('drop', 6, game, true),
+  new Gag({ track: 'sound', lvl: 6, isOrg: true, game }),
+  new Gag({ track: 'sound', lvl: 6, isOrg: false, game }),
+  new Gag({ track: 'sound', lvl: 6, isOrg: false, game }),
+  new Gag({ track: 'sound', lvl: 5, isOrg: false, game }),
 ];
 
 const combo = new Combo({ gags });

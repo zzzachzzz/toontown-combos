@@ -9,14 +9,14 @@ import findCombo, { logTable, Cog } from './gags.js';
 // Think about... big changes with more dynamic results and more user input parameters.
 
 const game = 'ttr'; // 'ttr' | 'classic'
-const cog = new Cog({ lvl: 11, isLured: false, game });
+const cog = new Cog({ lvl: 12, isLured: false, game });
 const combos = findCombo({
   cogLvl: cog.lvl,
   isLured: cog.isLured,
   gags: {
     trap: 0,
-    sound: 3,
-    throw: 0,
+    sound: 0,
+    throw: 3,
     squirt: 0,
     drop: 0,
   },
