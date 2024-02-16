@@ -20,15 +20,19 @@ html, body {
 }
 
 body {
-  background-image: url("assets/gags_pattern.png");
+  background-image: url("/gags_pattern.png");
   background-repeat: repeat;
   background-size: 15em;
   font-family: sans-serif;
   margin: 0;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
   min-height: 0px;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 1rem;
 }
 
@@ -263,12 +267,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #org-selection-container {
   margin-top: 0.5rem;
-  display: block;
 }
 
 #org-selection-preview {
   margin-top: 0.5rem;
-  display: none;
 }
 
 #expand-org {
