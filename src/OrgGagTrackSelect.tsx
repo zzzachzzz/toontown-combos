@@ -7,9 +7,9 @@ type Props = {
   toonIdx: number;
 };
 
-export const OrgGagTrackSelect = ({ toonIdx }: Props) => {
+export const OrgGagTrackSelect = (props: Props) => {
   const store = useStore();
-  const selectedOrgGag = () => store.getSelectedOrgGags()[toonIdx];
+  const selectedOrgGag = () => store.getSelectedOrgGags()[props.toonIdx];
 
   const onClickOrgGagTrack = (toonIdx: number, gagTrack: GagTrack) => {
     store.setOrToggleSelectedOrgGag(toonIdx, gagTrack);
@@ -25,7 +25,7 @@ export const OrgGagTrackSelect = ({ toonIdx }: Props) => {
             : 'transparent';
           return (
             <li role="option" style={{ background: background() }}>
-              <button onClick={() => onClickOrgGagTrack(toonIdx, gagTrack)}>
+              <button onClick={() => onClickOrgGagTrack(props.toonIdx, gagTrack)}>
                 <div class="img-container">
                   <img src={gagTrackData[gagTrack].img} />
                 </div>

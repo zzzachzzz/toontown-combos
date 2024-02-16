@@ -1,18 +1,25 @@
-import findCombo, { logTable } from './gags';
+import { findCombo, logTable } from './gags';
 
 const args: Parameters<typeof findCombo>[0] = {
-  game: 'ttr' as const, // 'ttr' | 'classic'
-  numToons: 2,  // 4 | 3 | 2
-  cogLvl: 1,  // 1 - 12
-  isLured: false,  // true | false
-  gagTrack: 'drop' as const,  // 'sound' | 'throw' | 'squirt' | 'drop'
-  stunTrack: 'throw' as const,  // 'sound' | 'throw' | 'squirt'
-  organicGags: {
-    // 4 | 3 | 2 | 1 | 0
-    sound: 0,
-    throw: 1,
+  cogLvl: 11,
+  isLured: false,
+  gags: {
+    toonup: 0,
+    trap:   0,
+    lure:   0,
+    sound:  3,
+    throw:  0,
     squirt: 0,
-    drop: 0,
+    drop:   0,
+  },
+  organicGags: {
+    toonup: 0,
+    trap:   0,
+    lure:   0,
+    sound:  2,
+    throw:  0,
+    squirt: 0,
+    drop:   0,
   },
 };
 

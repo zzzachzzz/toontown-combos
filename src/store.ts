@@ -1,10 +1,9 @@
 import { createMemo } from 'solid-js';
 import { createStore as _createStore } from 'solid-js/store';
-import type { GagTrack, Game } from './constants';
+import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
 
 export type State = {
-  game: Game;
   isLured: boolean;
   showOrgView: boolean;
   selectedOrgGags: Array<GagTrack | null>;
@@ -19,7 +18,6 @@ export const createStore = ({
   initialState,
 }: CreateStoreArgs = {}) => {
   const [state, setState] = _createStore<State>({
-    game: 'ttr',
     isLured: false,
     showOrgView: true,
     selectedOrgGags: Array.from({ length: 4 }, () => null),
@@ -28,10 +26,6 @@ export const createStore = ({
   });
 
   return new class {
-    getGame = () => state.game;
-
-    setGame = (game: State['game']) => setState('game', game);
-
     getIsLured = () => state.isLured;
 
     toggleIsLured = () => setState('isLured', isLured => !isLured);
@@ -68,17 +62,13 @@ export const createStore = ({
     toggleHideLvl13UpCogs = () => setState('hideLvl13UpCogs', hideLvl13UpCogs => !hideLvl13UpCogs);
 
     getMaxCogLvl = () => {
-      if (
-        state.game === 'classic'
-        || state.hideLvl13UpCogs
-      ) {
+      if (state.hideLvl13UpCogs) {
         return 12;
       }
       return 20;
     };
 
     getStateForStorage = (): SavedState => ({
-      game: state.game,
       isLured: state.isLured,
       selectedOrgGags: state.selectedOrgGags,
       hideLvl13UpCogs: state.hideLvl13UpCogs,

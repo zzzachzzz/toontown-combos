@@ -3,7 +3,7 @@ import type { State } from './store';
 /** Partial state persisted in local storage */
 export type SavedState = Pick<
   State,
-  'game' | 'isLured' | 'selectedOrgGags' | 'hideLvl13UpCogs'
+  'isLured' | 'selectedOrgGags' | 'hideLvl13UpCogs'
 >;
 
 const savedStateKey = 'savedState';

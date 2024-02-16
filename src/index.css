@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0.9em;
 }
 
-#game-select-and-lvl-13-toggle-container {
+#lvl-13-toggle-container {
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;

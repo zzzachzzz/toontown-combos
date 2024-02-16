@@ -1,34 +1,32 @@
-import { For, createMemo, ComponentProps } from 'solid-js';
-import { ComboCell } from './ComboCell';
+import { For, createMemo } from 'solid-js';
+import { Combo } from './Combo';
 import { useStore } from './store.instance';
-import type { GagTrack } from './constants';
-
-/** Which tracks to generate combos for */
-const gagTracks: Array<GagTrack> = ['sound', 'throw', 'squirt', 'drop'];
+import { batch, iterFindComboArgs } from './util';
+import { findCombo, Combo as _Combo } from './gags';
 
 export const CombosGrid = () => {
   const store = useStore();
 
-  const comboCellProps = createMemo(() => {
+  const combos = createMemo(() => {
     const maxCogLvl = store.getMaxCogLvl();
-    const arr: Array<ComponentProps<typeof ComboCell>> = [];
-    for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
-      for (const gagTrack of gagTracks) {
-        if (gagTrack === 'drop') {
-          arr.push({ cogLvl, gagTrack, stunTrack: 'sound' });
-          arr.push({ cogLvl, gagTrack, stunTrack: 'throw' });
-          arr.push({ cogLvl, gagTrack, stunTrack: 'squirt' });
-        } else {
-          arr.push({ cogLvl, gagTrack });
-        }
-      }
-    }
-    return arr;
+    const organicGags = store.getSelectedOrgGagTrackCounts();
+    const isLured = store.getIsLured();
+
+    return Array.from(
+      iterFindComboArgs({ maxCogLvl, organicGags, isLured }),
+      findComboArgs => findCombo(findComboArgs)
+    );
   });
 
   return (
-    <For each={comboCellProps()}>
-      {p => <ComboCell {...p} />}
+    <For each={Array.from(batch(4, combos()))}>
+      {comboBatch => (
+        <div class="combo-cell">
+          <For each={comboBatch}>
+            {combo => <Combo combo={combo} />}
+          </For>
+        </div>
+      )}
     </For>
   );
 };

@@ -5,7 +5,7 @@ import { CogLvlColumn } from './CogLvlColumn';
 import { OrgSelection } from './OrgSelection';
 import { OrgSelectionPreview } from './OrgSelectionPreview';
 import * as storage from './local-storage';
-import { BASE_URL, Game } from './constants';
+import { BASE_URL } from './constants';
 import './index.css';
 
 export const App = () => {
@@ -25,12 +25,6 @@ const _App = () => {
     storage.saveSavedState(store.getStateForStorage());
   };
 
-  const onChangeSelectGame: JSX.ChangeEventHandler<HTMLSelectElement, Event> = (e) => {
-    const game = e.target.value as Game;
-    store.setGame(game);
-    storage.saveSavedState(store.getStateForStorage());
-  };
-
   const onClickToggleLure: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent> = (_) => {
     store.toggleIsLured();
     storage.saveSavedState(store.getStateForStorage());
@@ -46,7 +40,7 @@ const _App = () => {
 
   return (
     <div id="app">
-      <div id="game-select-and-lvl-13-toggle-container">
+      <div id="lvl-13-toggle-container">
         <label>
           <input
             type="checkbox"
@@ -56,10 +50,6 @@ const _App = () => {
           />
           Hide Level 13+ Cogs
         </label>
-        <select id="game-select" name="game" onChange={onChangeSelectGame} value={store.getGame()}>
-          <option value="ttr">Toontown Rewritten</option>
-          <option value="classic">Toontown Online (Classic)</option>
-        </select>
       </div>
       <div style="flex-grow: 1; overflow: hidden;">
         <div id="combos">
