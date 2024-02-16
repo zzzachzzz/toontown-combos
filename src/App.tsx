@@ -56,7 +56,7 @@ const _App = () => {
           />
           Hide Level 13+ Cogs
         </label>
-        <select id="game-select" name="game" onChange={onChangeSelectGame}>
+        <select id="game-select" name="game" onChange={onChangeSelectGame} value={store.getGame()}>
           <option value="ttr">Toontown Rewritten</option>
           <option value="classic">Toontown Online (Classic)</option>
         </select>
