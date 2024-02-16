@@ -9,7 +9,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest",
-    "publish": "npm run build && gh-pages --dist dist"
+    "publish": "npm run build && gh-pages --dist dist",
+    "gags-cli": "tsx ./src/gags-cli.ts"
   },
   "license": "MIT",
   "devDependencies": {
@@ -19,6 +20,7 @@
     "gh-pages": "^3.1.0",
     "jsdom": "^22.1.0",
     "solid-devtools": "^0.27.3",
+    "tsx": "^4.7.1",
     "typescript": "^5.1.3",
     "vite": "^4.3.9",
     "vite-plugin-solid": "^2.7.0",

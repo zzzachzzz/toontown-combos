@@ -22,3 +22,5 @@ export const gagTrackData: Record<GagTrack, { name: string; img: string; }> = {
   drop:   { name: 'Drop',     img: `${BASE_URL}gag_icons/Flower_Pot.png` },
 };
 
+export type Game = 'ttr' | 'classic';
+

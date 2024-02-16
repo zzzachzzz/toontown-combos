@@ -1,4 +1,6 @@
-export const classicCogHp = {
+import { Game } from './constants';
+
+export const classicCogHp: Record<number, number> = {
   1:  6,
   2:  12,
   3:  20,
@@ -13,7 +15,7 @@ export const classicCogHp = {
   12: 200,
 };
 
-export const ttrCogHp = {
+export const ttrCogHp: Record<number, number> = {
   ...classicCogHp,
   12: 196,
   13: 224,
@@ -23,10 +25,10 @@ export const ttrCogHp = {
   17: 356,
   18: 394,
   19: 434,
-  20: 476,  
+  20: 476,
 };
 
-const gags = {
+const gags: Record<string, Record<number, { name: string; damage: number; }>> = {
   'sound': {
     1: { name: 'Bike Horn',       damage: 4  },
     2: { name: 'Whistle',         damage: 7  },
@@ -65,65 +67,51 @@ const gags = {
   },
 };
 
-const ttrGagsDmgOverrides = {
+const ttrGagsDmgOverrides: Record<string, Record<number, { name: string; damage: number; }>> = {
   'drop': {
     5: { name: 'Safe', damage: 70 },
   },
 };
 
 class Cog {
-  /**
-   * @param {number} lvl
-   * @param {string} game
-   */
-  constructor(lvl, game) {
+  lvl: number;
+  _game: Game;
+
+  constructor(lvl: number, game: Game) {
     this.lvl = lvl;
     this._game = game;
   }
 
-  /**
-   * @return {number}
-   */
-  get hp() {
+  get hp(): number {
     return (this._game === 'ttr' ? ttrCogHp : classicCogHp)[this.lvl];
   }
 
-  /**
-   * @return {string}
-   */
-  toString() {
+  toString(): string {
     return `Cog(level: ${this.lvl}, HP: ${this.hp})`;
   }
 }
 
 class Gag {
-  /**
-   * @param {string} track
-   * @param {number} lvl
-   * @param {string} game
-   * @param {boolean} [isOrg=false]
-   */
-  constructor(track, lvl, game, isOrg = false) {
+  track: string;
+  lvl: number;
+  _game: Game;
+  isOrg: boolean;
+
+  constructor(track: string, lvl: number, game: Game, isOrg: boolean = false) {
     this.track = track;
     this.lvl = lvl;
     this._game = game;
     this.isOrg = isOrg;
   }
 
-  /**
-   * @return {string}
-   */
-  get name() {
+  get name(): string {
     if (this.lvl === 0) {
       return 'None';
     }
     return gags[this.track][this.lvl].name;
   }
 
-  /**
-   * @return {number}
-   */
-  get damage() {
+  get damage(): number {
     if (this.lvl === 0) {
       return 0;
     }
@@ -139,10 +127,7 @@ class Gag {
     }
   }
 
-  /**
-   * @param {Combo} combo
-   */
-  multiplier(combo) {
+  multiplier(combo: Combo): number {
     if (this.lvl === 0) {
       return 1;
     }
@@ -154,33 +139,37 @@ class Gag {
     return multi;
   }
 
-  /**
-   * @return {string}
-   */
-  toString() {
+  toString(): string {
     return `Gag(name: ${this.name}, level: ${this.lvl}, damage: ${this.damage}, isOrg: ${this.isOrg})`;
   }
 }
 
 class Combo {
-  /**
-   * @param {Object} args
-   * @param {string} args.game
-   * @param {number} args.cogLvl
-   * @param {Array<Gag>} args.gags
-   * @param {boolean} args.isLured
-   * @param {string} args.gagTrack
-   * @param {string} [args.stunTrack=null]
-   * @param {Object<string, number>} [args.organicGags={}]
-   */
+  game: Game;
+  cog: Cog;
+  gags: Array<Gag>;
+  numToons: number;
+  isLured: boolean;
+  gagTrack: string;
+  stunTrack: string | null;
+  organicGags: Record<string, number>;
+
   constructor({
     game,
     cogLvl,
     gags,
     isLured,
     gagTrack,
-    stunTrack = null,
+    stunTrack,
     organicGags = {},
+  }: {
+    game: Game;
+    cogLvl: number;
+    gags: Array<Gag>;
+    isLured: boolean;
+    gagTrack: string;
+    stunTrack?: string | null;
+    organicGags?: Record<string, number>;
   }) {
     this.game = game;
     this.cog = new Cog(cogLvl, game);
@@ -188,15 +177,15 @@ class Combo {
     this.numToons = gags.length;
     this.isLured = isLured;
     this.gagTrack = gagTrack;
-    this.stunTrack = stunTrack;
+    this.stunTrack = stunTrack ?? null;
     this.organicGags = organicGags;
   }
 
   /**
-   * @return {Object<string, number>} A mapping of gag tracks to their respective number of gags in the combo
+   * @return A mapping of gag tracks to their respective number of gags in the combo
    */
-  trackCounts() {
-    let tc = {};
+  trackCounts(): Record<string, number> {
+    let tc: Record<string, number> = {};
     this.gags.forEach((gag) => {
       if (gag.lvl !== 0) {
         gag.track in tc ? tc[gag.track] += 1 : tc[gag.track] = 1;
@@ -205,10 +194,7 @@ class Combo {
     return tc;
   }
 
-  /**
-   * @return {number}
-   */
-  damage() {
+  damage(): number {
     let dmg = 0;
     this.gags.forEach((gag) => {
       dmg += gag.damage * gag.multiplier(this);
@@ -216,32 +202,15 @@ class Combo {
     return Math.ceil(dmg);
   }
 
-  /**
-   * @return {boolean}
-   */
-  damageKillsCog() {
+  damageKillsCog(): boolean {
     return this.damage() >= this.cog.hp;
   }
 
-  /**
-   * @return {string}
-   */
-  toString() {
+  toString(): string {
     return `Combo(damage: ${this.damage()} gags: [\n${this.gags.map(g => `  ${g}`).join(',\n')}\n])`;
   }
 }
 
-/**
- * @param {Object} args
- * @param {number} args.cogLvl
- * @param {string} args.gagTrack - 'sound' | 'throw' | 'squirt' | 'drop'
- * @param {number} args.numToons
- * @param {boolean} args.isLured
- * @param {Object<string, number>} args.organicGags
- * @param {string} args.game
- * @param {string} [args.stunTrack=null] 'sound' | 'throw' | 'squirt'
- * @return {Combo}
- */
 function findCombo({
   cogLvl,
   gagTrack,
@@ -249,8 +218,16 @@ function findCombo({
   isLured,
   organicGags,
   game = 'ttr',
-  stunTrack = null
-}) {
+  stunTrack = null,
+}: {
+  cogLvl: number;
+  gagTrack: 'sound' | 'throw' | 'squirt' | 'drop'
+  numToons: number;
+  isLured: boolean;
+  organicGags: Record<string, number>;
+  game: Game;
+  stunTrack?: 'sound' | 'throw' | 'squirt' | null;
+}): Combo {
   if (numToons === 1 && gagTrack === 'drop') {
     throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
   }
@@ -380,10 +357,7 @@ function findCombo({
   return combo;
 }
 
-/**
- * @param {Combo} combo
- */
-export function logTable(combo) {
+export function logTable(combo: Combo): void {
   console.log('Input:');
   console.table({
     'Game': combo.game === 'ttr' ? 'Toontown Rewritten' : 'Toontown Online (Classic)',
@@ -406,12 +380,12 @@ export function logTable(combo) {
         'Damage': gag.damage,
       };
       return newObj;
-    }, {})
+    }, {} as any)
   );
   const multipliers = [];
   if (combo.trackCounts()[combo.gagTrack] >= 2)
     multipliers.push('Same type bonus (20%)');
-  if (combo.isLured && [combo.gagTrack, combo.stunTrack].some(track => new Set(['throw', 'squirt']).has(track)))
+  if (combo.isLured && [combo.gagTrack, combo.stunTrack].some(track => new Set(['throw', 'squirt']).has(track!)))
     multipliers.push('Knockback bonus (50%)');
   console.log('Details:');
   console.table({

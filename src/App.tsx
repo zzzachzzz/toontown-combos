@@ -5,7 +5,7 @@ import { CogLvlColumn } from './CogLvlColumn';
 import { OrgSelection } from './OrgSelection';
 import { OrgSelectionPreview } from './OrgSelectionPreview';
 import * as storage from './local-storage';
-import { BASE_URL } from './constants';
+import { BASE_URL, Game } from './constants';
 import './index.css';
 
 export const App = () => {
@@ -26,7 +26,7 @@ const _App = () => {
   };
 
   const onChangeSelectGame: JSX.ChangeEventHandler<HTMLSelectElement, Event> = (e) => {
-    const game = e.target.value as 'ttr' | 'classic';
+    const game = e.target.value as Game;
     store.setGame(game);
     storage.saveSavedState(store.getStateForStorage());
   };

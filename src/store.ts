@@ -1,10 +1,10 @@
 import { createMemo } from 'solid-js';
 import { createStore as _createStore } from 'solid-js/store';
-import type { GagTrack } from './constants';
+import type { GagTrack, Game } from './constants';
 import type { SavedState } from './local-storage';
 
 export type State = {
-  game: 'ttr' | 'classic';
+  game: Game;
   isLured: boolean;
   showOrgView: boolean;
   selectedOrgGags: Array<GagTrack | null>;
