@@ -1,5 +1,6 @@
 import { ttrCogHp, classicCogHp } from './gags';
 import { useStore } from './store.instance';
+import { BASE_URL } from './constants';
 
 type Props = {
   cogLvl: number;
@@ -15,7 +16,7 @@ export const CogLvlCell = ({ cogLvl }: Props) => {
     <div class="cog-lvl-cell">
       <div class="cog-icon-container">
         <img
-          src={`/cog_icons/${cogLvlImg}.png`}
+          src={`${BASE_URL}cog_icons/${cogLvlImg}.png`}
           style={{ background: store.getIsLured() ? 'var(--lure)' : 'unset' }}
         />
         {store.getIsLured() && <span>Lured</span>}

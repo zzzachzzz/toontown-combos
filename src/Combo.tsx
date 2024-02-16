@@ -1,7 +1,7 @@
 import { For, Show, createMemo } from 'solid-js';
 import { useStore } from './store.instance';
 import findCombo from './gags';
-import type { GagTrack } from './constants';
+import { GagTrack, BASE_URL } from './constants';
 
 type Props = {
   cogLvl: number;
@@ -32,7 +32,7 @@ export const Combo = ({ cogLvl, gagTrack, numToons, stunTrack }: Props) => {
                 class="gag-icon-container"
                 style={{ background: gag.isOrg ? `var(--${gag.track})` : 'unset' }}
               >
-                <img class="gag-icon" src={`/gag_icons/${gag.name.replace(/\s/g, '_')}.png`} />
+                <img class="gag-icon" src={`${BASE_URL}gag_icons/${gag.name.replace(/\s/g, '_')}.png`} />
                 {gag.isOrg && <span class="org">Org</span>}
               </div>
             )}

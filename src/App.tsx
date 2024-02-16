@@ -5,6 +5,7 @@ import { CogLvlColumn } from './CogLvlColumn';
 import { OrgSelection } from './OrgSelection';
 import { OrgSelectionPreview } from './OrgSelectionPreview';
 import * as storage from './local-storage';
+import { BASE_URL } from './constants';
 import './index.css';
 
 export const App = () => {
@@ -81,7 +82,7 @@ const _App = () => {
           onClick={onClickToggleLure}
           style={{ background: store.getIsLured() ? 'var(--lure)' : 'unset' }}
         >
-          <img src="/gag_icons/$1_Bill.png" />
+          <img src={`${BASE_URL}gag_icons/$1_Bill.png`} />
           <span>Is Cog Lured?</span>
         </button>
       </div>
