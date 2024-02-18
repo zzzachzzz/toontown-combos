@@ -1,0 +1,2555 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Combo > inputKey & outputKey > generates the expected input key and output key 1`] = `
+{
+  "inputKey": {
+    "cog": {
+      "isLured": true,
+      "lvl": 11,
+    },
+    "gags": {
+      "sound": 1,
+      "squirt": 2,
+      "throw": 1,
+    },
+    "organicGags": {},
+  },
+  "outputKey": {
+    "dmg": 135,
+    "gags": [
+      {
+        "dmg": 4,
+        "knockback": false,
+        "lvl": 1,
+        "multi": false,
+        "track": "sound",
+      },
+      {
+        "dmg": 0,
+        "knockback": false,
+        "lvl": 0,
+        "multi": false,
+        "track": "throw",
+      },
+      {
+        "dmg": 105,
+        "knockback": false,
+        "lvl": 7,
+        "multi": true,
+        "track": "squirt",
+      },
+      {
+        "dmg": 4,
+        "knockback": false,
+        "lvl": 1,
+        "multi": true,
+        "track": "squirt",
+      },
+    ],
+  },
+}
+`;
+
+exports[`Combo > inputKey & outputKey > generates the expected input key and output key 2`] = `
+{
+  "inputKey": {
+    "cog": {
+      "isLured": false,
+      "lvl": 11,
+    },
+    "gags": {
+      "drop": 2,
+      "squirt": 2,
+    },
+    "organicGags": {
+      "drop": 1,
+    },
+  },
+  "outputKey": {
+    "dmg": 117,
+    "gags": [
+      {
+        "dmg": 4,
+        "knockback": false,
+        "lvl": 1,
+        "multi": false,
+        "track": "squirt",
+      },
+      {
+        "dmg": 0,
+        "knockback": false,
+        "lvl": 0,
+        "multi": false,
+        "track": "squirt",
+      },
+      {
+        "dmg": 49,
+        "knockback": false,
+        "lvl": 4,
+        "multi": true,
+        "track": "drop",
+      },
+      {
+        "dmg": 45,
+        "knockback": false,
+        "lvl": 4,
+        "multi": true,
+        "track": "drop",
+      },
+    ],
+  },
+}
+`;
+
+exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organicGags":{},"isLured":false} 1`] = `
+[
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 200,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 228,
+    "gags": [
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 216,
+    "gags": [
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 197,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 201,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 240,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 204,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 197,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 222,
+    "gags": [
+      Gag(Geyser [Lvl 7] [Dmg 105]),
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 196,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 220,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 220,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 198,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 208,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 197,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 196,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 198,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 200,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 12] [Hp 196]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 159,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 180,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 168,
+    "gags": [
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 161,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 161,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 168,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 156,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 158,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 192,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 166,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 172,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 174,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 161,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 165,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 176,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 156,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 159,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 174,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 11] [Hp 156]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 136,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 134,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 134,
+    "gags": [
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 134,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 144,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 132,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 134,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 136,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 132,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 133,
+    "gags": [
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 142,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 174,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 132,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 135,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 176,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 134,
+    "gags": [
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 132,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 174,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 10] [Hp 132]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 112,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 111,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 120,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 110,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 113,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 128,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 120,
+    "gags": [
+      Gag(Wedding Cake [Lvl 7] [Dmg 120]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 112,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 111,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 111,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 0,
+    "gags": [
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 112,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 112,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 174,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 114,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 114,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 110,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 112,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 112,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 174,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 9] [Hp 110]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 95,
+    "gags": [
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 93,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 120,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 90,
+    "gags": [
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 94,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 98,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 96,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 100,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 90,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 98,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 101,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 105,
+    "gags": [
+      Gag(Geyser [Lvl 7] [Dmg 105]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 98,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 94,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 91,
+    "gags": [
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 90,
+    "gags": [
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 96,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 97,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 98,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 94,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 91,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 8] [Hp 90]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 77,
+    "gags": [
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 76,
+    "gags": [
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 74,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 90,
+    "gags": [
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 74,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 74,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 81,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 100,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 75,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 76,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 72,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 80,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 72,
+    "gags": [
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 76,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 74,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 75,
+    "gags": [
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 78,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 72,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 73,
+    "gags": [
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 76,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 74,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 7] [Hp 72]),
+    "damage": 170,
+    "gags": [
+      Gag(Grand Piano [Lvl 6] [Dmg 170]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 59,
+    "gags": [
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 58,
+    "gags": [
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 65,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 90,
+    "gags": [
+      Gag(Opera Singer [Lvl 7] [Dmg 90]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 57,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 62,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 65,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 100,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 58,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 56,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 62,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 80,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 60,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 62,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 56,
+    "gags": [
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 70,
+    "gags": [
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 62,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 64,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 62,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 70,
+    "gags": [
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 60,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 62,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 57,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 6] [Hp 56]),
+    "damage": 70,
+    "gags": [
+      Gag(Safe [Lvl 5] [Dmg 70]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 44,
+    "gags": [
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 46,
+    "gags": [
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 45,
+    "gags": [
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 50,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 44,
+    "gags": [
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 45,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 45,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 100,
+    "gags": [
+      Gag(Birthday Cake [Lvl 6] [Dmg 100]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 44,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 44,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 51,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 80,
+    "gags": [
+      Gag(Storm Cloud [Lvl 6] [Dmg 80]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 50,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 48,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 49,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 45,
+    "gags": [
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 42,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 50,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 47,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 45,
+    "gags": [
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 50,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 48,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 42,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 5] [Hp 42]),
+    "damage": 45,
+    "gags": [
+      Gag(Big Weight [Lvl 4] [Dmg 45]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 31,
+    "gags": [
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 30,
+    "gags": [
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 33,
+    "gags": [
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 50,
+    "gags": [
+      Gag(Foghorn [Lvl 6] [Dmg 50]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 34,
+    "gags": [
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 32,
+    "gags": [
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 33,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 40,
+    "gags": [
+      Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 34,
+    "gags": [
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 34,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 30,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 30,
+    "gags": [
+      Gag(Fire Hose [Lvl 5] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 40,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 38,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 34,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 30,
+    "gags": [
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 42,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 30,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 36,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 30,
+    "gags": [
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 40,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 38,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 34,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 4] [Hp 30]),
+    "damage": 30,
+    "gags": [
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 20,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 22,
+    "gags": [
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 22,
+    "gags": [
+      Gag(Bugle [Lvl 3] [Dmg 11]),
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 21,
+    "gags": [
+      Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 22,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 22,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 20,
+    "gags": [
+      Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 27,
+    "gags": [
+      Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 20,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 20,
+    "gags": [
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 20,
+    "gags": [
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 21,
+    "gags": [
+      Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 28,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 28,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 22,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 30,
+    "gags": [
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 30,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 30,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 24,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 30,
+    "gags": [
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 28,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 28,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 22,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 3] [Hp 20]),
+    "damage": 30,
+    "gags": [
+      Gag(Anvil [Lvl 3] [Dmg 30]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 14,
+    "gags": [
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 16,
+    "gags": [
+      Gag(Aoogah [Lvl 4] [Dmg 16]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 17,
+    "gags": [
+      Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 15,
+    "gags": [
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 12,
+    "gags": [
+      Gag(Squirt Gun [Lvl 3] [Dmg 12]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 28,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 28,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 14,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 18,
+    "gags": [
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 30,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 30,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 16,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 18,
+    "gags": [
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 28,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 28,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 14,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 2] [Hp 12]),
+    "damage": 18,
+    "gags": [
+      Gag(Sandbag [Lvl 2] [Dmg 18]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 7,
+    "gags": [
+      Gag(Whistle [Lvl 2] [Dmg 7]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 6,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      None,
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 6,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 6,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 6,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 8,
+    "gags": [
+      Gag(Glass of Water [Lvl 2] [Dmg 8]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 14,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 14,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 14,
+    "gags": [
+      Gag(Bike Horn [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 16,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 16,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 16,
+    "gags": [
+      Gag(Cupcake [Lvl 1] [Dmg 6]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 14,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 14,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+      None,
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 14,
+    "gags": [
+      Gag(Squirting Flower [Lvl 1] [Dmg 4]),
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+  Combo {
+    "cog": Cog([Lvl 1] [Hp 6]),
+    "damage": 10,
+    "gags": [
+      Gag(Flower Pot [Lvl 1] [Dmg 10]),
+    ],
+  },
+]
+`;

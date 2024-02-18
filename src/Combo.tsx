@@ -1,32 +1,18 @@
-import { For, Show, createMemo } from 'solid-js';
-import { useStore } from './store.instance';
-import findCombo from './gags';
-import { GagTrack, BASE_URL } from './constants';
+import { For, Show } from 'solid-js';
+import type { Combo as _Combo } from './gags';
+import { BASE_URL } from './constants';
 
 type Props = {
-  cogLvl: number;
-  gagTrack: GagTrack;
-  numToons: number;
-  stunTrack?: GagTrack;
+  combo: _Combo;
 };
 
-export const Combo = ({ cogLvl, gagTrack, numToons, stunTrack }: Props) => {
-  const store = useStore();
-
-  // TODO Might need a custom equality check... cache key concept for combos
-  const combo = createMemo(() => {
-    const organicGags = store.getSelectedOrgGagTrackCounts();
-    const isLured = store.getIsLured();
-    const game = store.getGame();
-    return findCombo({ cogLvl, gagTrack, numToons, isLured, organicGags, stunTrack, game });
-  });
-
+export const Combo = (props: Props) => {
   return (
-    <Show when={combo().damageKillsCog()}>
+    <Show when={props.combo.damageKillsCog()}>
       <div class="combo">
-        <span class="combo-dmg">{combo().damage()}</span>
+        <span class="combo-dmg">{props.combo.damage()}</span>
         <div class="gags">
-          <For each={combo().gags}>
+          <For each={props.combo.gags}>
             {gag => (
               <div
                 class="gag-icon-container"

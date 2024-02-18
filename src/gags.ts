@@ -1,6 +1,6 @@
-import { Game } from './constants';
+import { GagTrack, GagTracks } from './constants';
 
-export const classicCogHp: Record<number, number> = {
+export const cogHp: Record<number, number> = {
   1:  6,
   2:  12,
   3:  20,
@@ -12,11 +12,6 @@ export const classicCogHp: Record<number, number> = {
   9:  110,
   10: 132,
   11: 156,
-  12: 200,
-};
-
-export const ttrCogHp: Record<number, number> = {
-  ...classicCogHp,
   12: 196,
   13: 224,
   14: 254,
@@ -28,8 +23,45 @@ export const ttrCogHp: Record<number, number> = {
   20: 476,
 };
 
+const gagTracksOrder: Record<GagTracks, number> = {
+  [GagTracks.toonup]: 0,
+  [GagTracks.trap]: 1,
+  [GagTracks.lure]: 2,
+  [GagTracks.sound]: 3,
+  [GagTracks.throw]: 4,
+  [GagTracks.squirt]: 5,
+  [GagTracks.drop]: 6,
+};
+
 const gags: Record<string, Record<number, { name: string; damage: number; }>> = {
-  'sound': {
+  [GagTracks.toonup]: {
+    1: { name: 'Feather',         damage: 0 },
+    2: { name: 'Megaphone',       damage: 0 },
+    3: { name: 'Lipstick',        damage: 0 },
+    4: { name: 'Bamboo Cane',     damage: 0 },
+    5: { name: 'Pixie Dust',      damage: 0 },
+    6: { name: 'Juggling Cubes',  damage: 0 },
+    7: { name: 'High Dive',       damage: 0 },
+  },
+  [GagTracks.lure]: {
+    1: { name: '$1 Bill',        damage: 0 },
+    2: { name: 'Small Magnet',   damage: 0 },
+    3: { name: '$5 Bill',        damage: 0 },
+    4: { name: 'Big Magnet',     damage: 0 },
+    5: { name: '$10 Bill',       damage: 0 },
+    6: { name: 'Hypno-goggles',  damage: 0 },
+    7: { name: 'Presentation',   damage: 0 },
+  },
+  [GagTracks.trap]: {
+    1: { name: 'Banana Peel',  damage: 12  },
+    2: { name: 'Rake',         damage: 20  },
+    3: { name: 'Marbles',      damage: 35  },
+    4: { name: 'Quicksand',    damage: 50  },
+    5: { name: 'Trapdoor',     damage: 85  },
+    6: { name: 'TNT',          damage: 180 },
+    7: { name: 'Railroad',     damage: 200 },
+  },
+  [GagTracks.sound]: {
     1: { name: 'Bike Horn',       damage: 4  },
     2: { name: 'Whistle',         damage: 7  },
     3: { name: 'Bugle',           damage: 11 },
@@ -38,7 +70,7 @@ const gags: Record<string, Record<number, { name: string; damage: number; }>> = 
     6: { name: 'Foghorn',         damage: 50 },
     7: { name: 'Opera Singer',    damage: 90 },
   },
-  'throw': {
+  [GagTracks.throw]: {
     1: { name: 'Cupcake',          damage: 6   },
     2: { name: 'Fruit Pie Slice',  damage: 10  },
     3: { name: 'Cream Pie Slice',  damage: 17  },
@@ -47,7 +79,7 @@ const gags: Record<string, Record<number, { name: string; damage: number; }>> = 
     6: { name: 'Birthday Cake',    damage: 100 },
     7: { name: 'Wedding Cake',     damage: 120 },
   },
-  'squirt': {
+  [GagTracks.squirt]: {
     1: { name: 'Squirting Flower',  damage: 4   },
     2: { name: 'Glass of Water',    damage: 8   },
     3: { name: 'Squirt Gun',        damage: 12  },
@@ -56,34 +88,31 @@ const gags: Record<string, Record<number, { name: string; damage: number; }>> = 
     6: { name: 'Storm Cloud',       damage: 80  },
     7: { name: 'Geyser',            damage: 105 },
   },
-  'drop': {
+  [GagTracks.drop]: {
     1: { name: 'Flower Pot',   damage: 10  },
     2: { name: 'Sandbag',      damage: 18  },
     3: { name: 'Anvil',        damage: 30  },
     4: { name: 'Big Weight',   damage: 45  },
-    5: { name: 'Safe',         damage: 60  },
+    5: { name: 'Safe',         damage: 70 },
     6: { name: 'Grand Piano',  damage: 170 },
     7: { name: 'Toontanic',    damage: 180 },
   },
 };
 
-const ttrGagsDmgOverrides: Record<string, Record<number, { name: string; damage: number; }>> = {
-  'drop': {
-    5: { name: 'Safe', damage: 70 },
-  },
-};
-
-class Cog {
+export class Cog {
   lvl: number;
-  _game: Game;
+  isLured: boolean;
 
-  constructor(lvl: number, game: Game) {
+  constructor({ lvl, isLured }: {
+    lvl: number;
+    isLured: boolean;
+  }) {
     this.lvl = lvl;
-    this._game = game;
+    this.isLured = isLured;
   }
 
   get hp(): number {
-    return (this._game === 'ttr' ? ttrCogHp : classicCogHp)[this.lvl];
+    return cogHp[this.lvl];
   }
 
   toString(): string {
@@ -91,17 +120,26 @@ class Cog {
   }
 }
 
-class Gag {
-  track: string;
+export class Gag {
+  track: GagTrack;
   lvl: number;
-  _game: Game;
   isOrg: boolean;
 
-  constructor(track: string, lvl: number, game: Game, isOrg: boolean = false) {
+  constructor({ track, lvl, isOrg = false }: {
+    track: GagTrack;
+    lvl: number;
+    isOrg?: boolean;
+  }) {
     this.track = track;
     this.lvl = lvl;
-    this._game = game;
     this.isOrg = isOrg;
+  }
+
+  /** Create new `Combo` instance, copied from another instance */
+  static fromGag(gag: Gag): Gag {
+    return new Gag({
+      track: gag.track, lvl: gag.lvl, isOrg: gag.isOrg
+    });
   }
 
   get name(): string {
@@ -115,9 +153,7 @@ class Gag {
     if (this.lvl === 0) {
       return 0;
     }
-    const baseDmg = this._game === 'ttr'
-      ? (ttrGagsDmgOverrides[this.track]?.[this.lvl]?.damage ?? gags[this.track][this.lvl].damage)
-      : gags[this.track][this.lvl].damage;
+    const baseDmg = gags[this.track][this.lvl].damage;
 
     if (this.isOrg) {
       if (baseDmg < 10) return baseDmg + 1;
@@ -127,16 +163,50 @@ class Gag {
     }
   }
 
-  multiplier(combo: Combo): number {
-    if (this.lvl === 0) {
-      return 1;
-    }
+  /**
+   * Return true/false if the gag receives multi same gag type bonus,
+   * and true/false if the gag receives knockback bonus.
+   */
+  multipliers(combo: Combo): { multi: boolean; knockback: boolean; } {
+    if (this.lvl === 0)
+      return { multi: false, knockback: false };
+
+    if (
+         this.track === GagTracks.toonup
+      || this.track === GagTracks.trap
+      || this.track === GagTracks.lure
+    )
+      return { multi: false, knockback: false };
+
     const tc = combo.trackCounts();
-    const multi = 1 + (tc[this.track] >= 2 ? 0.2 : 0) + (
-      (combo.isLured && (this.track === 'throw' ||
-              this.track === 'squirt')
-      ) ? 0.5 : 0)
-    return multi;
+    return {
+      multi: tc[this.track] >= 2,
+      knockback: this.knockback(combo),
+    };
+  }
+
+  multiplier(combo: Combo): number {
+    const _multipliers = this.multipliers(combo);
+    return (
+      1
+      + (_multipliers.multi ? 0.2 : 0)
+      + (_multipliers.knockback ? 0.5 : 0)
+    );
+  }
+
+  knockback(combo: Combo): boolean {
+    if (!combo.cog.isLured)
+      return false;
+    const tc = combo.trackCounts();
+    if (tc['trap'] > 0)
+      return false;
+    if (tc['sound'] > 0)
+      return false;
+    if (this.track === 'throw')
+      return true;
+    if (this.track === 'squirt' && tc['throw'] === 0)
+      return true;
+    return false;
   }
 
   toString(): string {
@@ -144,61 +214,64 @@ class Gag {
   }
 }
 
-class Combo {
-  game: Game;
-  cog: Cog;
+export class Combo {
   gags: Array<Gag>;
-  numToons: number;
-  isLured: boolean;
-  gagTrack: string;
-  stunTrack: string | null;
-  organicGags: Record<string, number>;
+  cog: Cog;
+  gagsInput: Partial<Record<GagTrack, number>>;
+  organicGagsInput: Partial<Record<GagTrack, number>>;
 
-  constructor({
-    game,
-    cogLvl,
-    gags,
-    isLured,
-    gagTrack,
-    stunTrack,
-    organicGags = {},
-  }: {
-    game: Game;
-    cogLvl: number;
+  constructor({ gags, cog, gagsInput, organicGagsInput }: {
     gags: Array<Gag>;
-    isLured: boolean;
-    gagTrack: string;
-    stunTrack?: string | null;
-    organicGags?: Record<string, number>;
+    cog: Cog;
+    gagsInput?: Partial<Record<GagTrack, number>>;
+    organicGagsInput?: Partial<Record<GagTrack, number>>;
   }) {
-    this.game = game;
-    this.cog = new Cog(cogLvl, game);
     this.gags = gags;
-    this.numToons = gags.length;
-    this.isLured = isLured;
-    this.gagTrack = gagTrack;
-    this.stunTrack = stunTrack ?? null;
-    this.organicGags = organicGags;
+    this.cog = cog;
+    this.gagsInput = Combo.cleanGagCounts(gagsInput ?? {});
+    this.organicGagsInput = Combo.cleanGagCounts(organicGagsInput ?? {});
+  }
+
+  /** Create new `Combo` instance, copied from another instance */
+  static fromCombo(combo: Combo): Combo {
+    return new Combo({
+      gags: combo.gags.map(g => Gag.fromGag(g)),
+      cog: combo.cog,
+      gagsInput: combo.gagsInput,
+      organicGagsInput: combo.organicGagsInput,
+    });
   }
 
   /**
-   * @return A mapping of gag tracks to their respective number of gags in the combo
+   * Util omitting gag tracks entries with non 1+ values,
+   * and sorting the keys order to match the correct gag track order.
+   * Used for handling the constructor params `gagsInput` & `organicGagsInput`.
    */
-  trackCounts(): Record<string, number> {
-    let tc: Record<string, number> = {};
-    this.gags.forEach((gag) => {
+  static cleanGagCounts(gagCounts: Partial<Record<GagTrack, number>>): Partial<Record<GagTrack, number>> {
+    return Object.values(GagTracks).reduce((acc, track) => {
+      if (gagCounts.hasOwnProperty(track) && gagCounts[track]! > 0)
+        acc[track] = gagCounts[track];
+      return acc;
+    }, {} as Partial<Record<GagTrack, number>>);
+  }
+
+  /** A mapping of gag tracks to their respective number of gags in the combo */
+  trackCounts(): Record<GagTrack, number> {
+    return this.gags.reduce((acc, gag) => {
       if (gag.lvl !== 0) {
-        gag.track in tc ? tc[gag.track] += 1 : tc[gag.track] = 1;
+        acc[gag.track] += 1;
       }
-    });
-    return tc;
+      return acc;
+    }, Object.fromEntries(Object.values(GagTracks).map(gt => [gt, 0])) as Record<GagTracks, number>);
   }
 
   damage(): number {
-    let dmg = 0;
-    this.gags.forEach((gag) => {
-      dmg += gag.damage * gag.multiplier(this);
-    });
+    const dmg = this.gags.reduce((dmg, gag) => {
+      return dmg + (
+        gag.damage
+        * gag.multiplier(this)
+      );
+    }, 0);
     return Math.ceil(dmg);
   }
 
@@ -206,102 +279,130 @@ class Combo {
     return this.damage() >= this.cog.hp;
   }
 
+  inputKey() {
+    const cog = { lvl: this.cog.lvl, isLured: this.cog.isLured };
+    const gags = this.gagsInput;
+    const organicGags = this.organicGagsInput;
+
+    return { cog, gags, organicGags };
+  }
+
+  outputKey() {
+    const gags = [...this.gags]
+      .sort(sortFnGags)
+      .map(gag => {
+        const dmg = gag.damage;
+        const { lvl, track } = gag;
+        const { multi, knockback } = gag.multipliers(this);
+        return { track, lvl, dmg, multi, knockback };
+      })
+
+    const dmg = this.damage();
+
+    return { dmg, gags };
+  }
+
   toString(): string {
     return `Combo(damage: ${this.damage()} gags: [\n${this.gags.map(g => `  ${g}`).join(',\n')}\n])`;
   }
 }
 
-function findCombo({
-  cogLvl,
-  gagTrack,
-  numToons,
-  isLured,
-  organicGags,
-  game = 'ttr',
-  stunTrack = null,
-}: {
+export type FindComboArgs = {
   cogLvl: number;
-  gagTrack: 'sound' | 'throw' | 'squirt' | 'drop'
-  numToons: number;
   isLured: boolean;
-  organicGags: Record<string, number>;
-  game: Game;
-  stunTrack?: 'sound' | 'throw' | 'squirt' | null;
-}): Combo {
-  if (numToons === 1 && gagTrack === 'drop') {
-    throw new Error('Invalid arguments: a drop combo must have 2 or more toons (for a stun gag)');
+  /**
+   * Mapping of gag track to number of gags to use in the combo.
+   * Sum of numbers must be 1 <= n <= 4.
+   */
+  gags: Partial<Record<GagTrack, number>>;
+  organicGags: Partial<Record<GagTrack, number>>;
+};
+
+export function findCombo({
+  cogLvl,
+  isLured,
+  gags,
+  organicGags,
+}: FindComboArgs): Combo {
+  let sumGags = 0;
+  for (const [key, val] of Object.entries(gags)) {
+    if (!GagTracks.hasOwnProperty(key)) {
+      throw new Error(
+        `Unrecognized gag track key '${key}' in \`gags\` argument. ` +
+        `Must be one of: ${Object.values(GagTracks).map(gt => "'" + gt + "'").join(', ')}`
+      );
+    }
+    if (typeof val !== 'number' || isNaN(val)) {
+      throw new Error(`Values in \`gags\` argument must be a number. For key '${key}' got value '${val}'.`);
+    }
+    if (key === 'trap' && val > 1) {
+      throw new Error(`Cannot specify multiple trap gags, must be 0 or 1.`);
+    }
+    sumGags += val;
+  }
+  if (sumGags < 1 || sumGags > 4) {
+    throw new Error(`Sum of values in \`gags\` argument must be 1 <= n <= 4. Received ${sumGags}.`);
   }
 
-  let combo, isStunOrg;
-  const numOrg = Math.min(
-    organicGags[gagTrack] || 0,
-    gagTrack === 'drop' ? numToons - 1 : numToons
-  );
+  const comboGags: Array<Gag> = Object.entries(gags).reduce((acc, [track, numGags]) => {
+    for (let i = 0; i < numGags; i++) {
+      const isOrg = i <= (organicGags[track as GagTrack] ?? 0) - 1;
+      acc.push(new Gag({
+        track: track as GagTrack,
+        lvl: 1,
+        isOrg,
+      }));
+    }
+    return acc;
+  }, [] as Array<Gag>);
 
-  // Populate the inital combo with level 1 gags
-  if (gagTrack === 'drop') {
-    if (stunTrack === null) throw new Error('Stun gag track not specified by `stunTrack` argument');
-    isStunOrg = organicGags[stunTrack] >= 1;
-    combo = new Combo({
-      game,
-      cogLvl,
-      gags: [new Gag(stunTrack, 1, game, isStunOrg)],
-      isLured,
-      gagTrack,
-      stunTrack,
-      organicGags,
-    });
-    for (let i = 0; i < numToons-1; i++) {
-      const isOrg = i <= numOrg - 1;
-      combo.gags.push(new Gag(gagTrack, 1, game, isOrg));
-    }
-  } else {
-    combo = new Combo({
-      game,
-      cogLvl,
-      gags: [],
-      isLured,
-      gagTrack,
-      organicGags,
-    });
-    for (let i = 0; i < numToons; i++) {
-      const isOrg = i <= numOrg - 1;
-      combo.gags.push(new Gag(gagTrack, 1, game, isOrg));
-    }
-  }
+  // Sort by damage high to low for the algorithm
+  comboGags.sort((gag1, gag2) => gag2.damage - gag1.damage);
+
+  const cog = new Cog({ lvl: cogLvl, isLured });
+
+  let combo = new Combo({
+    gags: comboGags,
+    cog,
+    gagsInput: gags,
+    organicGagsInput: organicGags,
+  });
+
+  combo = _findCombo(combo);
+
+  combo.gags.sort(sortFnGags);
+
+  return combo;
+}
+
+/**
+ * Core combo algorithm. Note that the `combo` argument is mutated.
+ */
+function _findCombo(combo: Combo): Combo {
   // Increase the level of each gag until the damage is sufficient
   while (!combo.damageKillsCog()) {
     for (const gag of combo.gags) {
-      if (gagTrack === 'drop' && gag.track === stunTrack && gag.lvl > 4) {
-        continue;
-      } else if (gag.lvl === 7) {
+      if (gag.lvl === 7) {
         continue;
       } else {
         gag.lvl += 1;
       }
     }
-    if (combo.gags[combo.gags.length-1].lvl === 7)
+    if (combo.gags.every(gag => gag.lvl === 7))
       break;
-  }
-  // Prioritize a lvl 6 stun gag over any lvl 7 gag
-  if (gagTrack === 'drop' && combo.gags.slice(1).some(gag => gag.lvl === 7)) {
-    combo.gags[0].lvl += 1;
-    combo.gags[1].lvl -= 1;
-    if (!combo.damageKillsCog()) {
-      combo.gags[0].lvl -= 1;
-      combo.gags[1].lvl += 1;
-    }
   }
 
   // Insufficient damage, killing cog with given parameters is not possible
   if (!combo.damageKillsCog()) {
-    combo.gags = combo.gags.map(g => new Gag(g.track, 0, game));
+    combo.gags = combo.gags.map(g => new Gag({ track: g.track, lvl: 0, isOrg: g.isOrg }));
     return combo;
   }
 
+  const hasDrop = combo.trackCounts()['drop'] > 0;
+
   // Decrease the level of individual gags until the damage is insufficient
   let i = 0;
-  while (i != combo.gags.length-1) {
+  while (i !== combo.gags.length-1) {
     for (i = combo.gags.length-1; i >= 0; i--) {
       if (combo.gags[i].lvl === 0) {
         break;
@@ -314,86 +415,75 @@ function findCombo({
     }
   }
 
-  // Check if organic is actually necessary for the combo
-  if (gagTrack === 'drop' && isStunOrg) {
-    combo.gags[0].isOrg = false;
-    if (!combo.damageKillsCog())
-      combo.gags[0].isOrg = true;
-  }
-  if (numOrg > 0) {
-    const offset = gagTrack === 'drop' ? 1 : 0;
-    let i = offset;
-    for (; i < numOrg + offset; i++) {
-      combo.gags[i].isOrg = false;
-      if (!combo.damageKillsCog()) {
-        combo.gags[i].isOrg = true;
-      }
+  // Check if organics are necessary for combo
+  for (let i = 0; i < combo.gags.length; i++) {
+    combo.gags[i].isOrg = false;
+    if (!combo.damageKillsCog()) {
+      combo.gags[i].isOrg = true;
     }
   }
 
-  combo.gags.sort((gag1, gag2) => gag2.damage - gag1.damage);
-
-  // In a drop combo, attempt to lower gag level of stun gag
-  if (gagTrack === 'drop') {
-    combo.gags.sort((gag1, gag2) => {
-      if (gag1.track !== 'drop') return -1;
-      else return gag2.damage - gag1.damage;
-    });
-
-    if (combo.gags[0].lvl > 5 && combo.gags[1].lvl < 6) {
-      combo.gags[0].lvl -= 1;
-      combo.gags[1].lvl += 1;
-      if (!combo.damageKillsCog()) {
-        combo.gags[0].lvl += 1;
-        combo.gags[1].lvl -= 1;
+  // If drop combo, keep other gags around for stun bonus even if the damage is unneeded
+  if (hasDrop) {
+    for (let i = 0; i < combo.gags.length; i++) {
+      if (combo.gags[i].track !== 'drop' && combo.gags[i].lvl === 0) {
+        combo.gags[i].lvl = 1;
       }
     }
-    while (combo.damageKillsCog() && combo.gags[0].lvl > 0) {
-      combo.gags[0].lvl -= 1;
-    }
-    combo.gags[0].lvl += 1;
   }
 
   return combo;
 }
 
+/** Sort gags based on track order, then damage high to low. */
+function sortFnGags(gag1: Gag, gag2: Gag): number {
+  const cmpTrack = gagTracksOrder[gag1.track] - gagTracksOrder[gag2.track];
+  if (cmpTrack !== 0) return cmpTrack;
+  return gag2.damage - gag1.damage;
+}
+
 export function logTable(combo: Combo): void {
   console.log('Input:');
-  console.table({
-    'Game': combo.game === 'ttr' ? 'Toontown Rewritten' : 'Toontown Online (Classic)',
-    'Num Toons': combo.numToons,
-    'Cog Level': combo.cog.lvl,
-    'Is Cog Lured?': combo.isLured,
-    'Gag Track': combo.gagTrack,
-    ...(combo.gagTrack === 'drop' && { 'Stun Gag Track': combo.stunTrack }),
-    'Organic Gags': Object.entries(combo.organicGags)
+
+  const fmtInputGags = (gags: Partial<Record<GagTrack, number>>) => {
+    const _gags = Object.entries(gags)
       .map(([track, num]) => !num ? null : `${track[0].toUpperCase()}${track.slice(1)}: ${num}`)
       .filter(s => s !== null)
-      .join(', '),
+    if (_gags.length === 0) return 'None';
+    return _gags.join(', ');
+  };
+
+  console.table({
+    'Cog Level': combo.cog.lvl,
+    'Is Cog Lured?': combo.cog.isLured,
+    'Gags': fmtInputGags(combo.gagsInput),
+    'Organic Gags': fmtInputGags(combo.organicGagsInput),
   });
   console.log('Combo:');
   console.table(
     combo.gags.reduce((newObj, gag, i) => {
+      const { multi, knockback } = gag.multipliers(combo);
+      const multipliers = [];
+      if (multi)
+        multipliers.push('Same type bonus (20%)');
+      if (knockback)
+        multipliers.push('Knockback bonus (50%)');
+
       newObj[`Gag ${i+1}`] = {
         'Name': `${gag.name}${gag.isOrg ? ' (Organic)' : ''}`,
         'Level': gag.lvl,
-        'Damage': gag.damage,
+        'Base Damage': gag.damage,
+        'Multipliers': multipliers.length === 0 ? 'None' : multipliers.join(', '),
       };
       return newObj;
     }, {} as any)
   );
-  const multipliers = [];
-  if (combo.trackCounts()[combo.gagTrack] >= 2)
-    multipliers.push('Same type bonus (20%)');
-  if (combo.isLured && [combo.gagTrack, combo.stunTrack].some(track => new Set(['throw', 'squirt']).has(track!)))
-    multipliers.push('Knockback bonus (50%)');
+
   console.log('Details:');
   console.table({
     'Total base damage': combo.gags.reduce((sum, gag) => sum + gag.damage, 0),
-    'Damage Multipliers': multipliers.join(', ') || '<None>',
     'Final damage calculated': combo.damage(),
     'Cog HP': combo.cog.hp,
   });
 }
 
-export default findCombo;

@@ -1,16 +1,19 @@
-export const gagTracksArr = [
-  'toonup',
-  'trap',
-  'lure',
-  'sound',
-  'throw',
-  'squirt',
-  'drop',
-] as const;
+export enum GagTracks {
+  toonup = 'toonup',
+  trap = 'trap',
+  lure = 'lure',
+  sound = 'sound',
+  throw = 'throw',
+  squirt = 'squirt',
+  drop = 'drop',
+};
 
-export type GagTrack = typeof gagTracksArr[number];
+// String union version, so that string literal or GagTracks enum can be provided
+export type GagTrack = `${GagTracks}`;
 
-export const BASE_URL: string = import.meta.env.BASE_URL;
+export const gagTracksArr: GagTracks[] = Object.values(GagTracks);
+
+export const BASE_URL: string = import.meta.env?.BASE_URL ?? '';
 
 export const gagTrackData: Record<GagTrack, { name: string; img: string; }> = {
   toonup: { name: 'Toon Up',  img: `${BASE_URL}gag_icons/Feather.png` },
@@ -21,6 +24,4 @@ export const gagTrackData: Record<GagTrack, { name: string; img: string; }> = {
   squirt: { name: 'Squirt',   img: `${BASE_URL}gag_icons/Squirting_Flower.png` },
   drop:   { name: 'Drop',     img: `${BASE_URL}gag_icons/Flower_Pot.png` },
 };
-
-export type Game = 'ttr' | 'classic';
 
