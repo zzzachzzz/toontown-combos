@@ -1,7 +1,7 @@
 import { For, createMemo } from 'solid-js';
 import { Combo } from './Combo';
 import { useStore } from './store.instance';
-import { batch, iterFindComboArgs } from './util';
+import { batch, genFindComboArgsDefault } from './util';
 import { findCombo, Combo as _Combo } from './gags';
 
 export const CombosGrid = () => {
@@ -13,7 +13,7 @@ export const CombosGrid = () => {
     const isLured = store.getIsLured();
 
     return Array.from(
-      iterFindComboArgs({ maxCogLvl, organicGags, isLured }),
+      genFindComboArgsDefault({ maxCogLvl, organicGags, isLured }),
       findComboArgs => findCombo(findComboArgs)
     );
   });

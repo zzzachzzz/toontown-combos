@@ -1,17 +1,30 @@
-import { findCombo, Combo, Gag, Cog } from './gags';
+import { findCombo, FindComboArgs, Combo, Gag, Cog } from './gags';
 import * as util from './util';
 
-type IterFindComboArgsArgs = Parameters<typeof util.iterFindComboArgs>[0];
+type IterFindComboArgsArgs = Parameters<typeof util.genFindComboArgsDefault>[0];
+
+type GenFindComboArgsCustomArgs = Parameters<typeof util.genFindComboArgsCustom>[0];
 
 describe('findCombo', () => {
-  test.each<IterFindComboArgsArgs>([
-    { maxCogLvl: 12, organicGags: {}, isLured: false },
-  ])('combos match the snapshot for args %j', (args) => {
-    const combos: Array<Combo> = Array.from(
-      util.iterFindComboArgs(args),
-      findComboArgs => findCombo(findComboArgs),
-    )
-    expect(combos).toMatchSnapshot();
+  test.each<FindComboArgs>([
+    ...util.genFindComboArgsDefault({ maxCogLvl: 12, organicGags: {}, isLured: false }),
+    ...util.genFindComboArgsCustom({ gagTrack: 'sound', organicGags: { 'sound': 1 } }),
+    ...util.genFindComboArgsCustom({ gagTrack: 'throw', organicGags: { 'throw': 1 }, isLured: false }),
+    ...util.genFindComboArgsCustom({ gagTrack: 'throw', organicGags: { 'throw': 1 }, isLured: true }),
+    ...util.genFindComboArgsCustom({ gagTrack: 'squirt', organicGags: { 'squirt': 1 }, isLured: false }),
+    ...util.genFindComboArgsCustom({ gagTrack: 'squirt', organicGags: { 'squirt': 1 }, isLured: true }),
+    ...[...util.range(20, 1, -1)].map(cogLvl => ({
+      cogLvl, isLured: false, gags: { sound: 2, drop: 1 }, organicGags: { drop: 1 }
+    })),
+    ...[...util.range(20, 1, -1)].map(cogLvl => ({
+      cogLvl, isLured: false, gags: { trap: 1, drop: 1 }, organicGags: { drop: 1 }
+    })),
+    ...[...util.range(20, 1, -1)].map(cogLvl => ({
+      cogLvl, isLured: false, gags: { squirt: 1, drop: 1 }, organicGags: { drop: 1 }
+    })),
+  ])('combo matches the snapshot for args %j', (args) => {
+    const combo: Combo = findCombo(args);
+    expect(combo).toMatchSnapshot();
   });
 });
 

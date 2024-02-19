@@ -40,7 +40,7 @@ describe('iterFindComboArgs', () => {
       },
     })
     expect(
-      Array.from(util.iterFindComboArgs({ maxCogLvl, organicGags, isLured }))
+      Array.from(util.genFindComboArgsDefault({ maxCogLvl, organicGags, isLured }))
     ).toMatchSnapshot();
   });
 });
