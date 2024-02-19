@@ -5,6 +5,8 @@ expect.addSnapshotSerializer({
   serialize(combo: Combo, config, indentation, depth, refs, printer) {
     return `Combo ${printer(
       {
+        inputKey: JSON.stringify(combo.inputKey()),
+        outputKey: JSON.stringify(combo.outputKey()),
         cog: combo.cog,
         damage: combo.damage(),
         gags: combo.gags,

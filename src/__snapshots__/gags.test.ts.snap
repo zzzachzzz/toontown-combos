@@ -112,6 +112,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":200,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -121,6 +123,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":228,"gags":[{"track":"sound","lvl":7,"dmg":90,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -129,6 +133,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":216,"gags":[{"track":"sound","lvl":7,"dmg":90,"multi":true,"knockback":false},{"track":"sound","lvl":7,"dmg":90,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -136,6 +142,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -146,6 +154,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":197,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -155,6 +165,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":201,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false},{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -163,6 +175,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":240,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false},{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -170,6 +184,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -180,6 +196,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":204,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -189,6 +207,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":197,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -197,6 +217,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Geyser [Lvl 7] [Dmg 105]),
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":222,"gags":[{"track":"squirt","lvl":7,"dmg":105,"multi":true,"knockback":false},{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -204,6 +226,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -214,6 +238,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":196,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -223,6 +249,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":220,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -231,6 +259,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":220,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -238,6 +268,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -248,6 +280,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":198,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -257,6 +291,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":208,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -265,6 +301,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":197,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -272,6 +310,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -282,6 +322,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":196,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -291,6 +333,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":198,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -299,6 +343,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":200,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 12] [Hp 196]),
@@ -306,6 +352,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":12,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -316,6 +364,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":159,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -325,6 +375,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":180,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -333,6 +385,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":168,"gags":[{"track":"sound","lvl":7,"dmg":90,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -340,6 +394,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -350,6 +406,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":161,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -359,6 +417,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":161,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -367,6 +427,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":168,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false},{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -374,6 +436,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -384,6 +448,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":156,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -393,6 +459,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":158,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -401,6 +469,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":192,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -408,6 +478,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -418,6 +490,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":166,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -427,6 +501,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":172,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -435,6 +511,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":174,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -442,6 +520,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -452,6 +532,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":161,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -461,6 +543,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":165,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -469,6 +553,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":176,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -476,6 +562,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -486,6 +574,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":156,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -495,6 +585,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":159,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -503,6 +595,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":174,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 11] [Hp 156]),
@@ -510,6 +604,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":11,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -520,6 +616,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":136,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -529,6 +627,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":134,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -537,6 +637,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":134,"gags":[{"track":"sound","lvl":7,"dmg":90,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -544,6 +646,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -554,6 +658,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":134,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -563,6 +669,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":144,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -571,6 +679,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":132,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -578,6 +688,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -588,6 +700,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":134,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -597,6 +711,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":136,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -605,6 +721,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":132,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -612,6 +730,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -622,6 +742,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":133,"gags":[{"track":"sound","lvl":2,"dmg":7,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -631,6 +753,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":142,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -639,6 +763,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":174,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -646,6 +772,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -656,6 +784,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":132,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -665,6 +795,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":135,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -673,6 +805,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":176,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -680,6 +814,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -690,6 +826,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":134,"gags":[{"track":"squirt","lvl":2,"dmg":8,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -699,6 +837,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":132,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -707,6 +847,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":174,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 10] [Hp 132]),
@@ -714,6 +856,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":10,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -724,6 +868,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":112,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -733,6 +879,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":111,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -741,6 +889,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":120,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -748,6 +898,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -758,6 +910,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":110,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -767,6 +921,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":113,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -775,6 +931,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":128,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -782,6 +940,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Wedding Cake [Lvl 7] [Dmg 120]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":120,"gags":[{"track":"throw","lvl":7,"dmg":120,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -792,6 +952,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":112,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -801,6 +963,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":111,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -809,6 +973,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":111,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -816,6 +982,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       None,
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":0,"gags":[{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -826,6 +994,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":112,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -835,6 +1005,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":112,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -843,6 +1015,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":174,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -850,6 +1024,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -860,6 +1036,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":114,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -869,6 +1047,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":114,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -877,6 +1057,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":110,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -884,6 +1066,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -894,6 +1078,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":112,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -903,6 +1089,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":112,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -911,6 +1099,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":174,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 9] [Hp 110]),
@@ -918,6 +1108,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":9,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -928,6 +1120,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":95,"gags":[{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -937,6 +1131,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":93,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -945,6 +1141,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":120,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -952,6 +1150,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":90,"gags":[{"track":"sound","lvl":7,"dmg":90,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -962,6 +1162,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":94,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -971,6 +1173,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":98,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -979,6 +1183,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":96,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -986,6 +1192,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":100,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -996,6 +1204,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":90,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1005,6 +1215,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":98,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1013,6 +1225,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":101,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1020,6 +1234,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Geyser [Lvl 7] [Dmg 105]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":105,"gags":[{"track":"squirt","lvl":7,"dmg":105,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1030,6 +1246,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":98,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1039,6 +1257,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":94,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1047,6 +1267,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":91,"gags":[{"track":"sound","lvl":5,"dmg":21,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1054,6 +1276,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1064,6 +1288,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":90,"gags":[{"track":"throw","lvl":2,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1073,6 +1299,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":96,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1081,6 +1309,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":97,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1088,6 +1318,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1098,6 +1330,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":98,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1107,6 +1341,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":94,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1115,6 +1351,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":91,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 8] [Hp 90]),
@@ -1122,6 +1360,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":8,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1132,6 +1372,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":77,"gags":[{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1141,6 +1383,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":76,"gags":[{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1149,6 +1393,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":74,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1156,6 +1402,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":90,"gags":[{"track":"sound","lvl":7,"dmg":90,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1166,6 +1414,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":74,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1175,6 +1425,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":74,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1183,6 +1435,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":81,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1190,6 +1444,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":100,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1200,6 +1456,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":75,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1209,6 +1467,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":76,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1217,6 +1477,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":72,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1224,6 +1486,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":80,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1234,6 +1498,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":72,"gags":[{"track":"sound","lvl":2,"dmg":7,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1243,6 +1509,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":76,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1251,6 +1519,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":74,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1258,6 +1528,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1268,6 +1540,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":75,"gags":[{"track":"throw","lvl":2,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1277,6 +1551,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":78,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1285,6 +1561,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":72,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1292,6 +1570,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1302,6 +1582,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":73,"gags":[{"track":"squirt","lvl":2,"dmg":8,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1311,6 +1593,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":76,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1319,6 +1603,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":74,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 7] [Hp 72]),
@@ -1326,6 +1612,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
+    "inputKey": "{"cog":{"lvl":7,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":170,"gags":[{"track":"drop","lvl":6,"dmg":170,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1336,6 +1624,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":59,"gags":[{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1345,6 +1635,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":58,"gags":[{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1353,6 +1645,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":65,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1360,6 +1654,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":90,"gags":[{"track":"sound","lvl":7,"dmg":90,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1370,6 +1666,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":57,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1379,6 +1677,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":62,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1387,6 +1687,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":65,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1394,6 +1696,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":100,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1404,6 +1708,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":58,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1413,6 +1719,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":56,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1421,6 +1729,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":62,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1428,6 +1738,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":80,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1438,6 +1750,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":60,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1447,6 +1761,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":62,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1455,6 +1771,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":56,"gags":[{"track":"sound","lvl":3,"dmg":11,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1462,6 +1780,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":70,"gags":[{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1472,6 +1792,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":62,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1481,6 +1803,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":64,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1489,6 +1813,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":62,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1496,6 +1822,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":70,"gags":[{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1506,6 +1834,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":60,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1515,6 +1845,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":62,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1523,6 +1855,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":57,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 6] [Hp 56]),
@@ -1530,6 +1864,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
+    "inputKey": "{"cog":{"lvl":6,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":70,"gags":[{"track":"drop","lvl":5,"dmg":70,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1540,6 +1876,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":44,"gags":[{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1549,6 +1887,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":46,"gags":[{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1557,6 +1897,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":45,"gags":[{"track":"sound","lvl":5,"dmg":21,"multi":true,"knockback":false},{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1564,6 +1906,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":50,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1574,6 +1918,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":44,"gags":[{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1583,6 +1929,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":45,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1591,6 +1939,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":45,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1598,6 +1948,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":100,"gags":[{"track":"throw","lvl":6,"dmg":100,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1608,6 +1960,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":44,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1617,6 +1971,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":44,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1625,6 +1981,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":51,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1632,6 +1990,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":80,"gags":[{"track":"squirt","lvl":6,"dmg":80,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1642,6 +2002,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":50,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1651,6 +2013,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":48,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1659,6 +2023,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":49,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1666,6 +2032,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":45,"gags":[{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1676,6 +2044,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":42,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1685,6 +2055,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":50,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1693,6 +2065,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":47,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1700,6 +2074,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":45,"gags":[{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1710,6 +2086,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":50,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1719,6 +2097,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":48,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1727,6 +2107,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":42,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 5] [Hp 42]),
@@ -1734,6 +2116,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
+    "inputKey": "{"cog":{"lvl":5,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":45,"gags":[{"track":"drop","lvl":4,"dmg":45,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1744,6 +2128,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":31,"gags":[{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1753,6 +2139,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1761,6 +2149,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":33,"gags":[{"track":"sound","lvl":4,"dmg":16,"multi":true,"knockback":false},{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1768,6 +2158,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":50,"gags":[{"track":"sound","lvl":6,"dmg":50,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1778,6 +2170,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":34,"gags":[{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1787,6 +2181,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":32,"gags":[{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1795,6 +2191,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":33,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":true,"knockback":false},{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1802,6 +2200,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":40,"gags":[{"track":"throw","lvl":5,"dmg":40,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1812,6 +2212,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":34,"gags":[{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1821,6 +2223,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":34,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1829,6 +2233,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1836,6 +2242,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"squirt","lvl":5,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1846,6 +2254,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":40,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1855,6 +2265,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":38,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1863,6 +2275,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":34,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1870,6 +2284,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1880,6 +2296,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":42,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1889,6 +2307,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1897,6 +2317,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":36,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1904,6 +2326,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1914,6 +2338,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":40,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1923,6 +2349,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":38,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1931,6 +2359,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":34,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 4] [Hp 30]),
@@ -1938,6 +2368,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":4,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -1948,6 +2380,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":20,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -1957,6 +2391,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":22,"gags":[{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -1965,6 +2401,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":22,"gags":[{"track":"sound","lvl":3,"dmg":11,"multi":true,"knockback":false},{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -1972,6 +2410,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":21,"gags":[{"track":"sound","lvl":5,"dmg":21,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -1982,6 +2422,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":22,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -1991,6 +2433,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":22,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -1999,6 +2443,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":20,"gags":[{"track":"throw","lvl":2,"dmg":10,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2006,6 +2452,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":27,"gags":[{"track":"throw","lvl":4,"dmg":27,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2016,6 +2464,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":20,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2025,6 +2475,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":20,"gags":[{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2033,6 +2485,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":20,"gags":[{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2040,6 +2494,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":21,"gags":[{"track":"squirt","lvl":4,"dmg":21,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2050,6 +2506,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2059,6 +2517,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2067,6 +2527,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":22,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2074,6 +2536,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2084,6 +2548,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2093,6 +2559,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2101,6 +2569,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":24,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2108,6 +2578,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2118,6 +2590,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2127,6 +2601,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2135,6 +2611,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":22,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":2,"dmg":18,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 3] [Hp 20]),
@@ -2142,6 +2620,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
+    "inputKey": "{"cog":{"lvl":3,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"drop","lvl":3,"dmg":30,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2152,6 +2632,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2161,6 +2643,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2169,6 +2653,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"sound","lvl":2,"dmg":7,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2176,6 +2662,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":16,"gags":[{"track":"sound","lvl":4,"dmg":16,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2186,6 +2674,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2195,6 +2685,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2203,6 +2695,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false},{"track":"throw","lvl":1,"dmg":6,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2210,6 +2704,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":17,"gags":[{"track":"throw","lvl":3,"dmg":17,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2220,6 +2716,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2229,6 +2727,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2237,6 +2737,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":15,"gags":[{"track":"squirt","lvl":2,"dmg":8,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2244,6 +2746,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":12,"gags":[{"track":"squirt","lvl":3,"dmg":12,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2254,6 +2758,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2263,6 +2769,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2271,6 +2779,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2278,6 +2788,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":18,"gags":[{"track":"drop","lvl":2,"dmg":18,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2288,6 +2800,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2297,6 +2811,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":30,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2305,6 +2821,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":16,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2312,6 +2830,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":18,"gags":[{"track":"drop","lvl":2,"dmg":18,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2322,6 +2842,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2331,6 +2853,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":28,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2339,6 +2863,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 2] [Hp 12]),
@@ -2346,6 +2872,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
+    "inputKey": "{"cog":{"lvl":2,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":18,"gags":[{"track":"drop","lvl":2,"dmg":18,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2356,6 +2884,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"sound":4},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2365,6 +2895,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"sound":3},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2373,6 +2905,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"sound":2},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"sound","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2380,6 +2914,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"sound":1},"organicGags":{}}",
+    "outputKey": "{"dmg":7,"gags":[{"track":"sound","lvl":2,"dmg":7,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2390,6 +2926,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"throw":4},"organicGags":{}}",
+    "outputKey": "{"dmg":6,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2399,6 +2937,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"throw":3},"organicGags":{}}",
+    "outputKey": "{"dmg":6,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2407,6 +2947,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"throw":2},"organicGags":{}}",
+    "outputKey": "{"dmg":6,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"throw","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2414,6 +2956,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"throw":1},"organicGags":{}}",
+    "outputKey": "{"dmg":6,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2424,6 +2968,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"squirt":4},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2433,6 +2979,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"squirt":3},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2441,6 +2989,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"squirt":2},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false},{"track":"squirt","lvl":1,"dmg":4,"multi":true,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2448,6 +2998,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"squirt":1},"organicGags":{}}",
+    "outputKey": "{"dmg":8,"gags":[{"track":"squirt","lvl":2,"dmg":8,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2458,6 +3010,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"sound":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2467,6 +3021,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"sound":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2475,6 +3031,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"sound":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"sound","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2482,6 +3040,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2492,6 +3052,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"throw":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":16,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2501,6 +3063,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"throw":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":16,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2509,6 +3073,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"throw":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":16,"gags":[{"track":"throw","lvl":1,"dmg":6,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2516,6 +3082,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2526,6 +3094,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"squirt":1,"drop":3},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2535,6 +3105,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
       None,
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"squirt":1,"drop":2},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false},{"track":"drop","lvl":0,"dmg":0,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2543,6 +3115,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"squirt":1,"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":14,"gags":[{"track":"squirt","lvl":1,"dmg":4,"multi":false,"knockback":false},{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
   Combo {
     "cog": Cog([Lvl 1] [Hp 6]),
@@ -2550,6 +3124,8 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
     "gags": [
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
+    "inputKey": "{"cog":{"lvl":1,"isLured":false},"gags":{"drop":1},"organicGags":{}}",
+    "outputKey": "{"dmg":10,"gags":[{"track":"drop","lvl":1,"dmg":10,"multi":false,"knockback":false}]}",
   },
 ]
 `;
