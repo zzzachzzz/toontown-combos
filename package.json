@@ -12,7 +12,7 @@
     "test-watch": "vitest watch",
     "publish": "npm run build && gh-pages --dist dist",
     "gags-cli": "tsx ./src/gags-cli.ts",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit --skipLibCheck"
   },
   "license": "MIT",
   "devDependencies": {
