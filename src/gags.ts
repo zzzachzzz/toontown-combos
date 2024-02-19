@@ -157,9 +157,19 @@ export class Gag {
 
     if (this.isOrg) {
       if (baseDmg < 10) return baseDmg + 1;
-      else return Math.floor(baseDmg * 1.1);
+      else return Math.ceil(baseDmg * (1 + this.orgBonus()));
     } else {
       return baseDmg;
+    }
+  }
+
+  orgBonus(): number {
+    switch (this.track) {
+      case GagTracks.squirt:
+      case GagTracks.drop:
+        return 0.15;
+      default:
+        return 0.10;
     }
   }
 
