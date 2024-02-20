@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Combo > inputKey & outputKey > generates the expected input key and output key 1`] = `
+exports[`FindComboResult > inputKey & outputKey > generates the expected input key and output key 1`] = `
 {
   "inputKey": {
     "cog": {
@@ -15,42 +15,13 @@ exports[`Combo > inputKey & outputKey > generates the expected input key and out
     "organicGags": {},
   },
   "outputKey": {
-    "dmg": 135,
-    "gags": [
-      {
-        "dmg": 4,
-        "knockback": false,
-        "lvl": 1,
-        "multi": false,
-        "track": "sound",
-      },
-      {
-        "dmg": 0,
-        "knockback": false,
-        "lvl": 0,
-        "multi": false,
-        "track": "throw",
-      },
-      {
-        "dmg": 105,
-        "knockback": false,
-        "lvl": 7,
-        "multi": true,
-        "track": "squirt",
-      },
-      {
-        "dmg": 4,
-        "knockback": false,
-        "lvl": 1,
-        "multi": true,
-        "track": "squirt",
-      },
-    ],
+    "dmg": 0,
+    "gags": [],
   },
 }
 `;
 
-exports[`Combo > inputKey & outputKey > generates the expected input key and output key 2`] = `
+exports[`FindComboResult > inputKey & outputKey > generates the expected input key and output key 2`] = `
 {
   "inputKey": {
     "cog": {
@@ -66,44 +37,15 @@ exports[`Combo > inputKey & outputKey > generates the expected input key and out
     },
   },
   "outputKey": {
-    "dmg": 117,
-    "gags": [
-      {
-        "dmg": 4,
-        "knockback": false,
-        "lvl": 1,
-        "multi": false,
-        "track": "squirt",
-      },
-      {
-        "dmg": 0,
-        "knockback": false,
-        "lvl": 0,
-        "multi": false,
-        "track": "squirt",
-      },
-      {
-        "dmg": 49,
-        "knockback": false,
-        "lvl": 4,
-        "multi": true,
-        "track": "drop",
-      },
-      {
-        "dmg": 45,
-        "knockback": false,
-        "lvl": 4,
-        "multi": true,
-        "track": "drop",
-      },
-    ],
+    "dmg": 0,
+    "gags": [],
   },
 }
 `;
 
 exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organicGags":{},"isLured":false} 1`] = `
 [
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 200,
     "gags": [
@@ -113,7 +55,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 228,
     "gags": [
@@ -122,7 +64,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 216,
     "gags": [
@@ -130,14 +72,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 197,
     "gags": [
@@ -147,7 +89,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 201,
     "gags": [
@@ -156,7 +98,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 240,
     "gags": [
@@ -164,14 +106,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 204,
     "gags": [
@@ -181,7 +123,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 197,
     "gags": [
@@ -190,7 +132,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 222,
     "gags": [
@@ -198,14 +140,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 196,
     "gags": [
@@ -215,7 +157,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 220,
     "gags": [
@@ -224,7 +166,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 220,
     "gags": [
@@ -232,14 +174,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 198,
     "gags": [
@@ -249,7 +191,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 208,
     "gags": [
@@ -258,7 +200,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 197,
     "gags": [
@@ -266,14 +208,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 196,
     "gags": [
@@ -283,7 +225,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 198,
     "gags": [
@@ -292,7 +234,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 200,
     "gags": [
@@ -300,14 +242,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 12] [Hp 196]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 159,
     "gags": [
@@ -317,7 +259,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 180,
     "gags": [
@@ -326,7 +268,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 168,
     "gags": [
@@ -334,14 +276,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 161,
     "gags": [
@@ -351,7 +293,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 161,
     "gags": [
@@ -360,7 +302,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 168,
     "gags": [
@@ -368,14 +310,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 156,
     "gags": [
@@ -385,7 +327,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 158,
     "gags": [
@@ -394,7 +336,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 192,
     "gags": [
@@ -402,14 +344,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 166,
     "gags": [
@@ -419,7 +361,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 172,
     "gags": [
@@ -428,7 +370,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 174,
     "gags": [
@@ -436,14 +378,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 161,
     "gags": [
@@ -453,7 +395,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 165,
     "gags": [
@@ -462,7 +404,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 176,
     "gags": [
@@ -470,14 +412,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 156,
     "gags": [
@@ -487,7 +429,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 159,
     "gags": [
@@ -496,7 +438,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 174,
     "gags": [
@@ -504,14 +446,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 11] [Hp 156]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 136,
     "gags": [
@@ -521,7 +463,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 134,
     "gags": [
@@ -530,7 +472,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 134,
     "gags": [
@@ -538,14 +480,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 134,
     "gags": [
@@ -555,7 +497,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 144,
     "gags": [
@@ -564,7 +506,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 132,
     "gags": [
@@ -572,14 +514,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 134,
     "gags": [
@@ -589,7 +531,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 136,
     "gags": [
@@ -598,7 +540,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 132,
     "gags": [
@@ -606,14 +548,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 133,
     "gags": [
@@ -623,7 +565,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 142,
     "gags": [
@@ -632,7 +574,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 174,
     "gags": [
@@ -640,14 +582,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 132,
     "gags": [
@@ -657,7 +599,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 135,
     "gags": [
@@ -666,7 +608,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 176,
     "gags": [
@@ -674,14 +616,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 134,
     "gags": [
@@ -691,7 +633,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 132,
     "gags": [
@@ -700,7 +642,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 174,
     "gags": [
@@ -708,14 +650,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 10] [Hp 132]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 112,
     "gags": [
@@ -725,7 +667,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 111,
     "gags": [
@@ -734,7 +676,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 120,
     "gags": [
@@ -742,14 +684,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 110,
     "gags": [
@@ -759,7 +701,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 113,
     "gags": [
@@ -768,7 +710,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 128,
     "gags": [
@@ -776,14 +718,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 120,
     "gags": [
       Gag(Wedding Cake [Lvl 7] [Dmg 120]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 112,
     "gags": [
@@ -793,7 +735,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 111,
     "gags": [
@@ -802,7 +744,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 111,
     "gags": [
@@ -810,14 +752,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 0,
     "gags": [
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 112,
     "gags": [
@@ -827,7 +769,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 112,
     "gags": [
@@ -836,7 +778,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 174,
     "gags": [
@@ -844,14 +786,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 114,
     "gags": [
@@ -861,7 +803,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 114,
     "gags": [
@@ -870,7 +812,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 110,
     "gags": [
@@ -878,14 +820,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 112,
     "gags": [
@@ -895,7 +837,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 112,
     "gags": [
@@ -904,7 +846,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 174,
     "gags": [
@@ -912,14 +854,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 9] [Hp 110]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 95,
     "gags": [
@@ -929,7 +871,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 93,
     "gags": [
@@ -938,7 +880,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 120,
     "gags": [
@@ -946,14 +888,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 90,
     "gags": [
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 94,
     "gags": [
@@ -963,7 +905,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 98,
     "gags": [
@@ -972,7 +914,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 96,
     "gags": [
@@ -980,14 +922,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 100,
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 90,
     "gags": [
@@ -997,7 +939,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 98,
     "gags": [
@@ -1006,7 +948,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 101,
     "gags": [
@@ -1014,14 +956,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 105,
     "gags": [
       Gag(Geyser [Lvl 7] [Dmg 105]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 98,
     "gags": [
@@ -1031,7 +973,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 94,
     "gags": [
@@ -1040,7 +982,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 91,
     "gags": [
@@ -1048,14 +990,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 90,
     "gags": [
@@ -1065,7 +1007,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 96,
     "gags": [
@@ -1074,7 +1016,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 97,
     "gags": [
@@ -1082,14 +1024,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 98,
     "gags": [
@@ -1099,7 +1041,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 94,
     "gags": [
@@ -1108,7 +1050,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 91,
     "gags": [
@@ -1116,14 +1058,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 8] [Hp 90]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 77,
     "gags": [
@@ -1133,7 +1075,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 76,
     "gags": [
@@ -1142,7 +1084,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 74,
     "gags": [
@@ -1150,14 +1092,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 90,
     "gags": [
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 74,
     "gags": [
@@ -1167,7 +1109,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 74,
     "gags": [
@@ -1176,7 +1118,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 81,
     "gags": [
@@ -1184,14 +1126,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 100,
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 75,
     "gags": [
@@ -1201,7 +1143,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 76,
     "gags": [
@@ -1210,7 +1152,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 72,
     "gags": [
@@ -1218,14 +1160,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 80,
     "gags": [
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 72,
     "gags": [
@@ -1235,7 +1177,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 76,
     "gags": [
@@ -1244,7 +1186,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 74,
     "gags": [
@@ -1252,14 +1194,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 75,
     "gags": [
@@ -1269,7 +1211,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 78,
     "gags": [
@@ -1278,7 +1220,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 72,
     "gags": [
@@ -1286,14 +1228,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 73,
     "gags": [
@@ -1303,7 +1245,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 76,
     "gags": [
@@ -1312,7 +1254,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 74,
     "gags": [
@@ -1320,14 +1262,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 7] [Hp 72]),
     "damage": 170,
     "gags": [
       Gag(Grand Piano [Lvl 6] [Dmg 170]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 59,
     "gags": [
@@ -1337,7 +1279,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 58,
     "gags": [
@@ -1346,7 +1288,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 65,
     "gags": [
@@ -1354,14 +1296,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 90,
     "gags": [
       Gag(Opera Singer [Lvl 7] [Dmg 90]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 57,
     "gags": [
@@ -1371,7 +1313,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 62,
     "gags": [
@@ -1380,7 +1322,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 65,
     "gags": [
@@ -1388,14 +1330,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 100,
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 58,
     "gags": [
@@ -1405,7 +1347,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 56,
     "gags": [
@@ -1414,7 +1356,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 62,
     "gags": [
@@ -1422,14 +1364,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 80,
     "gags": [
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 60,
     "gags": [
@@ -1439,7 +1381,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 62,
     "gags": [
@@ -1448,7 +1390,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 56,
     "gags": [
@@ -1456,14 +1398,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 70,
     "gags": [
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 62,
     "gags": [
@@ -1473,7 +1415,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 64,
     "gags": [
@@ -1482,7 +1424,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 62,
     "gags": [
@@ -1490,14 +1432,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 70,
     "gags": [
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 60,
     "gags": [
@@ -1507,7 +1449,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 62,
     "gags": [
@@ -1516,7 +1458,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 57,
     "gags": [
@@ -1524,14 +1466,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 6] [Hp 56]),
     "damage": 70,
     "gags": [
       Gag(Safe [Lvl 5] [Dmg 70]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 44,
     "gags": [
@@ -1541,7 +1483,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 46,
     "gags": [
@@ -1550,7 +1492,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 45,
     "gags": [
@@ -1558,14 +1500,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 50,
     "gags": [
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 44,
     "gags": [
@@ -1575,7 +1517,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 45,
     "gags": [
@@ -1584,7 +1526,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 45,
     "gags": [
@@ -1592,14 +1534,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 100,
     "gags": [
       Gag(Birthday Cake [Lvl 6] [Dmg 100]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 44,
     "gags": [
@@ -1609,7 +1551,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 44,
     "gags": [
@@ -1618,7 +1560,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 51,
     "gags": [
@@ -1626,14 +1568,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 80,
     "gags": [
       Gag(Storm Cloud [Lvl 6] [Dmg 80]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 50,
     "gags": [
@@ -1643,7 +1585,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 48,
     "gags": [
@@ -1652,7 +1594,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 49,
     "gags": [
@@ -1660,14 +1602,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 45,
     "gags": [
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 42,
     "gags": [
@@ -1677,7 +1619,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 50,
     "gags": [
@@ -1686,7 +1628,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 47,
     "gags": [
@@ -1694,14 +1636,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 45,
     "gags": [
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 50,
     "gags": [
@@ -1711,7 +1653,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 48,
     "gags": [
@@ -1720,7 +1662,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 42,
     "gags": [
@@ -1728,16 +1670,16 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 5] [Hp 42]),
     "damage": 45,
     "gags": [
       Gag(Big Weight [Lvl 4] [Dmg 45]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
-    "damage": 31,
+    "damage": 30,
     "gags": [
       Gag(Whistle [Lvl 2] [Dmg 7]),
       Gag(Whistle [Lvl 2] [Dmg 7]),
@@ -1745,7 +1687,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 30,
     "gags": [
@@ -1754,7 +1696,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 33,
     "gags": [
@@ -1762,14 +1704,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bugle [Lvl 3] [Dmg 11]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 50,
     "gags": [
       Gag(Foghorn [Lvl 6] [Dmg 50]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 34,
     "gags": [
@@ -1779,7 +1721,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 32,
     "gags": [
@@ -1788,7 +1730,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 33,
     "gags": [
@@ -1796,14 +1738,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Fruit Pie Slice [Lvl 2] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 40,
     "gags": [
       Gag(Whole Cream Pie [Lvl 5] [Dmg 40]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 34,
     "gags": [
@@ -1813,7 +1755,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 34,
     "gags": [
@@ -1822,7 +1764,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 30,
     "gags": [
@@ -1830,14 +1772,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 30,
     "gags": [
       Gag(Fire Hose [Lvl 5] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 40,
     "gags": [
@@ -1847,7 +1789,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 38,
     "gags": [
@@ -1856,7 +1798,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 34,
     "gags": [
@@ -1864,14 +1806,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 30,
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 42,
     "gags": [
@@ -1881,7 +1823,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 30,
     "gags": [
@@ -1890,7 +1832,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 36,
     "gags": [
@@ -1898,14 +1840,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 30,
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 40,
     "gags": [
@@ -1915,7 +1857,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 38,
     "gags": [
@@ -1924,7 +1866,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 34,
     "gags": [
@@ -1932,14 +1874,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 4] [Hp 30]),
     "damage": 30,
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 20,
     "gags": [
@@ -1949,7 +1891,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 22,
     "gags": [
@@ -1958,7 +1900,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 22,
     "gags": [
@@ -1966,14 +1908,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 21,
     "gags": [
       Gag(Elephant Trunk [Lvl 5] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 22,
     "gags": [
@@ -1983,7 +1925,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 22,
     "gags": [
@@ -1992,7 +1934,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 20,
     "gags": [
@@ -2000,14 +1942,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 27,
     "gags": [
       Gag(Whole Fruit Pie [Lvl 4] [Dmg 27]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 20,
     "gags": [
@@ -2017,7 +1959,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 20,
     "gags": [
@@ -2026,7 +1968,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 20,
     "gags": [
@@ -2034,14 +1976,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 21,
     "gags": [
       Gag(Seltzer Bottle [Lvl 4] [Dmg 21]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 28,
     "gags": [
@@ -2051,7 +1993,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 28,
     "gags": [
@@ -2060,7 +2002,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 22,
     "gags": [
@@ -2068,14 +2010,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 30,
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 30,
     "gags": [
@@ -2085,7 +2027,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 30,
     "gags": [
@@ -2094,7 +2036,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 24,
     "gags": [
@@ -2102,14 +2044,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 30,
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 28,
     "gags": [
@@ -2119,7 +2061,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 28,
     "gags": [
@@ -2128,7 +2070,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 22,
     "gags": [
@@ -2136,14 +2078,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 3] [Hp 20]),
     "damage": 30,
     "gags": [
       Gag(Anvil [Lvl 3] [Dmg 30]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2153,7 +2095,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2162,7 +2104,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 14,
     "gags": [
@@ -2170,14 +2112,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 16,
     "gags": [
       Gag(Aoogah [Lvl 4] [Dmg 16]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2187,7 +2129,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2196,7 +2138,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2204,14 +2146,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 17,
     "gags": [
       Gag(Cream Pie Slice [Lvl 3] [Dmg 17]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2221,7 +2163,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2230,7 +2172,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 15,
     "gags": [
@@ -2238,14 +2180,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 12,
     "gags": [
       Gag(Squirt Gun [Lvl 3] [Dmg 12]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 28,
     "gags": [
@@ -2255,7 +2197,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 28,
     "gags": [
@@ -2264,7 +2206,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 14,
     "gags": [
@@ -2272,14 +2214,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 18,
     "gags": [
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 30,
     "gags": [
@@ -2289,7 +2231,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 30,
     "gags": [
@@ -2298,7 +2240,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 16,
     "gags": [
@@ -2306,14 +2248,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 18,
     "gags": [
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 28,
     "gags": [
@@ -2323,7 +2265,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 28,
     "gags": [
@@ -2332,7 +2274,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 14,
     "gags": [
@@ -2340,14 +2282,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 2] [Hp 12]),
     "damage": 18,
     "gags": [
       Gag(Sandbag [Lvl 2] [Dmg 18]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
@@ -2357,7 +2299,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
@@ -2366,7 +2308,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
@@ -2374,14 +2316,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Bike Horn [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 7,
     "gags": [
       Gag(Whistle [Lvl 2] [Dmg 7]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 6,
     "gags": [
@@ -2391,7 +2333,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 6,
     "gags": [
@@ -2400,7 +2342,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 6,
     "gags": [
@@ -2408,14 +2350,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 6,
     "gags": [
       Gag(Cupcake [Lvl 1] [Dmg 6]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
@@ -2425,7 +2367,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
@@ -2434,7 +2376,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
@@ -2442,14 +2384,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Squirting Flower [Lvl 1] [Dmg 4]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 8,
     "gags": [
       Gag(Glass of Water [Lvl 2] [Dmg 8]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 14,
     "gags": [
@@ -2459,7 +2401,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 14,
     "gags": [
@@ -2468,7 +2410,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 14,
     "gags": [
@@ -2476,14 +2418,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 16,
     "gags": [
@@ -2493,7 +2435,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 16,
     "gags": [
@@ -2502,7 +2444,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 16,
     "gags": [
@@ -2510,14 +2452,14 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 14,
     "gags": [
@@ -2527,7 +2469,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 14,
     "gags": [
@@ -2536,7 +2478,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       None,
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 14,
     "gags": [
@@ -2544,7 +2486,7 @@ exports[`findCombo > combos match the snapshot for args {"maxCogLvl":12,"organic
       Gag(Flower Pot [Lvl 1] [Dmg 10]),
     ],
   },
-  Combo {
+  FindComboResult {
     "cog": Cog([Lvl 1] [Hp 6]),
     "damage": 10,
     "gags": [

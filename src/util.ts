@@ -1,5 +1,5 @@
 import type { FindComboArgs } from './gags';
-import type { GagTrack } from './constants';
+import { GagTrack, BASE_URL, gags } from './constants';
 
 export function* batch<T>(batchSize: number, iterable: Iterable<T>): Generator<Array<T>> {
   let yieldNext: Array<T> = [];
@@ -12,6 +12,32 @@ export function* batch<T>(batchSize: number, iterable: Iterable<T>): Generator<A
   }
   if (yieldNext.length > 0)
     yield yieldNext;
+}
+
+/**
+ * Generate an inclusive range of numbers.
+ * Examples:
+ * ---------
+ * range(1, 10)        -> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+ * range(0, -10, -1)   -> 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10
+ * range(0, 10, 2)     -> 0, 2, 4, 6, 8, 10
+ */
+export function* range(start: number, end: number, step: number = 1): Generator<number> {
+  if (step === 0) {
+    throw new Error("Step cannot be zero.");
+  }
+  if (start < end && step < 0 || start > end && step > 0) {
+    throw new Error("Invalid range: step direction does not match range direction.");
+  }
+  if (step > 0) {
+    for (let i = start; i <= end; i += step) {
+      yield i;
+    }
+  } else {
+    for (let i = start; i >= end; i += step) {
+      yield i;
+    }
+  }
 }
 
 export function* iterFindComboArgs({
@@ -49,4 +75,13 @@ export function* iterFindComboArgs({
     }
   }
 }
+
+export const getResourceUrl = (path: string): string => `${BASE_URL}${path}`;
+
+export const getGagIconUrl = ({ track, lvl }: { track: GagTrack; lvl: number; }): string => {
+  const iconName = lvl === 0
+    ? 'None'
+    : gags[track][lvl].name.replace(/\s/g, '_');
+  return getResourceUrl(`gag_icons/${iconName}.png`);
+};
 
