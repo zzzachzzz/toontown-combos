@@ -7,9 +7,9 @@ export const Nav = () => {
         <img id="nav-logo" src={util.getResourceUrl('favicon.ico')} />
         <span id="nav-title">Toontown<br/>Combos</span>
         <ul>
-          <li><a href="/grid">Combo Grid</a></li>
+          <li><a href={util.getResourceUrl('grid')}>Combo Grid</a></li>
           <div class="navlink-sep" />
-          <li><a href="/calc">Calculator</a></li>
+          <li><a href={util.getResourceUrl('calc')}>Calculator</a></li>
         </ul>
       </div>
     </nav>

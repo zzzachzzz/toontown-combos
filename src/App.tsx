@@ -1,17 +1,20 @@
 import { Router, Route } from '@solidjs/router';
 import type { ParentComponent } from 'solid-js';
 import { Provider } from './store.instance';
+import * as util from './util';
 import './index.css';
 
 import { Nav } from './Nav';
 import { ComboGrid } from './ComboGrid';
 import { Calculator } from './Calculator';
 
+const _path = util.getResourceUrl;
+
 export const App = () => {
   return (
     <Router root={_App}>
-      <Route path={["/", "/grid"]} component={ComboGrid} />
-      <Route path="/calc" component={Calculator} />
+      <Route path={[_path(''), _path('grid')]} component={ComboGrid} />
+      <Route path={_path('calc')} component={Calculator} />
       <Route path="*404" component={NotFound} />
     </Router>
   );
@@ -32,7 +35,7 @@ const NotFound = () => {
   return (
     <div id="not-found" class="flex-center">
       <div>Page not found</div>
-      <a href="/">Back to home</a>
+      <a href={util.getResourceUrl('')}>Back to home</a>
     </div>
   );
 };
