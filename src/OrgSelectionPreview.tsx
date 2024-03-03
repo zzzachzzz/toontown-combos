@@ -1,6 +1,7 @@
 import { For, Show } from 'solid-js';
 import { useStore } from './store.instance';
-import { gagTrackData } from './constants';
+import { gagTrackDisplayName } from './constants';
+import { getGagIconUrl } from './util';
 
 export const OrgSelectionPreview = () => {
   const store = useStore();
@@ -18,9 +19,9 @@ export const OrgSelectionPreview = () => {
               <li role="option" style={{ background }} class="org-selection-preview-list-item">
                 {selectedOrgGagTrack !== null && <>
                   <div class="img-container">
-                    <img src={gagTrackData[selectedOrgGagTrack].img} />
+                    <img src={getGagIconUrl({ track: selectedOrgGagTrack, lvl: 1 })} />
                   </div>
-                  <span>{gagTrackData[selectedOrgGagTrack].name}</span>
+                  <span>{gagTrackDisplayName[selectedOrgGagTrack]}</span>
                 </>}
               </li>
             );

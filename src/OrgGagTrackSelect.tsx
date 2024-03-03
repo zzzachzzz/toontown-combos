@@ -1,6 +1,7 @@
 import { For } from 'solid-js';
 import { useStore } from './store.instance';
-import { gagTracksArr, gagTrackData, GagTrack } from './constants';
+import { gagTracksArr, gagTrackDisplayName, GagTrack } from './constants';
+import { getGagIconUrl } from './util';
 import * as storage from './local-storage';
 
 type Props = {
@@ -27,9 +28,9 @@ export const OrgGagTrackSelect = (props: Props) => {
             <li role="option" style={{ background: background() }}>
               <button onClick={() => onClickOrgGagTrack(props.toonIdx, gagTrack)}>
                 <div class="img-container">
-                  <img src={gagTrackData[gagTrack].img} />
+                  <img src={getGagIconUrl({ track: gagTrack, lvl: 1 })} />
                 </div>
-                <span>{gagTrackData[gagTrack].name}</span>
+                <span>{gagTrackDisplayName[gagTrack]}</span>
               </button>
             </li>
           );

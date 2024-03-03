@@ -1,12 +1,29 @@
 import { SnapshotSerializer } from 'vitest';
-import { Combo, Gag, Cog } from './gags';
+import { FindComboResult, Combo, Gag, Cog } from './gags';
+
+expect.addSnapshotSerializer({
+  serialize(findComboRes: FindComboResult, config, indentation, depth, refs, printer) {
+    return `FindComboResult ${printer(
+      {
+        cog: findComboRes.cog,
+        damage: findComboRes.damage(),
+        gags: findComboRes.combo.gags,
+      },
+      config,
+      indentation,
+      depth,
+      refs,
+    )}`;
+  },
+  test(val: any) {
+    return val && val instanceof FindComboResult;
+  },
+} satisfies SnapshotSerializer);
 
 expect.addSnapshotSerializer({
   serialize(combo: Combo, config, indentation, depth, refs, printer) {
     return `Combo ${printer(
       {
-        cog: combo.cog,
-        damage: combo.damage(),
         gags: combo.gags,
       },
       config,

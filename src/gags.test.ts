@@ -1,4 +1,4 @@
-import { findCombo, Combo, Gag, Cog } from './gags';
+import { findCombo, FindComboResult, Combo, Gag, Cog } from './gags';
 import * as util from './util';
 
 type IterFindComboArgsArgs = Parameters<typeof util.iterFindComboArgs>[0];
@@ -7,42 +7,33 @@ describe('findCombo', () => {
   test.each<IterFindComboArgsArgs>([
     { maxCogLvl: 12, organicGags: {}, isLured: false },
   ])('combos match the snapshot for args %j', (args) => {
-    const combos: Array<Combo> = Array.from(
+    const findComboResults: Array<FindComboResult> = Array.from(
       util.iterFindComboArgs(args),
       findComboArgs => findCombo(findComboArgs),
     )
-    expect(combos).toMatchSnapshot();
+    expect(findComboResults).toMatchSnapshot();
   });
 });
 
-describe('Combo', () => {
+describe('FindComboResult', () => {
   describe('inputKey & outputKey', () => {
     test.each([
-      new Combo({
-        gags: [
-          new Gag({ track: 'sound', lvl: 1 }),
-          new Gag({ track: 'throw', lvl: 0 }),
-          new Gag({ track: 'squirt', lvl: 1 }),
-          new Gag({ track: 'squirt', lvl: 7 }),
-        ],
+      new FindComboResult({
+        combo: new Combo({ gags: [] }),
         cog: new Cog({ lvl: 11, isLured: true }),
         gagsInput: { sound: 1, throw: 1, squirt: 2 },
+        organicGagsInput: {},
       }),
-      new Combo({
-        gags: [
-          new Gag({ track: 'squirt', lvl: 1 }),
-          new Gag({ track: 'squirt', lvl: 0 }),
-          new Gag({ track: 'drop', lvl: 4 }),
-          new Gag({ track: 'drop', lvl: 4, isOrg: true }),
-        ],
+      new FindComboResult({
+        combo: new Combo({ gags: [] }),
         cog: new Cog({ lvl: 11, isLured: false }),
         gagsInput: { drop: 2, squirt: 2 },
         organicGagsInput: { drop: 1 },
       }),
-    ])('generates the expected input key and output key', (combo) => {
+    ])('generates the expected input key and output key', (findComboRes) => {
       expect({
-        inputKey: combo.inputKey(),
-        outputKey: combo.outputKey(),
+        inputKey: findComboRes.inputKey(),
+        outputKey: findComboRes.outputKey(),
       }).toMatchSnapshot();
     });
   });
