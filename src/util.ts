@@ -49,28 +49,11 @@ export function* iterFindComboArgs({
   'organicGags' | 'isLured'>
 ): Generator<FindComboArgs> {
   const common = { isLured, organicGags };
-  const gagTracks: Array<GagTrack> = ['sound', 'throw', 'squirt', 'drop'];
-  const stunTracks: Array<GagTrack> = ['sound', 'throw', 'squirt'];
+  const gagTracks: Array<GagTrack> = ['sound', 'throw', 'squirt'];
   for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
     for (const gagTrack of gagTracks) {
-      if (gagTrack === 'drop') {
-        for (const stunTrack of stunTracks) {
-          for (let numToons = 4; numToons >= 1; numToons--) {
-            const numDrop = Math.max(numToons - 1, 1);
-            yield {
-              ...common,
-              cogLvl,
-              gags: {
-                drop: numDrop,
-                [stunTrack]: numDrop === numToons ? 0 : 1,
-              },
-            };
-          }
-        }
-      } else {
-        for (let numToons = 4; numToons >= 1; numToons--) {
-          yield { ...common, cogLvl, gags: { [gagTrack]: numToons } };
-        }
+      for (let numToons = 4; numToons >= 1; numToons--) {
+        yield { ...common, cogLvl, gags: { [gagTrack]: numToons } };
       }
     }
   }

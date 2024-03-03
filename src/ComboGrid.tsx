@@ -53,7 +53,7 @@ export const ComboGrid = () => {
           </div>
           <div
             id="combos-grid"
-            style={{ 'grid-template': `repeat(${store.getMaxCogLvl()}, 140px) / repeat(6, 1fr)` }}
+            style={{ 'grid-template': `repeat(${store.getMaxCogLvl()}, 140px) / repeat(3, 1fr)` }}
           >
             <For each={Array.from(util.batch(4, combos()))}>
               {comboBatch => (
