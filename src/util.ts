@@ -44,11 +44,12 @@ export function* iterFindComboArgs({
   maxCogLvl,
   organicGags,
   isLured,
+  minGagLvl,
 }: { maxCogLvl: number; } & Pick<
   FindComboArgs,
-  'organicGags' | 'isLured'>
+  'organicGags' | 'isLured' | 'minGagLvl'>
 ): Generator<FindComboArgs> {
-  const common = { isLured, organicGags };
+  const common = { isLured, organicGags, minGagLvl };
   const gagTracks: Array<GagTrack> = ['sound', 'throw', 'squirt'];
   for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
     for (const gagTrack of gagTracks) {

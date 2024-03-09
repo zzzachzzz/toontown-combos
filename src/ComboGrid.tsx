@@ -15,19 +15,26 @@ export const ComboGrid = () => {
     const maxCogLvl = store.getMaxCogLvl();
     const organicGags = store.getSelectedOrgGagTrackCounts();
     const isLured = store.getIsLured();
+    const level4UpGagsOnly = store.getLevel4UpGagsOnly();
+    const minGagLvl = level4UpGagsOnly ? 4 : null;
 
     return Array.from(
-      util.iterFindComboArgs({ maxCogLvl, organicGags, isLured }),
+      util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
       findComboArgs => findCombo(findComboArgs)
     );
   });
 
-  const onClickHideLvl13UpCogs: JSX.EventHandlerUnion<HTMLInputElement, MouseEvent> = (_) => {
+  const onClickHideLvl13UpCogs: JSX.EventHandler<HTMLInputElement, MouseEvent> = (_) => {
     store.toggleHideLvl13UpCogs();
     storage.saveSavedState(store.getStateForStorage());
   };
 
-  const onClickToggleLure: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent> = (_) => {
+  const onClickToggleLevel4UpGagsOnly: JSX.EventHandler<HTMLInputElement, MouseEvent> = (_) => {
+    store.toggleLevel4UpGagsOnly();
+    storage.saveSavedState(store.getStateForStorage());
+  };
+
+  const onClickToggleLure: JSX.EventHandler<HTMLButtonElement, MouseEvent> = (_) => {
     store.toggleIsLured();
     storage.saveSavedState(store.getStateForStorage());
   };
@@ -37,7 +44,7 @@ export const ComboGrid = () => {
     storage.saveSavedState(store.getStateForStorage());
   };
 
-  const onClickClearSelection: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent> = (_) => {
+  const onClickClearSelection: JSX.EventHandler<HTMLButtonElement, MouseEvent> = (_) => {
     batch(() => {
       store.resetSelectedOrgGags();
       store.setIsLured(false);
@@ -76,7 +83,7 @@ export const ComboGrid = () => {
           </div>
         </div>
       </div>
-      <div id="lvl-13-toggle-container">
+      <div id="combo-grid-settings">
         <label>
           <input
             type="checkbox"
@@ -85,6 +92,15 @@ export const ComboGrid = () => {
             onClick={onClickHideLvl13UpCogs}
           />
           Hide Level 13+ Cogs
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            id="level-4-up-gags-only"
+            checked={store.getLevel4UpGagsOnly()}
+            onClick={onClickToggleLevel4UpGagsOnly}
+          />
+          Level 4+ Gags Only
         </label>
       </div>
       <div id="is-cog-lured">

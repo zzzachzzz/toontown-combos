@@ -266,6 +266,7 @@ export type FindComboArgs = {
    */
   gags: Partial<Record<GagTrack, number>>;
   organicGags: Partial<Record<GagTrack, number>>;
+  minGagLvl?: number | null;
 };
 
 export function findCombo({
@@ -273,7 +274,9 @@ export function findCombo({
   isLured,
   gags,
   organicGags,
+  minGagLvl = null,
 }: FindComboArgs): FindComboResult {
+  // Validate `gags` input
   let sumGags = 0;
   for (const [key, val] of Object.entries(gags)) {
     if (!GagTracks.hasOwnProperty(key)) {
@@ -294,12 +297,17 @@ export function findCombo({
     throw new Error(`Sum of values in \`gags\` argument must be 1 <= n <= 4. Received ${sumGags}.`);
   }
 
+  // Validate `minGagLvl` input
+  if (minGagLvl !== null && (minGagLvl < 1 || minGagLvl > 7)) {
+    throw new Error(`\`minGagLvl\` argument must be 1 <= n <= 7. Received ${minGagLvl}.`);
+  }
+
   const comboGags: Array<Gag> = Object.entries(gags).reduce((acc, [track, numGags]) => {
     for (let i = 0; i < numGags; i++) {
       const isOrg = i <= (organicGags[track as GagTrack] ?? 0) - 1;
       acc.push(new Gag({
         track: track as GagTrack,
-        lvl: 1,
+        lvl: minGagLvl ?? 1,
         isOrg,
       }));
     }
@@ -313,7 +321,7 @@ export function findCombo({
 
   let combo = new Combo({ gags: comboGags });
 
-  combo = _findCombo(combo, cog);
+  combo = _findCombo(combo, cog, minGagLvl);
 
   combo.gags.sort(sortFnGags);
 
@@ -328,7 +336,11 @@ export function findCombo({
 /**
  * Core combo algorithm. Note that the `combo` argument is mutated.
  */
-function _findCombo(combo: Combo, cog: Cog): Combo {
+function _findCombo(
+  combo: Combo,
+  cog: Cog,
+  minGagLvl: number | null,
+): Combo {
   // Increase the level of each gag until the damage is sufficient
   while (!combo.damageKillsCog(cog)) {
     for (const gag of combo.gags) {
@@ -357,10 +369,18 @@ function _findCombo(combo: Combo, cog: Cog): Combo {
       if (combo.gags[i].lvl === 0) {
         break;
       }
-      combo.gags[i].lvl -= 1;
-      if (!combo.damageKillsCog(cog)) {
-        combo.gags[i].lvl += 1;
-        break
+      if (minGagLvl !== null && combo.gags[i].lvl === minGagLvl) {
+        combo.gags[i].lvl = 0;
+        if (!combo.damageKillsCog(cog)) {
+          combo.gags[i].lvl = minGagLvl;
+          break
+        }
+      } else {
+        combo.gags[i].lvl -= 1;
+        if (!combo.damageKillsCog(cog)) {
+          combo.gags[i].lvl += 1;
+          break
+        }
       }
     }
   }
