@@ -1,4 +1,4 @@
-import { JSX, For, batch, createSignal, createMemo } from 'solid-js';
+import { JSX, For, batch, createMemo } from 'solid-js';
 import { useStore } from './store.instance';
 import { Combo } from './Combo';
 import { CogLvlColumn } from './CogLvlColumn';
@@ -9,7 +9,6 @@ import { findCombo, Combo as _Combo } from './gags';
 import * as storage from './local-storage';
 
 export const ComboGrid = () => {
-  const [showOrgView, setShowOrgView] = createSignal(true);
   const store = useStore();
 
   const combos = createMemo(() => {
@@ -30,6 +29,11 @@ export const ComboGrid = () => {
 
   const onClickToggleLure: JSX.EventHandlerUnion<HTMLButtonElement, MouseEvent> = (_) => {
     store.toggleIsLured();
+    storage.saveSavedState(store.getStateForStorage());
+  };
+
+  const onClickToggleShowOrgView: JSX.EventHandler<HTMLButtonElement, MouseEvent> = (_) => {
+    store.toggleShowOrgView();
     storage.saveSavedState(store.getStateForStorage());
   };
 
@@ -88,11 +92,11 @@ export const ComboGrid = () => {
         </button>
       </div>
       <div style="display: flex; justify-content: center;">
-        <button id="expand-org" onClick={() => setShowOrgView(s => !s)}>
-          {showOrgView() ? 'Hide' : 'Show'} organic gags selection
+        <button id="expand-org" onClick={onClickToggleShowOrgView}>
+          {store.getShowOrgView() ? 'Hide' : 'Show'} organic gags selection
         </button>
       </div>
-      {showOrgView() ? (
+      {store.getShowOrgView() ? (
         <div id="org-selection-container">
           <div id="org-selection-header">
             <h4>Select Your Party's Organic Gags</h4>

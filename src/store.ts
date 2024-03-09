@@ -70,6 +70,7 @@ export const createStore = ({
 
     getStateForStorage = (): SavedState => ({
       isLured: state.isLured,
+      showOrgView: state.showOrgView,
       selectedOrgGags: state.selectedOrgGags,
       hideLvl13UpCogs: state.hideLvl13UpCogs,
     });
