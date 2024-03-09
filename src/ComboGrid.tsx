@@ -45,6 +45,11 @@ export const ComboGrid = () => {
     storage.saveSavedState(store.getStateForStorage());
   };
 
+  const combosGridTemplate = () => {
+    const maxLvl = store.getMaxCogLvl();
+    return `repeat(${maxLvl}, 140px) / repeat(3, minmax(min-content, 250px))`;
+  };
+
   return (
     <div id="combo-grid">
       <div style="flex-grow: 1; overflow: hidden;">
@@ -57,7 +62,7 @@ export const ComboGrid = () => {
           </div>
           <div
             id="combos-grid"
-            style={{ 'grid-template': `repeat(${store.getMaxCogLvl()}, 140px) / repeat(3, 1fr)` }}
+            style={{ 'grid-template': combosGridTemplate() }}
           >
             <For each={Array.from(util.batch(4, combos()))}>
               {comboBatch => (
