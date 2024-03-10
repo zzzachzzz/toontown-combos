@@ -125,3 +125,15 @@ export const gagTrackDisplayName: Record<GagTrack, string> = {
   drop:   'Drop',
 };
 
+export enum SosToons {
+  ClerkWill,
+  ClerkPenny,
+  ClerkClara,
+  BarbaraSeville,
+  SidSonata,
+  MoeZart,
+  ClumsyNed,
+  FranzNeckvein,
+  BarnacleBessie,
+};
+

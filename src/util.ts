@@ -1,5 +1,5 @@
 import type { FindComboArgs } from './gags';
-import { GagTrack, BASE_URL, gags } from './constants';
+import { GagTrack, BASE_URL, gags, SosToons } from './constants';
 
 export function* batch<T>(batchSize: number, iterable: Iterable<T>): Generator<Array<T>> {
   let yieldNext: Array<T> = [];
@@ -67,5 +67,24 @@ export const getGagIconUrl = ({ track, lvl }: { track: GagTrack; lvl: number; })
     ? 'None'
     : gags[track][lvl].name.replace(/\s/g, '_');
   return getResourceUrl(`gag_icons/${iconName}.png`);
+};
+
+export const getSosToonIconUrl = (sosToon: SosToons): string => {
+  const iconName = (() => {
+    switch (sosToon) {
+      case SosToons.ClerkWill:      return 'clerk-will';
+      case SosToons.ClerkPenny:     return 'clerk-penny';
+      case SosToons.ClerkClara:     return 'clerk-clara';
+      case SosToons.BarbaraSeville: return 'barbara-seville';
+      case SosToons.SidSonata:      return 'sid-sonata';
+      case SosToons.MoeZart:        return 'moe-zart';
+      case SosToons.ClumsyNed:      return 'clumsy-ned';
+      case SosToons.FranzNeckvein:  return 'franz-neckvein';
+      case SosToons.BarnacleBessie: return 'barnacle-bessie';
+      default:
+        throw new Error(`Unmatched SosToons value '${sosToon}'`);
+    }
+  })();
+  return getResourceUrl(`${iconName}.png`);
 };
 

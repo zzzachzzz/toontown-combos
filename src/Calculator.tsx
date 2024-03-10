@@ -1,10 +1,18 @@
 import { JSX, For, Show, createSignal, createMemo } from 'solid-js';
 import * as util from './util';
-import { Combo, Gag, sortFnGags } from './gags';
-import { GagTracks, GagTrack, gagTrackDisplayName, cogHp } from './constants';
+import { Combo, Gag, sortFnGags, SosToonGag } from './gags';
+import { GagTracks, GagTrack, gagTrackDisplayName, cogHp, SosToons } from './constants';
 
 type OnClickGridGag = (
   data: { track: GagTrack; lvl: number; },
+  e: MouseEvent & {
+    currentTarget: HTMLButtonElement;
+    target: JSX.Element;
+  }
+) => void;
+
+type OnClickGridSosToonGag = (
+  data: { sosToon: SosToons; },
   e: MouseEvent & {
     currentTarget: HTMLButtonElement;
     target: JSX.Element;
@@ -54,6 +62,18 @@ export const Calculator = () => {
     });
   };
 
+  const onClickGridSosToonGag: OnClickGridSosToonGag = (data, _) => {
+    setCombo(c => {
+      if (c) {
+        c.gags.push(new SosToonGag(data.sosToon))
+        c.gags.sort(sortFnGags);
+        return c;
+      } else {
+        return new Combo({ gags: [new SosToonGag(data.sosToon)] });
+      }
+    });
+  };
+
   const onClickSelectedGag: OnClickSelectedGag = (data, e) => {
     // For handling onContextMenu (right click), prevent default
     // behavior and proceed unless modifier key is pressed.
@@ -98,7 +118,10 @@ export const Calculator = () => {
 
   return (
     <div id="calc-page">
-      <GagGrid onClickGag={onClickGridGag} />
+      <GagGrid
+        onClickGag={onClickGridGag}
+        onClickGridSosToonGag={onClickGridSosToonGag}
+      />
       <CogsHp comboDamage={combo()?.damage?.() ?? 0} />
       <ComboInfo
         combo={combo()}
@@ -129,6 +152,7 @@ export const Calculator = () => {
 
 type GagGridProps = {
   onClickGag: OnClickGridGag;
+  onClickGridSosToonGag: OnClickGridSosToonGag;
 };
 
 const GagGrid = (props: GagGridProps) => {
@@ -152,6 +176,40 @@ const GagGrid = (props: GagGridProps) => {
                 }}
               </For>
             </div>
+          );
+        }}
+      </For>
+      {/* Damaging SOS Toons */}
+      <SosToonsGroup
+        sosToons={[
+          SosToons.ClerkWill, SosToons.ClerkPenny, SosToons.ClerkClara,
+          SosToons.BarbaraSeville, SosToons.SidSonata, SosToons.MoeZart,
+          SosToons.ClumsyNed, SosToons.FranzNeckvein, SosToons.BarnacleBessie,
+        ]}
+        onClickGridSosToonGag={props.onClickGridSosToonGag}
+      />
+    </div>
+  );
+};
+
+type SosToonsProps = {
+  sosToons: Array<SosToons>;
+  onClickGridSosToonGag: OnClickGridSosToonGag;
+};
+
+const SosToonsGroup = (props: SosToonsProps) => {
+  return (
+    <div class="sos-toons">
+      <For each={props.sosToons}>
+        {sosToon => {
+          return (
+            <button
+              class="calc-gag-grid-cell"
+              onClick={[props.onClickGridSosToonGag, { sosToon }]}
+            >
+              <img class="no-drag sos-toon-icon" src={util.getSosToonIconUrl(sosToon)} />
+              <img class="no-drag sos-toon-gag-icon" src={getSosGagIconUrl(sosToon)} />
+            </button>
           );
         }}
       </For>
@@ -289,16 +347,29 @@ const ComboInfo = (props: ComboInfoProps) => {
                           onClick={[props.onClickSelectedGag, { gag, action: OnClickSelectedGagAction.Remove }]}
                           onContextMenu={[props.onClickSelectedGag, { gag, action: OnClickSelectedGagAction.ToggleOrg }]}
                           class="selected-gag-img-container"
+                          style={{
+                            background: gag instanceof SosToonGag ? 'var(--lightgrey)' : undefined,
+                            border: gag instanceof SosToonGag ? '2px solid var(--gag-bg-blue)' : undefined,
+                          }}
                         >
-                          <img src={util.getGagIconUrl({ track: gag.track, lvl: gag.lvl })} />
+                          {gag instanceof SosToonGag
+                            ? <>
+                              <img class="no-drag sos-toon-icon" src={util.getSosToonIconUrl(gag.sosToon)} />
+                              <img class="no-drag sos-toon-gag-icon" src={getSosGagIconUrl(gag.sosToon)} />
+                            </> : (
+                              <img src={util.getGagIconUrl({ track: gag.track, lvl: gag.lvl })} />
+                            )
+                          }
                         </button>
-                        <button
-                          onClick={[props.onClickOrgToggle, { gag }]}
-                          class="selected-org-img-container"
-                          style={{ opacity: gag.isOrg ? '100%' : '50%' }}
-                        >
-                          <img src={util.getResourceUrl('Organic.png')} />
-                        </button>
+                        <Show when={!(gag instanceof SosToonGag)}>
+                          <button
+                            onClick={[props.onClickOrgToggle, { gag }]}
+                            class="selected-org-img-container"
+                            style={{ opacity: gag.isOrg ? '100%' : '50%' }}
+                          >
+                            <img src={util.getResourceUrl('Organic.png')} />
+                          </button>
+                        </Show>
                         <span class="selected-gag-name">{gag.name}{gag.isOrg && ' (Org) '}</span>
                         <Show when={gag.damage > 0}>
                           <span class="selected-gag-base-dmg">{`[${gag.damage}]`}</span>
@@ -328,5 +399,21 @@ const ComboInfo = (props: ComboInfoProps) => {
       </div>
     </div>
   );
+};
+
+const getSosGagIconUrl = (sosToon: SosToons) => {
+  switch (sosToon) {
+    case SosToons.ClerkWill:      return util.getGagIconUrl({ track: GagTracks.trap, lvl: 4 });
+    case SosToons.ClerkPenny:     return util.getGagIconUrl({ track: GagTracks.trap, lvl: 5 });
+    case SosToons.ClerkClara:     return util.getGagIconUrl({ track: GagTracks.trap, lvl: 6 });
+    case SosToons.BarbaraSeville: return util.getGagIconUrl({ track: GagTracks.sound, lvl: 4 });
+    case SosToons.SidSonata:      return util.getGagIconUrl({ track: GagTracks.sound, lvl: 5 });
+    case SosToons.MoeZart:        return util.getGagIconUrl({ track: GagTracks.sound, lvl: 6 });
+    case SosToons.ClumsyNed:      return util.getGagIconUrl({ track: GagTracks.drop, lvl: 4 });
+    case SosToons.FranzNeckvein:  return util.getGagIconUrl({ track: GagTracks.drop, lvl: 5 });
+    case SosToons.BarnacleBessie: return util.getGagIconUrl({ track: GagTracks.drop, lvl: 6 });
+    default:
+      throw new Error(`Unmatched SosToons value '${sosToon}'`);
+  }
 };
 
