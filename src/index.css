@@ -476,8 +476,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .calc-gag-grid-cell img {
   aspect-ratio: 1 / 1;
-  max-width: 80%;
-  max-height: 35px;
+  max-width: 75%;
+  max-height: 30px;
   object-fit: contain;
   display: block;
 }
@@ -494,6 +494,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .sos-toons .calc-gag-grid-cell {
   background: var(--lightgrey);
+  position: relative;
+}
+
+.sos-toon-gag-icon {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  max-height: 45% !important;
+  max-width: 45% !important;
 }
 
 #cogs-hp {
@@ -606,6 +615,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--gag-bg-blue);
   padding: 0.2rem;
   border-radius: 10px;
+  position: relative;
 }
 
 .selected-org-img-container img {

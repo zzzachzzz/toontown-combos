@@ -199,9 +199,7 @@ type SosToonsProps = {
 
 const SosToonsGroup = (props: SosToonsProps) => {
   return (
-    <div
-      class="sos-toons"
-    >
+    <div class="sos-toons">
       <For each={props.sosToons}>
         {sosToon => {
           return (
@@ -209,7 +207,8 @@ const SosToonsGroup = (props: SosToonsProps) => {
               class="calc-gag-grid-cell"
               onClick={[props.onClickGridSosToonGag, { sosToon }]}
             >
-              <img class="no-drag" src={util.getSosToonIconUrl(sosToon)} />
+              <img class="no-drag sos-toon-icon" src={util.getSosToonIconUrl(sosToon)} />
+              <img class="no-drag sos-toon-gag-icon" src={getSosGagIconUrl(sosToon)} />
             </button>
           );
         }}
@@ -354,8 +353,12 @@ const ComboInfo = (props: ComboInfoProps) => {
                           }}
                         >
                           {gag instanceof SosToonGag
-                            ? <img src={util.getSosToonIconUrl(gag.sosToon)} />
-                            : <img src={util.getGagIconUrl({ track: gag.track, lvl: gag.lvl })} />
+                            ? <>
+                              <img class="no-drag sos-toon-icon" src={util.getSosToonIconUrl(gag.sosToon)} />
+                              <img class="no-drag sos-toon-gag-icon" src={getSosGagIconUrl(gag.sosToon)} />
+                            </> : (
+                              <img src={util.getGagIconUrl({ track: gag.track, lvl: gag.lvl })} />
+                            )
                           }
                         </button>
                         <Show when={!(gag instanceof SosToonGag)}>
@@ -396,5 +399,21 @@ const ComboInfo = (props: ComboInfoProps) => {
       </div>
     </div>
   );
+};
+
+const getSosGagIconUrl = (sosToon: SosToons) => {
+  switch (sosToon) {
+    case SosToons.ClerkWill:       return util.getGagIconUrl({ track: GagTracks.trap, lvl: 4 });
+    case SosToons.ClerkPenny:      return util.getGagIconUrl({ track: GagTracks.trap, lvl: 5 });
+    case SosToons.ClerkClara:      return util.getGagIconUrl({ track: GagTracks.trap, lvl: 6 });
+    case SosToons.BarbaraSeville:  return util.getGagIconUrl({ track: GagTracks.sound, lvl: 4 });
+    case SosToons.SidSonata:       return util.getGagIconUrl({ track: GagTracks.sound, lvl: 5 });
+    case SosToons.MoeZart:         return util.getGagIconUrl({ track: GagTracks.sound, lvl: 6 });
+    case SosToons.ClumsyNed:       return util.getGagIconUrl({ track: GagTracks.drop, lvl: 4 });
+    case SosToons.FranzNeckvein:   return util.getGagIconUrl({ track: GagTracks.drop, lvl: 5 });
+    case SosToons.BarnacleBessie:  return util.getGagIconUrl({ track: GagTracks.drop, lvl: 6 });
+    default:
+      throw new Error(`Unmatched SosToons value '${sosToon}'`);
+  }
 };
 
