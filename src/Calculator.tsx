@@ -180,20 +180,14 @@ const GagGrid = (props: GagGridProps) => {
         }}
       </For>
       {/* Damaging SOS Toons */}
-      <div class="sos-toons-row">
-        <SosToonsGroup
-          sosToons={[SosToons.ClerkWill, SosToons.ClerkPenny, SosToons.ClerkClara]}
-          onClickGridSosToonGag={props.onClickGridSosToonGag}
-        />
-        <SosToonsGroup
-          sosToons={[SosToons.BarbaraSeville, SosToons.SidSonata, SosToons.MoeZart]}
-          onClickGridSosToonGag={props.onClickGridSosToonGag}
-        />
-        <SosToonsGroup
-          sosToons={[SosToons.ClumsyNed, SosToons.FranzNeckvein, SosToons.BarnacleBessie]}
-          onClickGridSosToonGag={props.onClickGridSosToonGag}
-        />
-      </div>
+      <SosToonsGroup
+        sosToons={[
+          SosToons.ClerkWill, SosToons.ClerkPenny, SosToons.ClerkClara,
+          SosToons.BarbaraSeville, SosToons.SidSonata, SosToons.MoeZart,
+          SosToons.ClumsyNed, SosToons.FranzNeckvein, SosToons.BarnacleBessie,
+        ]}
+        onClickGridSosToonGag={props.onClickGridSosToonGag}
+      />
     </div>
   );
 };

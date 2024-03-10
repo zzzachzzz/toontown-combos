@@ -482,33 +482,14 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-.sos-toons-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .sos-toons {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   padding: 0.4rem;
   gap: 0.4rem;
   background: var(--gag-bg-blue);
   margin-top: 0.5rem;
-}
-
-.sos-toons:first-child {
-  padding-right: 0.2rem;
-  border-radius: 10px 0 0 10px;
-}
-
-.sos-toons:nth-child(2) {
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-}
-
-.sos-toons:last-child {
-  padding-left: 0.2rem;
-  border-radius:  0 10px 10px 0 ;
+  border-radius: 10px;
 }
 
 .sos-toons .calc-gag-grid-cell {
