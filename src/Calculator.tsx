@@ -403,15 +403,15 @@ const ComboInfo = (props: ComboInfoProps) => {
 
 const getSosGagIconUrl = (sosToon: SosToons) => {
   switch (sosToon) {
-    case SosToons.ClerkWill:       return util.getGagIconUrl({ track: GagTracks.trap, lvl: 4 });
-    case SosToons.ClerkPenny:      return util.getGagIconUrl({ track: GagTracks.trap, lvl: 5 });
-    case SosToons.ClerkClara:      return util.getGagIconUrl({ track: GagTracks.trap, lvl: 6 });
-    case SosToons.BarbaraSeville:  return util.getGagIconUrl({ track: GagTracks.sound, lvl: 4 });
-    case SosToons.SidSonata:       return util.getGagIconUrl({ track: GagTracks.sound, lvl: 5 });
-    case SosToons.MoeZart:         return util.getGagIconUrl({ track: GagTracks.sound, lvl: 6 });
-    case SosToons.ClumsyNed:       return util.getGagIconUrl({ track: GagTracks.drop, lvl: 4 });
-    case SosToons.FranzNeckvein:   return util.getGagIconUrl({ track: GagTracks.drop, lvl: 5 });
-    case SosToons.BarnacleBessie:  return util.getGagIconUrl({ track: GagTracks.drop, lvl: 6 });
+    case SosToons.ClerkWill:      return util.getGagIconUrl({ track: GagTracks.trap, lvl: 4 });
+    case SosToons.ClerkPenny:     return util.getGagIconUrl({ track: GagTracks.trap, lvl: 5 });
+    case SosToons.ClerkClara:     return util.getGagIconUrl({ track: GagTracks.trap, lvl: 6 });
+    case SosToons.BarbaraSeville: return util.getGagIconUrl({ track: GagTracks.sound, lvl: 4 });
+    case SosToons.SidSonata:      return util.getGagIconUrl({ track: GagTracks.sound, lvl: 5 });
+    case SosToons.MoeZart:        return util.getGagIconUrl({ track: GagTracks.sound, lvl: 6 });
+    case SosToons.ClumsyNed:      return util.getGagIconUrl({ track: GagTracks.drop, lvl: 4 });
+    case SosToons.FranzNeckvein:  return util.getGagIconUrl({ track: GagTracks.drop, lvl: 5 });
+    case SosToons.BarnacleBessie: return util.getGagIconUrl({ track: GagTracks.drop, lvl: 6 });
     default:
       throw new Error(`Unmatched SosToons value '${sosToon}'`);
   }

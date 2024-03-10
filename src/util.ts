@@ -72,15 +72,15 @@ export const getGagIconUrl = ({ track, lvl }: { track: GagTrack; lvl: number; })
 export const getSosToonIconUrl = (sosToon: SosToons): string => {
   const iconName = (() => {
     switch (sosToon) {
-      case SosToons.ClerkWill:       return 'clerk-will';
-      case SosToons.ClerkPenny:      return 'clerk-penny';
-      case SosToons.ClerkClara:      return 'clerk-clara';
-      case SosToons.BarbaraSeville:  return 'barbara-seville';
-      case SosToons.SidSonata:       return 'sid-sonata';
-      case SosToons.MoeZart:         return 'moe-zart';
-      case SosToons.ClumsyNed:       return 'clumsy-ned';
-      case SosToons.FranzNeckvein:   return 'franz-neckvein';
-      case SosToons.BarnacleBessie:  return 'barnacle-bessie';
+      case SosToons.ClerkWill:      return 'clerk-will';
+      case SosToons.ClerkPenny:     return 'clerk-penny';
+      case SosToons.ClerkClara:     return 'clerk-clara';
+      case SosToons.BarbaraSeville: return 'barbara-seville';
+      case SosToons.SidSonata:      return 'sid-sonata';
+      case SosToons.MoeZart:        return 'moe-zart';
+      case SosToons.ClumsyNed:      return 'clumsy-ned';
+      case SosToons.FranzNeckvein:  return 'franz-neckvein';
+      case SosToons.BarnacleBessie: return 'barnacle-bessie';
       default:
         throw new Error(`Unmatched SosToons value '${sosToon}'`);
     }

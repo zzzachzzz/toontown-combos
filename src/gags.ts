@@ -153,15 +153,15 @@ export class SosToonGag extends Gag {
 
   override get name(): string {
     switch (this.sosToon) {
-      case SosToons.ClerkWill:       return 'Clerk Will';
-      case SosToons.ClerkPenny:      return 'Clerk Penny';
-      case SosToons.ClerkClara:      return 'Clerk Clara';
-      case SosToons.BarbaraSeville:  return 'Barbara Seville';
-      case SosToons.SidSonata:       return 'Sid Sonata';
-      case SosToons.MoeZart:         return 'Moe Zart';
-      case SosToons.ClumsyNed:       return 'Clumsy Ned';
-      case SosToons.FranzNeckvein:   return 'Franz Neckvein';
-      case SosToons.BarnacleBessie:  return 'Barnacle Bessie';
+      case SosToons.ClerkWill:      return 'Clerk Will';
+      case SosToons.ClerkPenny:     return 'Clerk Penny';
+      case SosToons.ClerkClara:     return 'Clerk Clara';
+      case SosToons.BarbaraSeville: return 'Barbara Seville';
+      case SosToons.SidSonata:      return 'Sid Sonata';
+      case SosToons.MoeZart:        return 'Moe Zart';
+      case SosToons.ClumsyNed:      return 'Clumsy Ned';
+      case SosToons.FranzNeckvein:  return 'Franz Neckvein';
+      case SosToons.BarnacleBessie: return 'Barnacle Bessie';
       default:
         throw new Error(`Unmatched SosToons value '${this.sosToon}'`);
     }
@@ -169,15 +169,15 @@ export class SosToonGag extends Gag {
 
   override get damage(): number {
     switch (this.sosToon) {
-      case SosToons.ClerkWill:       return 60;
-      case SosToons.ClerkPenny:      return 120;
-      case SosToons.ClerkClara:      return 180;
-      case SosToons.BarbaraSeville:  return 35;
-      case SosToons.SidSonata:       return 55;
-      case SosToons.MoeZart:         return 75;
-      case SosToons.ClumsyNed:       return 60;
-      case SosToons.FranzNeckvein:   return 100;
-      case SosToons.BarnacleBessie:  return 170;
+      case SosToons.ClerkWill:      return 60;
+      case SosToons.ClerkPenny:     return 120;
+      case SosToons.ClerkClara:     return 180;
+      case SosToons.BarbaraSeville: return 35;
+      case SosToons.SidSonata:      return 55;
+      case SosToons.MoeZart:        return 75;
+      case SosToons.ClumsyNed:      return 60;
+      case SosToons.FranzNeckvein:  return 100;
+      case SosToons.BarnacleBessie: return 170;
       default:
         throw new Error(`Unmatched SosToons value '${this.sosToon}'`);
     }
