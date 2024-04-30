@@ -13,8 +13,8 @@ const _path = util.getResourceUrl;
 export const App = () => {
   return (
     <Router root={_App}>
-      <Route path={[_path(''), _path('grid')]} component={ComboGrid} />
-      <Route path={_path('calc')} component={Calculator} />
+      <Route path={[_path(''), _path('calc')]} component={Calculator} />
+      <Route path={_path('grid')} component={ComboGrid} />
       <Route path="*404" component={NotFound} />
     </Router>
   );
