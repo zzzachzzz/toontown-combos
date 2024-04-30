@@ -476,7 +476,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .calc-gag-grid-cell img {
   aspect-ratio: 1 / 1;
-  max-width: 75%;
+  max-width: min(70%, 30px);
   max-height: 30px;
   object-fit: contain;
   display: block;
