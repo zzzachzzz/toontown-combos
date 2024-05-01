@@ -10,6 +10,8 @@ export const Nav = () => {
           <li><a href={util.getResourceUrl('calc')}>Calculator</a></li>
           <div class="navlink-sep" />
           <li><a href={util.getResourceUrl('grid')}>Combo Grid</a></li>
+          <div class="navlink-sep" />
+          <li><a href={util.getResourceUrl('about')}>About</a></li>
         </ul>
       </div>
     </nav>

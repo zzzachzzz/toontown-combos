@@ -7,6 +7,7 @@ import './index.css';
 import { Nav } from './Nav';
 import { ComboGrid } from './ComboGrid';
 import { Calculator } from './Calculator';
+import { About } from './About';
 
 const _path = util.getResourceUrl;
 
@@ -15,6 +16,7 @@ export const App = () => {
     <Router root={_App}>
       <Route path={[_path(''), _path('calc')]} component={Calculator} />
       <Route path={_path('grid')} component={ComboGrid} />
+      <Route path={_path('about')} component={About} />
       <Route path="*404" component={NotFound} />
     </Router>
   );
