@@ -1,9 +1,8 @@
-import { JSX, For, batch, createMemo } from 'solid-js';
+import { JSX, For, Show, batch, createMemo } from 'solid-js';
 import { useStore } from './store.instance';
 import { Combo } from './Combo';
 import { CogLvlColumn } from './CogLvlColumn';
 import { OrgSelection } from './OrgSelection';
-import { OrgSelectionPreview } from './OrgSelectionPreview';
 import * as util from './util';
 import { findCombo, Combo as _Combo } from './gags';
 import * as storage from './local-storage';
@@ -117,8 +116,8 @@ export const ComboGrid = () => {
           {store.getShowOrgView() ? 'Hide' : 'Show'} organic gags selection
         </button>
       </div>
-      {store.getShowOrgView() ? (
-        <div id="org-selection-container">
+      <div id="org-selection-container">
+        <Show when={store.getShowOrgView()}>
           <div id="org-selection-header">
             <h4>Select Your Party's Organic Gags</h4>
             <button
@@ -128,15 +127,9 @@ export const ComboGrid = () => {
               Clear Selection
             </button>
           </div>
-          <div id="org-selection">
-            <OrgSelection />
-          </div>
-        </div>
-      ) : (
-        <div id="org-selection-preview">
-          <OrgSelectionPreview />
-        </div>
-      )}
+        </Show>
+        <OrgSelection />
+      </div>
     </div>
   );
 };
