@@ -1,9 +1,23 @@
 import * as util from './util';
+import {
+  TTR_VERSION,
+  TTR_VERSION_RELEASE_NOTES_LINK,
+} from './constants';
 
 export const About = () => {
   return (
     <div id="about-page">
       <div id="about-page-content">
+        <div id="version-info">
+          <span>Toontown Combos is up-to-date with Toontown Rewritten version </span>
+          <a
+            href={TTR_VERSION_RELEASE_NOTES_LINK}
+          >
+            {TTR_VERSION}
+          </a>
+          <span>.</span>
+        </div>
+
         <p>
           Hello! <i>*waves*</i> I am <b>Mr. von</b>! You may also see me around playing as <b>Little von</b> or <b>Baron von</b>.
         </p>

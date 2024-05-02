@@ -42,12 +42,13 @@ body {
 }
 
 #nav {
-  height: 50px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0.2rem;
   background: var(--black);
+  color: var(--lightgrey);
 }
 
 main {
@@ -99,6 +100,12 @@ main {
   width: 1px;
   background: var(--lightgrey);
   margin: 0 0.6rem;
+}
+
+#version-info {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-style: italic;
 }
 
 #combo-grid {
