@@ -89,7 +89,9 @@ export const Calculator = () => {
         break;
       }
       case OnClickSelectedGagAction.ToggleOrg: {
-        toggleGagOrg(data.gag);
+        if (!(data.gag instanceof SosToonGag)) {
+          toggleGagOrg(data.gag);
+        }
         break;
       }
       default:
