@@ -32,6 +32,19 @@ type OnClickSelectedGag = (
   }
 ) => void;
 
+enum OnClickSelectedGagLvlModAction {
+  LvlUp,
+  LvlDown,
+}
+
+type OnClickSelectedGagLvlMod = (
+  data: { gag: Gag; action: OnClickSelectedGagLvlModAction; },
+  e: MouseEvent & {
+    currentTarget: HTMLButtonElement;
+    target: JSX.Element;
+  }
+) => void;
+
 type OnClickOrgToggle = (
   data: { gag: Gag; },
   e: MouseEvent & {
@@ -99,6 +112,16 @@ export const Calculator = () => {
     }
   };
 
+  const onClickSelectedGagLvlMod: OnClickSelectedGagLvlMod = (data, _) => {
+    setCombo(c => {
+      const _gag = c.gags.find(g => g === data.gag)!;
+      _gag.lvl += data.action === OnClickSelectedGagLvlModAction.LvlUp
+        ? 1
+        : -1;
+      return c;
+    });
+  };
+
   const onClickClearGags: OnClickClearGags = (_) => {
     setCombo(c => {
       c.gags = [];
@@ -129,11 +152,12 @@ export const Calculator = () => {
         combo={combo()}
         onClickOrgToggle={onClickOrgToggle}
         onClickSelectedGag={onClickSelectedGag}
+        onClickSelectedGagLvlMod={onClickSelectedGagLvlMod}
         onClickClearGags={onClickClearGags}
       />
       <div id="calc-page-how-to">
         <ul>
-          <li>Left-click to select a gag</li>
+          <li>Click to select a gag</li>
           <li>Right-click to select an organic gag</li>
           <li>
             <span>Or click the organic icon&nbsp;</span>
@@ -145,7 +169,8 @@ export const Calculator = () => {
             </span>
             <span>&nbsp;of a selected gag to toggle organic</span>
           </li>
-          <li>Left-click a selected gag to deselect it</li>
+          <li>Click a selected gag to deselect it</li>
+          <li>Click a selected gag's up/down buttons to level it up/down</li>
         </ul>
       </div>
     </div>
@@ -267,6 +292,7 @@ type ComboInfoProps = {
   combo: Combo;
   onClickOrgToggle: OnClickOrgToggle;
   onClickSelectedGag: OnClickSelectedGag;
+  onClickSelectedGagLvlMod: OnClickSelectedGagLvlMod;
   onClickClearGags: OnClickClearGags;
 };
 
@@ -351,7 +377,7 @@ const ComboInfo = (props: ComboInfoProps) => {
                           class="selected-gag-img-container"
                           style={{
                             background: gag instanceof SosToonGag ? 'var(--lightgrey)' : undefined,
-                            border: gag instanceof SosToonGag ? '2px solid var(--gag-bg-blue)' : undefined,
+                            border: `2px solid ${gag instanceof SosToonGag ? 'var(--gag-bg-blue)' : 'transparent'}`,
                           }}
                         >
                           {gag instanceof SosToonGag
@@ -363,6 +389,26 @@ const ComboInfo = (props: ComboInfoProps) => {
                             )
                           }
                         </button>
+                        <div class="selected-gag-lvl-mod">
+                          <button
+                            onClick={[props.onClickSelectedGagLvlMod, { gag, action: OnClickSelectedGagLvlModAction.LvlUp }]}
+                            class="selected-gag-lvl-mod-img-container"
+                            style={{ opacity: canLvlUpGag(gag) ? '100%' : '50%' }}
+                            disabled={!canLvlUpGag(gag)}
+                            aria-label="Level up gag"
+                          >
+                            &#9650;
+                          </button>
+                          <button
+                            onClick={[props.onClickSelectedGagLvlMod, { gag, action: OnClickSelectedGagLvlModAction.LvlDown }]}
+                            class="selected-gag-lvl-mod-img-container"
+                            style={{ opacity: canLvlDownGag(gag) ? '100%' : '50%' }}
+                            disabled={!canLvlDownGag(gag)}
+                            aria-label="Level down gag"
+                          >
+                            &#9660;
+                          </button>
+                        </div>
                         <Show when={!(gag instanceof SosToonGag)}>
                           <button
                             onClick={[props.onClickOrgToggle, { gag }]}
@@ -417,5 +463,16 @@ const getSosGagIconUrl = (sosToon: SosToons) => {
     default:
       throw new Error(`Unmatched SosToons value '${sosToon}'`);
   }
+};
+
+const canLvlUpGag = (gag: Gag): boolean => {
+  if (gag instanceof SosToonGag) {
+    return gag.lvl < 3;
+  }
+  return gag.lvl < 7;
+};
+
+const canLvlDownGag = (gag: Gag): boolean => {
+  return gag.lvl > 1;
 };
 

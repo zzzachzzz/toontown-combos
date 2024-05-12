@@ -140,3 +140,24 @@ export enum SosToons {
   BarnacleBessie,
 };
 
+export const sosToonGags: Record<
+  GagTracks.trap | GagTracks.sound | GagTracks.drop,
+  Record<number, { name: string; damage: number; sosToon: SosToons; }>
+> = {
+  [GagTracks.trap]: {
+    1: { name: 'Clerk Will',   damage: 60,   sosToon: SosToons.ClerkWill },
+    2: { name: 'Clerk Penny',  damage: 120,  sosToon: SosToons.ClerkPenny },
+    3: { name: 'Clerk Clara',  damage: 180,  sosToon: SosToons.ClerkClara },
+  },
+  [GagTracks.sound]: {
+    1: { name: 'Barbara Seville',  damage: 35,  sosToon: SosToons.BarbaraSeville },
+    2: { name: 'Sid Sonata',       damage: 55,  sosToon: SosToons.SidSonata },
+    3: { name: 'Moe Zart',         damage: 75,  sosToon: SosToons.MoeZart },
+  },
+  [GagTracks.drop]: {
+    1: { name: 'Clumsy Ned',       damage: 60,   sosToon: SosToons.ClumsyNed },
+    2: { name: 'Franz Neckvein',   damage: 100,  sosToon: SosToons.FranzNeckvein },
+    3: { name: 'Barnacle Bessie',  damage: 170,  sosToon: SosToons.BarnacleBessie },
+  },
+};
+

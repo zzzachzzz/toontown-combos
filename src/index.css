@@ -599,13 +599,26 @@ h1, h2, h3, h4, h5, h6 {
 .selected-gag-base-dmg {
 }
 
+.selected-gag-lvl-mod {
+  color: var(--lightgrey);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.7rem;
+}
+
 .selected-gag-img-container,
-.selected-org-img-container
+.selected-org-img-container,
+.selected-gag-lvl-mod-img-container
 {
   background: var(--gag-bg-blue);
   padding: 0.2rem;
   border-radius: 10px;
   position: relative;
+}
+
+.selected-gag-lvl-mod-img-container {
+  border-radius: 5px;
 }
 
 .selected-org-img-container img {

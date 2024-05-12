@@ -1,5 +1,5 @@
 import {
-  GagTrack, GagTracks, gags, gagTracksOrder, cogHp, SosToons,
+  GagTrack, GagTracks, gags, gagTracksOrder, cogHp, SosToons, sosToonGags,
 } from './constants';
 
 export class Cog {
@@ -121,15 +121,20 @@ export class Gag {
 }
 
 export class SosToonGag extends Gag {
-  sosToon: SosToons;
-
   constructor(sosToon: SosToons) {
     super({
       track: SosToonGag.getTrackFromSosToon(sosToon),
-      lvl: 99, // Arbitrary
+      lvl: SosToonGag.getLvlFromSosToon(sosToon),
       isOrg: false,
     });
-    this.sosToon = sosToon;
+  }
+
+  static fromTrackAndLvl(
+    track: GagTracks.trap | GagTracks.sound | GagTracks.drop,
+    lvl: number,
+  ): SosToonGag {
+    const { sosToon } = sosToonGags[track][lvl];
+    return new SosToonGag(sosToon);
   }
 
   private static getTrackFromSosToon(sosToon: SosToons): GagTrack {
@@ -151,36 +156,35 @@ export class SosToonGag extends Gag {
     }
   }
 
-  override get name(): string {
-    switch (this.sosToon) {
-      case SosToons.ClerkWill:      return 'Clerk Will';
-      case SosToons.ClerkPenny:     return 'Clerk Penny';
-      case SosToons.ClerkClara:     return 'Clerk Clara';
-      case SosToons.BarbaraSeville: return 'Barbara Seville';
-      case SosToons.SidSonata:      return 'Sid Sonata';
-      case SosToons.MoeZart:        return 'Moe Zart';
-      case SosToons.ClumsyNed:      return 'Clumsy Ned';
-      case SosToons.FranzNeckvein:  return 'Franz Neckvein';
-      case SosToons.BarnacleBessie: return 'Barnacle Bessie';
+  private static getLvlFromSosToon(sosToon: SosToons): number {
+    switch (sosToon) {
+      case SosToons.ClerkWill:
+      case SosToons.BarbaraSeville:
+      case SosToons.ClumsyNed:
+        return 1;
+      case SosToons.ClerkPenny:
+      case SosToons.SidSonata:
+      case SosToons.FranzNeckvein:
+        return 2;
+      case SosToons.ClerkClara:
+      case SosToons.MoeZart:
+      case SosToons.BarnacleBessie:
+        return 3;
       default:
-        throw new Error(`Unmatched SosToons value '${this.sosToon}'`);
+        throw new Error(`Unmatched SosToons value '${sosToon}'`);
     }
   }
 
+  get sosToon(): SosToons {
+    return sosToonGags[this.track as GagTracks.trap | GagTracks.sound | GagTracks.drop][this.lvl].sosToon;
+  }
+
+  override get name(): string {
+    return sosToonGags[this.track as GagTracks.trap | GagTracks.sound | GagTracks.drop][this.lvl].name;
+  }
+
   override get damage(): number {
-    switch (this.sosToon) {
-      case SosToons.ClerkWill:      return 60;
-      case SosToons.ClerkPenny:     return 120;
-      case SosToons.ClerkClara:     return 180;
-      case SosToons.BarbaraSeville: return 35;
-      case SosToons.SidSonata:      return 55;
-      case SosToons.MoeZart:        return 75;
-      case SosToons.ClumsyNed:      return 60;
-      case SosToons.FranzNeckvein:  return 100;
-      case SosToons.BarnacleBessie: return 170;
-      default:
-        throw new Error(`Unmatched SosToons value '${this.sosToon}'`);
-    }
+    return sosToonGags[this.track as GagTracks.trap | GagTracks.sound | GagTracks.drop][this.lvl].damage;
   }
 }
 
