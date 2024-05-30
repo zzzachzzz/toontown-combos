@@ -238,6 +238,16 @@ export class Combo {
     }, Object.fromEntries(Object.values(GagTracks).map(gt => [gt, 0])) as Record<GagTracks, number>);
   }
 
+  /** A mapping of gag tracks to their respective number of organic gags in the combo */
+  orgTrackCounts(): Record<GagTrack, number> {
+    return this.gags.reduce((acc, gag) => {
+      if (gag.lvl !== 0 && gag.isOrg) {
+        acc[gag.track] += 1;
+      }
+      return acc;
+    }, Object.fromEntries(Object.values(GagTracks).map(gt => [gt, 0])) as Record<GagTracks, number>);
+  }
+
   /**
    * Returns an array of an array of gags, grouped by track,
    * sorted in the usual gag track order.
@@ -439,8 +449,6 @@ function _findCombo(
     return combo;
   }
 
-  const hasDrop = combo.trackCounts()['drop'] > 0;
-
   // Decrease the level of individual gags until the damage is insufficient
   let i = 0;
   while (i !== combo.gags.length-1) {
@@ -464,19 +472,53 @@ function _findCombo(
     }
   }
 
+  const orgsAvailable = combo.orgTrackCounts();
+
   // Check if organics are necessary for combo
-  for (let i = 0; i < combo.gags.length; i++) {
-    combo.gags[i].isOrg = false;
-    if (!combo.damageKillsCog(cog)) {
-      combo.gags[i].isOrg = true;
+  for (const gag of combo.gags)
+    gag.isOrg = false;
+
+  /**
+   * Optimize combo by prioritizing low level organics over high level organics.
+   * May require multiple passes... see comments in function calls below.
+   */
+  const tryOptimizeOrganics = (combo: Combo): Combo => {
+    for (let i = combo.gags.length - 1; i >= 0; i--) {
+      const gag = combo.gags[i];
+      if (orgsAvailable[gag.track] === 0)
+        continue;
+      if (combo.orgTrackCounts()[gag.track] >= orgsAvailable[gag.track]) {
+        for (let j = combo.gags.length - 1; j >= 0; j--) {
+          const gag2 = combo.gags[j];
+          if (gag2.track === gag.track && gag2.isOrg) {
+            gag2.isOrg = false;
+            break;
+          }
+        }
+      }
+      if (combo.damageKillsCog(cog))
+        break;
+      if (gag.lvl > 0)
+        gag.isOrg = true;
+      if (combo.damageKillsCog(cog))
+        break;
     }
-  }
+    return combo;
+  };
+
+  // Yeah this is stupid... 2 passes seems to suffice. A combo where 2 passes are required is:
+  // Lvl 10 cog 132 hp
+  // 4 sound, 2 org sound
+  // Fog (org) | Trunk | Aoogah (org) | Aoogah
+  // 132 damage
+  combo = tryOptimizeOrganics(combo);
+  combo = tryOptimizeOrganics(combo);
 
   // If drop combo, keep other gags around for stun bonus even if the damage is unneeded
-  if (hasDrop) {
+  if (combo.trackCounts()['drop'] > 0) {
     for (let i = 0; i < combo.gags.length; i++) {
       if (combo.gags[i].track !== 'drop' && combo.gags[i].lvl === 0) {
-        combo.gags[i].lvl = 1;
+        combo.gags[i].lvl = minGagLvl ?? 1;
       }
     }
   }
