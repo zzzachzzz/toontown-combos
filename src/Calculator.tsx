@@ -65,25 +65,17 @@ export const Calculator = () => {
       return;
     e.preventDefault();
     setCombo(c => {
-      if (c) {
-        c.gags.push(new Gag(data))
-        c.gags.sort(sortFnGags);
-        return c;
-      } else {
-        return new Combo({ gags: [new Gag(data)] });
-      }
+      c.gags.push(new Gag(data))
+      c.gags.sort(sortFnGags);
+      return c;
     });
   };
 
   const onClickGridSosToonGag: OnClickGridSosToonGag = (data, _) => {
     setCombo(c => {
-      if (c) {
-        c.gags.push(new SosToonGag(data.sosToon))
-        c.gags.sort(sortFnGags);
-        return c;
-      } else {
-        return new Combo({ gags: [new SosToonGag(data.sosToon)] });
-      }
+      c.gags.push(new SosToonGag(data.sosToon))
+      c.gags.sort(sortFnGags);
+      return c;
     });
   };
 
