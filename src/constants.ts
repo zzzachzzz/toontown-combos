@@ -1,5 +1,5 @@
-export const TTR_VERSION = 'ttr-live-v3.10.6';
-export const TTR_VERSION_RELEASE_NOTES_LINK = 'https://www.toontownrewritten.com/news/release-notes/352';
+export const TTR_VERSION = 'ttr-live-v4.0.0';
+export const TTR_VERSION_RELEASE_NOTES_LINK = 'https://www.toontownrewritten.com/news/release-notes/357';
 
 export enum GagTracks {
   toonup = 'toonup',

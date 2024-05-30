@@ -59,10 +59,21 @@ export class Gag {
     const baseDmg = gags[this.track][this.lvl].damage;
 
     if (this.isOrg && baseDmg > 0) {
-      if (baseDmg < 10) return baseDmg + 1;
-      else return Math.floor(baseDmg * 1.1);
+      return baseDmg + Math.ceil(baseDmg * Gag.orgBonusMultiplier(this.track));
     } else {
       return baseDmg;
+    }
+  }
+
+  static orgBonusMultiplier(track: GagTrack): number {
+    switch (track) {
+      case GagTracks.toonup:
+        return 0.20;
+      case GagTracks.squirt:
+      case GagTracks.drop:
+        return 0.15;
+      default:
+        return 0.10;
     }
   }
 
