@@ -164,6 +164,7 @@ export const Calculator = () => {
           </li>
           <li>Click a selected gag to deselect it</li>
           <li>Click a selected gag's up/down buttons to level it up/down</li>
+          <li>Right-click a selected gag to duplicate it</li>
         </ul>
       </div>
     </div>
