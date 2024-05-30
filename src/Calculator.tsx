@@ -21,7 +21,7 @@ type OnClickGridSosToonGag = (
 
 enum OnClickSelectedGagAction {
   Remove,
-  ToggleOrg,
+  Copy,
 }
 
 type OnClickSelectedGag = (
@@ -101,10 +101,11 @@ export const Calculator = () => {
         });
         break;
       }
-      case OnClickSelectedGagAction.ToggleOrg: {
-        if (!(data.gag instanceof SosToonGag)) {
-          toggleGagOrg(data.gag);
-        }
+      case OnClickSelectedGagAction.Copy: {
+        setCombo(c => {
+          c.gags.push(Gag.fromGag(data.gag));
+          return c;
+        });
         break;
       }
       default:
@@ -373,7 +374,7 @@ const ComboInfo = (props: ComboInfoProps) => {
                       <div class="selected-gag-img-and-name">
                         <button
                           onClick={[props.onClickSelectedGag, { gag, action: OnClickSelectedGagAction.Remove }]}
-                          onContextMenu={[props.onClickSelectedGag, { gag, action: OnClickSelectedGagAction.ToggleOrg }]}
+                          onContextMenu={[props.onClickSelectedGag, { gag, action: OnClickSelectedGagAction.Copy }]}
                           class="selected-gag-img-container"
                           style={{
                             background: gag instanceof SosToonGag ? 'var(--lightgrey)' : undefined,
