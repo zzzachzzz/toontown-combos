@@ -11,8 +11,8 @@ export const ComboGrid = () => {
 
   const combos = store.getComboGridCombos;
 
-  const onClickHideLvl13UpCogs: JSX.EventHandler<HTMLInputElement, MouseEvent> = (_) => {
-    store.toggleHideLvl13UpCogs();
+  const onClickHideLvl15UpCogs: JSX.EventHandler<HTMLInputElement, MouseEvent> = (_) => {
+    store.toggleHideLvl15UpCogs();
     storage.saveSavedState(store.getStateForStorage());
   };
 
@@ -74,11 +74,11 @@ export const ComboGrid = () => {
         <label>
           <input
             type="checkbox"
-            id="hide-lvl-13-up-cogs"
-            checked={store.getHideLvl13UpCogs()}
-            onClick={onClickHideLvl13UpCogs}
+            id="hide-lvl-15-up-cogs"
+            checked={store.getHideLvl15UpCogs()}
+            onClick={onClickHideLvl15UpCogs}
           />
-          Hide Level 13+ Cogs
+          Hide Level 15+ Cogs
         </label>
         <label>
           <input

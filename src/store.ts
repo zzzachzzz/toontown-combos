@@ -9,7 +9,7 @@ export type State = {
   isLured: boolean;
   showOrgView: boolean;
   selectedOrgGags: Array<GagTrack | null>;
-  hideLvl13UpCogs: boolean;
+  hideLvl15UpCogs: boolean;
   level4UpGagsOnly: boolean;
 };
 
@@ -24,7 +24,7 @@ export const createStore = ({
     isLured: false,
     showOrgView: true,
     selectedOrgGags: Array.from({ length: 4 }, () => null),
-    hideLvl13UpCogs: false,
+    hideLvl15UpCogs: false,
     level4UpGagsOnly: false,
     ...initialState,
   });
@@ -70,17 +70,17 @@ export const createStore = ({
       }, { toonup: 0, trap: 0, lure: 0, sound: 0, throw: 0, squirt: 0, drop: 0 });
     });
 
-    getHideLvl13UpCogs = () => state.hideLvl13UpCogs;
+    getHideLvl15UpCogs = () => state.hideLvl15UpCogs;
 
-    toggleHideLvl13UpCogs = () => setState('hideLvl13UpCogs', hideLvl13UpCogs => !hideLvl13UpCogs);
+    toggleHideLvl15UpCogs = () => setState('hideLvl15UpCogs', hideLvl15UpCogs => !hideLvl15UpCogs);
 
     getLevel4UpGagsOnly = () => state.level4UpGagsOnly;
 
     toggleLevel4UpGagsOnly = () => setState('level4UpGagsOnly', level4UpGagsOnly => !level4UpGagsOnly);
 
     getMaxCogLvl = () => {
-      if (state.hideLvl13UpCogs) {
-        return 12;
+      if (state.hideLvl15UpCogs) {
+        return 14;
       }
       return 20;
     };
@@ -102,7 +102,7 @@ export const createStore = ({
       isLured: state.isLured,
       showOrgView: state.showOrgView,
       selectedOrgGags: state.selectedOrgGags,
-      hideLvl13UpCogs: state.hideLvl13UpCogs,
+      hideLvl15UpCogs: state.hideLvl15UpCogs,
       level4UpGagsOnly: state.level4UpGagsOnly,
     });
   };
