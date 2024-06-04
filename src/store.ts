@@ -1,5 +1,7 @@
-import { createMemo } from 'solid-js';
+import { createMemo, createSignal } from 'solid-js';
 import { createStore as _createStore } from 'solid-js/store';
+import { findCombo, FindComboResult, Combo } from './gags';
+import * as util from './util';
 import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
 
@@ -27,7 +29,16 @@ export const createStore = ({
     ...initialState,
   });
 
+  const [calculatorCombo, setCalculatorCombo] = createSignal<Combo>(
+    new Combo({ gags: [] }),
+    { equals: false }
+  );
+
   return new class {
+    getCalculatorCombo = calculatorCombo;
+
+    setCalculatorCombo = setCalculatorCombo;
+
     getIsLured = () => state.isLured;
 
     toggleIsLured = () => setState('isLured', isLured => !isLured);
@@ -73,6 +84,19 @@ export const createStore = ({
       }
       return 20;
     };
+
+    getComboGridCombos = createMemo((): Array<FindComboResult> => {
+      const maxCogLvl = this.getMaxCogLvl();
+      const organicGags = this.getSelectedOrgGagTrackCounts();
+      const isLured = this.getIsLured();
+      const level4UpGagsOnly = this.getLevel4UpGagsOnly();
+      const minGagLvl = level4UpGagsOnly ? 4 : null;
+
+      return Array.from(
+        util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
+        findComboArgs => findCombo(findComboArgs)
+      );
+    });
 
     getStateForStorage = (): SavedState => ({
       isLured: state.isLured,

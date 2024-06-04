@@ -1,4 +1,5 @@
-import { JSX, For, Show, createSignal, createMemo } from 'solid-js';
+import { JSX, For, Show, createMemo } from 'solid-js';
+import { useStore } from './store.instance';
 import * as util from './util';
 import { Combo, Gag, sortFnGags, SosToonGag } from './gags';
 import { GagTracks, GagTrack, gagTrackDisplayName, cogHp, SosToons } from './constants';
@@ -56,7 +57,9 @@ type OnClickOrgToggle = (
 type OnClickClearGags = JSX.EventHandler<HTMLButtonElement, MouseEvent>;
 
 export const Calculator = () => {
-  const [combo, setCombo] = createSignal<Combo>(new Combo({ gags: [] }), { equals: false });
+  const store = useStore();
+  const combo = store.getCalculatorCombo;
+  const setCombo = store.setCalculatorCombo;
 
   const onClickGridGag: OnClickGridGag = (data, e) => {
     // For handling onContextMenu (right click), prevent default

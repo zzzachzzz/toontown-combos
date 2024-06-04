@@ -1,27 +1,15 @@
-import { JSX, For, Show, batch, createMemo } from 'solid-js';
+import { JSX, For, Show, batch } from 'solid-js';
 import { useStore } from './store.instance';
 import { Combo } from './Combo';
 import { CogLvlColumn } from './CogLvlColumn';
 import { OrgSelection } from './OrgSelection';
 import * as util from './util';
-import { findCombo, Combo as _Combo } from './gags';
 import * as storage from './local-storage';
 
 export const ComboGrid = () => {
   const store = useStore();
 
-  const combos = createMemo(() => {
-    const maxCogLvl = store.getMaxCogLvl();
-    const organicGags = store.getSelectedOrgGagTrackCounts();
-    const isLured = store.getIsLured();
-    const level4UpGagsOnly = store.getLevel4UpGagsOnly();
-    const minGagLvl = level4UpGagsOnly ? 4 : null;
-
-    return Array.from(
-      util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
-      findComboArgs => findCombo(findComboArgs)
-    );
-  });
+  const combos = store.getComboGridCombos;
 
   const onClickHideLvl13UpCogs: JSX.EventHandler<HTMLInputElement, MouseEvent> = (_) => {
     store.toggleHideLvl13UpCogs();
