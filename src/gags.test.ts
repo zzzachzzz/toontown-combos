@@ -1,4 +1,5 @@
 import { findCombo, FindComboResult, Combo, Gag, Cog } from './gags';
+import { GagTracks } from './constants';
 import * as util from './util';
 
 type IterFindComboArgsArgs = Parameters<typeof util.iterFindComboArgs>[0];
@@ -44,6 +45,36 @@ describe('FindComboResult', () => {
       expect(JSON.stringify(cleaned)).toEqual(
         '{"toonup":3,"squirt":1}'
       );
+    });
+  });
+});
+
+describe('Combo', () => {
+  describe('damage', () => {
+    // https://github.com/zzzachzzz/toontown-combos/issues/35
+    test.each([
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.lure, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.squirt, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.squirt, lvl: 4, isOrg: true }),
+          new Gag({ track: GagTracks.squirt, lvl: 4, isOrg: true }),
+          new Gag({ track: GagTracks.squirt, lvl: 4, isOrg: false }),
+        ] }),
+        expectedDamage: 173,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.lure, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 5, isOrg: true }),
+          new Gag({ track: GagTracks.throw, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 4, isOrg: false }),
+        ] }),
+        expectedDamage: 258,
+      },
+    ])('off by one damage calc issue #35 - test %#', ({ combo, expectedDamage }) => {
+      expect(combo.damage()).toBe(expectedDamage);
     });
   });
 });
