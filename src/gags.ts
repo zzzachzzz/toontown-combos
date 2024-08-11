@@ -99,15 +99,6 @@ export class Gag {
     };
   }
 
-  multiplier(combo: Combo, cog?: Cog): number {
-    const _multipliers = this.multipliers(combo, cog);
-    return (
-      1
-      + (_multipliers.multi ? 0.2 : 0)
-      + (_multipliers.knockback ? 0.5 : 0)
-    );
-  }
-
   knockback(combo: Combo, cog?: Cog): boolean {
     const tc = combo.trackCounts();
     // 2 options for isLured:
@@ -279,9 +270,14 @@ export class Combo {
       // If multiple traps are in the combo, they cancel each other out, don't included the trap damage
       if (gags[0].track === GagTracks.trap && gags.length >= 2)
         return dmg;
-      return dmg + Math.ceil(
-        gags.reduce((sumBaseDmgs, gag) => sumBaseDmgs + gag.damage, 0)
-        * gags[0].multiplier(this, cog)
+
+      const { multi, knockback } = gags[0].multipliers(this, cog);
+      const sumBaseDmgs = gags.reduce((acc, gag) => acc + gag.damage, 0)
+      return (
+        dmg
+        + sumBaseDmgs
+        + (multi ? Math.ceil(sumBaseDmgs * 0.2) : 0)
+        + (knockback ? Math.ceil(sumBaseDmgs * 0.5) : 0)
       );
     }, 0);
   }
