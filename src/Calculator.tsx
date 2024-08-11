@@ -1,4 +1,4 @@
-import { JSX, For, Show, createMemo } from 'solid-js';
+import { JSX, For, Show, createMemo, createSignal } from 'solid-js';
 import { useStore } from './store.instance';
 import * as util from './util';
 import { Combo, Gag, sortFnGags, SosToonGag } from './gags';
@@ -60,6 +60,9 @@ export const Calculator = () => {
   const store = useStore();
   const combo = store.getCalculatorCombo;
   const setCombo = store.setCalculatorCombo;
+  const [additionalGagMultiplier, setAdditionalGagMultiplier] = createSignal(0);
+
+  const comboDamage = createMemo(() => combo().damage({ additionalGagMultiplier: additionalGagMultiplier() }));
 
   const onClickGridGag: OnClickGridGag = (data, e) => {
     // For handling onContextMenu (right click), prevent default
@@ -143,9 +146,26 @@ export const Calculator = () => {
         onClickGag={onClickGridGag}
         onClickGridSosToonGag={onClickGridSosToonGag}
       />
-      <CogsHp comboDamage={combo()?.damage?.() ?? 0} />
+      <CogsHp comboDamage={comboDamage()} />
+      <label for="additional-gag-multiplier">Additional Gag Multiplier:</label>
+      <select
+        name="additional gag multiplier"
+        id="additional-gag-multiplier"
+        value={additionalGagMultiplier().toString()}
+        onChange={e => setAdditionalGagMultiplier(Number(e.target.value))}
+      >
+        <option value="0">None</option>
+        <option value="-0.25">-25% (Factory Foreman Cogs)</option>
+        <option value="0.2">+20% (Club President 1 Cog Defeated)</option>
+        <option value="0.25">+25% (Coin Bull Market)</option>
+        <option value="0.4">+40% (Club President 2 Cogs Defeated)</option>
+        <option value="0.5">+50% (Fired Up / Bullion Bull Market)</option>
+        <option value="0.6">+60% (Club President 3 Cogs Defeated)</option>
+      </select>
       <ComboInfo
         combo={combo()}
+        comboDamage={comboDamage()}
+        additionalGagMultiplier={additionalGagMultiplier()}
         onClickOrgToggle={onClickOrgToggle}
         onClickSelectedGag={onClickSelectedGag}
         onClickSelectedGagLvlMod={onClickSelectedGagLvlMod}
@@ -168,6 +188,11 @@ export const Calculator = () => {
           <li>Click a selected gag to deselect it</li>
           <li>Click a selected gag's up/down buttons to level it up/down</li>
           <li>Right-click a selected gag to duplicate it</li>
+          <li>
+            Note about <i>Additional Gag Multiplier</i>:<br/>
+            If the calculations seem odd, that's because they are.<br/>
+            <a href="https://github.com/zzzachzzz/toontown-combos/issues/34#issuecomment-2282841602">Learn more here</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -287,6 +312,8 @@ const CogsHp = (props: CogsHpProps) => {
 
 type ComboInfoProps = {
   combo: Combo;
+  comboDamage: number;
+  additionalGagMultiplier: number;
   onClickOrgToggle: OnClickOrgToggle;
   onClickSelectedGag: OnClickSelectedGag;
   onClickSelectedGagLvlMod: OnClickSelectedGagLvlMod;
@@ -294,7 +321,7 @@ type ComboInfoProps = {
 };
 
 const ComboInfo = (props: ComboInfoProps) => {
-  const damage = createMemo(() => props.combo.damage());
+  const damage = () => props.comboDamage;
 
   const cogLvlDestroyed = (): number | null => {
     for (const [cogLvl, _cogHp] of Object.entries(cogHp).reverse()) {
@@ -333,7 +360,7 @@ const ComboInfo = (props: ComboInfoProps) => {
               </table>
               <div style={{ width: 'min-content', 'text-align': 'center' }}>
                 <span id="combo-info-result-dmg">
-                  {props.combo.damage()}
+                  {damage()}
                 </span>
                 <label id="combo-info-result-dmg-label" for="combo-info-result-dmg">
                   Damage
@@ -433,7 +460,12 @@ const ComboInfo = (props: ComboInfoProps) => {
                     </Show>
                     <hr style={{ border: 'none', 'border-top': `2px solid var(--${gagGroup[0].track})` }} />
                     <div style={{ 'text-align': 'right' }}>
-                      Damage: {props.combo.damage(undefined, gagGroup[0].track)}
+                      Damage: {
+                        props.combo.damage({
+                          onlyTrack: gagGroup[0].track,
+                          additionalGagMultiplier: props.additionalGagMultiplier,
+                        })
+                      }
                     </div>
                   </div>
                 </Show>

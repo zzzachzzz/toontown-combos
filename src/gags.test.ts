@@ -76,6 +76,51 @@ describe('Combo', () => {
     ])('off by one damage calc issue #35 - test %#', ({ combo, expectedDamage }) => {
       expect(combo.damage()).toBe(expectedDamage);
     });
+
+    // https://github.com/zzzachzzz/toontown-combos/issues/34
+    test.each([
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.lure, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 4, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 6, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 6, isOrg: false }),
+        ] }),
+        additionalGagMultiplier: 0.60,
+        expectedDamage: 523,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.sound, lvl: 6, isOrg: false }),
+          new Gag({ track: GagTracks.sound, lvl: 6, isOrg: false }),
+          new Gag({ track: GagTracks.sound, lvl: 6, isOrg: false }),
+          new Gag({ track: GagTracks.sound, lvl: 7, isOrg: false }),
+        ] }),
+        additionalGagMultiplier: -0.25,
+        expectedDamage: 214,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.lure, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 6, isOrg: false }),
+        ] }),
+        additionalGagMultiplier: -0.25,
+        expectedDamage: 230,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.trap, lvl: 6, isOrg: true }),
+        ] }),
+        additionalGagMultiplier: 0.40,
+        expectedDamage: 278,
+      },
+    ])(
+      'returns correct damage for additionalGagMultiplier of $additionalGagMultiplier - test %#',
+      ({ combo, additionalGagMultiplier, expectedDamage }) => {
+      expect(combo.damage({ additionalGagMultiplier })).toBe(expectedDamage);
+    });
   });
 });
 

@@ -518,6 +518,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.7rem;
 }
 
+#additional-gag-multiplier {
+  margin-bottom: 1rem;
+}
+
 #combo-info {
   max-width: 650px;
   width: 100%;

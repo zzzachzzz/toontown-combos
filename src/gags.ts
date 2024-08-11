@@ -263,7 +263,11 @@ export class Combo {
     return groups;
   }
 
-  damage(cog?: Cog, onlyTrack?: GagTrack): number {
+  damage({ cog, additionalGagMultiplier = 0, onlyTrack }: {
+    cog?: Cog;
+    additionalGagMultiplier?: number;
+    onlyTrack?: GagTrack;
+  } = {}): number {
     return this.gagsGroupedByTrack().reduce((dmg, gags) => {
       if (onlyTrack && gags[0].track !== onlyTrack)
         return dmg;
@@ -272,23 +276,43 @@ export class Combo {
         return dmg;
 
       const { multi, knockback } = gags[0].multipliers(this, cog);
-      const sumBaseDmgs = gags.reduce((acc, gag) => acc + gag.damage, 0)
-      return (
-        dmg
-        + sumBaseDmgs
-        + (multi ? Math.ceil(sumBaseDmgs * 0.2) : 0)
-        + (knockback ? Math.ceil(sumBaseDmgs * 0.5) : 0)
-      );
+
+      // https://github.com/zzzachzzz/toontown-combos/issues/34#issuecomment-2282841602
+      // "When damage is reduced (+25% Defense) it applies to the gags..."
+      // Meaning that `additionalGagMultiplier` is applied to each individual gag's base damage
+      if (additionalGagMultiplier <= 0) {
+        const sumBaseDmgs = gags.reduce(
+          (acc, gag) => acc + Math.floor(gag.damage * (1 + additionalGagMultiplier)),
+          0
+        );
+        return (
+          dmg
+          + sumBaseDmgs
+          + (knockback ? Math.ceil(sumBaseDmgs * 0.5) : 0)
+          + (multi ? Math.ceil(sumBaseDmgs * 0.2) : 0)
+        );
+      // "...but when it's increased (+25/50% Damage, -20/40/50/60% Defense) it doesn't."
+      // In this case, `additionalGagMultiplier` is combined with the "orange damage" or "knockback damage",
+      // even in the case where there is no gag knockback.
+      } else {
+        const sumBaseDmgs = gags.reduce((acc, gag) => acc + gag.damage, 0);
+        return (
+          dmg
+          + sumBaseDmgs
+          + Math.ceil(
+            sumBaseDmgs * (
+              (knockback ? 0.5 : 0)
+              + additionalGagMultiplier
+            )
+          )
+          + (multi ? Math.ceil(sumBaseDmgs * 0.2) : 0)
+        );
+      }
     }, 0);
   }
 
-  damageKillsCog(cog: Cog): boolean {
-    return this.damage(cog) >= cog.hp;
-  }
-
-
-  toString(cog: Cog): string {
-    return `Combo(damage: ${this.damage(cog)} gags: [\n${this.gags.map(g => `  ${g}`).join(',\n')}\n])`;
+  damageKillsCog(cog: Cog, additionalGagMultiplier?: number): boolean {
+    return this.damage({ cog, additionalGagMultiplier }) >= cog.hp;
   }
 }
 
@@ -297,17 +321,20 @@ export class FindComboResult {
   cog: Cog;
   gagsInput: Partial<Record<GagTrack, number>>;
   organicGagsInput: Partial<Record<GagTrack, number>>;
+  additionalGagMultiplier?: number;
 
-  constructor({ combo, cog, gagsInput, organicGagsInput }: {
+  constructor({ combo, cog, gagsInput, organicGagsInput, additionalGagMultiplier }: {
     combo: Combo;
     cog: Cog;
     gagsInput: Partial<Record<GagTrack, number>>;
     organicGagsInput: Partial<Record<GagTrack, number>>;
+    additionalGagMultiplier?: number;
   }) {
     this.combo = combo
     this.cog = cog;
     this.gagsInput = Combo.cleanGagCounts(gagsInput ?? {});
     this.organicGagsInput = Combo.cleanGagCounts(organicGagsInput ?? {});
+    this.additionalGagMultiplier = additionalGagMultiplier;
   }
 
   inputKey() {
@@ -328,13 +355,13 @@ export class FindComboResult {
         return { track, lvl, dmg, multi, knockback };
       })
 
-    const dmg = this.combo.damage(this.cog);
+    const dmg = this.combo.damage({ cog: this.cog, additionalGagMultiplier: this.additionalGagMultiplier });
 
     return { dmg, gags };
   }
 
   damage(): number {
-    return this.combo.damage(this.cog);
+    return this.combo.damage({ cog: this.cog, additionalGagMultiplier: this.additionalGagMultiplier });
   }
 
   damageKillsCog(): boolean {
@@ -530,7 +557,7 @@ export function sortFnGags(gag1: Gag, gag2: Gag): number {
 }
 
 export function logTable(findComboRes: FindComboResult): void {
-  const { combo, cog } = findComboRes;
+  const { combo, cog, additionalGagMultiplier } = findComboRes;
 
   const fmtInputGags = (gags: Partial<Record<GagTrack, number>>) => {
     const _gags = Object.entries(gags)
@@ -547,6 +574,7 @@ export function logTable(findComboRes: FindComboResult): void {
     'Gags': fmtInputGags(findComboRes.gagsInput),
     'Organic Gags': fmtInputGags(findComboRes.organicGagsInput),
   });
+  // TODO Additional support for logging of `additionalGagMultiplier`
   console.log('Combo:');
   console.table(
     combo.gags.reduce((newObj, gag, i) => {
@@ -569,8 +597,7 @@ export function logTable(findComboRes: FindComboResult): void {
 
   console.log('Details:');
   console.table({
-    'Total base damage': combo.gags.reduce((sum, gag) => sum + gag.damage, 0),
-    'Final damage calculated': combo.damage(cog),
+    'Final damage calculated': combo.damage({ cog, additionalGagMultiplier }),
     'Cog HP': cog.hp,
   });
 }
