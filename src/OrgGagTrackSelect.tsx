@@ -57,7 +57,7 @@ type GagTrackListItemProps = {
 const GagTrackListItem = (props: GagTrackListItemProps) => {
   const background = () => props.isGagTrackSelected
     ? `var(--${props.gagTrack})`
-    : 'transparent';
+    : 'var(--lightgrey)';
 
   return (
     <li role="option" style={{ background: background() }}>

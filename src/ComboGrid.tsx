@@ -93,7 +93,7 @@ export const ComboGrid = () => {
       <div id="is-cog-lured">
         <button
           onClick={onClickToggleLure}
-          style={{ background: store.getIsLured() ? 'var(--lure)' : 'unset' }}
+          style={{ background: store.getIsLured() ? 'var(--lure)' : 'var(--lightgrey)' }}
         >
           <img src={util.getGagIconUrl({ track: 'lure', lvl: 1 }) /* $1 bill icon */} />
           <span>Is Cog Lured?</span>
