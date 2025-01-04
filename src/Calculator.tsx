@@ -286,8 +286,8 @@ const CogsHp = (props: CogsHpProps) => {
                       if (props.comboDamage === 0)
                         return {};
                       if (remaining() <= 0)
-                        return { background: '#22c45e' };
-                      return { background: '#ef4444' };
+                        return { background: '#22c45e', color: 'var(--black)' };
+                      return { background: '#ef4444', color: 'var(--black)' };
                     };
 
                     return (
@@ -348,7 +348,7 @@ const ComboInfo = (props: ComboInfoProps) => {
               <table>
                 <tbody>
                   <tr>
-                    <td class="cogs-hp-cell" style={{ 'white-space': 'nowrap' }}>
+                    <td class="cogs-hp-cell" style={{ 'white-space': 'nowrap', border: '2px solid var(--color-fg)' }}>
                       <div class="cogs-hp-lvl">Level: {lvl()}</div>
                       <div class="cogs-hp-hp">HP: {cogHp[lvl()]}</div>
                       <div class="cogs-hp-remaining">

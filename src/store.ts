@@ -11,6 +11,7 @@ export type State = {
   selectedOrgGags: Array<GagTrack | null>;
   hideLvl15UpCogs: boolean;
   level4UpGagsOnly: boolean;
+  theme: 'light' | 'dark';
 };
 
 type CreateStoreArgs = {
@@ -26,6 +27,7 @@ export const createStore = ({
     selectedOrgGags: Array.from({ length: 4 }, () => null),
     hideLvl15UpCogs: false,
     level4UpGagsOnly: false,
+    theme: 'light',
     ...initialState,
   });
 
@@ -98,12 +100,17 @@ export const createStore = ({
       );
     });
 
-    getStateForStorage = (): SavedState => ({
+    getTheme = () => state.theme;
+
+    toggleTheme = () => setState('theme', theme => theme === 'dark' ? 'light' : 'dark');
+
+    getStateForStorage = (): Required<SavedState> => ({
       isLured: state.isLured,
       showOrgView: state.showOrgView,
       selectedOrgGags: state.selectedOrgGags,
       hideLvl15UpCogs: state.hideLvl15UpCogs,
       level4UpGagsOnly: state.level4UpGagsOnly,
+      theme: state.theme,
     });
   };
 };
