@@ -8,8 +8,19 @@
   --drop: #25e9f0;
   --gag-bg-blue: #2d9ae3;
   --lightgrey: #f3f3f3;
-  --mediumgrey: #e4e4e4;
+  --mediumgrey: #313131;
+  --darkgrey: #262626;
   --black: #181818;
+}
+
+html[data-theme="light"] {
+   --color-bg: var(--lightgrey);
+   --color-fg: var(--black);
+}
+
+html[data-theme="dark"] {
+   --color-bg: var(--mediumgrey);
+   --color-fg: var(--lightgrey);
 }
 
 * {
@@ -32,6 +43,19 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  color: var(--color-fg);
+}
+
+html[data-theme="dark"] body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  pointer-events: none; /* Ensure it doesn't block interaction */
+  z-index: -1;
 }
 
 #root {
@@ -88,9 +112,12 @@ main {
   list-style: none;
 }
 
+a {
+  color: var(--gag-bg-blue);
+}
+
 #nav a {
   text-decoration: none;
-  color: var(--gag-bg-blue);
   font-weight: bold;
   white-space: nowrap;
 }
@@ -100,6 +127,12 @@ main {
   width: 1px;
   background: var(--lightgrey);
   margin: 0 0.6rem;
+}
+
+#light-dark-mode-toggle {
+  margin-left: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 #version-info {
@@ -269,8 +302,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .org-gag-track-list li {
-  border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 5px;
+  border: 2px solid var(--black);
 }
 
 .org-gag-track-list button {
@@ -337,11 +370,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #expand-org {
-  border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 5px;
+  border: 2px solid var(--black);
   height: 1.6rem;
-  padding: 0 1rem;
-  background: var(--lightgrey);
+  padding: 0 0.5rem;
+  background: var(--color-bg);
 }
 
 #is-cog-lured {
@@ -351,11 +384,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #is-cog-lured button, #clear-selection {
-  border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 5px;
+  border: 2px solid var(--black);
   font-size: 0.9em;
-  padding: 0 0.2em;
-  background: var(--lightgrey);
+  padding: 0 0.5rem;
+  background: var(--color-bg);
 }
 
 #is-cog-lured button {
@@ -398,11 +431,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #org-selection-header {
-    font-size: 0.6em;
-  }
-
-  button#clear-selection {
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
 }
 
@@ -446,7 +475,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.4rem;
   gap: 0.4rem;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .calc-gag-row-track-label {
@@ -456,6 +485,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.03rem;
+  color: var(--black);
 }
 
 .calc-gag-grid-cell {
@@ -481,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.4rem;
   background: var(--gag-bg-blue);
   margin-top: 0.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .sos-toons .calc-gag-grid-cell {
@@ -503,10 +533,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cogs-hp-cell {
-  border: 3px solid black;
+  border: 2px solid var(--black);
   text-align: center;
   padding: 0.2rem;
-  background: var(--lightgrey);
+  background: var(--color-bg);
+}
+
+html[data-theme="dark"] .cogs-hp-cell {
+  border: 2px solid var(--color-bg);
+  background: var(--black);
 }
 
 .cogs-hp-lvl {
@@ -523,6 +558,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #additional-gag-multiplier {
   margin-bottom: 1rem;
+}
+
+
+html[data-theme="dark"] #additional-gag-multiplier {
+  background: var(--black);
+  color: inherit;
 }
 
 #combo-info {
@@ -547,14 +588,14 @@ h1, h2, h3, h4, h5, h6 {
 #combo-info-result {
   width: 100%;
   border: 4px solid var(--gag-bg-blue);
-  border-radius: 10px;
+  border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr 120px 1fr;
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
   gap: 0.7rem;
-  background: var(--lightgrey);
+  background: var(--color-bg);
 }
 
 #combo-info-result-dmg-label {
@@ -580,12 +621,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .selected-gag {
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  background: var(--lightgrey);
+  background: var(--color-bg);
 }
 
 .selected-gag-img-and-name {
@@ -622,7 +663,7 @@ h1, h2, h3, h4, h5, h6 {
 {
   background: var(--gag-bg-blue);
   padding: 0.2rem;
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
 }
 
@@ -661,7 +702,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
   max-height: 600px;
   border: 4px solid var(--black);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .about-img-container {

@@ -1,10 +1,10 @@
 import type { State } from './store';
 
 /** Partial state persisted in local storage */
-export type SavedState = Pick<
+export type SavedState = Partial<Pick<
   State,
-  'isLured' | 'showOrgView' | 'selectedOrgGags' | 'hideLvl15UpCogs' | 'level4UpGagsOnly'
->;
+  'isLured' | 'showOrgView' | 'selectedOrgGags' | 'hideLvl15UpCogs' | 'level4UpGagsOnly' | 'theme'
+>>;
 
 const savedStateKey = 'savedState';
 

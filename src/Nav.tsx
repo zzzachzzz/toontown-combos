@@ -1,4 +1,5 @@
 import * as util from './util';
+import { LightDarkModeToggle } from './LightDarkModeToggle';
 
 export const Nav = () => {
   return (
@@ -13,6 +14,7 @@ export const Nav = () => {
           <div class="navlink-sep" />
           <li><a href={util.getResourceUrl('about')}>About</a></li>
         </ul>
+        <LightDarkModeToggle />
       </div>
     </nav>
   );

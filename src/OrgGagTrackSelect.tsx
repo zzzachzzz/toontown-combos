@@ -57,10 +57,14 @@ type GagTrackListItemProps = {
 const GagTrackListItem = (props: GagTrackListItemProps) => {
   const background = () => props.isGagTrackSelected
     ? `var(--${props.gagTrack})`
-    : 'var(--lightgrey)';
+    : 'var(--color-bg)';
+
+  const color = () => props.isGagTrackSelected
+    ? `var(--black)`
+    : undefined;
 
   return (
-    <li role="option" style={{ background: background() }}>
+    <li role="option" style={{ background: background(), color: color() }}>
       <Show when={props.gagTrack !== null}>
         <button
           onClick={() => props.onClickOrgGagTrack(props.toonIdx, props.gagTrack!)}
