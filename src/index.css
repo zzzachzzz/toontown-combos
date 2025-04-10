@@ -512,6 +512,12 @@ h6 {
     0 2px 3px var(--mediumgrey);
 }
 
+.calc-gag-grid-cell:hover {
+  box-shadow: inset 0 -1px 9px 2px var(--gag-highlight-blue),
+    0 0px 0px var(--gag-shadow-blue);
+  border-bottom: 1px solid var(--gag-shadow-blue);
+}
+
 .calc-gag-grid-cell img {
   aspect-ratio: 1 / 1;
   max-width: min(70%, 30px);
