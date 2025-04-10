@@ -11,16 +11,18 @@
   --mediumgrey: #313131;
   --darkgrey: #262626;
   --black: #181818;
+  --gag-shadow-blue: #1c78b2;
+  --gag-highlight-blue: #8cd1ff;
 }
 
 html[data-theme="light"] {
-   --color-bg: var(--lightgrey);
-   --color-fg: var(--black);
+  --color-bg: var(--lightgrey);
+  --color-fg: var(--black);
 }
 
 html[data-theme="dark"] {
-   --color-bg: var(--mediumgrey);
-   --color-fg: var(--lightgrey);
+  --color-bg: var(--mediumgrey);
+  --color-fg: var(--lightgrey);
 }
 
 * {
@@ -48,7 +50,7 @@ body {
 }
 
 html[data-theme="dark"] body::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -182,7 +184,12 @@ ul {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   text-align: center;
 }
@@ -257,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-column-gap: 20px;
   width: 100%;
-  overflow-x: auto;;
+  overflow-x: auto;
   overflow-y: hidden;
   padding: 0 1rem;
 }
@@ -281,7 +288,8 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   font-size: 0.3em;
   color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .cog-icon-container span {
@@ -384,7 +392,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0.5rem;
 }
 
-#is-cog-lured button, #clear-selection {
+#is-cog-lured button,
+#clear-selection {
   border-radius: 5px;
   border: 2px solid var(--black);
   font-size: 0.9em;
@@ -495,6 +504,10 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   background: var(--gag-bg-blue);
   border-radius: 5px;
+  border-bottom: 1.5px solid var(--gag-shadow-blue);
+  outline: 2px solid var(--gag-shadow-blue);
+  box-shadow: inset 0 0 6px var(--gag-highlight-blue),
+    0 2px 3px var(--mediumgrey);
 }
 
 .calc-gag-grid-cell img {
@@ -560,7 +573,6 @@ html[data-theme="dark"] .cogs-hp-cell {
 #additional-gag-multiplier {
   margin-bottom: 1rem;
 }
-
 
 html[data-theme="dark"] #additional-gag-multiplier {
   background: var(--black);
@@ -660,8 +672,7 @@ html[data-theme="dark"] #additional-gag-multiplier {
 
 .selected-gag-img-container,
 .selected-org-img-container,
-.selected-gag-lvl-mod-img-container
-{
+.selected-gag-lvl-mod-img-container {
   background: var(--gag-bg-blue);
   padding: 0.2rem;
   border-radius: 5px;
@@ -734,4 +745,3 @@ html[data-theme="dark"] #additional-gag-multiplier {
     display: none;
   }
 }
-
