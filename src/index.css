@@ -505,6 +505,7 @@ h6 {
   justify-content: center;
   background: var(--gag-bg-blue);
   border-radius: 5px;
+  border-top: 1.5px solid var(--gag-highlight-blue);
   border-bottom: 1.5px solid var(--gag-shadow-blue);
   outline: 2px solid var(--gag-shadow-blue);
   box-shadow: inset 0 0 6px var(--gag-highlight-blue),
