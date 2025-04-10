@@ -674,7 +674,7 @@ html[data-theme="dark"] #additional-gag-multiplier {
 
 .selected-gag-img-container,
 .selected-org-img-container,
-.selected-gag-lvl-mod-img-container 
+.selected-gag-lvl-mod-img-container
 {
   background: var(--gag-bg-blue);
   padding: 0.2rem;
