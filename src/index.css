@@ -483,7 +483,7 @@ h6 {
   grid-template-columns: repeat(9, 1fr);
   gap: 0.4rem;
   padding: 0.4rem;
-  gap: 0.4rem;
+  gap: 0.5rem;
   width: 100%;
   border-radius: 5px;
   box-shadow: inset 0 -8px 0 rgba(5, 5, 5, 0.15);
