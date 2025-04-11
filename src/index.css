@@ -175,8 +175,8 @@ button:not([disabled]) {
 }
 
 button:focus:not(:focus-visible) {
-  outline: 0 !important;
-  box-shadow: none !important;
+  outline: 0;
+  box-shadow: none;
 }
 
 ul {
