@@ -11,6 +11,8 @@
   --mediumgrey: #313131;
   --darkgrey: #262626;
   --black: #181818;
+  --gag-shadow-blue: #1c78b2;
+  --gag-highlight-blue: #8cd1ff;
 }
 
 html[data-theme="light"] {
@@ -173,8 +175,8 @@ button:not([disabled]) {
 }
 
 button:focus:not(:focus-visible) {
-  outline: 0 !important;
-  box-shadow: none !important;
+  outline: 0;
+  box-shadow: none;
 }
 
 ul {
@@ -474,9 +476,10 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(9, 1fr);
   gap: 0.4rem;
   padding: 0.4rem;
-  gap: 0.4rem;
+  gap: 0.5rem;
   width: 100%;
   border-radius: 5px;
+  box-shadow: inset 0 -8px 0 rgba(5, 5, 5, 0.15);
 }
 
 .calc-gag-row-track-label {
@@ -495,6 +498,17 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   background: var(--gag-bg-blue);
   border-radius: 5px;
+  border-top: 1.5px solid var(--gag-highlight-blue);
+  border-bottom: 1.5px solid var(--gag-shadow-blue);
+  outline: 2px solid var(--gag-shadow-blue) !imporant;
+  box-shadow: inset 0 0 6px var(--gag-highlight-blue),
+    0 2px 3px var(--mediumgrey) !important;
+}
+
+.calc-gag-grid-cell:hover {
+  box-shadow: inset 0 -1px 9px 2px var(--gag-highlight-blue),
+    0 0px 0px var(--gag-shadow-blue) !important;
+  border-bottom: 1px solid var(--gag-shadow-blue) !important;
 }
 
 .calc-gag-grid-cell img {
