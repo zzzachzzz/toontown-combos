@@ -155,7 +155,10 @@ export const Calculator = () => {
         onChange={e => setAdditionalGagMultiplier(Number(e.target.value))}
       >
         <option value="0">None</option>
-        <option value="-0.25">-25% (Factory Foreman Cogs)</option>
+        <option value="-0.10">-10% (1-star FO Market Research)</option>
+        <option value="-0.15">-15% (2-star FO Market Research)</option>
+        <option value="-0.20">-20% (3-star FO Market Research)</option>
+        <option value="-0.25">-25% (Factory Foreman Cogs / 4-star FO Market Research)</option>
         <option value="0.2">+20% (Club President 1 Cog Defeated)</option>
         <option value="0.25">+25% (Coin Bull Market)</option>
         <option value="0.4">+40% (Club President 2 Cogs Defeated)</option>
