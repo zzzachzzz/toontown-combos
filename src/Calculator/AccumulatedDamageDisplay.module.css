@@ -1,0 +1,42 @@
+.innerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hr {
+  border: none;
+  border-top: 4px solid var(--black);
+  margin-top: 0;
+}
+
+.damage {
+  width: min-content;
+  text-align: center;
+}
+
+.damageValue {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.damageLabel {
+  font-size: 0.7rem;
+  display: block;
+}
+
+.xBtn {
+  position: absolute;
+  right: calc(0.5rem + 4px);
+}
+
+.xBtnLabel {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+

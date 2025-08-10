@@ -161,3 +161,16 @@ export const sosToonGags: Record<
   },
 };
 
+export const additionalGagMultipliers: Record<number, string> = {
+  [0]:      'None',
+  [-0.1]:   '-10% (1-star FO Market Research)',
+  [-0.15]:  '-15% (2-star FO Market Research)',
+  [-0.2]:   '-20% (3-star FO Market Research)',
+  [-0.25]:  '-25% (Factory Foreman Cogs / 4-star FO Market Research)',
+  [0.2]:    '+20% (Club President 1 Cog Defeated)',
+  [0.25]:   '+25% (Coin Bull Market)',
+  [0.4]:    '+40% (Club President 2 Cogs Defeated)',
+  [0.5]:    '+50% (Fired Up / Bullion Bull Market)',
+  [0.6]:    '+60% (Club President 3 Cogs Defeated)',
+};
+

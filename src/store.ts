@@ -13,6 +13,10 @@ export type State = {
   hideLvl15UpCogs: boolean;
   level4UpGagsOnly: boolean;
   theme: 'light' | 'dark';
+  accumulatedDamageCombos: Array<{
+    combo: Combo;
+    additionalGagMultiplier: number;
+  }>;
 };
 
 type CreateStoreArgs = {
@@ -30,6 +34,7 @@ export const createStore = ({
     hideLvl15UpCogs: false,
     level4UpGagsOnly: false,
     theme: 'light',
+    accumulatedDamageCombos: [],
     ...initialState,
   });
 
@@ -51,6 +56,34 @@ export const createStore = ({
 
     setAdditionalGagMultiplier = (value: State['additionalGagMultiplier']) =>
       setState('additionalGagMultiplier', value);
+
+    pushAccumulatedDamageCombo = () => {
+      const combo = this.getCalculatorCombo().clone();
+      const { additionalGagMultiplier } = state;
+      setState(
+        'accumulatedDamageCombos',
+        state.accumulatedDamageCombos.length,
+        { combo, additionalGagMultiplier }
+      );
+    };
+
+    removeAccumulatedDamageCombo = (index: number) => {
+      setState(
+        'accumulatedDamageCombos',
+        arr => [...arr.slice(0, index), ...arr.slice(index + 1)]
+      );
+    };
+
+    clearAccumulatedDamageCombos = () => {
+      setState('accumulatedDamageCombos', []);
+    };
+
+    getAccumulatedDamageCombos = () => state.accumulatedDamageCombos;
+
+    getAccumulatedCombosDamage = createMemo((): number => state.accumulatedDamageCombos.reduce(
+      (acc, { combo, additionalGagMultiplier }) => acc + combo.damage({ additionalGagMultiplier }),
+      0
+    ));
 
     getIsLured = () => state.isLured;
 
