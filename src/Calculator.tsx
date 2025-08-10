@@ -1,4 +1,4 @@
-import { JSX, For, Show, createMemo, createSignal } from 'solid-js';
+import { JSX, For, Show, createMemo } from 'solid-js';
 import { useStore } from './store.instance';
 import * as util from './util';
 import { Combo, Gag, sortFnGags, SosToonGag } from './gags';
@@ -60,9 +60,10 @@ export const Calculator = () => {
   const store = useStore();
   const combo = store.getCalculatorCombo;
   const setCombo = store.setCalculatorCombo;
-  const [additionalGagMultiplier, setAdditionalGagMultiplier] = createSignal(0);
 
-  const comboDamage = createMemo(() => combo().damage({ additionalGagMultiplier: additionalGagMultiplier() }));
+  const comboDamage = createMemo(() => combo().damage({
+    additionalGagMultiplier: store.getAdditionalGagMultiplier()
+  }));
 
   const onClickGridGag: OnClickGridGag = (data, e) => {
     // For handling onContextMenu (right click), prevent default
@@ -151,8 +152,8 @@ export const Calculator = () => {
       <select
         name="additional gag multiplier"
         id="additional-gag-multiplier"
-        value={additionalGagMultiplier().toString()}
-        onChange={e => setAdditionalGagMultiplier(Number(e.target.value))}
+        value={store.getAdditionalGagMultiplier().toString()}
+        onChange={e => store.setAdditionalGagMultiplier(Number(e.target.value))}
       >
         <option value="0">None</option>
         <option value="-0.1">-10% (1-star FO Market Research)</option>
@@ -168,7 +169,7 @@ export const Calculator = () => {
       <ComboInfo
         combo={combo()}
         comboDamage={comboDamage()}
-        additionalGagMultiplier={additionalGagMultiplier()}
+        additionalGagMultiplier={store.getAdditionalGagMultiplier()}
         onClickOrgToggle={onClickOrgToggle}
         onClickSelectedGag={onClickSelectedGag}
         onClickSelectedGagLvlMod={onClickSelectedGagLvlMod}

@@ -6,6 +6,7 @@ import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
 
 export type State = {
+  additionalGagMultiplier: number;
   isLured: boolean;
   showOrgView: boolean;
   selectedOrgGags: Array<GagTrack | null>;
@@ -22,6 +23,7 @@ export const createStore = ({
   initialState,
 }: CreateStoreArgs = {}) => {
   const [state, setState] = _createStore<State>({
+    additionalGagMultiplier: 0,
     isLured: false,
     showOrgView: true,
     selectedOrgGags: Array.from({ length: 4 }, () => null),
@@ -40,6 +42,11 @@ export const createStore = ({
     getCalculatorCombo = calculatorCombo;
 
     setCalculatorCombo = setCalculatorCombo;
+
+    getAdditionalGagMultiplier = () => state.additionalGagMultiplier;
+
+    setAdditionalGagMultiplier = (value: State['additionalGagMultiplier']) =>
+      setState('additionalGagMultiplier', value);
 
     getIsLured = () => state.isLured;
 

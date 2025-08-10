@@ -1,6 +1,9 @@
 import type { State } from './store';
 
-/** Partial state persisted in local storage */
+/**
+ * Partial state persisted in local storage.
+ * Omit `additionalGagMultiplier` from `SavedState`.
+ */
 export type SavedState = Partial<Pick<
   State,
   'isLured' | 'showOrgView' | 'selectedOrgGags' | 'hideLvl15UpCogs' | 'level4UpGagsOnly' | 'theme'
