@@ -43,6 +43,10 @@ export const createStore = ({
 
     setCalculatorCombo = setCalculatorCombo;
 
+    getCalculatorComboDamage = createMemo((): number => calculatorCombo().damage({
+      additionalGagMultiplier: state.additionalGagMultiplier
+    }));
+
     getAdditionalGagMultiplier = () => state.additionalGagMultiplier;
 
     setAdditionalGagMultiplier = (value: State['additionalGagMultiplier']) =>

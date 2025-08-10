@@ -1,0 +1,42 @@
+.cell {
+  width: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.imgContainer {
+  width: 60px;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+}
+
+.lvl {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.hpValue {
+  font-size: 0.8rem;
+  margin: 0 2px;
+}
+
+.hpText {
+  font-size: 0.3rem;
+}
+
+.lured {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.3em;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+

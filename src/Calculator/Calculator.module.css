@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.5rem 0 0.5rem;
+  height: 100%;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.additionalGagMultiplier {
+  margin-bottom: 1rem;
+}
+
+html[data-theme="dark"] .additionalGagMultiplier {
+  background: var(--black);
+  color: inherit;
+}
+
+.clearGagsBtn {
+  background: var(--gag-bg-blue);
+  color: var(--lightgrey);
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  align-self: flex-start;
+}
+
+.howTo {
+  margin: auto 1rem 0.5rem 1rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+

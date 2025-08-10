@@ -5,9 +5,9 @@ import * as util from './util';
 import './index.css';
 
 import { Nav } from './Nav';
-import { ComboGrid } from './ComboGrid';
-import { Calculator } from './Calculator';
-import { About } from './About';
+import { ComboGrid } from './ComboGrid/ComboGrid';
+import { Calculator } from './Calculator/Calculator';
+import { About } from './About/About';
 
 const _path = util.getResourceUrl;
 

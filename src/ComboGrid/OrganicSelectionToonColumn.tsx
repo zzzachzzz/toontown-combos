@@ -1,8 +1,9 @@
 import { For, Show } from 'solid-js';
-import { useStore } from './store.instance';
-import { gagTracksArr, gagTrackDisplayName, GagTrack } from './constants';
-import { getGagIconUrl } from './util';
-import * as storage from './local-storage';
+import { useStore } from '../store.instance';
+import { gagTracksArr, gagTrackDisplayName, GagTrack } from '../constants';
+import { getGagIconUrl } from '../util';
+import * as storage from '../local-storage';
+import styles from './OrganicSelectionToonColumn.module.css';
 
 type Props = {
   toonIdx: number;
@@ -10,7 +11,7 @@ type Props = {
 
 type OnClickOrgGagTrack = (toonIdx: number, gagTrack: GagTrack) => void;
 
-export const OrgGagTrackSelect = (props: Props) => {
+export const OrganicSelectionToonColumn = (props: Props) => {
   const store = useStore();
   const selectedOrgGag = () => store.getSelectedOrgGags()[props.toonIdx];
 
@@ -20,7 +21,7 @@ export const OrgGagTrackSelect = (props: Props) => {
   };
 
   return (
-    <ul class="org-gag-track-list" role="listbox">
+    <ul class={styles.column} role="listbox">
       {store.getShowOrgView() ? (
         <For each={gagTracksArr}>
           {gagTrack => (
@@ -70,7 +71,7 @@ const GagTrackListItem = (props: GagTrackListItemProps) => {
           onClick={() => props.onClickOrgGagTrack(props.toonIdx, props.gagTrack!)}
           disabled={!props.showOrgView}
         >
-          <div class="img-container">
+          <div class={styles.imgContainer}>
             <img src={getGagIconUrl({ track: props.gagTrack!, lvl: 1 })} />
           </div>
           <span>{gagTrackDisplayName[props.gagTrack!]}</span>

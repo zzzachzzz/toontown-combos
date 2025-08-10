@@ -1,8 +1,9 @@
 import { For, Show } from 'solid-js';
-import { useStore } from './store.instance';
-import { OrgGagTrackSelect } from './OrgGagTrackSelect';
+import { useStore } from '../store.instance';
+import { OrganicSelectionToonColumn } from './OrganicSelectionToonColumn';
+import styles from './OrganicSelection.module.css';
 
-export const OrgSelection = () => {
+export const OrganicSelection = () => {
   const store = useStore();
 
   return (
@@ -10,15 +11,15 @@ export const OrgSelection = () => {
       store.getShowOrgView()
       || store.getSelectedOrgGags().some(g => g !== null)
     )}>
-      <div id="org-selection">
-        <ul class="org-selection-list">
+      <div>
+        <ul class={styles.list}>
           <For each={Array.from({ length: 4 })}>
             {(_, i) => (
               <li>
                 <Show when={store.getShowOrgView()}>
-                  <div class="toon-num">Toon {i() + 1}</div>
+                  <div class={styles.toonNum}>Toon {i() + 1}</div>
                 </Show>
-                <OrgGagTrackSelect toonIdx={i()} />
+                <OrganicSelectionToonColumn toonIdx={i()} />
               </li>
             )}
           </For>

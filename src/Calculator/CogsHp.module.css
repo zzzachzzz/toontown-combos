@@ -1,0 +1,34 @@
+.table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.cell {
+  border: 2px solid var(--black);
+  text-align: center;
+  padding: 0.2rem;
+  background: var(--color-bg);
+}
+
+html[data-theme="dark"] .cell {
+  border: 2px solid var(--color-bg);
+  background: var(--black);
+}
+
+.cogLvl {
+  font-size: 1.3rem;
+}
+
+.cogHp {
+  font-size: 0.8rem;
+}
+
+.cogHpRemaining {
+  font-size: 0.7rem;
+}
+
+@media (max-width: 570px) {
+  .cogLvl {
+    font-size: 1.1rem;
+  }
+}

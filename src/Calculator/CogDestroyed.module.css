@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  border: 4px solid var(--gag-bg-blue);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.7rem;
+  background: var(--color-bg);
+}
+
+.cell {
+  border: 2px solid var(--color-fg);
+  background: var(--color-bg);
+  text-align: center;
+  padding: 0.2rem;
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] .cell {
+  border: 2px solid var(--color-fg);
+  background: var(--black);
+}
+
+.cogLvl {
+  font-size: 1.3rem;
+}
+
+.cogHp {
+  font-size: 0.8rem;
+}
+
+.cogsHpRemaining {
+  font-size: 0.7rem;
+}
+
+.damage {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.damageLabel {
+  font-size: 0.7rem;
+  display: block;
+}
+
+@media (max-width: 570px) {
+  .cogHp {
+    font-size: 1.1rem;
+  }
+}
+

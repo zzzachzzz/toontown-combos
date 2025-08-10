@@ -1,0 +1,48 @@
+.combo {
+  display: grid;
+  grid-template-columns: 25px auto;
+  grid-template-rows: 30px;
+  align-items: center;
+}
+
+.combo:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.gags {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.dmg {
+  font-size: 0.8rem;
+  margin-right: 8px;
+}
+
+.gagIconContainer {
+  width: 30px;
+  height: 100%;
+  text-align: center;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+.orgText {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.3em;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.gagIcon {
+  max-width: 30px;
+  max-height: 30px;
+}
+

@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.selectedGagGroup {
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--color-bg);
+}
+
+.selectedGag {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.gagName {
+  white-space: nowrap;
+}
+
+.gagLvlMod {
+  color: var(--lightgrey);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.7rem;
+}
+
+.gagIcon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  display: block;
+}
+
+.sosToons {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  padding: 0.4rem;
+  gap: 0.5rem;
+  background: var(--gag-bg-blue);
+  margin-top: 0.5rem;
+  border-radius: 5px;
+}
+
+.sosToonCell {
+  background: var(--lightgrey);
+  position: relative;
+}
+
+.sosToonGagIcon {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  max-height: 45% !important;
+  max-width: 45% !important;
+}
+
+.bgBlueBtn {
+  background: var(--gag-bg-blue);
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+
+.orgImg {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  display: block;
+}
+
+.multiTrapWarning {
+  color: #ef4444;
+}
+
+.gagMultipliers {
+  font-size: 0.8rem;
+}
+

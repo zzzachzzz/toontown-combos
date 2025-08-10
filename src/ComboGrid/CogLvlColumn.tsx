@@ -1,6 +1,6 @@
 import { For, createMemo } from 'solid-js';
 import { CogLvlCell } from './CogLvlCell';
-import { useStore } from './store.instance';
+import { useStore } from '../store.instance';
 
 export const CogLvlColumn = () => {
   const store = useStore();

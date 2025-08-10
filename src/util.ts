@@ -1,5 +1,5 @@
 import type { FindComboArgs } from './gags';
-import { GagTrack, BASE_URL, gags, SosToons } from './constants';
+import { GagTrack, GagTracks, BASE_URL, gags, SosToons } from './constants';
 
 export function* batch<T>(batchSize: number, iterable: Iterable<T>): Generator<Array<T>> {
   let yieldNext: Array<T> = [];
@@ -69,6 +69,9 @@ export const getGagIconUrl = ({ track, lvl }: { track: GagTrack; lvl: number; })
   return getResourceUrl(`gag_icons/${iconName}.png`);
 };
 
+export const getCogIconUrl = (cogLvl: number): string =>
+  getResourceUrl(`cog_icons/${cogLvl > 14 ? 'field-office' : cogLvl}.png`)
+
 export const getSosToonIconUrl = (sosToon: SosToons): string => {
   const iconName = (() => {
     switch (sosToon) {
@@ -86,5 +89,21 @@ export const getSosToonIconUrl = (sosToon: SosToons): string => {
     }
   })();
   return getResourceUrl(`${iconName}.png`);
+};
+
+export const getSosGagIconUrl = (sosToon: SosToons) => {
+  switch (sosToon) {
+    case SosToons.ClerkWill:      return getGagIconUrl({ track: GagTracks.trap, lvl: 4 });
+    case SosToons.ClerkPenny:     return getGagIconUrl({ track: GagTracks.trap, lvl: 5 });
+    case SosToons.ClerkClara:     return getGagIconUrl({ track: GagTracks.trap, lvl: 6 });
+    case SosToons.BarbaraSeville: return getGagIconUrl({ track: GagTracks.sound, lvl: 4 });
+    case SosToons.SidSonata:      return getGagIconUrl({ track: GagTracks.sound, lvl: 5 });
+    case SosToons.MoeZart:        return getGagIconUrl({ track: GagTracks.sound, lvl: 6 });
+    case SosToons.ClumsyNed:      return getGagIconUrl({ track: GagTracks.drop, lvl: 4 });
+    case SosToons.FranzNeckvein:  return getGagIconUrl({ track: GagTracks.drop, lvl: 5 });
+    case SosToons.BarnacleBessie: return getGagIconUrl({ track: GagTracks.drop, lvl: 6 });
+    default:
+      throw new Error(`Unmatched SosToons value '${sosToon}'`);
+  }
 };
 
