@@ -21,7 +21,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: [
-      'node_modules/@testing-library/jest-dom/extend-expect.js',
+      '@testing-library/jest-dom/vitest',
       './src/test-setup.ts',
     ],
     // if you have few tests, try commenting one
