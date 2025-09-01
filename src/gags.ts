@@ -38,10 +38,9 @@ export class Gag {
     this.isOrg = isOrg;
   }
 
-  /** Create new `Combo` instance, copied from another instance */
-  static fromGag(gag: Gag): Gag {
+  clone(): Gag {
     return new Gag({
-      track: gag.track, lvl: gag.lvl, isOrg: gag.isOrg
+      track: this.track, lvl: this.lvl, isOrg: this.isOrg
     });
   }
 
@@ -122,7 +121,11 @@ export class Gag {
   }
 }
 
+type SosToonGagTrack = keyof typeof sosToonGags;
+
 export class SosToonGag extends Gag {
+  declare track: SosToonGagTrack;
+
   constructor(sosToon: SosToons) {
     super({
       track: SosToonGag.getTrackFromSosToon(sosToon),
@@ -132,14 +135,18 @@ export class SosToonGag extends Gag {
   }
 
   static fromTrackAndLvl(
-    track: GagTracks.trap | GagTracks.sound | GagTracks.drop,
+    track: SosToonGagTrack,
     lvl: number,
   ): SosToonGag {
     const { sosToon } = sosToonGags[track][lvl];
     return new SosToonGag(sosToon);
   }
 
-  private static getTrackFromSosToon(sosToon: SosToons): GagTrack {
+  override clone(): SosToonGag {
+    return new SosToonGag(this.sosToon);
+  }
+
+  private static getTrackFromSosToon(sosToon: SosToons): SosToonGagTrack {
     switch (sosToon) {
       case SosToons.ClerkWill:
       case SosToons.ClerkPenny:
@@ -178,15 +185,15 @@ export class SosToonGag extends Gag {
   }
 
   get sosToon(): SosToons {
-    return sosToonGags[this.track as GagTracks.trap | GagTracks.sound | GagTracks.drop][this.lvl].sosToon;
+    return sosToonGags[this.track][this.lvl].sosToon;
   }
 
   override get name(): string {
-    return sosToonGags[this.track as GagTracks.trap | GagTracks.sound | GagTracks.drop][this.lvl].name;
+    return sosToonGags[this.track][this.lvl].name;
   }
 
   override get damage(): number {
-    return sosToonGags[this.track as GagTracks.trap | GagTracks.sound | GagTracks.drop][this.lvl].damage;
+    return sosToonGags[this.track][this.lvl].damage;
   }
 }
 
@@ -200,9 +207,9 @@ export class Combo {
   }
 
   /** Create new `Combo` instance, copied from another instance */
-  static fromCombo(combo: Combo): Combo {
+  clone(): Combo {
     return new Combo({
-      gags: combo.gags.map(g => Gag.fromGag(g)),
+      gags: this.gags.map(g => g.clone()),
     });
   }
 
