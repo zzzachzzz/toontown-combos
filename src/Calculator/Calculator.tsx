@@ -63,7 +63,7 @@ export const Calculator = () => {
       }
       case OnClickSelectedGagAction.Copy: {
         setCombo(c => {
-          c.gags.push(Gag.fromGag(data.gag));
+          c.gags.push(data.gag.clone());
           return c;
         });
         break;
