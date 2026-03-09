@@ -1,7 +1,7 @@
 import { JSX, Show, For } from 'solid-js';
 import * as util from '../util';
 import { Combo, SosToonGag } from '../gags';
-import { additionalGagMultipliers } from '../constants';
+import { ADDITIONAL_GAG_MULTIPLIERS } from '../constants';
 import { SvgX } from './SvgX';
 import stylesSelectedGags from './SelectedGags.module.css';
 import stylesAccumulatedDamageCombo from './AccumulatedDamageCombo.module.css';
@@ -18,7 +18,7 @@ export const AccumulatedDamageCombo = (props: Props) => {
   return (
     <div class={styles.container}>
       <Show when={props.additionalGagMultiplier !== 0}>
-        <div style={{ 'font-size': '0.8rem' }}>{additionalGagMultipliers[props.additionalGagMultiplier]}</div>
+        <div style={{ 'font-size': '0.8rem' }}>{ADDITIONAL_GAG_MULTIPLIERS[props.additionalGagMultiplier]}</div>
         <hr style={{ border: 'none', 'border-top': `2px solid var(--black)` }} />
       </Show>
       <div class={styles.flexContainer}>

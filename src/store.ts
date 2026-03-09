@@ -1,6 +1,6 @@
 import { createMemo, createSignal } from 'solid-js';
 import { createStore as _createStore } from 'solid-js/store';
-import { findCombo, FindComboResult, Combo } from './gags';
+import { findCombo, Combo } from './gags';
 import * as util from './util';
 import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
@@ -131,12 +131,12 @@ export const createStore = ({
       return 20;
     };
 
-    getComboGridCombos = createMemo((): Array<FindComboResult> => {
+    getComboGridCombos = createMemo((): Array<Combo | null> => {
       const maxCogLvl = this.getMaxCogLvl();
       const organicGags = this.getSelectedOrgGagTrackCounts();
       const isLured = this.getIsLured();
       const level4UpGagsOnly = this.getLevel4UpGagsOnly();
-      const minGagLvl = level4UpGagsOnly ? 4 : null;
+      const minGagLvl = level4UpGagsOnly ? 4 : undefined;
 
       return Array.from(
         util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),

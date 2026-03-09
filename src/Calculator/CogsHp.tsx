@@ -1,6 +1,6 @@
 import { For } from 'solid-js';
 import * as util from '../util';
-import { cogHp } from '../constants';
+import { COG_HP } from '../constants';
 import styles from './CogsHp.module.css';
 
 type Props = {
@@ -17,7 +17,7 @@ export const CogsHp = (props: Props) => {
               <tr>
                 <For each={range}>
                   {cogLvl => {
-                    const remaining = () => cogHp[cogLvl] - props.comboDamage;
+                    const remaining = () => COG_HP[cogLvl] - props.comboDamage;
 
                     const tdStyle = () => {
                       if (props.comboDamage === 0)
@@ -30,7 +30,7 @@ export const CogsHp = (props: Props) => {
                     return (
                       <td class={styles.cell} style={tdStyle()}>
                         <div class={styles.cogLvl}>{cogLvl}</div>
-                        <div class={styles.cogHp}>{cogHp[cogLvl]}</div>
+                        <div class={styles.cogHp}>{COG_HP[cogLvl]}</div>
                         <div class={styles.cogHpRemaining}>
                           {props.comboDamage === 0 ? '-' : remaining()}
                         </div>

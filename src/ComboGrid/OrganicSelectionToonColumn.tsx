@@ -1,6 +1,6 @@
 import { For, Show } from 'solid-js';
 import { useStore } from '../store.instance';
-import { gagTracksArr, gagTrackDisplayName, GagTrack } from '../constants';
+import { GagTracks, GAG_TRACK_DISPLAY_NAME, GagTrack } from '../constants';
 import { getGagIconUrl } from '../util';
 import * as storage from '../local-storage';
 import styles from './OrganicSelectionToonColumn.module.css';
@@ -23,7 +23,7 @@ export const OrganicSelectionToonColumn = (props: Props) => {
   return (
     <ul class={styles.column} role="listbox">
       {store.getShowOrgView() ? (
-        <For each={gagTracksArr}>
+        <For each={Object.values(GagTracks)}>
           {gagTrack => (
             <GagTrackListItem
               toonIdx={props.toonIdx}
@@ -74,7 +74,7 @@ const GagTrackListItem = (props: GagTrackListItemProps) => {
           <div class={styles.imgContainer}>
             <img src={getGagIconUrl({ track: props.gagTrack!, lvl: 1 })} />
           </div>
-          <span>{gagTrackDisplayName[props.gagTrack!]}</span>
+          <span>{GAG_TRACK_DISPLAY_NAME[props.gagTrack!]}</span>
         </button>
       </Show>
     </li>

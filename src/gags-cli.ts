@@ -1,13 +1,13 @@
-import { findCombo, logTable } from './gags';
+import { findCombo, FindComboResult, logTable } from './gags';
 
 const args: Parameters<typeof findCombo>[0] = {
-  cogLvl: 11,
+  cogLvl: 12,
   isLured: false,
   gags: {
     toonup: 0,
     trap:   0,
     lure:   0,
-    sound:  3,
+    sound:  4,
     throw:  0,
     squirt: 0,
     drop:   0,
@@ -16,13 +16,15 @@ const args: Parameters<typeof findCombo>[0] = {
     toonup: 0,
     trap:   0,
     lure:   0,
-    sound:  2,
+    sound:  3,
     throw:  0,
     squirt: 0,
     drop:   0,
   },
+  minGagLvl: undefined,
+  additionalGagMultiplier: undefined,
 };
 
 const combo = findCombo(args);
-logTable(combo);
+logTable(new FindComboResult(args, combo));
 
