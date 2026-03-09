@@ -14,9 +14,7 @@ export enum GagTracks {
 // String union version, so that string literal or GagTracks enum can be provided
 export type GagTrack = `${GagTracks}`;
 
-export const gagTracksArr: GagTracks[] = Object.values(GagTracks);
-
-export const gagTracksOrder: Record<GagTracks, number> = {
+export const GAG_TRACKS_ORDER: Record<GagTracks, number> = {
   [GagTracks.toonup]: 0,
   [GagTracks.trap]: 1,
   [GagTracks.lure]: 2,
@@ -27,7 +25,7 @@ export const gagTracksOrder: Record<GagTracks, number> = {
 };
 
 // TODO Can extend this to include other info such as accuracy
-export const gags: Record<GagTracks, Record<number, { name: string; damage: number; }>> = {
+export const GAGS: Record<GagTracks, Record<number, { name: string; damage: number; }>> = {
   [GagTracks.toonup]: {
     1: { name: 'Feather',         damage: 0 },
     2: { name: 'Megaphone',       damage: 0 },
@@ -93,7 +91,7 @@ export const gags: Record<GagTracks, Record<number, { name: string; damage: numb
   },
 };
 
-export const cogHp: Record<number, number> = {
+export const COG_HP: Record<number, number> = {
   1:  6,
   2:  12,
   3:  20,
@@ -118,7 +116,7 @@ export const cogHp: Record<number, number> = {
 
 export const BASE_URL: string = import.meta.env?.BASE_URL ?? '';
 
-export const gagTrackDisplayName: Record<GagTrack, string> = {
+export const GAG_TRACK_DISPLAY_NAME: Record<GagTrack, string> = {
   toonup: 'Toon-Up',
   trap:   'Trap',
   lure:   'Lure',
@@ -140,7 +138,7 @@ export enum SosToons {
   BarnacleBessie,
 };
 
-export const sosToonGags: Record<
+export const SOS_TOON_GAGS: Record<
   GagTracks.trap | GagTracks.sound | GagTracks.drop,
   Record<number, { name: string; damage: number; sosToon: SosToons; }>
 > = {
@@ -161,7 +159,7 @@ export const sosToonGags: Record<
   },
 };
 
-export const additionalGagMultipliers: Record<number, string> = {
+export const ADDITIONAL_GAG_MULTIPLIERS: Record<number, string> = {
   [0]:      'None',
   [-0.1]:   '-10% (1-star FO Market Research)',
   [-0.15]:  '-15% (2-star FO Market Research)',

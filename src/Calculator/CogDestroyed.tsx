@@ -1,5 +1,5 @@
 import * as util from '../util';
-import { cogHp } from '../constants';
+import { COG_HP } from '../constants';
 import styles from './CogDestroyed.module.css';
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const CogDestroyed = (props: Props) => {
-  const remaining = () => cogHp[props.cogLvl] - props.comboDamage;
+  const remaining = () => COG_HP[props.cogLvl] - props.comboDamage;
 
   return (
     <div class={styles.container}>
@@ -24,7 +24,7 @@ export const CogDestroyed = (props: Props) => {
           <tr>
             <td class={styles.cell}>
               <div class={styles.cogLvl}>Level: {props.cogLvl}</div>
-              <div class={styles.cogHp}>HP: {cogHp[props.cogLvl]}</div>
+              <div class={styles.cogHp}>HP: {COG_HP[props.cogLvl]}</div>
               <div class={styles.cogsHpRemaining}>
                 Remaining: {remaining()}
               </div>

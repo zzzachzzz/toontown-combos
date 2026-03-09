@@ -7,7 +7,7 @@ expect.addSnapshotSerializer({
       {
         cog: findComboRes.cog,
         damage: findComboRes.damage(),
-        gags: findComboRes.combo.gags,
+        gags: findComboRes.combo?.gags,
       },
       config,
       indentation,

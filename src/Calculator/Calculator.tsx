@@ -1,7 +1,7 @@
 import { Show, For } from 'solid-js';
 import { useStore } from '../store.instance';
 import * as util from '../util';
-import { cogHp, additionalGagMultipliers } from '../constants';
+import { COG_HP, ADDITIONAL_GAG_MULTIPLIERS } from '../constants';
 import {
   OnClickSelectedGagAction,
   OnClickGridGag,
@@ -105,7 +105,7 @@ export const Calculator = () => {
   };
 
   const cogLvlDestroyed = (): number | null => {
-    for (const [cogLvl, _cogHp] of Object.entries(cogHp).reverse()) {
+    for (const [cogLvl, _cogHp] of Object.entries(COG_HP).reverse()) {
       if (comboDamage() >= _cogHp)
         return Number(cogLvl);
     }
@@ -127,7 +127,7 @@ export const Calculator = () => {
           value={additionalGagMultiplier().toString()}
           onChange={e => store.setAdditionalGagMultiplier(Number(e.target.value))}
         >
-          {Object.entries(additionalGagMultipliers).map(([value, desc]) => (
+          {Object.entries(ADDITIONAL_GAG_MULTIPLIERS).map(([value, desc]) => (
             <option value={value}>{desc}</option>
           ))}
         </select>

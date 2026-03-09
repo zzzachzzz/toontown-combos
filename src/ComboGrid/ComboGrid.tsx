@@ -63,7 +63,11 @@ export const ComboGrid = () => {
               {comboBatch => (
                 <div>
                   <For each={comboBatch}>
-                    {combo => <Combo combo={combo} />}
+                    {maybeCombo => (
+                      <Show when={maybeCombo}>
+                        {combo => <Combo combo={combo()} isLured={store.getIsLured()} />}
+                      </Show>
+                    )}
                   </For>
                 </div>
               )}

@@ -1,51 +1,92 @@
-import { findCombo, FindComboResult, Combo, Gag, Cog } from './gags';
+import {
+  findCombo,
+  FindComboResult,
+  FindComboArgs,
+  Combo,
+  Gag,
+  sortFnGags,
+  sortFnGagsLowest,
+  cleanGagCounts,
+  findComboArgsToKey,
+  keyToFindComboArgs,
+  FindComboArgsKey,
+  ComboKey,
+} from './gags';
 import { GagTracks } from './constants';
 import * as util from './util';
 
-type IterFindComboArgsArgs = Parameters<typeof util.iterFindComboArgs>[0];
+const GT = GagTracks;
 
 describe('findCombo', () => {
-  test.each<IterFindComboArgsArgs>([
-    { maxCogLvl: 12, organicGags: {}, isLured: false },
-  ])('combos match the snapshot for args %j', (args) => {
+  test('matches snapshot for all permutations relevant to combo grid', () => {
     const findComboResults: Array<FindComboResult> = Array.from(
-      util.iterFindComboArgs(args),
-      findComboArgs => findCombo(findComboArgs),
-    )
-    expect(findComboResults).toMatchSnapshot();
+      iterFindComboArgsComboGridPermutations(),
+      findComboArgs => new FindComboResult(findComboArgs, findCombo(findComboArgs)),
+    );
+    expectFindComboResults(findComboResults);
+  });
+
+  test('matches snapshot for all 2sound2drop & 3sound1drop permutations', () => {
+    const findComboResults: Array<FindComboResult> = Array.from(
+      iterFindComboArgsSoundDropPermutations(),
+      findComboArgs => new FindComboResult(findComboArgs, findCombo(findComboArgs)),
+    );
+    expectFindComboResults(findComboResults);
+  });
+
+  function expectFindComboResults(findComboResults: Array<FindComboResult>) {
+    for (const res of findComboResults) {
+      if (!res.combo) continue;
+      expect.soft(
+        res.combo.damageKillsCog(res.cog, res.args.additionalGagMultiplier),
+        `[${res.inputKey()}] Non-null combo does not kill cog`
+      ).toBe(true);
+      const orgTrackCounts = res.combo.orgTrackCounts();
+      for (const [track, orgsAvailable] of Object.entries(res.args.organicGags)) {
+        const orgsUsed = orgTrackCounts[track as GagTracks];
+        if (orgsUsed > orgsAvailable) { // Extra condition check for lazy expect message creation
+          expect.soft(
+            orgsUsed,
+            `[${res.inputKey()}] More orgs used in combo than available for track ${track} ` +
+            `(${orgsUsed} > ${orgsAvailable}) ${JSON.stringify(res.shortView())}\n`
+          ).toBeLessThanOrEqual(orgsAvailable);
+        }
+      }
+    }
+    expect(findComboResults.map(res => res.shortView())).toMatchSnapshot();
+  }
+});
+
+const findComboArgsToFromKeyTestCases: [FindComboArgs, string][] = [
+  [{ gags: { throw: 4 }, organicGags: { throw: 3 }, minGagLvl: 4, cogLvl: 14, isLured: true }, 'Th_Th_Th_th_min4_c14_l'],
+  [{ gags: { throw: 2, squirt: 1 }, organicGags: { throw: 1, squirt: 1 }, cogLvl: 1, isLured: false }, 'Th_th_Sq_c1'],
+  [{ gags: { drop: 1, throw: 2 }, organicGags: { throw: 1 }, minGagLvl: 5, cogLvl: 12, isLured: false }, 'Th_th_dr_min5_c12'],
+  [{ gags: { drop: 1 }, organicGags: {}, minGagLvl: 4, cogLvl: 9, isLured: true, additionalGagMultiplier: -0.25 }, 'dr_min4_c9_l_*-0.25'],
+  [{ gags: {}, organicGags: {}, minGagLvl: 4, cogLvl: 9, isLured: true, additionalGagMultiplier: 0.6 }, 'min4_c9_l_*0.6'],
+];
+
+describe('findComboArgsToKey', () => {
+  test.each(
+    findComboArgsToFromKeyTestCases
+  )('converts `FindComboArgs` object to string key', (findComboArgs, key) => {
+    expect(findComboArgsToKey(findComboArgs)).toEqual(key);
   });
 });
 
-describe('FindComboResult', () => {
-  describe('inputKey & outputKey', () => {
-    test.each([
-      new FindComboResult({
-        combo: new Combo({ gags: [] }),
-        cog: new Cog({ lvl: 11, isLured: true }),
-        gagsInput: { sound: 1, throw: 1, squirt: 2 },
-        organicGagsInput: {},
-      }),
-      new FindComboResult({
-        combo: new Combo({ gags: [] }),
-        cog: new Cog({ lvl: 11, isLured: false }),
-        gagsInput: { drop: 2, squirt: 2 },
-        organicGagsInput: { drop: 1 },
-      }),
-    ])('generates the expected input key and output key', (findComboRes) => {
-      expect({
-        inputKey: findComboRes.inputKey(),
-        outputKey: findComboRes.outputKey(),
-      }).toMatchSnapshot();
-    });
+describe('keyToFindComboArgs', () => {
+  test.each(
+    findComboArgsToFromKeyTestCases
+  )('converts string key to `FindComboArgs` object', (findComboArgs, key) => {
+    expect(keyToFindComboArgs(key as FindComboArgsKey)).toEqual(findComboArgs);
   });
+});
 
-  describe('cleanGagCounts', () => {
-    test('sorts keys to match gag track order and omits 0 or undefined values', () => {
-      const cleaned = Combo.cleanGagCounts({ drop: 0, squirt: 1, toonup: 3, lure: undefined });
-      expect(JSON.stringify(cleaned)).toEqual(
-        '{"toonup":3,"squirt":1}'
-      );
-    });
+describe('cleanGagCounts', () => {
+  test('sorts keys to match gag track order and omits 0 or undefined values', () => {
+    const cleaned = cleanGagCounts({ drop: 0, squirt: 1, toonup: 3, lure: undefined });
+    expect(JSON.stringify(cleaned)).toEqual(
+      '{"toonup":3,"squirt":1}'
+    );
   });
 });
 
@@ -122,5 +163,177 @@ describe('Combo', () => {
       expect(combo.damage({ additionalGagMultiplier })).toBe(expectedDamage);
     });
   });
+
+  const comboToFromKeyTestCases: [Combo, string][] = [
+    [
+      new Combo({ gags: [
+        new Gag({ track: GT.throw, lvl: 6, isOrg: true }),
+        new Gag({ track: GT.throw, lvl: 5, isOrg: true }),
+        new Gag({ track: GT.squirt, lvl: 7 }),
+      ] }),
+      'Th6_Th5_sq7'
+    ],
+  ];
+
+  describe('toKey', () => {
+    test.each(
+      comboToFromKeyTestCases
+    )('converts `Combo` object to string key', (combo, key) => {
+      expect(combo.toKey()).toEqual(key);
+    });
+  });
+
+  describe('fromKey', () => {
+    test.each(
+      comboToFromKeyTestCases
+    )('converts string key to `Combo` object', (combo, key) => {
+      expect(Combo.fromKey(key as ComboKey)).toEqual(combo);
+    });
+  });
 });
+
+describe('sortFnGags', () => {
+  test('sorts by track order, then by damage, high to low', () => {
+    expect([
+      new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.squirt, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.drop, lvl: 2, isOrg: false }),
+      new Gag({ track: GT.trap, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.throw, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.trap, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.throw, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.squirt, lvl: 1, isOrg: true }),
+    ].toSorted(sortFnGags)).toEqual([
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.trap, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.trap, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.throw, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.throw, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.squirt, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.squirt, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.drop, lvl: 2, isOrg: false }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
+    ]);
+  });
+});
+
+describe('sortFnGagsLowest', () => {
+  test('sorts by damage, low to high', () => {
+    const arr = [
+      new Gag({ track: GT.drop,    lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.toonup,  lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.drop,    lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.squirt,  lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.drop,    lvl: 2,  isOrg: false }),
+      new Gag({ track: GT.drop,    lvl: 0,  isOrg: true  }),
+      new Gag({ track: GT.drop,    lvl: 0,  isOrg: false }),
+      new Gag({ track: GT.trap,    lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.lure,    lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.sound,   lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.sound,   lvl: 0,  isOrg: true  }),
+      new Gag({ track: GT.sound,   lvl: 0,  isOrg: false }),
+      new Gag({ track: GT.throw,   lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.trap,    lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.toonup,  lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.throw,   lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.sound,   lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.lure,    lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.squirt,  lvl: 1,  isOrg: true  }),
+    ];
+
+    const sorted = arr.toSorted(sortFnGagsLowest);
+
+    expect(sorted).toEqual([
+      new Gag({ track: GT.sound,   lvl: 0,  isOrg: false }),
+      new Gag({ track: GT.sound,   lvl: 0,  isOrg: true  }),
+      new Gag({ track: GT.drop,    lvl: 0,  isOrg: false }),
+      new Gag({ track: GT.drop,    lvl: 0,  isOrg: true  }),
+      new Gag({ track: GT.toonup,  lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.toonup,  lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.lure,    lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.lure,    lvl: 1,  isOrg: true  }),
+
+      new Gag({ track: GT.sound,   lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.squirt,  lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.sound,   lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.squirt,  lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.throw,   lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.throw,   lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.drop,    lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.trap,    lvl: 1,  isOrg: false }),
+      new Gag({ track: GT.drop,    lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.trap,    lvl: 1,  isOrg: true  }),
+      new Gag({ track: GT.drop,    lvl: 2,  isOrg: false }),
+    ]);
+  });
+});
+
+function* iterFindComboArgsComboGridPermutations(): Generator<FindComboArgs> {
+  for (const { gagTrack, numToons } of (
+    [GagTracks.sound, GagTracks.throw, GagTracks.squirt]
+    .flatMap(gagTrack => Array.from(
+      util.range(4, 1, -1),
+      numToons => ({ gagTrack, numToons })
+    ))
+  )) {
+    const maxCogLvl = 20;
+    for (
+      const isLured of (
+        gagTrack === GagTracks.throw || gagTrack === GagTracks.squirt
+        ? [false, true]
+        : [false]
+      )
+    ) {
+      for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
+        for (let numOrg = 0; numOrg <= numToons; numOrg++) {
+          for (const minGagLvl of [undefined, 4]) {
+            yield {
+              minGagLvl,
+              isLured,
+              cogLvl,
+              gags: { [gagTrack]: numToons },
+              organicGags: { [gagTrack]: numOrg },
+            };
+          }
+        }
+      }
+    }
+  }
+}
+
+function* iterFindComboArgsSoundDropPermutations(): Generator<FindComboArgs> {
+  const maxCogLvl = 20;
+  const isLured = false;
+  for (const gags of [
+    { sound: 2, drop: 2 },
+    { sound: 3, drop: 1 },
+  ] satisfies FindComboArgs['gags'][]) {
+    for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
+      for (const soundOrg of util.range(0, gags.sound)) {
+        for (const dropOrg of util.range(0, gags.drop)) {
+          yield {
+            minGagLvl: undefined,
+            isLured,
+            cogLvl,
+            gags,
+            organicGags: { sound: soundOrg, drop: dropOrg },
+          };
+        }
+      }
+    }
+  }
+}
 

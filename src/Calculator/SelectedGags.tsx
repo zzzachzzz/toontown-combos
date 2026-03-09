@@ -27,15 +27,15 @@ type Props = {
 export const SelectedGags = (props: Props) => {
   return (
     <div class={styles.container}>
-      <For each={props.combo.gagsGroupedByTrack()}>
-        {gagGroup => {
+      <For each={Object.entries(props.combo.gagsGroupedByTrack())}>
+        {([track, gagGroup]) => {
           // Multipliers will be the same for the gags of a given track in the combo
           const multipliers = createMemo(() => gagGroup[0].multipliers(props.combo));
 
           return (
-            <div class={styles.selectedGagGroup} style={{ border: `4px solid var(--${gagGroup[0].track})` }}>
+            <div class={styles.selectedGagGroup} style={{ border: `4px solid var(--${track})` }}>
               <div style={{ display: 'flex', 'flex-direction': 'column', gap: '0.5rem' }}>
-                <Show when={gagGroup[0].track === GagTracks.trap && gagGroup.length >= 2}>
+                <Show when={track === GagTracks.trap && gagGroup.length >= 2}>
                   <span class={styles.multiTrapWarning}>
                     Multiple trap present in combo, damage negated
                   </span>

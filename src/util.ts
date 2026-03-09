@@ -1,5 +1,24 @@
 import type { FindComboArgs } from './gags';
-import { GagTrack, GagTracks, BASE_URL, gags, SosToons } from './constants';
+import { GagTrack, GagTracks, BASE_URL, GAGS, SosToons } from './constants';
+
+declare const __brand: unique symbol;
+export type Brand<T, B extends string> = T & { [__brand]: B };
+
+export function defaultdict<T extends Record<string, any>>(
+  obj: T,
+  factory: () => T[keyof T]
+): Required<T> {
+  return new Proxy(obj, {
+    get(target, name) {
+      if (!(name in target)) target[name as keyof T] = factory();
+      return target[name as keyof T];
+    }
+  }) as Required<T>;
+}
+
+export function clamp(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max);
+}
 
 export function* batch<T>(batchSize: number, iterable: Iterable<T>): Generator<Array<T>> {
   let yieldNext: Array<T> = [];
@@ -40,6 +59,17 @@ export function* range(start: number, end: number, step: number = 1): Generator<
   }
 }
 
+export function assert(
+  fn: () => boolean,
+  msg?: string,
+): asserts fn is (() => true) {
+  if (fn()) return;
+  const condition = fn.toString()
+    .replace(/^\(\)\s*=>\s*/, '')
+    .trim();
+  throw new Error(`Assertion failed (${condition})${msg ? (': ' + msg) : ''}`);
+}
+
 export function* iterFindComboArgs({
   maxCogLvl,
   organicGags,
@@ -50,7 +80,7 @@ export function* iterFindComboArgs({
   'organicGags' | 'isLured' | 'minGagLvl'>
 ): Generator<FindComboArgs> {
   const common = { isLured, organicGags, minGagLvl };
-  const gagTracks: Array<GagTrack> = ['sound', 'throw', 'squirt'];
+  const gagTracks: Array<GagTrack> = [GagTracks.sound, GagTracks.throw, GagTracks.squirt];
   for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
     for (const gagTrack of gagTracks) {
       for (let numToons = 4; numToons >= 1; numToons--) {
@@ -65,7 +95,7 @@ export const getResourceUrl = (path: string): string => `${BASE_URL}${path}`;
 export const getGagIconUrl = ({ track, lvl }: { track: GagTrack; lvl: number; }): string => {
   const iconName = lvl === 0
     ? 'None'
-    : gags[track][lvl].name.replace(/\s/g, '_');
+    : GAGS[track][lvl].name.replace(/\s/g, '_');
   return getResourceUrl(`gag_icons/${iconName}.png`);
 };
 

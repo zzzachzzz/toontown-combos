@@ -1,6 +1,6 @@
 import { For } from 'solid-js';
 import * as util from '../util';
-import { gagTracksArr, gagTrackDisplayName, SosToons } from '../constants';
+import { GagTracks, GAG_TRACK_DISPLAY_NAME, SosToons } from '../constants';
 import { OnClickGridGag } from './types';
 import styles from './GagGrid.module.css';
 
@@ -11,11 +11,11 @@ type Props = {
 export const GagGrid = (props: Props) => {
   return (
     <div class={styles.container}>
-      <For each={gagTracksArr}>
+      <For each={Object.values(GagTracks)}>
         {track => {
           return (
             <div class={`${styles.row} no-drag`} style={{ background: `var(--${track})` }}>
-              <div class={styles.gagTrackLabel}>{gagTrackDisplayName[track]}</div>
+              <div class={styles.gagTrackLabel}>{GAG_TRACK_DISPLAY_NAME[track]}</div>
               <For each={[...util.range(1, 7)]} >
                 {lvl => {
                   return (

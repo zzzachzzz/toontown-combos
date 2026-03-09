@@ -1,5 +1,5 @@
 import { useStore } from '../store.instance';
-import { cogHp as cogHpLookup } from '../constants';
+import { COG_HP as cogHpLookup } from '../constants';
 import { getCogIconUrl } from '../util';
 import styles from './CogLvlCell.module.css';
 
