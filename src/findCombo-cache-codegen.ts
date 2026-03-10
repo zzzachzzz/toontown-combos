@@ -45,9 +45,8 @@ function* iterFindComboArgsComboGridPermutations(): Generator<FindComboArgs> {
   }
 }
 
-async function main() {
-  console.log('Beginning cache codegen');
-  const cache: Record<FindComboArgsKey, ComboKey> = Object.fromEntries(
+export function genCache(): Record<FindComboArgsKey, ComboKey> {
+  return Object.fromEntries(
     Array.from(
       iterFindComboArgsComboGridPermutations(),
       findComboArgs => {
@@ -56,14 +55,24 @@ async function main() {
       }
     )
   );
+}
+
+export function genCodegenFileContents(): string {
+  const cache = genCache();
+  return `export const cache: Record<FindComboArgsKey, ComboKey> = ${JSON.stringify(cache, null, 2)};`;
+}
+
+async function main() {
+  console.log('Beginning cache codegen');
+
+  const codegenFileContents = genCodegenFileContents();
 
   const outfilename = 'findCombo-cache.codegen.ts';
-  const __dirname = dirname(fileURLToPath(import.meta.url));
-  const outfilepath = resolve(__dirname, outfilename);
+  const outfilepath = resolve(dirname(fileURLToPath(import.meta.url)), outfilename);
 
   await fs.writeFile(
     outfilepath,
-    `export const cache: Record<FindComboArgsKey, ComboKey> = ${JSON.stringify(cache, null, 2)};`,
+    codegenFileContents,
     { encoding: 'utf8' }
   );
 
