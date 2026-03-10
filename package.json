@@ -11,6 +11,9 @@
     "test": "vitest run",
     "test-watch": "vitest watch",
     "publish": "npm run build && gh-pages --dist dist",
+    "ci": "npm run type-check && npm run test",
+    "cicd": "npm run _confirmprompt && npm run ci && npm run publish",
+    "_confirmprompt": "echo 'Type DEPLOY to confirm: ' && read confirm && [ \"$confirm\" = 'DEPLOY' ] || { echo 'Aborted'; exit 1; }",
     "gags-cli": "tsx ./src/gags-cli.ts",
     "cache-codegen": "tsx ./src/findCombo-cache-codegen.ts",
     "type-check": "tsc --noEmit --skipLibCheck"
