@@ -12,6 +12,7 @@
     "test-watch": "vitest watch",
     "publish": "npm run build && gh-pages --dist dist",
     "gags-cli": "tsx ./src/gags-cli.ts",
+    "cache-codegen": "tsx ./src/findCombo-cache-codegen.ts",
     "type-check": "tsc --noEmit --skipLibCheck"
   },
   "license": "MIT",
