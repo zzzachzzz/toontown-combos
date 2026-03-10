@@ -14,6 +14,7 @@ import {
 } from './gags';
 import { GagTracks } from './constants';
 import * as util from './util';
+import { iterFindComboArgsComboGridPermutations } from './findCombo-cache-codegen';
 
 const GT = GagTracks;
 
@@ -280,39 +281,6 @@ describe('sortFnGagsLowest', () => {
     ]);
   });
 });
-
-function* iterFindComboArgsComboGridPermutations(): Generator<FindComboArgs> {
-  for (const { gagTrack, numToons } of (
-    [GagTracks.sound, GagTracks.throw, GagTracks.squirt]
-    .flatMap(gagTrack => Array.from(
-      util.range(4, 1, -1),
-      numToons => ({ gagTrack, numToons })
-    ))
-  )) {
-    const maxCogLvl = 20;
-    for (
-      const isLured of (
-        gagTrack === GagTracks.throw || gagTrack === GagTracks.squirt
-        ? [false, true]
-        : [false]
-      )
-    ) {
-      for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
-        for (let numOrg = 0; numOrg <= numToons; numOrg++) {
-          for (const minGagLvl of [undefined, 4]) {
-            yield {
-              minGagLvl,
-              isLured,
-              cogLvl,
-              gags: { [gagTrack]: numToons },
-              organicGags: { [gagTrack]: numOrg },
-            };
-          }
-        }
-      }
-    }
-  }
-}
 
 function* iterFindComboArgsSoundDropPermutations(): Generator<FindComboArgs> {
   const maxCogLvl = 20;

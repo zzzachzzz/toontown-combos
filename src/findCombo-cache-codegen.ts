@@ -11,8 +11,7 @@ import {
 import { range } from './util';
 import { GagTracks } from './constants';
 
-// TODO import this, it's copied from gags.test.ts
-function* iterFindComboArgsComboGridPermutations(): Generator<FindComboArgs> {
+export function* iterFindComboArgsComboGridPermutations(): Generator<FindComboArgs> {
   for (const { gagTrack, numToons } of (
     [GagTracks.sound, GagTracks.throw, GagTracks.squirt]
     .flatMap(gagTrack => Array.from(
