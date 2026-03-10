@@ -1,6 +1,7 @@
 import { createMemo, createSignal } from 'solid-js';
 import { createStore as _createStore } from 'solid-js/store';
-import { findCombo, Combo } from './gags';
+import { findCombo, Combo, findComboArgsToKey, type ComboKey } from './gags';
+import { cache } from './findCombo-cache.codegen';
 import * as util from './util';
 import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
@@ -135,12 +136,17 @@ export const createStore = ({
       const maxCogLvl = this.getMaxCogLvl();
       const organicGags = this.getSelectedOrgGagTrackCounts();
       const isLured = this.getIsLured();
-      const level4UpGagsOnly = this.getLevel4UpGagsOnly();
-      const minGagLvl = level4UpGagsOnly ? 4 : undefined;
+      const minGagLvl = this.getLevel4UpGagsOnly() ? 4 : undefined;
 
       return Array.from(
         util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
-        findComboArgs => findCombo(findComboArgs)
+        findComboArgs => {
+          const cacheKey = findComboArgsToKey(findComboArgs);
+          const cacheHit = cache[cacheKey];
+          if (cacheHit !== undefined) return Combo.fromKey(cacheHit as ComboKey);
+          console.warn(`Cache miss for ComboKey '${cacheKey}'`);
+          return findCombo(findComboArgs);
+        }
       );
     });
 

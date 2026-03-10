@@ -11,6 +11,8 @@ import {
 import { range } from './util';
 import { GagTracks } from './constants';
 
+// TODO The collab?
+// export function* iterFindComboArgs({ // TODO Rename? ComboGrid permutations
 export function* iterFindComboArgsComboGridPermutations(): Generator<FindComboArgs> {
   for (const { gagTrack, numToons } of (
     [GagTracks.sound, GagTracks.throw, GagTracks.squirt]

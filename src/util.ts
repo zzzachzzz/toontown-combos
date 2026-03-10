@@ -70,7 +70,7 @@ export function assert(
   throw new Error(`Assertion failed (${condition})${msg ? (': ' + msg) : ''}`);
 }
 
-export function* iterFindComboArgs({
+export function* iterFindComboArgs({ // TODO Rename? ComboGrid permutations
   maxCogLvl,
   organicGags,
   isLured,
