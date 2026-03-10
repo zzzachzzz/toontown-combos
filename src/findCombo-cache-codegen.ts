@@ -61,21 +61,21 @@ export function genCodegenFileContents(): string {
   return `export const cache: Record<FindComboArgsKey, ComboKey> = ${JSON.stringify(cache, null, 2)};`;
 }
 
+export const outCodegenFilename = 'findCombo-cache.codegen.ts';
+export const outCodegenFilepath = resolve(dirname(fileURLToPath(import.meta.url)), outCodegenFilename);
+
 async function main() {
   console.log('Beginning cache codegen');
 
   const codegenFileContents = genCodegenFileContents();
 
-  const outfilename = 'findCombo-cache.codegen.ts';
-  const outfilepath = resolve(dirname(fileURLToPath(import.meta.url)), outfilename);
-
   await fs.writeFile(
-    outfilepath,
+    outCodegenFilepath,
     codegenFileContents,
     { encoding: 'utf8' }
   );
 
-  console.log(`Wrote cache codegen to file '${outfilepath}'`);
+  console.log(`Wrote cache codegen to file '${outCodegenFilepath}'`);
 }
 
 if (import.meta.main) main();
