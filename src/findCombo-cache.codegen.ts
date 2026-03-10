@@ -1,4 +1,4 @@
-export const cache: Record<FindComboArgsKey, ComboKey> = {
+export const cache: Record<string, string> = {
   "so_so_so_so_c20": "",
   "so_so_so_so_min4_c20": "",
   "So_so_so_so_c20": "",
