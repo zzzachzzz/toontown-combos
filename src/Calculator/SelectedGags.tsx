@@ -1,7 +1,7 @@
-import { Show, For, createMemo } from 'solid-js';
+import { Show, For, createMemo, mapArray, Accessor } from 'solid-js';
 import * as util from '../util';
 import { Combo, Gag, SosToonGag } from '../gags';
-import { GagTracks } from '../constants';
+import { GagTracks, GagTrack } from '../constants';
 import {
   OnClickOrgToggle,
   OnClickSelectedGag,
@@ -28,19 +28,24 @@ export const SelectedGags = (props: Props) => {
   return (
     <div class={styles.container}>
       <For each={Object.entries(props.combo.gagsGroupedByTrack())}>
-        {([track, gagGroup]) => {
+        {(x) => {
+          const [track, gagGroup] =
+            mapArray(x, accessor => accessor)() satisfies
+            Array<Accessor<string | Gag[]>> as
+            [Accessor<GagTrack>, Accessor<Gag[]>];
+
           // Multipliers will be the same for the gags of a given track in the combo
-          const multipliers = createMemo(() => gagGroup[0].multipliers(props.combo));
+          const multipliers = createMemo(() => gagGroup()[0].multipliers(props.combo));
 
           return (
             <div class={styles.selectedGagGroup} style={{ border: `4px solid var(--${track})` }}>
               <div style={{ display: 'flex', 'flex-direction': 'column', gap: '0.5rem' }}>
-                <Show when={track === GagTracks.trap && gagGroup.length >= 2}>
+                <Show when={track() === GagTracks.trap && gagGroup.length >= 2}>
                   <span class={styles.multiTrapWarning}>
                     Multiple trap present in combo, damage negated
                   </span>
                 </Show>
-                <For each={gagGroup}>
+                <For each={gagGroup()}>
                   {gag => (
                     <div class={styles.selectedGag}>
                       <button
@@ -66,7 +71,7 @@ export const SelectedGags = (props: Props) => {
                           </> : (
                             <img
                               class={`${styles.gagIcon} no-drag`}
-                              src={util.getGagIconUrl({ track: gag.track, lvl: gag.lvl })}
+                              src={util.getGagIconUrl({ track: gag().track, lvl: gag().lvl })}
                             />
                           )
                         }
@@ -75,8 +80,8 @@ export const SelectedGags = (props: Props) => {
                         <button
                           onClick={[props.onClickGagLvlMod, { gag, action: LvlUp }]}
                           class={styles.bgBlueBtn}
-                          style={{ opacity: canLvlUpGag(gag) ? '100%' : '50%' }}
-                          disabled={!canLvlUpGag(gag)}
+                          style={{ opacity: canLvlUpGag(gag()) ? '100%' : '50%' }}
+                          disabled={!canLvlUpGag(gag())}
                           aria-label="Level up gag"
                         >
                           &#9650;
@@ -84,8 +89,8 @@ export const SelectedGags = (props: Props) => {
                         <button
                           onClick={[props.onClickGagLvlMod, { gag, action: LvlDown }]}
                           class={styles.bgBlueBtn}
-                          style={{ opacity: canLvlDownGag(gag) ? '100%' : '50%' }}
-                          disabled={!canLvlDownGag(gag)}
+                          style={{ opacity: canLvlDownGag(gag()) ? '100%' : '50%' }}
+                          disabled={!canLvlDownGag(gag())}
                           aria-label="Level down gag"
                         >
                           &#9660;
@@ -95,14 +100,14 @@ export const SelectedGags = (props: Props) => {
                         <button
                           onClick={[props.onClickOrgToggle, { gag }]}
                           class={styles.bgBlueBtn}
-                          style={{ opacity: gag.isOrg ? '100%' : '50%' }}
+                          style={{ opacity: gag().isOrg ? '100%' : '50%' }}
                         >
                           <img class={styles.orgImg} src={util.getResourceUrl('Organic.png')} />
                         </button>
                       </Show>
-                      <span class={styles.gagName}>{gag.name}{gag.isOrg && ' (Org) '}</span>
-                      <Show when={gag.damage > 0}>
-                        <span>{`[${gag.damage}]`}</span>
+                      <span class={styles.gagName}>{gag.name}{gag().isOrg && ' (Org) '}</span>
+                      <Show when={gag().damage > 0}>
+                        <span>{`[${gag().damage}]`}</span>
                       </Show>
                     </div>
                   )}
@@ -116,11 +121,11 @@ export const SelectedGags = (props: Props) => {
                   <Show when={multipliers().knockback}>
                     <div>+50% Lure knockback bonus</div>
                   </Show>
-                  <hr style={{ border: 'none', 'border-top': `2px solid var(--${gagGroup[0].track})` }} />
+                  <hr style={{ border: 'none', 'border-top': `2px solid var(--${gagGroup()[0].track})` }} />
                   <div style={{ 'text-align': 'right' }}>
                     Damage: {
                       props.combo.damage({
-                        onlyTrack: gagGroup[0].track,
+                        onlyTrack: gagGroup()[0].track,
                         additionalGagMultiplier: props.additionalGagMultiplier,
                       })
                     }

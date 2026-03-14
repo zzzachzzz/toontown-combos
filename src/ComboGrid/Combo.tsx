@@ -19,10 +19,10 @@ export const Combo = (props: Props) => {
           {gag => (
             <div
               class={styles.gagIconContainer}
-              style={{ background: gag.isOrg ? `var(--${gag.track})` : 'unset' }}
+              style={{ background: gag().isOrg ? `var(--${gag().track})` : 'unset' }}
             >
-              <img class={styles.gagIcon} src={getGagIconUrl({ track: gag.track, lvl: gag.lvl })} />
-              {gag.isOrg && <span class={styles.orgText}>Org</span>}
+              <img class={styles.gagIcon} src={getGagIconUrl({ track: gag().track, lvl: gag().lvl })} />
+              {gag().isOrg && <span class={styles.orgText}>Org</span>}
             </div>
           )}
         </For>

@@ -1,5 +1,4 @@
-import { createMemo, createSignal } from 'solid-js';
-import { createStore as _createStore } from 'solid-js/store';
+import { createMemo, createSignal, createStore as _createStore, storePath } from 'solid-js'; // TODO update to preferred 2.0 pattern rather than `storePath` helper
 import { findCombo, Combo, findComboArgsToKey, type ComboKey } from './gags';
 import * as util from './util';
 import type { GagTrack } from './constants';
@@ -57,27 +56,27 @@ export const createStore = ({
     getAdditionalGagMultiplier = () => state.additionalGagMultiplier;
 
     setAdditionalGagMultiplier = (value: State['additionalGagMultiplier']) =>
-      setState('additionalGagMultiplier', value);
+      setState(storePath('additionalGagMultiplier', value));
 
     pushAccumulatedDamageCombo = () => {
       const combo = this.getCalculatorCombo().clone();
       const { additionalGagMultiplier } = state;
-      setState(
+      setState(storePath(
         'accumulatedDamageCombos',
         state.accumulatedDamageCombos.length,
         { combo, additionalGagMultiplier }
-      );
+      ));
     };
 
     removeAccumulatedDamageCombo = (index: number) => {
-      setState(
+      setState(storePath(
         'accumulatedDamageCombos',
         arr => [...arr.slice(0, index), ...arr.slice(index + 1)]
-      );
+      ));
     };
 
     clearAccumulatedDamageCombos = () => {
-      setState('accumulatedDamageCombos', []);
+      setState(storePath('accumulatedDamageCombos', []));
     };
 
     getAccumulatedDamageCombos = () => state.accumulatedDamageCombos;
@@ -89,26 +88,26 @@ export const createStore = ({
 
     getIsLured = () => state.isLured;
 
-    toggleIsLured = () => setState('isLured', isLured => !isLured);
+    toggleIsLured = () => setState(storePath('isLured', isLured => !isLured));
 
-    setIsLured = (isLured: State['isLured']) => setState('isLured', isLured);
+    setIsLured = (isLured: State['isLured']) => setState(storePath('isLured', isLured));
 
     getShowOrgView = () => state.showOrgView;
 
-    toggleShowOrgView = () => setState('showOrgView', showOrgView => !showOrgView);
+    toggleShowOrgView = () => setState(storePath('showOrgView', showOrgView => !showOrgView));
 
     getSelectedOrgGags = () => state.selectedOrgGags;
 
     setOrToggleSelectedOrgGag = (toonIdx: number, gagTrack: GagTrack) => {
-      setState('selectedOrgGags', toonIdx, prevGagTrack => {
+      setState(storePath('selectedOrgGags', toonIdx, prevGagTrack => {
         return gagTrack === prevGagTrack
           ? null
           : gagTrack;
-      });
+      }));
     };
 
     resetSelectedOrgGags = () => {
-      setState('selectedOrgGags',Array.from({ length: 4 }, () => null));
+      setState(storePath('selectedOrgGags',Array.from({ length: 4 }, () => null)));
     };
 
     getSelectedOrgGagTrackCounts = createMemo((): Record<GagTrack, number> => {
@@ -120,11 +119,11 @@ export const createStore = ({
 
     getHideLvl15UpCogs = () => state.hideLvl15UpCogs;
 
-    toggleHideLvl15UpCogs = () => setState('hideLvl15UpCogs', hideLvl15UpCogs => !hideLvl15UpCogs);
+    toggleHideLvl15UpCogs = () => setState(storePath('hideLvl15UpCogs', hideLvl15UpCogs => !hideLvl15UpCogs));
 
     getLevel4UpGagsOnly = () => state.level4UpGagsOnly;
 
-    toggleLevel4UpGagsOnly = () => setState('level4UpGagsOnly', level4UpGagsOnly => !level4UpGagsOnly);
+    toggleLevel4UpGagsOnly = () => setState(storePath('level4UpGagsOnly', level4UpGagsOnly => !level4UpGagsOnly));
 
     getMaxCogLvl = () => {
       if (state.hideLvl15UpCogs) {
@@ -162,7 +161,7 @@ export const createStore = ({
 
     getTheme = () => state.theme;
 
-    toggleTheme = () => setState('theme', theme => theme === 'dark' ? 'light' : 'dark');
+    toggleTheme = () => setState(storePath('theme', theme => theme === 'dark' ? 'light' : 'dark'));
 
     getStateForStorage = (): Required<SavedState> => ({
       isLured: state.isLured,
