@@ -60,10 +60,10 @@ export function genCache(): Record<FindComboArgsKey, ComboKey> {
 
 export function genCodegenFileContents(): string {
   const cache = genCache();
-  return `export const cache: Record<string, string> = ${JSON.stringify(cache, null, 2)};`;
+  return JSON.stringify(cache, null, 2);
 }
 
-export const outCodegenFilename = 'findCombo-cache.codegen.ts';
+export const outCodegenFilename = 'findCombo-cache.codegen.json';
 export const outCodegenFilepath = resolve(dirname(fileURLToPath(import.meta.url)), outCodegenFilename);
 
 async function main() {
