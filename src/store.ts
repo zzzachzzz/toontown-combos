@@ -1,7 +1,6 @@
 import { createMemo, createSignal } from 'solid-js';
 import { createStore as _createStore } from 'solid-js/store';
 import { findCombo, Combo, findComboArgsToKey, type ComboKey } from './gags';
-import { cache } from './findCombo-cache.codegen';
 import * as util from './util';
 import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
@@ -22,10 +21,12 @@ export type State = {
 
 type CreateStoreArgs = {
   initialState?: Partial<State>;
+  getFindComboCache?: () => Record<string, string> | null | undefined;
 };
 
 export const createStore = ({
   initialState,
+  getFindComboCache,
 }: CreateStoreArgs = {}) => {
   const [state, setState] = _createStore<State>({
     additionalGagMultiplier: 0,
@@ -132,19 +133,28 @@ export const createStore = ({
       return 20;
     };
 
+    // "Why createMemo is not lazy?" (initial value computed eagerly on my `createStore` call)
+    // "Just what I was looking at the time.
+    //  I created Solid back in 2016 and was inspired heavily by S.js which was all eager.
+    //  Changing to lazy would have been breaking. But it will be lazy in 2.0." -ryansolid
+    // https://github.com/solidjs/solid/discussions/2416#discussioncomment-12204286
     getComboGridCombos = createMemo((): Array<Combo | null> => {
       const maxCogLvl = this.getMaxCogLvl();
       const organicGags = this.getSelectedOrgGagTrackCounts();
       const isLured = this.getIsLured();
       const minGagLvl = this.getLevel4UpGagsOnly() ? 4 : undefined;
 
+      const cache = getFindComboCache?.();
+
       return Array.from(
         util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
         findComboArgs => {
           const cacheKey = findComboArgsToKey(findComboArgs);
-          const cacheHit = cache[cacheKey];
-          if (cacheHit !== undefined) return Combo.fromKey(cacheHit as ComboKey);
-          console.warn(`Cache miss for ComboKey '${cacheKey}'`);
+          if (cache) {
+            const cacheHit = cache[cacheKey];
+            if (cacheHit != null) return Combo.fromKey(cacheHit satisfies string as ComboKey);
+            console.warn(`Cache miss for ComboKey '${cacheKey}'`);
+          }
           return findCombo(findComboArgs);
         }
       );
