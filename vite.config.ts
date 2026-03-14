@@ -3,15 +3,15 @@
 
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
-import devtools from 'solid-devtools/vite';
+// import devtools from 'solid-devtools/vite';
 
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/toontown-combos/' : '/',
   plugins: [
     // solid-devtools: https://github.com/thetarnav/solid-devtools/tree/main/packages/extension#readme
-    devtools({
-      autoname: true,
-    }),
+    // devtools({
+    //   autoname: true,
+    // }),
     solidPlugin(),
   ],
   server: {
