@@ -16,7 +16,7 @@ export const CogLvlColumn = () => {
 
   return (
     <For each={cogLvls()}>
-      {cogLvl => <CogLvlCell cogLvl={cogLvl} />}
+      {cogLvl => <CogLvlCell cogLvl={cogLvl()} />}
     </For>
   );
 };

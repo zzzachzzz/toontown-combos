@@ -19,9 +19,9 @@ export const Provider: ParentComponent = (props) => {
   });
 
   return (
-    <StoreContext.Provider value={store}>
+    <StoreContext value={store}>
       {props.children}
-    </StoreContext.Provider>
+    </StoreContext>
   );
 };
 

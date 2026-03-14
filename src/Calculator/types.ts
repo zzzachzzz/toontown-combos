@@ -1,10 +1,10 @@
 import type { JSX } from 'solid-js';
-import type { GagTrack, SosToons } from '../constants';
+import type { SosToons } from '../constants';
 import type { Gag } from '../gags';
 
 export type OnClickGridGag = (
   data:
-    | { track: GagTrack; lvl: number }
+    | Required<ConstructorParameters<typeof Gag>[0]>
     | { sosToon: SosToons },
   e: MouseEvent & {
     currentTarget: HTMLButtonElement;

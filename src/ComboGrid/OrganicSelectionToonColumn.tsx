@@ -27,8 +27,8 @@ export const OrganicSelectionToonColumn = (props: Props) => {
           {gagTrack => (
             <GagTrackListItem
               toonIdx={props.toonIdx}
-              gagTrack={gagTrack}
-              isGagTrackSelected={gagTrack === selectedOrgGag()}
+              gagTrack={gagTrack()}
+              isGagTrackSelected={gagTrack() === selectedOrgGag()}
               onClickOrgGagTrack={onClickOrgGagTrack}
               showOrgView={store.getShowOrgView()}
             />

@@ -15,9 +15,9 @@ export const CogsHp = (props: Props) => {
           {range => {
             return (
               <tr>
-                <For each={range}>
+                <For each={range()}>
                   {cogLvl => {
-                    const remaining = () => COG_HP[cogLvl] - props.comboDamage;
+                    const remaining = () => COG_HP[cogLvl()] - props.comboDamage;
 
                     const tdStyle = () => {
                       if (props.comboDamage === 0)
@@ -29,8 +29,8 @@ export const CogsHp = (props: Props) => {
 
                     return (
                       <td class={styles.cell} style={tdStyle()}>
-                        <div class={styles.cogLvl}>{cogLvl}</div>
-                        <div class={styles.cogHp}>{COG_HP[cogLvl]}</div>
+                        <div class={styles.cogLvl}>{cogLvl()}</div>
+                        <div class={styles.cogHp}>{COG_HP[cogLvl()]}</div>
                         <div class={styles.cogHpRemaining}>
                           {props.comboDamage === 0 ? '-' : remaining()}
                         </div>

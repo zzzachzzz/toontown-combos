@@ -1,4 +1,4 @@
-import { JSX, For, Show, batch } from 'solid-js';
+import { JSX, For, Show } from 'solid-js';
 import { useStore } from '../store.instance';
 import * as util from '../util';
 import * as storage from '../local-storage';
@@ -33,10 +33,8 @@ export const ComboGrid = () => {
   };
 
   const onClickClearSelection: JSX.EventHandler<HTMLButtonElement, MouseEvent> = (_) => {
-    batch(() => {
-      store.resetSelectedOrgGags();
-      store.setIsLured(false);
-    });
+    store.resetSelectedOrgGags();
+    store.setIsLured(false);
     storage.saveSavedState(store.getStateForStorage());
   };
 
@@ -62,9 +60,9 @@ export const ComboGrid = () => {
             <For each={Array.from(util.batch(4, combos()))}>
               {comboBatch => (
                 <div>
-                  <For each={comboBatch}>
+                  <For each={comboBatch()}>
                     {maybeCombo => (
-                      <Show when={maybeCombo}>
+                      <Show when={maybeCombo()}>
                         {combo => <Combo combo={combo()} isLured={store.getIsLured()} />}
                       </Show>
                     )}

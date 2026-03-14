@@ -1,4 +1,4 @@
-import { JSX, Show, For } from 'solid-js';
+import { JSX, Show, For, Switch, Match } from 'solid-js';
 import * as util from '../util';
 import { Combo, SosToonGag } from '../gags';
 import { ADDITIONAL_GAG_MULTIPLIERS } from '../constants';
@@ -27,27 +27,27 @@ export const AccumulatedDamageCombo = (props: Props) => {
             <div
               class={styles.bgBlueBtn}
               style={{
-                background: gag instanceof SosToonGag ? 'var(--lightgrey)' : undefined,
-                border: `2px solid ${gag instanceof SosToonGag ? 'var(--gag-bg-blue)' : 'transparent'}`,
+                background: gag() instanceof SosToonGag ? 'var(--lightgrey)' : undefined,
+                border: `2px solid ${gag() instanceof SosToonGag ? 'var(--gag-bg-blue)' : 'transparent'}`,
                 position: 'relative',
               }}
             >
-              {gag instanceof SosToonGag
+              {gag() instanceof SosToonGag
                 ? <>
                   <img
                     class={`${styles.gagIcon} no-drag`}
-                    src={util.getSosToonIconUrl(gag.sosToon)}
+                    src={util.getSosToonIconUrl((gag() as SosToonGag).sosToon)}
                   />
                   <img
                     class={`${styles.sosToonGagIcon} no-drag`}
-                    src={util.getSosGagIconUrl(gag.sosToon)}
+                    src={util.getSosGagIconUrl((gag() as SosToonGag).sosToon)}
                   />
                 </> : <>
                   <img
                     class={`${styles.gagIcon} no-drag`}
-                    src={util.getGagIconUrl({ track: gag.track, lvl: gag.lvl })}
+                    src={util.getGagIconUrl({ track: gag().track, lvl: gag().lvl })}
                   />
-                  <Show when={gag.isOrg}>
+                  <Show when={gag().isOrg}>
                     <img class={styles.organicIcon} src={util.getResourceUrl('Organic.png')} />
                   </Show>
                 </>

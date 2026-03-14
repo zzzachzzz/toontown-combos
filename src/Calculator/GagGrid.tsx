@@ -15,15 +15,18 @@ export const GagGrid = (props: Props) => {
         {track => {
           return (
             <div class={`${styles.row} no-drag`} style={{ background: `var(--${track})` }}>
-              <div class={styles.gagTrackLabel}>{GAG_TRACK_DISPLAY_NAME[track]}</div>
+              <div class={styles.gagTrackLabel}>{GAG_TRACK_DISPLAY_NAME[track()]}</div>
               <For each={[...util.range(1, 7)]} >
                 {lvl => {
                   return (
                     <button
                       class={styles.cell}
-                      onContextMenu={[props.onClickGag, { track, lvl, isOrg: true }]}
-                      onClick={[props.onClickGag, { track, lvl, isOrg: false }]}>
-                      <img class={`${styles.gagIcon} no-drag`} src={util.getGagIconUrl({ track, lvl })} />
+                      onContextMenu={e => props.onClickGag({ track: track(), lvl: lvl(), isOrg: true }, e)}
+                      onClick={e => props.onClickGag({ track: track(), lvl: lvl(), isOrg: false }, e)}>
+                      <img
+                        class={`${styles.gagIcon} no-drag`}
+                        src={util.getGagIconUrl({ track: track(), lvl: lvl() })}
+                      />
                     </button>
                   );
                 }}
@@ -56,10 +59,10 @@ const SosToonsGroup = (props: SosToonsProps) => {
           return (
             <button
               class={`${styles.cell} ${styles.sosToonCell}`}
-              onClick={[props.onClickGag, { sosToon }]}
+              onClick={e => props.onClickGag({ sosToon: sosToon() }, e)}
             >
-              <img class={`${styles.gagIcon} no-drag`} src={util.getSosToonIconUrl(sosToon)} />
-              <img class={`${styles.sosToonGagIcon} no-drag`} src={util.getSosGagIconUrl(sosToon)} />
+              <img class={`${styles.gagIcon} no-drag`} src={util.getSosToonIconUrl(sosToon())} />
+              <img class={`${styles.sosToonGagIcon} no-drag`} src={util.getSosGagIconUrl(sosToon())} />
             </button>
           );
         }}

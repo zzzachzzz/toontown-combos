@@ -192,10 +192,10 @@ export const Calculator = () => {
          <div class={styles.right}>
            <div class={styles.rightInnerCombos}>
              <For each={store.getAccumulatedDamageCombos()}>
-               {({ combo, additionalGagMultiplier }, index) => (
+               {(accumCombos, index) => (
                  <AccumulatedDamageCombo
-                   combo={combo}
-                   additionalGagMultiplier={additionalGagMultiplier}
+                   combo={accumCombos().combo}
+                   additionalGagMultiplier={accumCombos().additionalGagMultiplier}
                    onClickRemove={() => store.removeAccumulatedDamageCombo(index())}
                  />
                )}
