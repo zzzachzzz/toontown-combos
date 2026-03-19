@@ -29,7 +29,7 @@ export default defineConfig({
     isolate: false,
   },
   build: {
-    target: 'esnext',
+    target: 'baseline-widely-available',
   },
   resolve: {
     conditions: ['development', 'browser'],
