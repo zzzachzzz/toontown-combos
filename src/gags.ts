@@ -245,7 +245,11 @@ export class Combo {
       .filter(g => g.lvl !== 0)
       .toSorted(sortFnGags);
 
-    return Object.groupBy(gags, (gag) => gag.track);
+    return gags.reduce((acc, gag) => {
+      if (!acc.hasOwnProperty(gag.track)) acc[gag.track] = [];
+      acc[gag.track]!.push(gag);
+      return acc;
+    }, {} as Partial<Record<GagTrack, Gag[]>>);
   }
 
   damage({ isLured, additionalGagMultiplier = 0, onlyTrack }: {
