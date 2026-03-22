@@ -14,7 +14,7 @@ export const GagGrid = (props: Props) => {
       <For each={Object.values(GagTracks)}>
         {track => {
           return (
-            <div class={`${styles.row} no-drag`} style={{ background: `var(--${track})` }}>
+            <div class={`${styles.row} no-drag`} style={{ background: `var(--${track()})` }}>
               <div class={styles.gagTrackLabel}>{GAG_TRACK_DISPLAY_NAME[track()]}</div>
               <For each={[...util.range(1, 7)]} >
                 {lvl => {
