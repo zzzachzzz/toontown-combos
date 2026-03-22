@@ -143,7 +143,7 @@ export const createStore = ({
       const isLured = this.getIsLured();
       const minGagLvl = this.getLevel4UpGagsOnly() ? 4 : undefined;
 
-      const cache = getFindComboCache?.();
+      const cache = getFindComboCache?.(); // TODO... is this a dependency..? That would trigger an update?
 
       return Array.from(
         util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
@@ -157,7 +157,7 @@ export const createStore = ({
           return findCombo(findComboArgs);
         }
       );
-    });
+    }, []);
 
     getTheme = () => state.theme;
 

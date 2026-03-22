@@ -41,6 +41,8 @@ function getFindComboCache(): typeof findComboCache {
   if (!findComboCache) {
     console.debug("'getFindComboCache' called before 'findComboCache' was ready");
     console.trace();
+  } else {
+    console.debug("'getFindComboCache' called 'findComboCache' AND WAS READY !!!");
   }
   return findComboCache;
 }
