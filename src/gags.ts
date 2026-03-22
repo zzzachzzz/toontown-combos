@@ -559,14 +559,10 @@ function validateGagTrackRecord(
     if (typeof val !== 'number' || isNaN(val)) {
       throw new Error(`Values in \`${argName}\` argument must be a number. For key '${key}' got value '${val}'.`);
     }
-    if (key === 'trap' && val > 1) {
+    if (argName === 'gags' && key === 'trap' && val > 1) {
       throw new Error(`${val} trap gags specified in argument \`${argName}\`. Must be 0 or 1.`);
     }
     sumGags += val;
-  }
-  const minSumGags = argName === 'gags' ? 1 : 0;
-  if (sumGags < minSumGags || sumGags > 4) {
-    throw new Error(`Sum of values in \`${argName}\` argument must be ${minSumGags} <= n <= 4. Received ${sumGags}.`);
   }
 }
 
