@@ -4,6 +4,7 @@ import {
   FindComboArgs,
   Combo,
   Gag,
+  NoneGag,
   sortFnGags,
   sortFnGagsLowest,
   cleanGagCounts,
@@ -227,6 +228,28 @@ describe('sortFnGags', () => {
       new Gag({ track: GT.drop, lvl: 2, isOrg: false }),
       new Gag({ track: GT.drop, lvl: 1, isOrg: true }),
       new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
+    ]);
+  });
+
+  test('sorts `NoneGag` (lvl 0 with null track) by placing at the end', () => {
+    expect([
+      new NoneGag(),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: false }),
+      new NoneGag(),
+    ].toSorted(sortFnGags)).toEqual([
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
+      new NoneGag(),
+      new NoneGag(),
     ]);
   });
 });

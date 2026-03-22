@@ -129,6 +129,16 @@ export class Gag {
   }
 }
 
+export class NoneGag extends Gag {
+  constructor() {
+    super({
+      track: null as unknown as GagTrack,
+      lvl: 0,
+      isOrg: false,
+    });
+  }
+}
+
 type SosToonGagTrack = keyof typeof SOS_TOON_GAGS;
 
 export class SosToonGag extends Gag {
@@ -320,10 +330,7 @@ export class Combo {
     if (key === '') return null;
     return new Combo({
       gags: key.split('_').map(part => {
-        // NOTE That for "no" entries, we don't technically know what gag track it is/was...
-        // see if this is bad and if we could use null or something instead.
-        // TODO This is sus lol
-        if (part === "no") return new Gag({ track: GagTracks.toonup, lvl: 0 });
+        if (part === "no") return new NoneGag();
 
         const gagTrackAbbrev = part.substring(0, 2);
         const track = gagTrackAbbrevLookup[
