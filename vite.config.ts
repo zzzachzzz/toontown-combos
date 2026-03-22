@@ -21,7 +21,6 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: [
-      '@testing-library/jest-dom/vitest',
       './src/test-setup.ts',
     ],
     // if you have few tests, try commenting one

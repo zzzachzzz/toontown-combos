@@ -20,8 +20,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.4",
-    "@types/testing-library__jest-dom": "^6.0.0",
     "gh-pages": "^3.1.0",
     "jsdom": "^26.1.0",
     "solid-devtools": "^0.34.5",
