@@ -132,12 +132,8 @@ export const createStore = ({
       return 20;
     };
 
-    // "Why createMemo is not lazy?" (initial value computed eagerly on my `createStore` call)
-    // "Just what I was looking at the time.
-    //  I created Solid back in 2016 and was inspired heavily by S.js which was all eager.
-    //  Changing to lazy would have been breaking. But it will be lazy in 2.0." -ryansolid
-    // https://github.com/solidjs/solid/discussions/2416#discussioncomment-12204286
     getComboGridCombos = createMemo(async () => {
+      console.log('computing getComboGridCombos'); // TODO
       const maxCogLvl = this.getMaxCogLvl();
       const organicGags = this.getSelectedOrgGagTrackCounts();
       const isLured = this.getIsLured();

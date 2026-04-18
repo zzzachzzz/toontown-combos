@@ -31,22 +31,20 @@ export const useStore = () => {
   return useContext(StoreContext)!;
 };
 
-console.log('findComboCacheUrl:', findComboCacheUrl);
-
 // Fetch promise fires off here on module load
 const findComboCachePromise: Promise<FindComboCache | undefined> =
   fetch(findComboCacheUrl)
   .then(async res => {
     const findComboCache = await res.json();
-    console.debug("Loaded and parsed 'findCombo-cache.codegen.json'");
+    console.debug(`Fetched and parsed '${findComboCacheUrl}'`);
     return findComboCache;
   })
   .catch((error) => {
-    console.error("Error thrown for... TODO", error);
+    console.error(`Error during fetch or parse of '${findComboCacheUrl}'\n`, error);
   });
 
 async function getFindComboCache(): Promise<FindComboCache | undefined> {
-  const race = await util.raceTimeout(findComboCachePromise, 800);
+  const race = await util.raceTimeout(findComboCachePromise, 500);
 
   if (race === util.TIMEOUT) {
     console.warn(`Timeout reached on fetch ${findComboCacheUrl}`);

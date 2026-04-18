@@ -1,4 +1,4 @@
-import { JSX, For, Show } from 'solid-js';
+import { JSX, For, Show, Loading } from 'solid-js';
 import { useStore } from '../store.instance';
 import * as util from '../util';
 import * as storage from '../local-storage';
@@ -57,19 +57,21 @@ export const ComboGrid = () => {
             class={styles.gagCombosInnerGrid}
             style={{ 'grid-template': combosGridTemplate() }}
           >
-            <For each={Array.from(util.batch(4, combos()))}>
-              {comboBatch => (
-                <div>
-                  <For each={comboBatch()}>
-                    {maybeCombo => (
-                      <Show when={maybeCombo()}>
-                        {combo => <Combo combo={combo()} isLured={store.getIsLured()} />}
-                      </Show>
-                    )}
-                  </For>
-                </div>
-              )}
-            </For>
+            <Loading>
+              <For each={Array.from(util.batch(4, combos()))}>
+                {comboBatch => (
+                  <div>
+                    <For each={comboBatch()}>
+                      {maybeCombo => (
+                        <Show when={maybeCombo()}>
+                          {combo => <Combo combo={combo()} isLured={store.getIsLured()} />}
+                        </Show>
+                      )}
+                    </For>
+                  </div>
+                )}
+              </For>
+            </Loading>
           </div>
         </div>
       </div>
