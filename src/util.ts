@@ -70,6 +70,33 @@ export function assert(
   throw new Error(`Assertion failed (${condition})${msg ? (': ' + msg) : ''}`);
 }
 
+export async function sleep(
+  ms: number,
+  onSetTimeout?: (timeout: ReturnType<typeof setTimeout>) => void,
+): Promise<undefined> {
+  return new Promise<undefined>((resolve) => {
+    const timeout = setTimeout(() => resolve(undefined), ms)
+    onSetTimeout?.(timeout);
+  });
+}
+
+export const TIMEOUT = Symbol('timeout');
+
+export async function raceTimeout<T>(
+  promise: Promise<T>,
+  ms: number,
+): Promise<Awaited<T> | typeof TIMEOUT> {
+  let sleepTimeout: ReturnType<typeof setTimeout>;
+
+  const sleepPromise: Promise<typeof TIMEOUT> =
+    sleep(ms, (t) => { sleepTimeout = t; }).then(() => TIMEOUT)
+
+  return Promise.race([
+    promise,
+    sleepPromise
+  ]).finally(() => clearTimeout(sleepTimeout));
+}
+
 export function* iterFindComboArgs({ // TODO Rename? ComboGrid permutations
   maxCogLvl,
   organicGags,
