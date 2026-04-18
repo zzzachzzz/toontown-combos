@@ -1,5 +1,5 @@
 import { createMemo, createSignal, createStore as _createStore, storePath } from 'solid-js'; // TODO update to preferred 2.0 pattern rather than `storePath` helper
-import { findCombo, Combo, findComboArgsToKey, type ComboKey } from './gags';
+import { findCombo, Combo, findComboArgsToKey, type ComboKey, type FindComboCache } from './gags';
 import * as util from './util';
 import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
@@ -20,7 +20,7 @@ export type State = {
 
 type CreateStoreArgs = {
   initialState?: Partial<State>;
-  getFindComboCache?: () => Record<string, string> | null | undefined;
+  getFindComboCache?: () => Promise<FindComboCache | null | undefined>;
 };
 
 export const createStore = ({
@@ -137,15 +137,15 @@ export const createStore = ({
     //  I created Solid back in 2016 and was inspired heavily by S.js which was all eager.
     //  Changing to lazy would have been breaking. But it will be lazy in 2.0." -ryansolid
     // https://github.com/solidjs/solid/discussions/2416#discussioncomment-12204286
-    getComboGridCombos = createMemo((): Array<Combo | null> => {
+    getComboGridCombos = createMemo(async () => {
       const maxCogLvl = this.getMaxCogLvl();
       const organicGags = this.getSelectedOrgGagTrackCounts();
       const isLured = this.getIsLured();
       const minGagLvl = this.getLevel4UpGagsOnly() ? 4 : undefined;
 
-      const cache = getFindComboCache?.(); // TODO... is this a dependency..? That would trigger an update?
+      const cache = await getFindComboCache?.();
 
-      return Array.from(
+      return Promise.resolve(Array.from(
         util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
         findComboArgs => {
           const cacheKey = findComboArgsToKey(findComboArgs);
@@ -156,8 +156,8 @@ export const createStore = ({
           }
           return findCombo(findComboArgs);
         }
-      );
-    }, []);
+      ));
+    }, [], { lazy: true });
 
     getTheme = () => state.theme;
 

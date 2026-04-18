@@ -1,7 +1,9 @@
 import { createContext, useContext } from 'solid-js';
 import type { ParentComponent } from 'solid-js';
+import type { FindComboCache } from './gags';
 import { createStore } from './store';
 import * as storage from './local-storage';
+import * as util from './util';
 import { determineTheme, setDomDataTheme } from './light-dark-theme';
 import findComboCacheUrl from './findCombo-cache.codegen.json?url';
 
@@ -29,21 +31,38 @@ export const useStore = () => {
   return useContext(StoreContext)!;
 };
 
+console.log('findComboCacheUrl:', findComboCacheUrl);
 
-let findComboCache: Record<string, string> | null = null;
+// Fetch promise fires off here on module load
+const findComboCachePromise: Promise<FindComboCache | undefined> =
+  fetch(findComboCacheUrl)
+  .then(async res => {
+    const findComboCache = await res.json();
+    console.debug("Loaded and parsed 'findCombo-cache.codegen.json'");
+    return findComboCache;
+  })
+  .catch((error) => {
+    console.error("Error thrown for... TODO", error);
+  });
 
-fetch(findComboCacheUrl).then(async r => {
-  findComboCache = await r.json();
-  console.debug("Loaded and parsed 'findCombo-cache.codegen.json'");
-});
+async function getFindComboCache(): Promise<FindComboCache | undefined> {
+  const race = await util.raceTimeout(findComboCachePromise, 800);
 
-function getFindComboCache(): typeof findComboCache {
-  if (!findComboCache) {
-    console.debug("'getFindComboCache' called before 'findComboCache' was ready");
-    console.trace();
-  } else {
-    console.debug("'getFindComboCache' called 'findComboCache' AND WAS READY !!!");
+  if (race === util.TIMEOUT) {
+    console.warn(`Timeout reached on fetch ${findComboCacheUrl}`);
+    return undefined;
   }
-  return findComboCache;
+
+  return race;
 }
+
+// TODO
+  // if (!findComboCache) {
+  //   console.debug("'getFindComboCache' called before 'findComboCache' was ready");
+  //   console.trace();
+  // } else {
+  //   console.debug("'getFindComboCache' called 'findComboCache' AND WAS READY !!!");
+  // }
+  // return findComboCache;
+// }
 

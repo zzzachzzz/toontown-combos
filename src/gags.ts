@@ -726,6 +726,8 @@ export function sortFnGagsLowest(gag1: Gag, gag2: Gag): number {
   );
 }
 
+export type FindComboCache = Record<FindComboArgsKey, ComboKey>;
+
 export function logTable(findComboRes: FindComboResult): void {
   const { combo, cog, args: { isLured, cogLvl, additionalGagMultiplier } } = findComboRes;
 
