@@ -1,4 +1,4 @@
-import { JSX, For, Show, Loading } from 'solid-js';
+import { JSX, For, Show, Loading, createEffect } from 'solid-js';
 import { useStore } from '../store.instance';
 import * as util from '../util';
 import * as storage from '../local-storage';
@@ -9,6 +9,17 @@ import styles from './ComboGrid.module.css';
 
 export const ComboGrid = () => {
   const store = useStore();
+
+  createEffect(
+    () => {
+      // console.log('createEffect compute fn?');
+      console.log('store.getProof():', store.getProof());
+    },
+    () => {
+      // console.log('createEffect effect fn?');
+      // console.log('store.getProof():', store.getProof());
+    }
+  );
 
   const combos = store.getComboGridCombos;
 

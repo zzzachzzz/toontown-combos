@@ -132,6 +132,11 @@ export const createStore = ({
       return 20;
     };
 
+    getProof = createMemo(() => {
+      console.log('computing getProof');
+      return ["foo", "bar", "baz"];
+    });
+
     getComboGridCombos = createMemo(async () => {
       console.log('computing getComboGridCombos'); // TODO
       const maxCogLvl = this.getMaxCogLvl();
