@@ -27,6 +27,7 @@
 
 .gagCombosInnerGrid {
   display: grid;
+  grid-auto-flow: column;
   grid-column-gap: 20px;
   width: 100%;
   overflow-x: auto;;

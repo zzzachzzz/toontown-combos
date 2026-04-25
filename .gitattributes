@@ -1,2 +1,3 @@
 *.snap linguist-generated
+*.codegen.* linguist-generated
 
