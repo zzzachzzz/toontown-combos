@@ -1,6 +1,6 @@
 import { createMemo, createSignal } from 'solid-js';
 import { createStore as _createStore } from 'solid-js/store';
-import { findCombo, Combo } from './gags';
+import { findCombo, Combo, findComboArgsToKey, type ComboKey, type FindComboCache } from './gags';
 import * as util from './util';
 import type { GagTrack } from './constants';
 import type { SavedState } from './local-storage';
@@ -21,10 +21,12 @@ export type State = {
 
 type CreateStoreArgs = {
   initialState?: Partial<State>;
+  findComboCache?: FindComboCache;
 };
 
 export const createStore = ({
   initialState,
+  findComboCache,
 }: CreateStoreArgs = {}) => {
   const [state, setState] = _createStore<State>({
     additionalGagMultiplier: 0,
@@ -135,12 +137,19 @@ export const createStore = ({
       const maxCogLvl = this.getMaxCogLvl();
       const organicGags = this.getSelectedOrgGagTrackCounts();
       const isLured = this.getIsLured();
-      const level4UpGagsOnly = this.getLevel4UpGagsOnly();
-      const minGagLvl = level4UpGagsOnly ? 4 : undefined;
+      const minGagLvl = this.getLevel4UpGagsOnly() ? 4 : undefined;
 
       return Array.from(
-        util.iterFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
-        findComboArgs => findCombo(findComboArgs)
+        util.genComboGridFindComboArgs({ maxCogLvl, organicGags, isLured, minGagLvl }),
+        findComboArgs => {
+          if (findComboCache) {
+            const cacheKey = findComboArgsToKey(findComboArgs);
+            const cacheHit = findComboCache[cacheKey];
+            if (cacheHit != null) return Combo.fromKey(cacheHit);
+            console.warn(`Cache miss for cache key '${cacheKey}'`);
+          }
+          return findCombo(findComboArgs);
+        }
       );
     });
 

@@ -70,7 +70,7 @@ export function assert(
   throw new Error(`Assertion failed (${condition})${msg ? (': ' + msg) : ''}`);
 }
 
-export function* iterFindComboArgs({
+export function* genComboGridFindComboArgs({
   maxCogLvl,
   organicGags,
   isLured,
@@ -81,8 +81,8 @@ export function* iterFindComboArgs({
 ): Generator<FindComboArgs> {
   const common = { isLured, organicGags, minGagLvl };
   const gagTracks: Array<GagTrack> = [GagTracks.sound, GagTracks.throw, GagTracks.squirt];
-  for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
-    for (const gagTrack of gagTracks) {
+  for (const gagTrack of gagTracks) {
+    for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
       for (let numToons = 4; numToons >= 1; numToons--) {
         yield { ...common, cogLvl, gags: { [gagTrack]: numToons } };
       }

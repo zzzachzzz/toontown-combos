@@ -129,6 +129,16 @@ export class Gag {
   }
 }
 
+export class NoneGag extends Gag {
+  constructor() {
+    super({
+      track: null as unknown as GagTrack,
+      lvl: 0,
+      isOrg: false,
+    });
+  }
+}
+
 type SosToonGagTrack = keyof typeof SOS_TOON_GAGS;
 
 export class SosToonGag extends Gag {
@@ -316,9 +326,12 @@ export class Combo {
     return parts.join('_') as ComboKey;
   }
 
-  static fromKey(key: ComboKey): Combo {
+  static fromKey(key: ComboKey): Combo | null {
+    if (key === '') return null;
     return new Combo({
       gags: key.split('_').map(part => {
+        if (part === "no") return new NoneGag();
+
         const gagTrackAbbrev = part.substring(0, 2);
         const track = gagTrackAbbrevLookup[
           gagTrackAbbrev.toLowerCase() as GagTrackAbbrev<GagTrack, false>
@@ -712,6 +725,8 @@ export function sortFnGagsLowest(gag1: Gag, gag2: Gag): number {
     || Number(gag1.isOrg) - Number(gag2.isOrg) // For 0 dmg gags (toonup, lure), fallback for sort predictability
   );
 }
+
+export type FindComboCache = Record<FindComboArgsKey, ComboKey>;
 
 export function logTable(findComboRes: FindComboResult): void {
   const { combo, cog, args: { isLured, cogLvl, additionalGagMultiplier } } = findComboRes;

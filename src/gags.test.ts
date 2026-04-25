@@ -4,6 +4,7 @@ import {
   FindComboArgs,
   Combo,
   Gag,
+  NoneGag,
   sortFnGags,
   sortFnGagsLowest,
   cleanGagCounts,
@@ -14,13 +15,14 @@ import {
 } from './gags';
 import { GagTracks } from './constants';
 import * as util from './util';
+import { genComboGridFindComboArgsAllPermutations } from './findCombo-cache-codegen';
 
 const GT = GagTracks;
 
 describe('findCombo', () => {
   test('matches snapshot for all permutations relevant to combo grid', () => {
     const findComboResults: Array<FindComboResult> = Array.from(
-      iterFindComboArgsComboGridPermutations(),
+      genComboGridFindComboArgsAllPermutations(),
       findComboArgs => new FindComboResult(findComboArgs, findCombo(findComboArgs)),
     );
     expectFindComboResults(findComboResults);
@@ -28,7 +30,7 @@ describe('findCombo', () => {
 
   test('matches snapshot for all 2sound2drop & 3sound1drop permutations', () => {
     const findComboResults: Array<FindComboResult> = Array.from(
-      iterFindComboArgsSoundDropPermutations(),
+      genFindComboArgsSoundDropPermutations(),
       findComboArgs => new FindComboResult(findComboArgs, findCombo(findComboArgs)),
     );
     expectFindComboResults(findComboResults);
@@ -228,6 +230,28 @@ describe('sortFnGags', () => {
       new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
     ]);
   });
+
+  test('sorts `NoneGag` (lvl 0 with null track) by placing at the end', () => {
+    expect([
+      new NoneGag(),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: false }),
+      new NoneGag(),
+    ].toSorted(sortFnGags)).toEqual([
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.toonup, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.lure, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.sound, lvl: 1, isOrg: false }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: true }),
+      new Gag({ track: GT.drop, lvl: 1, isOrg: false }),
+      new NoneGag(),
+      new NoneGag(),
+    ]);
+  });
 });
 
 describe('sortFnGagsLowest', () => {
@@ -281,40 +305,7 @@ describe('sortFnGagsLowest', () => {
   });
 });
 
-function* iterFindComboArgsComboGridPermutations(): Generator<FindComboArgs> {
-  for (const { gagTrack, numToons } of (
-    [GagTracks.sound, GagTracks.throw, GagTracks.squirt]
-    .flatMap(gagTrack => Array.from(
-      util.range(4, 1, -1),
-      numToons => ({ gagTrack, numToons })
-    ))
-  )) {
-    const maxCogLvl = 20;
-    for (
-      const isLured of (
-        gagTrack === GagTracks.throw || gagTrack === GagTracks.squirt
-        ? [false, true]
-        : [false]
-      )
-    ) {
-      for (let cogLvl = maxCogLvl; cogLvl >= 1; cogLvl--) {
-        for (let numOrg = 0; numOrg <= numToons; numOrg++) {
-          for (const minGagLvl of [undefined, 4]) {
-            yield {
-              minGagLvl,
-              isLured,
-              cogLvl,
-              gags: { [gagTrack]: numToons },
-              organicGags: { [gagTrack]: numOrg },
-            };
-          }
-        }
-      }
-    }
-  }
-}
-
-function* iterFindComboArgsSoundDropPermutations(): Generator<FindComboArgs> {
+function* genFindComboArgsSoundDropPermutations(): Generator<FindComboArgs> {
   const maxCogLvl = 20;
   const isLured = false;
   for (const gags of [

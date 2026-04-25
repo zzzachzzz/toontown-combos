@@ -24,7 +24,7 @@ describe('batch', () => {
   });
 });
 
-describe('iterFindComboArgs', () => {
+describe('genComboGridFindComboArgs', () => {
   test('generated combo args match snapshot', () => {
     const maxCogLvl = 12;
     const organicGags = {};
@@ -40,7 +40,7 @@ describe('iterFindComboArgs', () => {
       },
     })
     expect(
-      Array.from(util.iterFindComboArgs({ maxCogLvl, organicGags, isLured }))
+      Array.from(util.genComboGridFindComboArgs({ maxCogLvl, organicGags, isLured }))
     ).toMatchSnapshot();
   });
 });

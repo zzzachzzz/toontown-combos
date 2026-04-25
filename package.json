@@ -15,6 +15,7 @@
     "cicd": "npm run _confirmprompt && npm run ci && npm run _publish",
     "_confirmprompt": "echo 'Type DEPLOY to confirm: ' && read confirm && [ \"$confirm\" = 'DEPLOY' ] || { echo 'Aborted'; exit 1; }",
     "gags-cli": "tsx ./src/gags-cli.ts",
+    "cache-codegen": "tsx ./src/findCombo-cache-codegen.ts",
     "type-check": "tsc --noEmit --skipLibCheck"
   },
   "license": "MIT",
