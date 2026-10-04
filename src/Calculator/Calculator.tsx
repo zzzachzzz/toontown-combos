@@ -114,29 +114,13 @@ export const Calculator = () => {
 
   return (
     <div class={styles.container}>
-      <div class={styles.left}>
+      <div>
         <GagGrid onClickGag={onClickGridGag} />
 
-        <CogsHp comboDamage={comboDamage()} />
-
-        <label for="additional-gag-multiplier">Additional Gag Multiplier:</label>
-        <select
-          id="additional-gag-multiplier"
-          class={styles.additionalGagMultiplier}
-          name="additional gag multiplier"
-          value={additionalGagMultiplier().toString()}
-          onChange={e => store.setAdditionalGagMultiplier(Number(e.target.value))}
-        >
-          {Object.entries(ADDITIONAL_GAG_MULTIPLIERS).map(([value, desc]) => (
-            <option value={value}>{desc}</option>
-          ))}
-        </select>
-
-        <Show when={cogLvlDestroyed()}>
-          {cogLvl => <CogDestroyed cogLvl={cogLvl()} comboDamage={comboDamage()} />}
-        </Show>
-
         <Show when={combo().gags.length > 0}>
+          <Show when={cogLvlDestroyed()}>
+            {cogLvl => <CogDestroyed cogLvl={cogLvl()} comboDamage={comboDamage()} />}
+          </Show>
           <div style={{ 'display': 'flex', 'justify-content': 'space-between', 'width': '100%' }}>
             <button
               class={styles.clearGagsBtn}
@@ -153,35 +137,26 @@ export const Calculator = () => {
             </button>
           </div>
         </Show>
-
-
-        <div class={styles.howTo}>
-          <ul>
-            <li>Click to select a gag</li>
-            <li>Right-click to select an organic gag</li>
-            <li>
-              <span>Or click the organic icon&nbsp;</span>
-              <span style={{ position: 'relative', 'padding-right': '1.1rem' }}>
-                <img
-                  style={{ position: 'absolute', top: 0, left: 0, width: '1.1rem', height: '1.1rem' }}
-                  src={util.getResourceUrl('Organic.png')}
-                />
-              </span>
-              <span>&nbsp;of a selected gag to toggle organic</span>
-            </li>
-            <li>Click a selected gag to deselect it</li>
-            <li>Click a selected gag's up/down buttons to level it up/down</li>
-            <li>Right-click a selected gag to duplicate it</li>
-            <li>
-              Note about <i>Additional Gag Multiplier</i>:<br/>
-              If the calculations seem odd, that's because they are.<br/>
-              <a href="https://github.com/zzzachzzz/toontown-combos/issues/34#issuecomment-2282841602">Learn more here</a>
-            </li>
-          </ul>
-        </div>
       </div>
 
-      <div class={styles.right}>
+      <div>
+        <CogsHp comboDamage={comboDamage()} />
+
+        <label for="additional-gag-multiplier">Additional Gag Multiplier:</label>
+        <select
+          id="additional-gag-multiplier"
+          class={styles.additionalGagMultiplier}
+          name="additional gag multiplier"
+          value={additionalGagMultiplier().toString()}
+          onChange={e => store.setAdditionalGagMultiplier(Number(e.target.value))}
+        >
+          {Object.entries(ADDITIONAL_GAG_MULTIPLIERS).map(([value, desc]) => (
+            <option value={value}>{desc}</option>
+          ))}
+        </select>
+
+        <HowTo />
+
         <SelectedGags
           combo={combo()}
           additionalGagMultiplier={additionalGagMultiplier()}
@@ -213,6 +188,35 @@ export const Calculator = () => {
           </div>
         </Show>
       </div>
+    </div>
+  );
+};
+
+const HowTo = () => {
+  return (
+    <div class={styles.howTo}>
+      <ul>
+        <li>Click to select a gag</li>
+        <li>Right-click to select an organic gag</li>
+        <li>
+          <span>Or click the organic icon&nbsp;</span>
+          <span style={{ position: 'relative', 'padding-right': '1.1rem' }}>
+            <img
+              style={{ position: 'absolute', top: 0, left: 0, width: '1.1rem', height: '1.1rem' }}
+              src={util.getResourceUrl('Organic.png')}
+            />
+          </span>
+          <span>&nbsp;of a selected gag to toggle organic</span>
+        </li>
+        <li>Click a selected gag to deselect it</li>
+        <li>Click a selected gag's up/down buttons to level it up/down</li>
+        <li>Right-click a selected gag to duplicate it</li>
+        <li>
+          Note about <i>Additional Gag Multiplier</i>:<br/>
+          If the calculations seem odd, that's because they are.<br/>
+          <a href="https://github.com/zzzachzzz/toontown-combos/issues/34#issuecomment-2282841602">Learn more here</a>
+        </li>
+      </ul>
     </div>
   );
 };
