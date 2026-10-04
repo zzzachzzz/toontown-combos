@@ -154,14 +154,6 @@ export const Calculator = () => {
           </div>
         </Show>
 
-        <SelectedGags
-          combo={combo()}
-          additionalGagMultiplier={additionalGagMultiplier()}
-          onClickOrgToggle={onClickOrgToggle}
-          onClickGag={onClickSelectedGag}
-          onClickGagLvlMod={onClickSelectedGagLvlMod}
-          onClickClearGags={onClickClearGags}
-        />
 
         <div class={styles.howTo}>
           <ul>
@@ -188,27 +180,39 @@ export const Calculator = () => {
           </ul>
         </div>
       </div>
-       <Show when={store.getAccumulatedDamageCombos().length > 0}>
-         <div class={styles.right}>
-           <div class={styles.rightInnerCombos}>
-             <For each={store.getAccumulatedDamageCombos()}>
-               {({ combo, additionalGagMultiplier }, index) => (
-                 <AccumulatedDamageCombo
-                   combo={combo}
-                   additionalGagMultiplier={additionalGagMultiplier}
-                   onClickRemove={() => store.removeAccumulatedDamageCombo(index())}
-                 />
-               )}
-             </For>
-           </div>
-           <div class={styles.rightInnerTotal}>
-             <AccumulatedDamageDisplay
-               accumulatedDamage={store.getAccumulatedCombosDamage()}
-               onClickClearAll={store.clearAccumulatedDamageCombos}
-             />
-           </div>
-         </div>
-       </Show>
+
+      <div class={styles.right}>
+        <SelectedGags
+          combo={combo()}
+          additionalGagMultiplier={additionalGagMultiplier()}
+          onClickOrgToggle={onClickOrgToggle}
+          onClickGag={onClickSelectedGag}
+          onClickGagLvlMod={onClickSelectedGagLvlMod}
+          onClickClearGags={onClickClearGags}
+        />
+      </div>
+
+      <div class={styles.right}>
+        <Show when={store.getAccumulatedDamageCombos().length > 0}>
+          <div class={styles.rightInnerCombos}>
+            <For each={store.getAccumulatedDamageCombos()}>
+              {({ combo, additionalGagMultiplier }, index) => (
+                <AccumulatedDamageCombo
+                  combo={combo}
+                  additionalGagMultiplier={additionalGagMultiplier}
+                  onClickRemove={() => store.removeAccumulatedDamageCombo(index())}
+                />
+              )}
+            </For>
+          </div>
+          <div class={styles.rightInnerTotal}>
+            <AccumulatedDamageDisplay
+              accumulatedDamage={store.getAccumulatedCombosDamage()}
+              onClickClearAll={store.clearAccumulatedDamageCombos}
+            />
+          </div>
+        </Show>
+      </div>
     </div>
   );
 };
