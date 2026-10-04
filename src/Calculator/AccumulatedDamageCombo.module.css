@@ -2,6 +2,7 @@
   padding: 0.5rem;
   border-radius: 5px;
   border: 4px solid var(--black);
+  background: var(--color-bg);
 }
 
 .flexContainer {
