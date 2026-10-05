@@ -1,7 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: minmax(0, 600px) minmax(0, 600px);
-  grid-template-rows: 1fr auto;
+  grid-template-columns: minmax(0, 600px) minmax(0, 600px) auto;
   gap: 2rem;
   margin: 2rem auto;
 }
@@ -61,8 +60,8 @@ html[data-theme="dark"] .additionalGagMultiplier {
 }
 
 .howTo {
-  margin: auto 1rem 0.5rem 1rem;
-  padding: 1rem 0;
+  margin-top: 4rem;
+  margin-left: 4rem;
   font-size: 0.9rem;
 }
 

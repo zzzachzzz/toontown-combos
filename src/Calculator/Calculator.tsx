@@ -114,9 +114,12 @@ export const Calculator = () => {
 
   return (
     <div class={styles.container}>
-      <GagGrid onClickGag={onClickGridGag} />
-
       <div>
+        <GagGrid onClickGag={onClickGridGag} />
+        <HowTo />
+      </div>
+
+      <div class={styles.left}>
         <CogsHp comboDamage={comboDamage()} />
 
         <label for="additional-gag-multiplier">Additional Gag Multiplier:</label>
@@ -132,10 +135,6 @@ export const Calculator = () => {
           ))}
         </select>
 
-        <HowTo />
-      </div>
-
-      <div>
         <Show when={combo().gags.length > 0}>
           <Show when={cogLvlDestroyed()}>
             {cogLvl => <CogDestroyed cogLvl={cogLvl()} comboDamage={comboDamage()} />}
@@ -156,16 +155,17 @@ export const Calculator = () => {
             </button>
           </div>
         </Show>
+
+        <SelectedGags
+          combo={combo()}
+          additionalGagMultiplier={additionalGagMultiplier()}
+          onClickOrgToggle={onClickOrgToggle}
+          onClickGag={onClickSelectedGag}
+          onClickGagLvlMod={onClickSelectedGagLvlMod}
+          onClickClearGags={onClickClearGags}
+        />
       </div>
 
-      <SelectedGags
-        combo={combo()}
-        additionalGagMultiplier={additionalGagMultiplier()}
-        onClickOrgToggle={onClickOrgToggle}
-        onClickGag={onClickSelectedGag}
-        onClickGagLvlMod={onClickSelectedGagLvlMod}
-        onClickClearGags={onClickClearGags}
-      />
 
       {/*
       <div class={styles.right}>
