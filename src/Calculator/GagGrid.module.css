@@ -43,7 +43,6 @@
 }
 
 .gagIcon {
-  aspect-ratio: 1 / 1;
   max-width: min(70%, 30px);
   max-height: 30px;
   object-fit: contain;
