@@ -1,7 +1,9 @@
 .container {
   display: grid;
-  grid-template-columns: minmax(0, 650px) minmax(0, 650px) auto;
-  margin: 0 auto;
+  grid-template-columns: minmax(0, 600px) minmax(0, 600px);
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+  margin: 2rem auto;
 }
 
 .left {
