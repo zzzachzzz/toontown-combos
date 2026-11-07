@@ -159,6 +159,44 @@ describe('Combo', () => {
         additionalGagMultiplier: 0.40,
         expectedDamage: 278,
       },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.drop, lvl: 7, isOrg: true }),
+        ] }),
+        additionalGagMultiplier: -0.25,
+        expectedDamage: 156,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.throw, lvl: 1, isOrg: true }),
+        ] }),
+        additionalGagMultiplier: -0.25,
+        expectedDamage: 5,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.squirt, lvl: 4, isOrg: true }),
+        ] }),
+        additionalGagMultiplier: -0.25,
+        expectedDamage: 18,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.lure,  lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 4, isOrg: false }),
+          new Gag({ track: GagTracks.throw, lvl: 4, isOrg: false }),
+        ] }),
+        additionalGagMultiplier: -0.25,
+        expectedDamage: 68,
+      },
+      {
+        combo: new Combo({ gags: [
+          new Gag({ track: GagTracks.lure,   lvl: 5, isOrg: false }),
+          new Gag({ track: GagTracks.squirt, lvl: 7, isOrg: false }),
+        ] }),
+        additionalGagMultiplier: -0.25,
+        expectedDamage: 117,
+      },
     ])(
       'returns correct damage for additionalGagMultiplier of $additionalGagMultiplier - test %#',
       ({ combo, additionalGagMultiplier, expectedDamage }) => {
