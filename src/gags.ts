@@ -59,17 +59,41 @@ export class Gag {
     return GAGS[this.track][this.lvl].name;
   }
 
-  get damage(): number {
+  private _damage(baseMultiplier: number = 1): number {
     if (this.lvl === 0) {
       return 0;
     }
-    const baseDmg = GAGS[this.track][this.lvl].damage;
+    const gagDmg = GAGS[this.track][this.lvl].damage;
 
-    if (this.isOrg && baseDmg > 0) {
-      return baseDmg + Math.ceil(baseDmg * Gag.orgBonusMultiplier(this.track));
-    } else {
-      return baseDmg;
-    }
+    if (gagDmg === 0) return 0;
+
+    const baseDmg = Math.floor(gagDmg * baseMultiplier);
+
+    return (
+      baseDmg
+      + (this.isOrg ? Math.ceil(baseDmg * Gag.orgBonusMultiplier(this.track)) : 0)
+    );
+  }
+
+  get damage(): number {
+    return this._damage();
+  }
+
+  /**
+   * A negative `additionalGagMultiplier` (cog defense) lowers the base damage
+   * of the gag. It also has a weird interaction with organic gags,
+   * where the damage reduction is first applied to the non-org base and floored,
+   * then the organic multiplier is applied and ceiled.
+   * Example with Toontanic and 25% defense:
+   *
+   * ceil(floor(180 * 0.75) * 1.15) = 156 (correct)
+   * vs
+   * floor(ceil(180 * 1.15) * 0.75) = 155 (incorrect pre-bugfix behavior)
+   *
+   * https://github.com/zzzachzzz/toontown-combos/issues/50
+   */
+  damageReduced(negativeGagMultiplier: number): number {
+    return this._damage(1 + negativeGagMultiplier);
   }
 
   static orgBonusMultiplier(track: GagTrack): number {
@@ -283,7 +307,7 @@ export class Combo {
       // Meaning that `additionalGagMultiplier` is applied to each individual gag's base damage
       if (additionalGagMultiplier <= 0) {
         const sumBaseDmgs = gags.reduce(
-          (acc, gag) => acc + Math.floor(gag.damage * (1 + additionalGagMultiplier)),
+          (acc, gag) => acc + gag.damageReduced(additionalGagMultiplier),
           0
         );
         return (
