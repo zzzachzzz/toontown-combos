@@ -59,12 +59,17 @@ export class Gag {
     return GAGS[this.track][this.lvl].name;
   }
 
+  protected get baseDamage(): number {
+    return GAGS[this.track][this.lvl].damage;
+  }
+  
   private _damage(baseMultiplier: number = 1): number {
     if (this.lvl === 0) {
       return 0;
     }
-    const gagDmg = GAGS[this.track][this.lvl].damage;
 
+    const gagDmg = this.baseDamage;
+    
     if (gagDmg === 0) return 0;
 
     const baseDmg = Math.floor(gagDmg * baseMultiplier);
@@ -234,7 +239,7 @@ export class SosToonGag extends Gag {
     return SOS_TOON_GAGS[this.track][this.lvl].name;
   }
 
-  override get damage(): number {
+  protected override get baseDamage(): number {
     return SOS_TOON_GAGS[this.track][this.lvl].damage;
   }
 }
