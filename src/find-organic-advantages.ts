@@ -1,4 +1,4 @@
-import { findCombo, FindComboArgs, logTable } from './gags';
+import { findCombo, FindComboArgs, FindComboResult, logTable, Combo } from './gags';
 import type { GagTrack } from './constants';
 
 const args: Parameters<typeof findCombo>[0] = {
@@ -44,7 +44,7 @@ function thing({
   organicGags?: FindComboArgs['organicGags'];
   isLured?: FindComboArgs['isLured'];
 }) {
-  const retval = [];
+  const retval: [FindComboResult, FindComboResult][] = [];
   // findCombo(
   for (let cogLvl = maxCogLvl; cogLvl >= minCogLvl; cogLvl--) {
     for (let numToons = maxToons; numToons >= minToons; numToons--) {
@@ -52,8 +52,11 @@ function thing({
       const nonOrgCombo = findCombo({ ...args, organicGags: {} });
       const orgCombo = findCombo(args);
 
-      if (JSON.stringify(nonOrgCombo.outputKey()) !== JSON.stringify(orgCombo.outputKey())) {
-        retval.push([nonOrgCombo, orgCombo]);
+      if (nonOrgCombo?.toKey() !== orgCombo?.toKey()) {
+        retval.push([
+          new FindComboResult(args, nonOrgCombo),
+          new FindComboResult(args, orgCombo),
+        ]);
       }
     }
   }
@@ -68,6 +71,7 @@ function main() {
     organicGags: { squirt: 1 },
     isLured: true,
   });
+
   for (const [nonOrgCombo, orgCombo] of res) {
     console.log('nonOrgCombo:');
     logTable(nonOrgCombo);
